@@ -66,7 +66,7 @@ class __TwigTemplate_6109c48aa2fdd43b58f48ffafd7501daa76718e455c7625311513359e3f
         echo csrf_field();
         echo "
                     <div class=\"row\">
-                        <div class=\"col-md-6\"><input required class=\"form-control\" type=\"text\" placeholder=\"Nome da Escola:\" name=\"nome\" /></div>
+                        <div class=\"col-md-6\"><input required class=\"form-control\" type=\"text\" placeholder=\"Nome da Escola:\" name=\"escola\" /></div>
                         <div class=\"col-md-6\"><input required class=\"form-control\" type=\"text\" placeholder=\"Cidade:\" name=\"cidade\" /></div>
                         <div class=\"col-md-6\"><input required class=\"form-control\" type=\"text\" placeholder=\"Responsável:\" name=\"responsavel\" /></div>
                         <div class=\"col-md-6\"><input required class=\"form-control\" type=\"email\" placeholder=\"E-mail do Responsavel:\" name=\"responsavel_email\" /></div>
@@ -142,7 +142,7 @@ class __TwigTemplate_6109c48aa2fdd43b58f48ffafd7501daa76718e455c7625311513359e3f
                 <form method=\"post\" action=\"/inscricao/fam-na-escola\">
                     {{ csrf_field() }}
                     <div class=\"row\">
-                        <div class=\"col-md-6\"><input required class=\"form-control\" type=\"text\" placeholder=\"Nome da Escola:\" name=\"nome\" /></div>
+                        <div class=\"col-md-6\"><input required class=\"form-control\" type=\"text\" placeholder=\"Nome da Escola:\" name=\"escola\" /></div>
                         <div class=\"col-md-6\"><input required class=\"form-control\" type=\"text\" placeholder=\"Cidade:\" name=\"cidade\" /></div>
                         <div class=\"col-md-6\"><input required class=\"form-control\" type=\"text\" placeholder=\"Responsável:\" name=\"responsavel\" /></div>
                         <div class=\"col-md-6\"><input required class=\"form-control\" type=\"email\" placeholder=\"E-mail do Responsavel:\" name=\"responsavel_email\" /></div>
