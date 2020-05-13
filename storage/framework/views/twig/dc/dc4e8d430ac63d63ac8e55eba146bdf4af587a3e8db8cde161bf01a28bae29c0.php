@@ -162,7 +162,7 @@ class __TwigTemplate_e933e7752e970c122ee9ca5e1a57b0e1575715fdd7bc48fdc8985e05c41
 \t\t\t<div class=\"row\">
 \t\t\t\t<!-- Nome -->
 \t\t\t\t<div class=\"col-xs-12 col-md-6 v-spacing\">
-\t\t\t\t\t<input class=\"form-control\" name=\"candidato[primeiro_nome]\" type=\"text\" placeholder=\"Nome\" required v-model=\"aluno.primeiro_nome\" />
+\t\t\t\t\t<input class=\"form-control\" name=\"candidato[nome]\" type=\"text\" placeholder=\"Nome\" required v-model=\"aluno.nome\" />
 \t\t\t\t</div>
 \t\t\t\t<!-- Sobrenome -->
 \t\t\t\t<div class=\"col-xs-12 col-md-6 v-spacing\">
@@ -680,7 +680,7 @@ class __TwigTemplate_e933e7752e970c122ee9ca5e1a57b0e1575715fdd7bc48fdc8985e05c41
 \t\t\t<div class=\"row\">
 \t\t\t\t<!-- Nome -->
 \t\t\t\t<div class=\"col-xs-12 col-md-6 v-spacing\">
-\t\t\t\t\t<input class=\"form-control\" name=\"candidato[primeiro_nome]\" type=\"text\" placeholder=\"Nome\" required v-model=\"aluno.primeiro_nome\" />
+\t\t\t\t\t<input class=\"form-control\" name=\"candidato[nome]\" type=\"text\" placeholder=\"Nome\" required v-model=\"aluno.nome\" />
 \t\t\t\t</div>
 \t\t\t\t<!-- Sobrenome -->
 \t\t\t\t<div class=\"col-xs-12 col-md-6 v-spacing\">

@@ -7,7 +7,7 @@ use Carbon\Carbon;
 class Aluno extends Model
 {
     //
-    protected $fillable = ['nome', 'email', 'cpf', 'rg', 'datanascimento', 'sexo', 'endereco', 'numero', 'bairro', 'cidade_id', 'celular', 'telefone'];
+    protected $fillable = ['nome', 'sobrenome', 'email', 'cpf', 'rg', 'datanascimento', 'sexo', 'endereco', 'numero', 'bairro', 'cidade_id', 'celular', 'telefone'];
 
     public function cidade () {
     	return $this->belongsTo('App\Cidade');
@@ -80,10 +80,12 @@ class Aluno extends Model
         $nome = explode(' ', $this->nome_exibicao);
         return $nome[0];
     }
-    public function getSobrenomeAttribute() {
-        $nome = explode(' ', $this->nome_exibicao);
-        unset($nome[0]);
-        return implode(' ', $nome);
+
+    public function getSobrenomeAttribute () {
+        return $this->attributes['sobrenome'];
+    }
+    public function setSobrenomeAttribute ($value) {
+        $this->attributes['sobrenome'] = $value;
     }
 
     // CPF

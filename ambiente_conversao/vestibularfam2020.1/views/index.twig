@@ -27,6 +27,7 @@
 						<the-mask required name="cpf" class="form-control cpf" type="tel" placeholder="Insira seu CPF" :mask="['###.###.###-##']" title="Por favor insira seu CPF"></the-mask>
 						<div class="inputs-hidden">
 							<input required name="candidato[nome]" class="form-control" type="text" placeholder="Nome" title="Por favor insira seu nome"/>
+							<input required name="candidato[sobrenome]" class="form-control" type="text" placeholder="Sobrenome" title="Por favor insira seu Sobrenome"/>
 							<input required name="candidato[email]" class="form-control" type="email" placeholder="E-mail" title="Por favor insira seu e-mail" />
                             <the-mask class="form-control" name="candidato[celular]" type="tel" placeholder="Celular/WhatsApp" required :mask="['(##) ####-####', '(##) #####-####']" title="Por favor insira seu celular"></the-mask>
                             <select required name="curso" class="form-control curso">

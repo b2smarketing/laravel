@@ -216,20 +216,14 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
                 echo "<li><a href=\"/alunos\"><i class=\"fa fa-user\"></i> Candidatos </span></a></li>";
             }
             // line 150
-            echo "
-                  ";
-            // line 151
+            echo "                  ";
             echo "<li><a href=\"/escolas\"><i class=\"fa fa-user\"></i> Escolas </span></a></li>";
-            // line 152
-            echo "
-
-
-                  ";
-            // line 155
+            // line 151
+            echo "                  ";
             if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "gerenciamento.unidades"), "method")) {
                 echo "<li><a href=\"/unidades\"><i class=\"fa fa-building\"></i> Unidades </span></a></li>";
             }
-            // line 156
+            // line 152
             echo "                  ";
             if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "gerenciamento.provas"), "method")) {
                 echo "<li><a><i class=\"fa fa-file-text\"></i> Provas <span class=\"fa fa-chevron-down\"></span></a>
@@ -237,47 +231,47 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
                       <li><a href=\"/provas/locais\">Locais de Provas</a></li>
                       <li><a href=\"/provas/datas\">Datas de Provas</a></li>
                       ";
-                // line 161
+                // line 157
                 echo "                    </ul>
                   </li>";
             }
-            // line 163
+            // line 159
             echo "                  ";
             if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "gerenciamento.campanhas"), "method")) {
                 echo "<li><a href=\"/top\"><i class=\"fa fa-user\"></i> Resultados TOP </span></a></li>";
             }
-            // line 164
+            // line 160
             echo "                  ";
             if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "gerenciamento.campanhas"), "method")) {
                 echo "<li><a href=\"/top-pesquisa\"><i class=\"fa fa-user\"></i> TOP com pesquisa </span></a></li>";
             }
-            // line 165
+            // line 161
             echo "                  ";
             if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "gerenciamento.campanhas"), "method")) {
                 echo "<li><a href=\"/datastore\"><i class=\"fa fa-user\"></i> Outros Dados </span></a></li>";
             }
-            // line 166
+            // line 162
             echo "                  ";
             if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "gerenciamento.campanhas"), "method")) {
                 echo "<li><a href=\"/revisaco\"><i class=\"fa fa-table\"></i> Revisaço ENEM 2019</span></a></li>";
             }
-            // line 167
+            // line 163
             echo "                  ";
             if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "gerenciamento.campanhas"), "method")) {
                 echo "<li><a href=\"/faculdadeaberta\"><i class=\"fa fa-building\"></i> Faculdade Aberta 2019</span></a></li>";
             }
-            // line 168
+            // line 164
             echo "                </ul>
               </div>
             ";
         }
-        // line 171
+        // line 167
         echo "            
             ";
-        // line 173
+        // line 169
         echo "            ";
         if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "crm*"), "method")) {
-            // line 174
+            // line 170
             echo "              <div class=\"menu_section\">
                 <h3>CRM</h3>
                 <ul class=\"nav side-menu\">
@@ -291,13 +285,13 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
               </div>
             ";
         }
-        // line 186
+        // line 182
         echo "            
             ";
-        // line 188
+        // line 184
         echo "            ";
         if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "financeiro*"), "method")) {
-            // line 189
+            // line 185
             echo "              <div class=\"menu_section\">
                 <h3>Financeiro</h3>
                 <ul class=\"nav side-menu\">
@@ -310,13 +304,13 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
               </div>
             ";
         }
-        // line 200
+        // line 196
         echo "            
             ";
-        // line 202
+        // line 198
         echo "            ";
         if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "administrativo*"), "method")) {
-            // line 203
+            // line 199
             echo "              <div class=\"menu_section\">
                 <h3>Administrativo</h3>
                 <ul class=\"nav side-menu\">
@@ -326,13 +320,13 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
               </div>
             ";
         }
-        // line 211
+        // line 207
         echo "            
             ";
-        // line 213
+        // line 209
         echo "            ";
         if ($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "can", array(0 => "dev*"), "method")) {
-            // line 214
+            // line 210
             echo "              <div class=\"menu_section\">
                 <h3>Desenvolvedor</h3>
                 <ul class=\"nav side-menu\">
@@ -356,14 +350,14 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
               </div>
             ";
         }
-        // line 236
+        // line 232
         echo "
             </div>
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
             ";
-        // line 255
+        // line 251
         echo "            <!-- /menu footer buttons -->
           </div>
         </div>
@@ -380,7 +374,7 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
                 <li class=\"\">
                   <a href=\"javascript:;\" class=\"user-profile dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">
                     <img src=\"//www.gravatar.com/avatar/";
-        // line 270
+        // line 266
         echo twig_escape_filter($this->env, $this->env->getExtension('App\TwigExtended')->md5($this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "email", array())), "html", null, true);
         echo "?s=58\" alt=\"\">";
         echo twig_escape_filter($this->env, $this->getAttribute(call_user_func_array($this->env->getFunction('auth_user')->getCallable(), array()), "name", array()), "html", null, true);
@@ -389,15 +383,15 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
                   </a>
                   <ul class=\"dropdown-menu dropdown-usermenu pull-right\">
                     ";
-        // line 282
+        // line 278
         echo "                    <li><a href=\"/logout\"><i class=\"fa fa-sign-out pull-right\"></i> Sair</a></li>
                   </ul>
                 </li>
                 
                 ";
-        // line 286
+        // line 282
         $this->displayBlock('top_bar', $context, $blocks);
-        // line 287
+        // line 283
         echo "              </ul>
             </nav>
           </div>
@@ -406,9 +400,9 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
 
         <!-- page content -->
         ";
-        // line 294
+        // line 290
         $this->displayBlock('content', $context, $blocks);
-        // line 295
+        // line 291
         echo "        <!-- /page content -->
 
         <!-- footer content -->
@@ -416,7 +410,7 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
           <div class=\"pull-right\">
             Plataforma BI FAM, desenvolvida por <a href=\"https://b2s.marketing\">B2S Marketing</a>
             ";
-        // line 302
+        // line 298
         echo "          </div>
           <div class=\"clearfix\"></div>
         </footer>
@@ -456,11 +450,11 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
     <script src=\"/vendors/Flot/jquery.flot.dashes.js\"></script>
     <!-- Flot plugins -->
     ";
-        // line 341
+        // line 337
         echo "    ";
-        // line 342
+        // line 338
         echo "    ";
-        // line 343
+        // line 339
         echo "    <!-- DateJS -->
     <script src=\"/vendors/DateJS/build/date.js\"></script>
     <!-- bootstrap-daterangepicker -->
@@ -781,7 +775,7 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
     <script src=\"/vendors/datatables.net-responsive/js/dataTables.responsive.min.js\"></script>
     <script src=\"/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js\"></script>
     ";
-        // line 663
+        // line 659
         echo "    <script src=\"//cdn.datatables.net/plug-ins/1.10.13/sorting/natural.js\"></script>
     <script src=\"/vendors/jszip/dist/jszip.min.js\"></script>
     <script src=\"/vendors/pdfmake/build/pdfmake.min.js\"></script>
@@ -855,33 +849,33 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
     </script>
 
     ";
-        // line 736
+        // line 732
         echo "    <script src=\"/helpers.js?t=";
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "", "U"), "html", null, true);
         echo "\"></script>
 
     ";
-        // line 738
+        // line 734
         $this->displayBlock('scripts', $context, $blocks);
-        // line 739
+        // line 735
         echo "
 ";
-        // line 827
+        // line 823
         echo "  </body>
 </html>";
     }
 
-    // line 286
+    // line 282
     public function block_top_bar($context, array $blocks = array())
     {
     }
 
-    // line 294
+    // line 290
     public function block_content($context, array $blocks = array())
     {
     }
 
-    // line 738
+    // line 734
     public function block_scripts($context, array $blocks = array())
     {
     }
@@ -898,7 +892,7 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
 
     public function getDebugInfo()
     {
-        return array (  885 => 738,  880 => 294,  875 => 286,  870 => 827,  867 => 739,  865 => 738,  859 => 736,  785 => 663,  464 => 343,  462 => 342,  460 => 341,  420 => 302,  412 => 295,  410 => 294,  401 => 287,  399 => 286,  393 => 282,  384 => 270,  367 => 255,  360 => 236,  336 => 214,  333 => 213,  330 => 211,  320 => 203,  317 => 202,  314 => 200,  301 => 189,  298 => 188,  295 => 186,  281 => 174,  278 => 173,  275 => 171,  270 => 168,  265 => 167,  260 => 166,  255 => 165,  250 => 164,  245 => 163,  241 => 161,  233 => 156,  229 => 155,  224 => 152,  222 => 151,  219 => 150,  214 => 149,  209 => 148,  204 => 147,  200 => 145,  193 => 140,  188 => 137,  185 => 136,  173 => 125,  168 => 123,  165 => 122,  160 => 120,  155 => 119,  153 => 118,  147 => 115,  137 => 107,  49 => 18,  38 => 12,  33 => 10,  22 => 1,);
+        return array (  879 => 734,  874 => 290,  869 => 282,  864 => 823,  861 => 735,  859 => 734,  853 => 732,  779 => 659,  458 => 339,  456 => 338,  454 => 337,  414 => 298,  406 => 291,  404 => 290,  395 => 283,  393 => 282,  387 => 278,  378 => 266,  361 => 251,  354 => 232,  330 => 210,  327 => 209,  324 => 207,  314 => 199,  311 => 198,  308 => 196,  295 => 185,  292 => 184,  289 => 182,  275 => 170,  272 => 169,  269 => 167,  264 => 164,  259 => 163,  254 => 162,  249 => 161,  244 => 160,  239 => 159,  235 => 157,  227 => 152,  222 => 151,  219 => 150,  214 => 149,  209 => 148,  204 => 147,  200 => 145,  193 => 140,  188 => 137,  185 => 136,  173 => 125,  168 => 123,  165 => 122,  160 => 120,  155 => 119,  153 => 118,  147 => 115,  137 => 107,  49 => 18,  38 => 12,  33 => 10,  22 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1060,11 +1054,7 @@ class __TwigTemplate_92eb446007c699f10f4a1e17f7bbbe5661ffbfdbb322e8b455785520415
                   {% if auth_user().can('gerenciamento.campanhas') %}<li><a href=\"/campanhas\"><i class=\"fa fa-bar-chart-o\"></i> Campanhas </span></a></li>{% endif %}
                   {% if auth_user().can('gerenciamento.cursos') %}<li><a href=\"/cursos\"><i class=\"fa fa-list-alt\"></i> Cursos </span></a></li>{% endif %}
                   {% if auth_user().can('gerenciamento.alunos') %}<li><a href=\"/alunos\"><i class=\"fa fa-user\"></i> Candidatos </span></a></li>{% endif %}
-
                   {#% if auth_user().can('gerenciamento.escolas') %#}<li><a href=\"/escolas\"><i class=\"fa fa-user\"></i> Escolas </span></a></li>{#% endif %#}
-
-
-
                   {% if auth_user().can('gerenciamento.unidades') %}<li><a href=\"/unidades\"><i class=\"fa fa-building\"></i> Unidades </span></a></li>{% endif %}
                   {% if auth_user().can('gerenciamento.provas') %}<li><a><i class=\"fa fa-file-text\"></i> Provas <span class=\"fa fa-chevron-down\"></span></a>
                     <ul class=\"nav child_menu\">

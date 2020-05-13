@@ -160,6 +160,9 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		if (isset($infosCandidato['nome']))
 			$aluno->nome = $infosCandidato['nome'];
 
+		if (isset($infosCandidato['sobrenome']))
+			$aluno->sobrenome = $infosCandidato['sobrenome'];
+
 		if (isset($infosCandidato['email']))
 			$aluno->email = $infosCandidato['email'];
 
@@ -233,7 +236,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$locais_provas = $campanha->locais_provas;
 
 		// Preencher dados do aluno que faltaram
-		$aluno['primeiro_nome'] = $aluno->primeiro_nome;
+		$aluno['nome'] = $aluno->nome;
 		$aluno['sobrenome'] = $aluno->sobrenome;
 		$aluno['telefone_ddd'] = isset($aluno->telefone) ? trim(substr($aluno->telefone, 1, 2)) : '';
 		$aluno['telefone_numero'] = isset($aluno->telefone) ? trim(substr($aluno->telefone, 4, strlen($aluno->telefone) - 3)) : '';
@@ -291,12 +294,10 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$dadosRaw = $req->all();
 
 		// Verificar se estamos usando Nome + Sobrenome
+		
 		if (!empty($req->input('candidato.primeiro_nome'))) {
-			$post['nome'] = $dadosRaw['candidato']['nome'] = trim(
-				$req->input('candidato.primeiro_nome') .
-					' ' .
-					$req->input('candidato.sobrenome')
-			);
+			$post['nome'] = $dadosRaw['candidato']['nome'];
+			$post['sobrenome'] = $dadosRaw['candidato']['sobrenome'];
 		}
 
 		// Verificar se estamos usando DDD + Numero no Celular
@@ -330,6 +331,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		// Validação extra de dados
 		$validator = Validator::make($dadosRaw, [
 			'candidato.nome' => 'required',
+			'candidato.sobrenome' => 'required',
 			'candidato.email' => 'required',
 			'candidato.sexo' => 'required',
 			'candidato.celular' => 'required',
@@ -355,6 +357,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 		// Atualizar dados
 		if (isset($post['nome'])) $aluno->nome = $post['nome'];
+		if (isset($post['sobrenome'])) $aluno->sobrenome = $post['sobrenome'];
 		if (isset($post['email'])) $aluno->email = $post['email'];
 		if (isset($post['sexo'])) $aluno->sexo = $post['sexo'];
 		if (isset($post['rg'])) $aluno->rg = $post['rg'];

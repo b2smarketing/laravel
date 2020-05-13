@@ -271,6 +271,7 @@ class Lead extends Model
     
         $obj = [
             'nome' => $aluno->nome,
+            'sobrenome' => $aluno->sobrenome,
             'email' => $aluno->email,
             'status' => $status->codigo,
             'base' => $status->base_id,
