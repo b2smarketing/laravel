@@ -147,11 +147,7 @@
                   {% if auth_user().can('gerenciamento.campanhas') %}<li><a href="/campanhas"><i class="fa fa-bar-chart-o"></i> Campanhas </span></a></li>{% endif %}
                   {% if auth_user().can('gerenciamento.cursos') %}<li><a href="/cursos"><i class="fa fa-list-alt"></i> Cursos </span></a></li>{% endif %}
                   {% if auth_user().can('gerenciamento.alunos') %}<li><a href="/alunos"><i class="fa fa-user"></i> Candidatos </span></a></li>{% endif %}
-
                   {#% if auth_user().can('gerenciamento.escolas') %#}<li><a href="/escolas"><i class="fa fa-user"></i> Escolas </span></a></li>{#% endif %#}
-
-
-
                   {% if auth_user().can('gerenciamento.unidades') %}<li><a href="/unidades"><i class="fa fa-building"></i> Unidades </span></a></li>{% endif %}
                   {% if auth_user().can('gerenciamento.provas') %}<li><a><i class="fa fa-file-text"></i> Provas <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
