@@ -84,7 +84,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
         Route::post('/inscricao/fam-na-escola', function (Request $req) use ($module) {
 
-          $nome = $req['nome'];
+          $nome = $req['escola'];
           $cidade = $req['cidade'];
           $responsavel = $req['responsavel'];
           $responsavel_email = $req['responsavel_email'];
