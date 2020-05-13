@@ -89,8 +89,10 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
           $responsavel = $req['responsavel'];
           $responsavel_email = $req['responsavel_email'];
           $responsavel_telefone = $req['responsavel_telefone'];
-          $data = $req['data'];          
-        
+          $data = $req['data'];
+          
+          echo $nome."<br>".$cidade."<br>".$responsavel."<br>".$responsavel_email."<br>".$responsavel_telefone."<br>".$data."<br>";
+          
           $escola = new Escola();
           $escola->nome = $nome;
           $escola->cidade = $cidade;
@@ -98,7 +100,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
           $escola->responsavel_email = $responsavel_email;
           $escola->responsavel_telefone = $responsavel_telefone;
           $escola->data = $data;
-          $escola -> save ();
+          $escola->save();
 
           $dado = [
               'nome' => $nome,
