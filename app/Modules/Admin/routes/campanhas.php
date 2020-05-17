@@ -247,14 +247,16 @@ Route::group(['middleware' => $middle], function () {
 		// Nome do Arquivo
 		$filename = str_replace(' ', '_', 'Leads ' . $campanha->nome . ' ' . date('Y-m-d H-i-s'));
 
-		header("Content-Type:application/csv"); 
+		header('Content-Encoding: UTF-8');
+    	header('Content-Type: text/csv; charset=UTF-8' );
 		header("Content-Disposition:attachment;filename=" . $filename . ".csv"); 
+		
+		fputs( $output, "\xEF\xBB\xBF" );
 
 		$separator = ',';
 
 		// Separator
-		fprintf($output, "sep=$separator\r\n");
-
+		
 		fputcsv($output, $columns, $separator);
 		foreach($leads as $data) {
 			if (!is_null($data))
