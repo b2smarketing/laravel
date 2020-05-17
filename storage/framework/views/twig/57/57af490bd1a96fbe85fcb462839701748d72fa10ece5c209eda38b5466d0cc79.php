@@ -37,7 +37,7 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 
 <!-- Principal -->
 <main id=\"page-home\" class=\"container fit-height\">
-\t<img class=\"img-home-person d-none d-md-block\" src=\"/assets/images/img-home-person2.png\" style=\"transform: scale(1.4); position:absolute;bottom:0;right:5%;\">
+\t<img class=\"img-home-person d-none d-md-block\" src=\"/assets/images/img-home-person2.png\" style=\"transform: scale(1.1); position:absolute;bottom:0;right:5%;\">
 \t<div class=\"row fit mt-4 mt-md-0\">
         <!--div id=\"acfam-home-artwork\" class=\"col-md-8 full-height d-none d-md-block\">
 \t\t\t";
@@ -58,6 +58,7 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 \t\t\t\t\t\t<the-mask required name=\"cpf\" class=\"form-control cpf\" type=\"tel\" placeholder=\"Insira seu CPF\" :mask=\"['###.###.###-##']\" title=\"Por favor insira seu CPF\"></the-mask>
 \t\t\t\t\t\t<div class=\"inputs-hidden\">
 \t\t\t\t\t\t\t<input required name=\"candidato[nome]\" class=\"form-control\" type=\"text\" placeholder=\"Nome\" title=\"Por favor insira seu nome\"/>
+\t\t\t\t\t\t\t<input required name=\"candidato[sobrenome]\" class=\"form-control\" type=\"text\" placeholder=\"Sobrenome\" title=\"Por favor insira seu Sobrenome\"/>
 \t\t\t\t\t\t\t<input required name=\"candidato[email]\" class=\"form-control\" type=\"email\" placeholder=\"E-mail\" title=\"Por favor insira seu e-mail\" />
                             <the-mask class=\"form-control\" name=\"candidato[celular]\" type=\"tel\" placeholder=\"Celular/WhatsApp\" required :mask=\"['(##) ####-####', '(##) #####-####']\" title=\"Por favor insira seu celular\"></the-mask>
                             <select required name=\"curso\" class=\"form-control curso\">
@@ -78,10 +79,10 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 ";
     }
 
-    // line 49
+    // line 50
     public function block_scripts($context, array $blocks = array())
     {
-        // line 50
+        // line 51
         echo "\t<!-- Script da Página -->
 \t<script type=\"text/javascript\" src=\"/assets/js/page-index.js\"></script>
 
@@ -89,9 +90,9 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/page-index.css\" />
 
 \t";
-        // line 56
+        // line 57
         if (($context["error"] ?? null)) {
-            // line 57
+            // line 58
             echo "\t\t<script>alert('";
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');</script>
@@ -111,7 +112,7 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 
     public function getDebugInfo()
     {
-        return array (  95 => 57,  93 => 56,  85 => 50,  82 => 49,  56 => 26,  45 => 17,  35 => 8,  32 => 7,  28 => 3,  26 => 5,  11 => 3,);
+        return array (  96 => 58,  94 => 57,  86 => 51,  83 => 50,  56 => 26,  45 => 17,  35 => 8,  32 => 7,  28 => 3,  26 => 5,  11 => 3,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

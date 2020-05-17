@@ -162,7 +162,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t<div class=\"row\">
 \t\t\t\t<!-- Nome -->
 \t\t\t\t<div class=\"col-xs-12 col-md-6 v-spacing\">
-\t\t\t\t\t<input class=\"form-control\" name=\"candidato[primeiro_nome]\" type=\"text\" placeholder=\"Nome\" required v-model=\"aluno.primeiro_nome\" />
+\t\t\t\t\t<input class=\"form-control\" name=\"candidato[nome]\" type=\"text\" placeholder=\"Nome\" required v-model=\"aluno.nome\" />
 \t\t\t\t</div>
 \t\t\t\t<!-- Sobrenome -->
 \t\t\t\t<div class=\"col-xs-12 col-md-6 v-spacing\">
