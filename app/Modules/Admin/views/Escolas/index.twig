@@ -3,36 +3,93 @@
 {% import 'Admin::helpers.link_display' as exibir %}
 
 {% block content %}
-<div class="right_col" role="main">
+	<div
+		class="right_col" role="main">
 
-<!-- WYSWYG -->
-<link rel="stylesheet" href="/wysiwyg/bootstrap3-wysihtml5.min.css" />
-<script src="/wysiwyg/wysihtml5x-toolbar.min.js"></script>
-<script src="/wysiwyg/handlebars.runtime.min.js"></script>
-<script src="/wysiwyg/bootstrap3-wysihtml5.min.js"></script>
+		<!-- WYSWYG -->
+		<link rel="stylesheet" href="/wysiwyg/bootstrap3-wysihtml5.min.css"/>
+    <style>
+    table{
+      display:block;
+      position:relative;
+      margin: 0 auto !important;
+      width:100%;
+    }
+	th,td{
+		width: 180px;
+	}
+	.id{
+		width:30px;
+	}
+    .x_panel{
+      width:125%;
+      left: -25%;
+    }
+    </style>
+		<script src="/wysiwyg/wysihtml5x-toolbar.min.js"></script>
+		<script src="/wysiwyg/handlebars.runtime.min.js"></script>
+		<script src="/wysiwyg/bootstrap3-wysihtml5.min.js"></script>
 
-<!-- Aplicar WYSWYG -->
+		<!-- Aplicar WYSWYG -->
 
-<script type="text/javascript">
-$('textarea').wysihtml5({
-  locale: 'pt-BR',
-  toolbar: {
-    'color': false,
-    'image': false,
-    'blockquote': false,
-    'ident-left': false,
-    'Outdent': false,
-    'small': false
-  }
+		<script type="text/javascript">
+			$('textarea').wysihtml5({
+locale: 'pt-BR',
+toolbar: {
+'color': false,
+'image': false,
+'blockquote': false,
+'ident-left': false,
+'Outdent': false,
+'small': false
+}
 });
-</script>
-<h2>Escolas</h2><hr>
-<table>
-{#% foreach(escolas as s) %#}
-<tr><td>{{ escolas }}</td></tr>
-{#% endforeach %#}
-</table> 
+		</script>
 
-</div>
+		<!-- page content -->
+		<div class="right_col" role="main">
+			<div class="row">
+				<div class="col-md-18 col-sm-12 col-xs-12">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>Escolas</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+							<table id="tabela_alunos" class="table table-striped">
+								<thead>
+									<tr>
+										<th class="id">ID</th>
+										<th>Nome</th>
+										<th>Cidade</th>
+										<th>Responsavel</th>
+										<th>E-Mail</th>
+										<th>Telefone</th>
+										<th>Data</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% if escolas|length > 0 %}
+										{% for escola in escolas %}
+											<tr>
+												<td class="id">{{ escola.id|e }}</td>
+												<td>{{ escola.nome|e }}</td>
+												<td>{{ escola.cidade|e }}</td>
+												<td>{{ escola.responsavel|e }}</td>
+												<td>{{ escola.responsavel_email|e }}</td>
+												<td>{{ escola.responsavel_telefone|e }}</td>
+												<td>{{ escola.data|e }}</td>
 
-{% endblock %}
+											</tr>
+										{% endfor %}
+									{% endif %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+
+
+		{% endblock %}
