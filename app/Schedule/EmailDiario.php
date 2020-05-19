@@ -114,9 +114,9 @@ $schedule->call(function () {
                 $email = Email::create($assunto)
                     ->smtp_auth()
                     ->from(env('SMTP_USER'), 'App FAM')
-                    //->to('everton.messias@gmail.com','Everton')
-                    ->to('eryvelton@fam.br','Eryvelton')
-                    ->to('gabriela@fam.br','Gabriela')
+                    ->to('everton.messias@gmail.com','Everton')
+                    //->to('eryvelton@fam.br','Eryvelton')
+                    //->to('gabriela@fam.br','Gabriela')
                     ->html($mail_body);
 
                 // Realizar disparo
