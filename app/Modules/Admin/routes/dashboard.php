@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Cache;
 
 set_time_limit(150);
 
-/*
+
 $total_campanhas = 0;
 //$campanhas = [];
 foreach (Campanha::cursor() as $campanha) {
@@ -35,7 +35,7 @@ foreach (Campanha::cursor() as $campanha) {
     }
 }
 echo $total_campanhas;
-*/
+
 
 Route::get('/graph/{chart}', function (Request $req, $chart) {
 	$dados = $req->session()->get('obj', []);
