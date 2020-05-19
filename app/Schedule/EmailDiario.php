@@ -30,7 +30,8 @@ $schedule->call(function () {
             return (($data >= $min) && ($data < $max));
         };
 
-        // Aqui fazemos o loop por todas campanhas
+        // Aqui fazemos o loop por todas campanhas (RUIM, investigar pq ta dando mto loop)
+        /*
         $total_campanhas = 0;
         $campanhas = [];
         foreach (Campanha::cursor() as $campanha) {
@@ -44,6 +45,9 @@ $schedule->call(function () {
         for ($i=0;$i<$total_campanhas;$i++) {
             $campanha = $campanhas[$i];
 
+        */
+        $campanha = Campanha::cursor(); // fiz unica campanha; a primeira vigente ativa
+        if ($campanha->relatorios == 1) {
             _('Campanha: ' . $campanha->nome);
 
             // Leads
@@ -54,8 +58,8 @@ $schedule->call(function () {
             });
 
             // Ignorar e-mails em branco
-            if ($leads->count() == 0)
-                continue;
+            //if ($leads->count() == 0)
+            //    continue;
 
             // Inscritos
 
