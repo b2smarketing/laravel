@@ -121,9 +121,9 @@ $schedule->call(function () {
                     ->smtp_auth()
                     ->from(env('SMTP_USER'), 'App FAM')
                     ->to('everton.messias@gmail.com', 'Everton')
-                    //->to('eryvelton@fam.br','Eryvelton')
-                    //->to('gabriela@fam.br','Gabriela')
-                    //->to('nicom@fam.br','Nicom')
+                    ->to('eryvelton@fam.br','Eryvelton')
+                    ->to('gabriela@fam.br','Gabriela')
+                    ->to('nicom@fam.br','Nicom')
                     ->html($mail_body);
 
                 // Realizar disparo
@@ -164,4 +164,4 @@ $schedule->call(function () {
             */
         }
     });
-})->timezone('America/Sao_Paulo')->dailyAt('17:57'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
+})->timezone('America/Sao_Paulo')->dailyAt('6:00'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
