@@ -35,7 +35,7 @@ $schedule->call(function () {
         foreach (Campanha::cursor() as $campanha) {
 
             // Valida se campanha está ativa
-            if (!$campanha->is_ativa || !$campanha->relatorios)
+            if (!$campanha->relatorios)
                 continue;
 
             _ ('Campanha: ' . $campanha->nome);
