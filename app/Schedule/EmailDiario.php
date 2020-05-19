@@ -123,6 +123,7 @@ $schedule->call(function () {
                     ->to('everton.messias@gmail.com', 'Everton')
                     //->to('eryvelton@fam.br','Eryvelton')
                     //->to('gabriela@fam.br','Gabriela')
+                    //->to('nicom@fam.br','Nicom')
                     ->html($mail_body);
 
                 // Realizar disparo
@@ -163,4 +164,4 @@ $schedule->call(function () {
             */
         }
     });
-})->timezone('America/Sao_Paulo')->dailyAt('16:53'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
+})->timezone('America/Sao_Paulo')->dailyAt('17:02'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
