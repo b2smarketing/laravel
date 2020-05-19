@@ -43,7 +43,7 @@ $schedule->call(function () {
 
         for ($i=0;$i<$total_campanhas;$i++) {
             $campanha = $campanhas[$i];
-            
+
             _('Campanha: ' . $campanha->nome);
 
             // Leads
@@ -163,4 +163,4 @@ $schedule->call(function () {
             */
         }
     });
-})->timezone('America/Sao_Paulo')->dailyAt('16:30'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
+})->timezone('America/Sao_Paulo')->dailyAt('16:53'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
