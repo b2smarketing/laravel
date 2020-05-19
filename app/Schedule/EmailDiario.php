@@ -30,13 +30,12 @@ $schedule->call(function () {
             return (($data >= $min) && ($data < $max));
         };
 
-        // Aqui fazemos o loop por todas campanhas (RUIM, investigar pq ta dando mto loop)
-        /*
+        // Aqui fazemos o loop por todas campanhas
         $total_campanhas = 0;
         $campanhas = [];
         foreach (Campanha::cursor() as $campanha) {
             // Valida se campanha está ativa           
-            if ($campanha->relatorios == 1) {
+            if ($campanha->relatorios) {
                 $total_campanhas++;
                 array_push($campanhas,$campanha);
             }
@@ -45,9 +44,6 @@ $schedule->call(function () {
         for ($i=0;$i<$total_campanhas;$i++) {
             $campanha = $campanhas[$i];
 
-        */
-        $campanha = Campanha::cursor(); // fiz unica campanha; a primeira vigente ativa
-        if ($campanha->relatorios == 1) {
             _('Campanha: ' . $campanha->nome);
 
             // Leads
@@ -58,8 +54,8 @@ $schedule->call(function () {
             });
 
             // Ignorar e-mails em branco
-            //if ($leads->count() == 0)
-            //    continue;
+            if ($leads->count() == 0)
+                continue;
 
             // Inscritos
 
@@ -168,4 +164,4 @@ $schedule->call(function () {
             */
         }
     });
-})->timezone('America/Sao_Paulo')->dailyAt('17:17'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
+})->timezone('America/Sao_Paulo')->dailyAt('17:08'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
