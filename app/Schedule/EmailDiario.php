@@ -37,11 +37,11 @@ $schedule->call(function () {
             // Valida se campanha está ativa           
             if ($campanha->relatorios) {
                 $total_campanhas++;
-                array_push($campanhas,$campanha);
+                array_push($campanhas, $campanha);
             }
         }
 
-        for ($i=0;$i<$total_campanhas;$i++) {
+        for ($i = 0; $i < $total_campanhas; $i++) {
             $campanha = $campanhas[$i];
 
             _('Campanha: ' . $campanha->nome);
@@ -112,9 +112,7 @@ $schedule->call(function () {
 
             _('Preparando disparos de e-mail...');
 
-           // foreach (Datalist::on('email-diario')->cursor() as $dest) {
-
-            $dest = Datalist::on('email-diario')->cursor();
+            foreach (Datalist::on('email-diario')->cursor() as $dest) {
 
                 _('Disparando e-mail: ' . $dest->value);
 
@@ -138,7 +136,7 @@ $schedule->call(function () {
 
                 // Deixar o servidor de e-mail "respirar" um pouco
                 sleep(6);
-           // }
+            }
 
             /*// Criar e-mail
             $email = Email::create($assunto)
@@ -166,4 +164,4 @@ $schedule->call(function () {
             */
         }
     });
-})->timezone('America/Sao_Paulo')->dailyAt('17:41'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
+})->timezone('America/Sao_Paulo')->dailyAt('17:43'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
