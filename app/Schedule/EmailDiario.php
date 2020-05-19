@@ -54,8 +54,8 @@ $schedule->call(function () {
             });
 
             // Ignorar e-mails em branco
-            if ($leads->count() == 0)
-                continue;
+            //if ($leads->count() == 0)
+            //    continue;
 
             // Inscritos
 
@@ -112,7 +112,9 @@ $schedule->call(function () {
 
             _('Preparando disparos de e-mail...');
 
-            foreach (Datalist::on('email-diario')->cursor() as $dest) {
+           // foreach (Datalist::on('email-diario')->cursor() as $dest) {
+
+            $dest = Datalist::on('email-diario')->cursor();
 
                 _('Disparando e-mail: ' . $dest->value);
 
@@ -136,7 +138,7 @@ $schedule->call(function () {
 
                 // Deixar o servidor de e-mail "respirar" um pouco
                 sleep(6);
-            }
+           // }
 
             /*// Criar e-mail
             $email = Email::create($assunto)
@@ -164,4 +166,4 @@ $schedule->call(function () {
             */
         }
     });
-})->timezone('America/Sao_Paulo')->dailyAt('17:08'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
+})->timezone('America/Sao_Paulo')->dailyAt('17:39'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
