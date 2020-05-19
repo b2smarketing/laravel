@@ -164,4 +164,4 @@ $schedule->call(function () {
             */
         }
     });
-})->timezone('America/Sao_Paulo')->dailyAt('17:02'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
+})->timezone('America/Sao_Paulo')->dailyAt('17:08'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
