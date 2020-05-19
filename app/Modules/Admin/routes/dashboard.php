@@ -25,17 +25,15 @@ use Illuminate\Support\Facades\Cache;
 set_time_limit(150);
 
 $total_campanhas = 0;
-$campanhas = [];
+//$campanhas = [];
 foreach (Campanha::cursor() as $campanha) {
     // Valida se campanha está ativa           
     if ($campanha->relatorios) {        
-        $total_campanhas++;
-        echo $total_campanhas;
-        array_push($campanhas,$campanha);
+        $total_campanhas++;        
+        //array_push($campanhas,$campanha);
     }
 }
-
-
+echo $total_campanhas;
 
 Route::get('/graph/{chart}', function (Request $req, $chart) {
 	$dados = $req->session()->get('obj', []);
