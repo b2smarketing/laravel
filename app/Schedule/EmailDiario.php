@@ -114,7 +114,7 @@ $schedule->call(function () {
                 $email = Email::create($assunto)
                     ->smtp_auth()
                     ->from(env('SMTP_USER'), 'App FAM')
-                    ->to($dest->value)
+                    ->to('everton.messias@gmail.com','Everton')
                     ->html($mail_body);
 
                 // Realizar disparo
@@ -157,4 +157,4 @@ $schedule->call(function () {
 
     });
 
- })->timezone('America/Sao_Paulo')->dailyAt('10:37'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
+ })->timezone('America/Sao_Paulo')->dailyAt('12:50'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
