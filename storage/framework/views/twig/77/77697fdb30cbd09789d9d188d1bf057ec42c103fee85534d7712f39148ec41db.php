@@ -42,7 +42,7 @@ class __TwigTemplate_42971b45b736f8173136280f874de8d803067f5f8441ca58e86b367dfb7
 \t";
         // line 283
         echo "
-\t<main id=\"page-inscricao\">
+\t<main id=\"page-inscricao\" class=\"inscricao\">
 
 \t\t<!-- Cabeçalho -->
 \t\t<header class=\"fit-height\">
@@ -529,7 +529,7 @@ class __TwigTemplate_42971b45b736f8173136280f874de8d803067f5f8441ca58e86b367dfb7
 <form method=\"post\" action=\"/inscricao/finaliza\" class=\"js-form\">
 \t{{ csrf_field() }}
 \t{% verbatim %}
-\t<main id=\"page-inscricao\">
+\t<main id=\"page-inscricao\" class=\"inscricao\">
 
 \t\t<!-- Cabeçalho -->
 \t\t<header class=\"fit-height\">

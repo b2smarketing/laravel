@@ -143,7 +143,7 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
         // line 98
         echo "
 \t\t<!-- Rodapé -->
-\t\t<footer>
+\t\t<footer class=\"rodape\">
 \t\t\t<div class=\"container\">
 \t\t\t\t<p>Atendimento das 9 às 21 horas";
         // line 102
@@ -409,7 +409,7 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
 \t\t{% block body %}{% endblock %}
 
 \t\t<!-- Rodapé -->
-\t\t<footer>
+\t\t<footer class=\"rodape\">
 \t\t\t<div class=\"container\">
 \t\t\t\t<p>Atendimento das 9 às 21 horas{% if opcoes.url_edital %} | <a target=\"_blank\"
 \t\t\t\t\t\thref=\"{{ opcoes.url_edital }}\">Edital</a>{% endif %}{% if opcoes.url_cursos %} | <a

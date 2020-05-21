@@ -26,9 +26,10 @@ img {
   vertical-align: middle;
   background-repeat: no-repeat; }
   .icone.logo-fam {
+    margin-left: -40px;
     background-image: url(../images/logo-fam.svg), none;
-    width: 203px;
-    height: 51px; }
+    width: 180px;
+    height: 40px; }
   .icone.texto-fam {
     background-image: url(../images/texto-fam.svg), none;
     width: 100%;
@@ -70,17 +71,17 @@ select:not([size]):not([multiple]).form-control.curso {
     color: #fff;
     border-color: transparent; }
   .btn.cta {
-    background-color: #2b347c;
+    background-color: #572199;
     color: #fff;
-    border-color: #2b347c; }
+    border-color: #572199; }
     .btn.cta:hover {
       background-color: #fff;
-      color: #2b347c;
-      border-color: #2b347c; }
+      color: #572199;
+      border-color: #572199; }
     @media (max-width: 768px) {
       .btn.cta {
         background-color: #f9e113;
-        color: #2b347c;
+        color: #572199;
         border-color: #f9e113; } }
   .btn.large {
     font-size: 1.5em;
@@ -110,6 +111,18 @@ select:not([size]):not([multiple]).form-control.curso {
   /* Firefox 18- */
   color: #fff !important;
   font-weight: 300; }
+  
+@media (min-width: 900px) {
+.col{  
+  z-index: 999;
+  top: -30px;
+  transform: scale(0.8);
+  display: block;
+  height: 170px;
+  margin-left: -710px;
+}
+
+}
 
 .form-home {
   margin-bottom: 4.5em; }
@@ -136,6 +149,7 @@ body {
   position: relative;
   background-position: top center;
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 main {
@@ -179,7 +193,7 @@ main {
       #acfam-nav-main li a {
         margin: 0.5em auto; } }
     #acfam-nav-main li a:hover, #acfam-nav-main li a:focus, #acfam-nav-main li a:active {
-      background-color: #2b347c;
+      background-color: #572199;
       color: #fff; }
   #acfam-nav-main .navbar-toggler {
     color: inherit; }
@@ -232,7 +246,7 @@ main {
 
 body#page-home {
   background-image: url("../images/home-background.jpg");
-  background-color: #313171;
+  background-color: #572199;
   color: #fff;
   background-size: cover;
   min-height: 100vh; }
@@ -324,10 +338,23 @@ body#page-home {
     body#page-home {
       background-image: url("../images/home-background-mobile.jpg"); } }
 
+.acompanhar{
+  margin-top: 500px;
+  transform: scale(0.8);
+}
+.inscricao{
+  margin-top: 500px !important;
+  transform: scale(0.8);
+}
+.finaliza{
+  margin-top: -100px !important;
+  transform: scale(0.8);
+}
+
 body#page-inscricao {
   background-image: url("../images/inscricao-background.jpg");
-  background-color: #2b347c;
-  color: #2b347c;
+  background-color: #572199;
+  color: #572199;
   background-size: contain;
   background-repeat: no-repeat; }
   @media (max-width: 768px) {
@@ -349,7 +376,7 @@ body#page-inscricao {
   body#page-inscricao #acfam-inscricao-opcoes-curso {
     padding: 1em;
     background-color: #fff;
-    color: #2b347c;
+    color: #572199;
     box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem; }
     body#page-inscricao #acfam-inscricao-opcoes-curso h2 {
@@ -377,7 +404,7 @@ body#page-inscricao {
       font-style: italic;
       font-weight: 600;
       letter-spacing: -0.04em;
-      color: #2b347c; }
+      color: #572199; }
     body#page-inscricao #acfam-inscricao-infos .desconto-regressivo {
       font-size: 2.5em;
       font-style: italic;
@@ -401,7 +428,7 @@ body#page-inscricao {
 
 body#page-finalizar-inscricao {
   background-image: url("../images/institucional-background.jpg");
-  background-color: #2b347c;
+  background-color: #572199;
   color: #121215; }
   @media (max-width: 1500px) {
     body#page-finalizar-inscricao {
@@ -448,7 +475,7 @@ body#page-finalizar-inscricao {
       font-weight: bold;
       text-transform: uppercase; }
     body#page-finalizar-inscricao main .row-header-cursos .opcao-curso.principal {
-      background-color: #2b347c;
+      background-color: #572199;
       color: #ffffff;
       box-shadow: 0px 4px 0px #1e2456; }
     body#page-finalizar-inscricao main .row-header-cursos .opcao-curso h2 {
@@ -464,7 +491,7 @@ body#page-finalizar-inscricao {
     margin-top: 1em;
     color: #121215; }
     body#page-finalizar-inscricao main .content .accent {
-      color: #2b347c; }
+      color: #572199; }
     body#page-finalizar-inscricao main .content > .row {
       border-radius: 0.5em;
       box-shadow: 0px 4px 0px #1e2456;
@@ -481,7 +508,7 @@ body#page-finalizar-inscricao {
 
 body#page-acompanhar-inscricao {
   background-image: url("../images/background-acompanhar.jpg");
-  background-color: #2b347c;
+  background-color: #572199;
   color: #121215; }
   @media (max-width: 1500px) {
     body#page-acompanhar-inscricao {
@@ -516,7 +543,7 @@ body#page-acompanhar-inscricao {
       font-weight: bold;
       text-transform: uppercase; }
     body#page-acompanhar-inscricao main .row-header-cursos .opcao-curso.principal {
-      background-color: #2b347c;
+      background-color: #572199;
       color: #ffffff;
       box-shadow: 0px 4px 0px #1e2456; }
     body#page-acompanhar-inscricao main .row-header-cursos .opcao-curso h2 {
@@ -541,14 +568,16 @@ body#page-acompanhar-inscricao {
       background-image: url("../images/home-background-mobile.jpg"); } }
 
 footer {
-  width: 100%;
+  width: 90%;
   padding-bottom: 1em;
   text-align: center;
   font-weight: bold;
   background-color: transparent;
   color: #fff; }
   @media (min-width: 992px) {
-    footer {
+    footer {      
+      padding-top: 30px;
+      margin-left: 150px !important;
       position: absolute;
       bottom: 0px; } }
   footer a {

@@ -4,7 +4,6 @@
 
 {% block body %}
 <!-- Principal -->
-<br><br><br><br><br><br><br><br><br><h1>&emsp;2º Semestre</h1>
 <main id="page-home" class="container fit-height">
 	<div class="row fit mt-4 mt-md-0">
         <div id="acfam-home-artwork" class="col-md-8 full-height d-none d-md-block">
@@ -14,8 +13,8 @@
 		<div id="acfam-home-form" class="col-md-4 pt-md-5 full-height">
 			<!-- Centralizar verticamente o formulário -->
 			<div class="row full-height align-items-end">
-				<div class="col">
-                    <img class="img-fluid apoio d-none d-md-block" src="/assets/images/home-text.png" alt="Apenas R$ 239,00 mensais." />
+				<div class="col coluna">
+                    <!--<img class="img-fluid apoio d-none d-md-block" src="/assets/images/home-text.png" alt="Apenas R$ 239,00 mensais." />-->
 					<!-- Aqui é o formulário padrão de cadastro -->
 					<form action="/inscricao" method="post" class="form-home">
 						{{ csrf_field() }}
@@ -23,7 +22,7 @@
 						<img src="/assets/images/home-campanha-logo.png" class="d-block d-md-none mt-4" alt="Faculdade é FAM"/>
                         <img class="d-block d-md-none img-fluid mb-4 apoio" src="/assets/images/home-text.png" alt="Apenas R$ 239,00 mensais." />
 						<the-mask required name="cpf" class="form-control cpf" type="tel" placeholder="Insira seu CPF" :mask="['###.###.###-##']" title="Por favor insira seu CPF"></the-mask>
-						<div class="inputs-hidden">
+						<div class="inputs-hidden coluna">
 							<input required name="candidato[nome]" class="form-control" type="text" placeholder="Nome" title="Por favor insira seu nome"/>
 							<input required name="candidato[sobrenome]" class="form-control" type="text" placeholder="Sobrenome" title="Por favor insira seu Sobrenome"/>
 							<input required name="candidato[email]" class="form-control" type="email" placeholder="E-mail" title="Por favor insira seu e-mail" />

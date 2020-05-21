@@ -33,30 +33,29 @@ class __TwigTemplate_b8d7529883500629175d809439ae8e7afdc02e844b089ae64621d022812
     {
         // line 6
         echo "<!-- Principal -->
-<br><br><br><br><br><br><br><br><br><h1>&emsp;2º Semestre</h1>
 <main id=\"page-home\" class=\"container fit-height\">
 \t<div class=\"row fit mt-4 mt-md-0\">
         <div id=\"acfam-home-artwork\" class=\"col-md-8 full-height d-none d-md-block\">
 \t\t\t<!-- Aqui serão inseridas as artes de campanha (roupagem) -->
 \t\t\t";
-        // line 13
+        // line 12
         echo "\t\t</div>
 \t\t<div id=\"acfam-home-form\" class=\"col-md-4 pt-md-5 full-height\">
 \t\t\t<!-- Centralizar verticamente o formulário -->
 \t\t\t<div class=\"row full-height align-items-end\">
-\t\t\t\t<div class=\"col\">
-                    <img class=\"img-fluid apoio d-none d-md-block\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />
+\t\t\t\t<div class=\"col coluna\">
+                    <!--<img class=\"img-fluid apoio d-none d-md-block\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />-->
 \t\t\t\t\t<!-- Aqui é o formulário padrão de cadastro -->
 \t\t\t\t\t<form action=\"/inscricao\" method=\"post\" class=\"form-home\">
 \t\t\t\t\t\t";
-        // line 21
+        // line 20
         echo csrf_field();
         echo "
 
 \t\t\t\t\t\t<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4\" alt=\"Faculdade é FAM\"/>
                         <img class=\"d-block d-md-none img-fluid mb-4 apoio\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />
 \t\t\t\t\t\t<the-mask required name=\"cpf\" class=\"form-control cpf\" type=\"tel\" placeholder=\"Insira seu CPF\" :mask=\"['###.###.###-##']\" title=\"Por favor insira seu CPF\"></the-mask>
-\t\t\t\t\t\t<div class=\"inputs-hidden\">
+\t\t\t\t\t\t<div class=\"inputs-hidden coluna\">
 \t\t\t\t\t\t\t<input required name=\"candidato[nome]\" class=\"form-control\" type=\"text\" placeholder=\"Nome\" title=\"Por favor insira seu nome\"/>
 \t\t\t\t\t\t\t<input required name=\"candidato[sobrenome]\" class=\"form-control\" type=\"text\" placeholder=\"Sobrenome\" title=\"Por favor insira seu Sobrenome\"/>
 \t\t\t\t\t\t\t<input required name=\"candidato[email]\" class=\"form-control\" type=\"email\" placeholder=\"E-mail\" title=\"Por favor insira seu e-mail\" />
@@ -78,10 +77,10 @@ class __TwigTemplate_b8d7529883500629175d809439ae8e7afdc02e844b089ae64621d022812
 ";
     }
 
-    // line 47
+    // line 46
     public function block_scripts($context, array $blocks = array())
     {
-        // line 48
+        // line 47
         echo "\t<!-- Script da Página -->
 \t<script type=\"text/javascript\" src=\"/assets/js/page-index.js\"></script>
 
@@ -89,9 +88,9 @@ class __TwigTemplate_b8d7529883500629175d809439ae8e7afdc02e844b089ae64621d022812
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/page-index.css\" />
 
 \t";
-        // line 54
+        // line 53
         if (($context["error"] ?? null)) {
-            // line 55
+            // line 54
             echo "\t\t<script>alert('";
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');</script>
@@ -111,7 +110,7 @@ class __TwigTemplate_b8d7529883500629175d809439ae8e7afdc02e844b089ae64621d022812
 
     public function getDebugInfo()
     {
-        return array (  95 => 55,  93 => 54,  85 => 48,  82 => 47,  53 => 21,  43 => 13,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  94 => 54,  92 => 53,  84 => 47,  81 => 46,  52 => 20,  42 => 12,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -130,7 +129,6 @@ class __TwigTemplate_b8d7529883500629175d809439ae8e7afdc02e844b089ae64621d022812
 
 {% block body %}
 <!-- Principal -->
-<br><br><br><br><br><br><br><br><br><h1>&emsp;2º Semestre</h1>
 <main id=\"page-home\" class=\"container fit-height\">
 \t<div class=\"row fit mt-4 mt-md-0\">
         <div id=\"acfam-home-artwork\" class=\"col-md-8 full-height d-none d-md-block\">
@@ -140,8 +138,8 @@ class __TwigTemplate_b8d7529883500629175d809439ae8e7afdc02e844b089ae64621d022812
 \t\t<div id=\"acfam-home-form\" class=\"col-md-4 pt-md-5 full-height\">
 \t\t\t<!-- Centralizar verticamente o formulário -->
 \t\t\t<div class=\"row full-height align-items-end\">
-\t\t\t\t<div class=\"col\">
-                    <img class=\"img-fluid apoio d-none d-md-block\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />
+\t\t\t\t<div class=\"col coluna\">
+                    <!--<img class=\"img-fluid apoio d-none d-md-block\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />-->
 \t\t\t\t\t<!-- Aqui é o formulário padrão de cadastro -->
 \t\t\t\t\t<form action=\"/inscricao\" method=\"post\" class=\"form-home\">
 \t\t\t\t\t\t{{ csrf_field() }}
@@ -149,7 +147,7 @@ class __TwigTemplate_b8d7529883500629175d809439ae8e7afdc02e844b089ae64621d022812
 \t\t\t\t\t\t<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4\" alt=\"Faculdade é FAM\"/>
                         <img class=\"d-block d-md-none img-fluid mb-4 apoio\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />
 \t\t\t\t\t\t<the-mask required name=\"cpf\" class=\"form-control cpf\" type=\"tel\" placeholder=\"Insira seu CPF\" :mask=\"['###.###.###-##']\" title=\"Por favor insira seu CPF\"></the-mask>
-\t\t\t\t\t\t<div class=\"inputs-hidden\">
+\t\t\t\t\t\t<div class=\"inputs-hidden coluna\">
 \t\t\t\t\t\t\t<input required name=\"candidato[nome]\" class=\"form-control\" type=\"text\" placeholder=\"Nome\" title=\"Por favor insira seu nome\"/>
 \t\t\t\t\t\t\t<input required name=\"candidato[sobrenome]\" class=\"form-control\" type=\"text\" placeholder=\"Sobrenome\" title=\"Por favor insira seu Sobrenome\"/>
 \t\t\t\t\t\t\t<input required name=\"candidato[email]\" class=\"form-control\" type=\"email\" placeholder=\"E-mail\" title=\"Por favor insira seu e-mail\" />

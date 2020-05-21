@@ -32,7 +32,7 @@ class __TwigTemplate_e2c1b62edabd28a3531f35b1d7d37a4f464d857ab5ee18de50e9a04c408
     public function block_body($context, array $blocks = array())
     {
         // line 6
-        echo "<main class=\"container\">
+        echo "<main class=\"container finaliza\">
 \t<div class=\"row\">
 \t\t<div class=\"row-header offset-md-1 col-md-7\">
 \t\t\t<h1>Parabéns<br/><span>";
@@ -205,7 +205,7 @@ class __TwigTemplate_e2c1b62edabd28a3531f35b1d7d37a4f464d857ab5ee18de50e9a04c408
 {% set page_id = 'page-finalizar-inscricao' %}
 
 {% block body %}
-<main class=\"container\">
+<main class=\"container finaliza\">
 \t<div class=\"row\">
 \t\t<div class=\"row-header offset-md-1 col-md-7\">
 \t\t\t<h1>Parabéns<br/><span>{{ aluno.primeiro_nome }}!</span></h1>
