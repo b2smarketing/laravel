@@ -143,7 +143,7 @@ class __TwigTemplate_6eb787740a5f2104b73ef1f125b7949904803a0b2e7ec6cdc24cee8b0be
         // line 98
         echo "
 \t\t<!-- Rodapé -->
-\t\t<footer>
+\t\t<footer class=\"rodape\">
 \t\t\t<div class=\"container\">
 \t\t\t\t<p>Atendimento das 9 às 21 horas";
         // line 102
