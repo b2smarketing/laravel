@@ -71,9 +71,9 @@ select:not([size]):not([multiple]).form-control.curso {
     color: #fff;
     border-color: transparent; }
   .btn.cta {
-    background-color: #572199;
+    background-color: #004a85;
     color: #fff;
-    border-color: #572199; }
+    border-color: #004a85; }
     .btn.cta:hover {
       background-color: #fff;
       color: #572199;
@@ -475,7 +475,7 @@ body#page-finalizar-inscricao {
       font-weight: bold;
       text-transform: uppercase; }
     body#page-finalizar-inscricao main .row-header-cursos .opcao-curso.principal {
-      background-color: #572199;
+      background-color: #004a85;
       color: #ffffff;
       box-shadow: 0px 4px 0px #1e2456; }
     body#page-finalizar-inscricao main .row-header-cursos .opcao-curso h2 {
@@ -543,7 +543,7 @@ body#page-acompanhar-inscricao {
       font-weight: bold;
       text-transform: uppercase; }
     body#page-acompanhar-inscricao main .row-header-cursos .opcao-curso.principal {
-      background-color: #572199;
+      background-color: #004a85;
       color: #ffffff;
       box-shadow: 0px 4px 0px #1e2456; }
     body#page-acompanhar-inscricao main .row-header-cursos .opcao-curso h2 {
