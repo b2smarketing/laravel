@@ -32,7 +32,7 @@ class __TwigTemplate_66cc86265f7400f250bf3bd63b98b031c73d621069c90527e05e26cdcd4
     public function block_body($context, array $blocks = array())
     {
         // line 6
-        echo "<main class=\"container\">
+        echo "<main class=\"container finaliza\">
 \t<div class=\"row\">
 \t\t<div class=\"row-header offset-md-1 col-md-7\">
 \t\t\t<h1>Parabéns<br/><span>";

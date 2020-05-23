@@ -42,7 +42,7 @@ class __TwigTemplate_9cec961ef1584ea0d08703f7a001006b4f4a4feccf03385d6c0508061dc
 \t";
         // line 283
         echo "
-\t<main id=\"page-inscricao\">
+\t<main id=\"page-inscricao\" class=\"inscricao\">
 
 \t\t<!-- Cabeçalho -->
 \t\t<header class=\"fit-height\">
