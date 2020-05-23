@@ -65,20 +65,18 @@
         background-image: url("../images/mobile-institucional-background.jpg");}
     
     .coluna {
+        z-index: 999;
         display: block;
         position: relative;
         margin: 0 auto;
         top: -50px !important;
         margin-top: 0px !important;
-        transform: scale(1);
         left: 0;
     }
     .acompanhar {
-        margin-top: 450px;
-        transform: scale(0.8);
+        margin-top: 350px;
     }
     .finaliza {
         margin-top: 600px !important;
-        transform: scale(0.8);
     }
 }
