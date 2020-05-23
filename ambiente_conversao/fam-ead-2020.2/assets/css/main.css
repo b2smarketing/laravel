@@ -28,8 +28,8 @@ img {
   .icone.logo-fam {
     margin-left: -40px;
     background-image: url(../images/logo-fam.svg), none;
-    width: 180px;
-    height: 40px; }
+    width: 200px;
+    height: 60px; }
   .icone.texto-fam {
     background-image: url(../images/texto-fam.svg), none;
     width: 100%;
@@ -112,18 +112,6 @@ select:not([size]):not([multiple]).form-control.curso {
   color: #fff !important;
   font-weight: 300; }
   
-@media (min-width: 900px) {
-.col{  
-  z-index: 999;
-  top: -30px;
-  transform: scale(0.8);
-  display: block;
-  height: 170px;
-  margin-left: -710px;
-}
-
-}
-
 .form-home {
   margin-bottom: 4.5em; }
   @media (max-width: 768px) {
@@ -312,7 +300,7 @@ body#page-home {
       width: 100%; }
   @media (max-width: 576px) {
     body#page-home body#page-home {
-      background-image: url("../images/institucional-background.png") !important; }
+      background-image: url("../images/mobile-institucional-background.jpg") !important; }
     body#page-home main {
       position: relative;
       z-index: 999;
@@ -336,20 +324,7 @@ body#page-home {
     font-weight: 300; }
   @media (max-width: 768px) {
     body#page-home {
-      background-image: url("../images/home-background-mobile.jpg"); } }
-
-.acompanhar{
-  margin-top: 500px;
-  transform: scale(0.8);
-}
-.inscricao{
-  margin-top: 500px !important;
-  transform: scale(0.8);
-}
-.finaliza{
-  margin-top: -100px !important;
-  transform: scale(0.8);
-}
+      background-image: url("../images/mobile-background.jpg"); } }
 
 body#page-inscricao {
   background-image: url("../images/inscricao-background.jpg");
@@ -430,9 +405,6 @@ body#page-finalizar-inscricao {
   background-image: url("../images/institucional-background.jpg");
   background-color: #572199;
   color: #121215; }
-  @media (max-width: 1500px) {
-    body#page-finalizar-inscricao {
-      background-image: url("../images/institucional-background-1500.jpg"); } }
   body#page-finalizar-inscricao main .row-header {
     padding: 2em; }
     body#page-finalizar-inscricao main .row-header h1 {
@@ -512,7 +484,7 @@ body#page-acompanhar-inscricao {
   color: #121215; }
   @media (max-width: 1500px) {
     body#page-acompanhar-inscricao {
-      background-image: url("../images/background-acompanhar-1500.jpg"); } }
+      background-image: url("../images/background-acompanhar.jpg"); } }
   body#page-acompanhar-inscricao main .row-header {
     padding: 2em; }
     body#page-acompanhar-inscricao main .row-header h1 {
@@ -565,10 +537,10 @@ body#page-acompanhar-inscricao {
     margin-left: -15px; }
   @media (max-width: 768px) {
     body#page-acompanhar-inscricao {
-      background-image: url("../images/home-background-mobile.jpg"); } }
+      background-image: url("../images/mobile-acompanhar-background.jpg"); } }
 
 footer {
-  width: 90%;
+  width: 100%;
   padding-bottom: 1em;
   text-align: center;
   font-weight: bold;
@@ -577,7 +549,6 @@ footer {
   @media (min-width: 992px) {
     footer {      
       padding-top: 30px;
-      margin-left: 150px !important;
       position: absolute;
       bottom: 0px; } }
   footer a {

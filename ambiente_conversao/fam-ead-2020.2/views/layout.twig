@@ -75,7 +75,7 @@
 							<li class="nav-item">
 								<a target="_blank" class="nav-link" href="https://fam.br">Portal FAM</a>
 							</li>
-							{% if opcoes.url_cursos %}
+							{#% if opcoes.url_cursos %}
 							<li class="nav-item">
 								<a target="_blank" class="nav-link" href="{{ opcoes.url_cursos }}">Guia de Cursos</a>
 							</li>
@@ -99,21 +99,15 @@
 		<!-- Rodapé -->
 		<footer class="rodape">
 			<div class="container">
-				<p>Atendimento das 9 às 21 horas{% if opcoes.url_edital %} | <a target="_blank"
+				<!--<p>Atendimento das 9 às 21 horas{#% if opcoes.url_edital %} | <a target="_blank"
 						href="{{ opcoes.url_edital }}">Edital</a>{% endif %}{% if opcoes.url_cursos %} | <a
-						target="_blank" href="{{ opcoes.url_cursos }}">Guia de Cursos</a>{% endif %}</p>
+						target="_blank" href="{{ opcoes.url_cursos }}">Guia de Cursos</a>{% endif %#}</p>-->
 				<div class="social">
-					<a target="_blank" href="http://instagram.com/famamericana"><i class="fa fa-instagram"></i></a>
-					<a target="_blank" href="http://fb.com/famamericana"><i class="fa fa-facebook"></i></a>
-					<a target="_blank" href="mailto:vestibular@fam.br"><i class="fa fa-envelope-o"></i></a>
-					<a class="has-text" target="_blank" href="tel:08007712449">
-						<i class="fa fa-phone"></i>
-						0800 771 2449
-					</a>
-					<a class="has-text" target="_blank" href="https://api.whatsapp.com/send?phone=551994379555">
-						<i class="fa fa-whatsapp"></i>
-						WhatsFAM (19) 99437-9555
-					</a>
+					<a target="_blank" title="Instagram" href="http://instagram.com/famamericana"><i class="fa fa-instagram"></i></a>
+					<a target="_blank" title="Facebook" href="http://fb.com/famamericana"><i class="fa fa-facebook"></i></a>
+					<a target="_blank" title="E-Mail" href="mailto:vestibular@fam.br"><i class="fa fa-envelope-o"></i></a>
+					<a class="has-text" title="Telefone: 08007712449" target="_blank" href="tel:08007712449"><i class="fa fa-phone"></i></a>
+					<a class="has-text" title="WhatsFAM (19) 99437-9555" target="_blank" href="https://api.whatsapp.com/send?phone=551994379555"><i class="fa fa-whatsapp"></i></a>
 				</div>
 			</div>
 		</footer>
@@ -125,6 +119,7 @@
 	<link rel="stylesheet" type="text/css"
 		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/update.css">
 
 	<!-- Bootstrap -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>

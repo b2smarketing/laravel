@@ -52,10 +52,10 @@ class __TwigTemplate_b8d7529883500629175d809439ae8e7afdc02e844b089ae64621d022812
         echo csrf_field();
         echo "
 
-\t\t\t\t\t\t<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4\" alt=\"Faculdade é FAM\"/>
-                        <img class=\"d-block d-md-none img-fluid mb-4 apoio\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />
+\t\t\t\t\t\t<!--<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4\" alt=\"Faculdade é FAM\"/>-->
+                        <!--<img class=\"d-block d-md-none img-fluid mb-4 apoio\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />-->
 \t\t\t\t\t\t<the-mask required name=\"cpf\" class=\"form-control cpf\" type=\"tel\" placeholder=\"Insira seu CPF\" :mask=\"['###.###.###-##']\" title=\"Por favor insira seu CPF\"></the-mask>
-\t\t\t\t\t\t<div class=\"inputs-hidden coluna\">
+\t\t\t\t\t\t<div class=\"inputs-hidden\">
 \t\t\t\t\t\t\t<input required name=\"candidato[nome]\" class=\"form-control\" type=\"text\" placeholder=\"Nome\" title=\"Por favor insira seu nome\"/>
 \t\t\t\t\t\t\t<input required name=\"candidato[sobrenome]\" class=\"form-control\" type=\"text\" placeholder=\"Sobrenome\" title=\"Por favor insira seu Sobrenome\"/>
 \t\t\t\t\t\t\t<input required name=\"candidato[email]\" class=\"form-control\" type=\"email\" placeholder=\"E-mail\" title=\"Por favor insira seu e-mail\" />
@@ -144,10 +144,10 @@ class __TwigTemplate_b8d7529883500629175d809439ae8e7afdc02e844b089ae64621d022812
 \t\t\t\t\t<form action=\"/inscricao\" method=\"post\" class=\"form-home\">
 \t\t\t\t\t\t{{ csrf_field() }}
 
-\t\t\t\t\t\t<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4\" alt=\"Faculdade é FAM\"/>
-                        <img class=\"d-block d-md-none img-fluid mb-4 apoio\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />
+\t\t\t\t\t\t<!--<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4\" alt=\"Faculdade é FAM\"/>-->
+                        <!--<img class=\"d-block d-md-none img-fluid mb-4 apoio\" src=\"/assets/images/home-text.png\" alt=\"Apenas R\$ 239,00 mensais.\" />-->
 \t\t\t\t\t\t<the-mask required name=\"cpf\" class=\"form-control cpf\" type=\"tel\" placeholder=\"Insira seu CPF\" :mask=\"['###.###.###-##']\" title=\"Por favor insira seu CPF\"></the-mask>
-\t\t\t\t\t\t<div class=\"inputs-hidden coluna\">
+\t\t\t\t\t\t<div class=\"inputs-hidden\">
 \t\t\t\t\t\t\t<input required name=\"candidato[nome]\" class=\"form-control\" type=\"text\" placeholder=\"Nome\" title=\"Por favor insira seu nome\"/>
 \t\t\t\t\t\t\t<input required name=\"candidato[sobrenome]\" class=\"form-control\" type=\"text\" placeholder=\"Sobrenome\" title=\"Por favor insira seu Sobrenome\"/>
 \t\t\t\t\t\t\t<input required name=\"candidato[email]\" class=\"form-control\" type=\"email\" placeholder=\"E-mail\" title=\"Por favor insira seu e-mail\" />

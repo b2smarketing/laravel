@@ -320,7 +320,7 @@ class __TwigTemplate_6ba4486813fd8d649ca4d2bab226a6964b7a8c7e36b6fe5ee9f2fb75897
 \t\t\t</div>
 \t\t</div>
 \t</div>
-\t<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4 mb-4 apoio\" alt=\"Faculdade é FAM\"/>
+\t<!--<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4 mb-4 apoio\" alt=\"Faculdade é FAM\"/>-->
 </main>
 ";
     }
@@ -500,7 +500,7 @@ class __TwigTemplate_6ba4486813fd8d649ca4d2bab226a6964b7a8c7e36b6fe5ee9f2fb75897
 \t\t\t</div>
 \t\t</div>
 \t</div>
-\t<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4 mb-4 apoio\" alt=\"Faculdade é FAM\"/>
+\t<!--<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4 mb-4 apoio\" alt=\"Faculdade é FAM\"/>-->
 </main>
 {% endblock %}
 

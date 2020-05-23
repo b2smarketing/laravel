@@ -105,31 +105,6 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
 \t\t\t\t\t\t\t\t<a target=\"_blank\" class=\"nav-link\" href=\"https://fam.br\">Portal FAM</a>
 \t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t";
-        // line 78
-        if ($this->getAttribute(($context["opcoes"] ?? null), "url_cursos", array())) {
-            // line 79
-            echo "\t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t<a target=\"_blank\" class=\"nav-link\" href=\"";
-            // line 80
-            echo twig_escape_filter($this->env, $this->getAttribute(($context["opcoes"] ?? null), "url_cursos", array()), "html", null, true);
-            echo "\">Guia de Cursos</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t";
-        }
-        // line 83
-        echo "\t\t\t\t\t\t\t";
-        if ($this->getAttribute(($context["opcoes"] ?? null), "url_edital", array())) {
-            // line 84
-            echo "\t\t\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t\t\t\t<a target=\"_blank\" class=\"nav-link\" href=\"";
-            // line 85
-            echo twig_escape_filter($this->env, $this->getAttribute(($context["opcoes"] ?? null), "url_edital", array()), "html", null, true);
-            echo "\">Edital</a>
-\t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t";
-        }
-        // line 88
-        echo "\t\t\t\t\t\t\t";
         // line 91
         echo "\t\t\t\t\t\t</ul>
 \t\t\t\t\t</div>
@@ -145,35 +120,15 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
 \t\t<!-- Rodapé -->
 \t\t<footer class=\"rodape\">
 \t\t\t<div class=\"container\">
-\t\t\t\t<p>Atendimento das 9 às 21 horas";
-        // line 102
-        if ($this->getAttribute(($context["opcoes"] ?? null), "url_edital", array())) {
-            echo " | <a target=\"_blank\"
-\t\t\t\t\t\thref=\"";
-            // line 103
-            echo twig_escape_filter($this->env, $this->getAttribute(($context["opcoes"] ?? null), "url_edital", array()), "html", null, true);
-            echo "\">Edital</a>";
-        }
-        if ($this->getAttribute(($context["opcoes"] ?? null), "url_cursos", array())) {
-            echo " | <a
-\t\t\t\t\t\ttarget=\"_blank\" href=\"";
-            // line 104
-            echo twig_escape_filter($this->env, $this->getAttribute(($context["opcoes"] ?? null), "url_cursos", array()), "html", null, true);
-            echo "\">Guia de Cursos</a>";
-        }
-        echo "</p>
+\t\t\t\t<!--<p>Atendimento das 9 às 21 horas";
+        // line 104
+        echo "</p>-->
 \t\t\t\t<div class=\"social\">
-\t\t\t\t\t<a target=\"_blank\" href=\"http://instagram.com/famamericana\"><i class=\"fa fa-instagram\"></i></a>
-\t\t\t\t\t<a target=\"_blank\" href=\"http://fb.com/famamericana\"><i class=\"fa fa-facebook\"></i></a>
-\t\t\t\t\t<a target=\"_blank\" href=\"mailto:vestibular@fam.br\"><i class=\"fa fa-envelope-o\"></i></a>
-\t\t\t\t\t<a class=\"has-text\" target=\"_blank\" href=\"tel:08007712449\">
-\t\t\t\t\t\t<i class=\"fa fa-phone\"></i>
-\t\t\t\t\t\t0800 771 2449
-\t\t\t\t\t</a>
-\t\t\t\t\t<a class=\"has-text\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone=551994379555\">
-\t\t\t\t\t\t<i class=\"fa fa-whatsapp\"></i>
-\t\t\t\t\t\tWhatsFAM (19) 99437-9555
-\t\t\t\t\t</a>
+\t\t\t\t\t<a target=\"_blank\" title=\"Instagram\" href=\"http://instagram.com/famamericana\"><i class=\"fa fa-instagram\"></i></a>
+\t\t\t\t\t<a target=\"_blank\" title=\"Facebook\" href=\"http://fb.com/famamericana\"><i class=\"fa fa-facebook\"></i></a>
+\t\t\t\t\t<a target=\"_blank\" title=\"E-Mail\" href=\"mailto:vestibular@fam.br\"><i class=\"fa fa-envelope-o\"></i></a>
+\t\t\t\t\t<a class=\"has-text\" title=\"Telefone: 08007712449\" target=\"_blank\" href=\"tel:08007712449\"><i class=\"fa fa-phone\"></i></a>
+\t\t\t\t\t<a class=\"has-text\" title=\"WhatsFAM (19) 99437-9555\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone=551994379555\"><i class=\"fa fa-whatsapp\"></i></a>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</footer>
@@ -185,6 +140,7 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
 \t<link rel=\"stylesheet\" type=\"text/css\"
 \t\thref=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/main.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/update.css\">
 
 \t<!-- Bootstrap -->
 \t<script src=\"https://code.jquery.com/jquery-3.2.1.min.js\" crossorigin=\"anonymous\"></script>
@@ -236,13 +192,13 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
 
 \t<!-- Page Scripts -->
 \t";
-        // line 178
+        // line 173
         $this->displayBlock('scripts', $context, $blocks);
-        // line 179
+        // line 174
         echo "
 \t<!-- Tags Footer -->
 \t";
-        // line 181
+        // line 176
         echo $this->getAttribute(($context["tags"] ?? null), "foot", array());
         echo "
 
@@ -280,7 +236,7 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
     {
     }
 
-    // line 178
+    // line 173
     public function block_scripts($context, array $blocks = array())
     {
     }
@@ -297,7 +253,7 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
 
     public function getDebugInfo()
     {
-        return array (  284 => 178,  279 => 97,  246 => 181,  242 => 179,  240 => 178,  161 => 104,  154 => 103,  150 => 102,  144 => 98,  142 => 97,  134 => 91,  132 => 88,  126 => 85,  123 => 84,  120 => 83,  114 => 80,  111 => 79,  109 => 78,  83 => 55,  72 => 47,  53 => 31,  21 => 1,);
+        return array (  240 => 173,  235 => 97,  202 => 176,  198 => 174,  196 => 173,  125 => 104,  119 => 98,  117 => 97,  109 => 91,  83 => 55,  72 => 47,  53 => 31,  21 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -387,7 +343,7 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
 \t\t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t\t<a target=\"_blank\" class=\"nav-link\" href=\"https://fam.br\">Portal FAM</a>
 \t\t\t\t\t\t\t</li>
-\t\t\t\t\t\t\t{% if opcoes.url_cursos %}
+\t\t\t\t\t\t\t{#% if opcoes.url_cursos %}
 \t\t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t\t<a target=\"_blank\" class=\"nav-link\" href=\"{{ opcoes.url_cursos }}\">Guia de Cursos</a>
 \t\t\t\t\t\t\t</li>
@@ -411,21 +367,15 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
 \t\t<!-- Rodapé -->
 \t\t<footer class=\"rodape\">
 \t\t\t<div class=\"container\">
-\t\t\t\t<p>Atendimento das 9 às 21 horas{% if opcoes.url_edital %} | <a target=\"_blank\"
+\t\t\t\t<!--<p>Atendimento das 9 às 21 horas{#% if opcoes.url_edital %} | <a target=\"_blank\"
 \t\t\t\t\t\thref=\"{{ opcoes.url_edital }}\">Edital</a>{% endif %}{% if opcoes.url_cursos %} | <a
-\t\t\t\t\t\ttarget=\"_blank\" href=\"{{ opcoes.url_cursos }}\">Guia de Cursos</a>{% endif %}</p>
+\t\t\t\t\t\ttarget=\"_blank\" href=\"{{ opcoes.url_cursos }}\">Guia de Cursos</a>{% endif %#}</p>-->
 \t\t\t\t<div class=\"social\">
-\t\t\t\t\t<a target=\"_blank\" href=\"http://instagram.com/famamericana\"><i class=\"fa fa-instagram\"></i></a>
-\t\t\t\t\t<a target=\"_blank\" href=\"http://fb.com/famamericana\"><i class=\"fa fa-facebook\"></i></a>
-\t\t\t\t\t<a target=\"_blank\" href=\"mailto:vestibular@fam.br\"><i class=\"fa fa-envelope-o\"></i></a>
-\t\t\t\t\t<a class=\"has-text\" target=\"_blank\" href=\"tel:08007712449\">
-\t\t\t\t\t\t<i class=\"fa fa-phone\"></i>
-\t\t\t\t\t\t0800 771 2449
-\t\t\t\t\t</a>
-\t\t\t\t\t<a class=\"has-text\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone=551994379555\">
-\t\t\t\t\t\t<i class=\"fa fa-whatsapp\"></i>
-\t\t\t\t\t\tWhatsFAM (19) 99437-9555
-\t\t\t\t\t</a>
+\t\t\t\t\t<a target=\"_blank\" title=\"Instagram\" href=\"http://instagram.com/famamericana\"><i class=\"fa fa-instagram\"></i></a>
+\t\t\t\t\t<a target=\"_blank\" title=\"Facebook\" href=\"http://fb.com/famamericana\"><i class=\"fa fa-facebook\"></i></a>
+\t\t\t\t\t<a target=\"_blank\" title=\"E-Mail\" href=\"mailto:vestibular@fam.br\"><i class=\"fa fa-envelope-o\"></i></a>
+\t\t\t\t\t<a class=\"has-text\" title=\"Telefone: 08007712449\" target=\"_blank\" href=\"tel:08007712449\"><i class=\"fa fa-phone\"></i></a>
+\t\t\t\t\t<a class=\"has-text\" title=\"WhatsFAM (19) 99437-9555\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone=551994379555\"><i class=\"fa fa-whatsapp\"></i></a>
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</footer>
@@ -437,6 +387,7 @@ class __TwigTemplate_128035f7fa79d9ad8892da173ef2b9b8df9205c3241f581018b303dd44f
 \t<link rel=\"stylesheet\" type=\"text/css\"
 \t\thref=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/main.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/update.css\">
 
 \t<!-- Bootstrap -->
 \t<script src=\"https://code.jquery.com/jquery-3.2.1.min.js\" crossorigin=\"anonymous\"></script>

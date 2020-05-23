@@ -162,15 +162,14 @@ class __TwigTemplate_e2c1b62edabd28a3531f35b1d7d37a4f464d857ab5ee18de50e9a04c408
 \t\t\t</div>
 \t\t</div>
 \t</div>
-    <img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4 apoio\" alt=\"Faculdade é FAM\"/>
 </main>
 ";
     }
 
-    // line 79
+    // line 78
     public function block_scripts($context, array $blocks = array())
     {
-        // line 80
+        // line 79
         echo "
 ";
     }
@@ -187,7 +186,7 @@ class __TwigTemplate_e2c1b62edabd28a3531f35b1d7d37a4f464d857ab5ee18de50e9a04c408
 
     public function getDebugInfo()
     {
-        return array (  174 => 80,  171 => 79,  154 => 67,  150 => 65,  146 => 63,  140 => 62,  131 => 58,  127 => 56,  122 => 53,  116 => 52,  109 => 48,  105 => 46,  103 => 45,  89 => 34,  81 => 31,  73 => 26,  65 => 23,  57 => 18,  49 => 15,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  173 => 79,  170 => 78,  154 => 67,  150 => 65,  146 => 63,  140 => 62,  131 => 58,  127 => 56,  122 => 53,  116 => 52,  109 => 48,  105 => 46,  103 => 45,  89 => 34,  81 => 31,  73 => 26,  65 => 23,  57 => 18,  49 => 15,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -274,7 +273,6 @@ class __TwigTemplate_e2c1b62edabd28a3531f35b1d7d37a4f464d857ab5ee18de50e9a04c408
 \t\t\t</div>
 \t\t</div>
 \t</div>
-    <img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4 apoio\" alt=\"Faculdade é FAM\"/>
 </main>
 {% endblock %}
 
