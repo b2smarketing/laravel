@@ -3,4 +3,3 @@
 .env
 /storage/framework/sessions
 /storage/framework/logs
-/storage/framework/views
