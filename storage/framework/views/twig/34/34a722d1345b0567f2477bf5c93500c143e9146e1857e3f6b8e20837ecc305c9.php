@@ -33,13 +33,12 @@ class __TwigTemplate_f65b053ae51540abe84e13c738f63d322f08bed733aa2a0990cbf1c4eee
     {
         // line 6
         echo "<!-- Principal -->
-<h1>2020 - 1º Semestre</h1>
 <main id=\"page-home\" class=\"container fit-height\">
 \t<div class=\"row fit mt-4 mt-md-0\">
         <div id=\"acfam-home-artwork\" class=\"col-md-8 full-height d-none d-md-block\">
 \t\t\t<!-- Aqui serão inseridas as artes de campanha (roupagem) -->
 \t\t\t";
-        // line 13
+        // line 12
         echo "\t\t</div>
 \t\t<div id=\"acfam-home-form\" class=\"col-md-4 pt-md-5 full-height\">
 \t\t\t<!-- Centralizar verticamente o formulário -->
@@ -49,7 +48,7 @@ class __TwigTemplate_f65b053ae51540abe84e13c738f63d322f08bed733aa2a0990cbf1c4eee
 \t\t\t\t\t<!-- Aqui é o formulário padrão de cadastro -->
 \t\t\t\t\t<form action=\"/inscricao\" method=\"post\" class=\"form-home\">
 \t\t\t\t\t\t";
-        // line 21
+        // line 20
         echo csrf_field();
         echo "
 
@@ -77,10 +76,10 @@ class __TwigTemplate_f65b053ae51540abe84e13c738f63d322f08bed733aa2a0990cbf1c4eee
 ";
     }
 
-    // line 46
+    // line 45
     public function block_scripts($context, array $blocks = array())
     {
-        // line 47
+        // line 46
         echo "\t<!-- Script da Página -->
 \t<script type=\"text/javascript\" src=\"/assets/js/page-index.js\"></script>
 
@@ -88,9 +87,9 @@ class __TwigTemplate_f65b053ae51540abe84e13c738f63d322f08bed733aa2a0990cbf1c4eee
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/page-index.css\" />
 
 \t";
-        // line 53
+        // line 52
         if (($context["error"] ?? null)) {
-            // line 54
+            // line 53
             echo "\t\t<script>alert('";
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');</script>
@@ -110,7 +109,7 @@ class __TwigTemplate_f65b053ae51540abe84e13c738f63d322f08bed733aa2a0990cbf1c4eee
 
     public function getDebugInfo()
     {
-        return array (  94 => 54,  92 => 53,  84 => 47,  81 => 46,  53 => 21,  43 => 13,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  93 => 53,  91 => 52,  83 => 46,  80 => 45,  52 => 20,  42 => 12,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
