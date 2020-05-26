@@ -1,5 +1,4 @@
 /backup
 /vendor
 .env
-/storage/framework/sessions
-/storage/framework/logs
+/storage/framework/
