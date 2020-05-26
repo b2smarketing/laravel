@@ -312,10 +312,17 @@
 						<option :value="null" v-if="lead.dados_adicionais.usar_enem == 'sim'">Escolher data e local para entrega da documentação:</option>
 						{% for local in locais_prova %}
 						{% if local.datas_provas_disponiveis %}
+						
+						{% if local.local == "FAM Digit@l" %}
+
+
 							<optgroup label="{{ local.local }}">
 							{% for data in local.datas_provas_disponiveis.splice(0, 10) %}
 								<option value="{{ data.id }}">{{ data.hora|date('d/m/Y') }} - {{ data.hora|date('H:i') }}{% if data.hora_final %} às {{ data.hora_final|date('H:i') }}{% endif %} - {{ data.hora|date('w')|dia_semana }}</option>
 							{% endfor %}
+						
+						{% endif %}
+
 							</optgroup>
 						{% endif %}
 						{% endfor %}
