@@ -265,7 +265,7 @@
 				<!-- Como conheceu a FAM? -->
 				<div class="col-xs-12 col-md-6 col-lg-6 v-spacing">
 					<select size required class="form-control" name="como_conheceu" v-model="lead.midia_id">
-						<option value="" selected="selected">Como nos conheceu?</option>
+						<option :value="null">Como nos conheceu?</option>
 						<option v-for="midia in midias" :value="midia.id">{{ midia.nome }}</option>
 					</select>
 				</div>
