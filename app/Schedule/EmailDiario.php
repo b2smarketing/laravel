@@ -120,7 +120,8 @@ $schedule->call(function () {
                 $email = Email::create($assunto)
                     ->smtp_auth()
                     ->from(env('SMTP_USER'), 'App FAM')
-                    ->to('everton.messias@gmail.com', 'Everton')
+                    ->to('celia@fam.br', 'Celia')
+                    ->to('gustavo@fam.br', 'Gustavo')
                     ->to('eryvelton@fam.br','Eryvelton')
                     ->to('gabriela@fam.br','Gabriela')
                     ->to('nicom@fam.br','Nicom')
@@ -164,4 +165,4 @@ $schedule->call(function () {
             */
         }
     });
-})->timezone('America/Sao_Paulo')->dailyAt('6:00'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
+})->timezone('America/Sao_Paulo')->dailyAt('8:00'); // Rodamos esse relatório todos os dias, às 10:37 da manhã
