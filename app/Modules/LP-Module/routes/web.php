@@ -102,14 +102,31 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
           $escola->data = $data;
           $escola->save();
 
-          $dado = [
+          $dado = array_merge([
               'nome' => $nome,
               'cidade' => $cidade,
               'responsavel' => $responsavel,
               'responsavel_email' => $responsavel_email,
               'responsavel_telefone' => $responsavel_telefone,
               'data' => $data
-          ];
+          ]);
+
+          // Preparar e-mail
+
+		// Identidade de Gênero
+		$assunto = 'Seja bem-vindo' . $escola->nome . '!';
+
+        // Preparar dados
+        
+		// Criar e-mail
+		$email = Email::create($assunto)
+			->smtp_auth()
+			->from('no-reply@vestibularfam.com.br', 'Vestibular FAM')
+			->to($responsavel_email, $nome)
+			->html(view('LP::obrigado', $dado)->render());
+
+		// Enviar
+		$email->send();
 
 			return view('LP::obrigado',$dado);
         });
