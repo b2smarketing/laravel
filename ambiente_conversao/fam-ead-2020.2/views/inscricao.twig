@@ -265,7 +265,7 @@
 				<!-- Como conheceu a FAM? -->
 				<div class="col-xs-12 col-md-6 col-lg-6 v-spacing">
 					<select size required class="form-control" name="como_conheceu" v-model="lead.midia_id">
-						<option value="" selected="selected">Como nos conheceu?</option>
+						<option :value="null">Como nos conheceu?</option>
 						<option v-for="midia in midias" :value="midia.id">{{ midia.nome }}</option>
 					</select>
 				</div>
@@ -312,10 +312,17 @@
 						<option :value="null" v-if="lead.dados_adicionais.usar_enem == 'sim'">Escolher data e local para entrega da documentação:</option>
 						{% for local in locais_prova %}
 						{% if local.datas_provas_disponiveis %}
+						
+						{% if local.local == "FAM Digit@l" %}
+
+
 							<optgroup label="{{ local.local }}">
 							{% for data in local.datas_provas_disponiveis.splice(0, 10) %}
 								<option value="{{ data.id }}">{{ data.hora|date('d/m/Y') }} - {{ data.hora|date('H:i') }}{% if data.hora_final %} às {{ data.hora_final|date('H:i') }}{% endif %} - {{ data.hora|date('w')|dia_semana }}</option>
 							{% endfor %}
+						
+						{% endif %}
+
 							</optgroup>
 						{% endif %}
 						{% endfor %}

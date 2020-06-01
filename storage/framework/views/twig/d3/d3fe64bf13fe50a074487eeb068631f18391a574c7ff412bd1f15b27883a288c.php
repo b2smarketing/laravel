@@ -11,6 +11,7 @@ class __TwigTemplate_29582a25f12d7cbda3d77a14261f8996bcd03c6741389ebfb9dad61f17c
         $this->parent = $this->loadTemplate("Admin::layout", "/var/www/app/app/Modules/Admin/views/Escolas/index.twig", 1);
         $this->blocks = array(
             'content' => array($this, 'block_content'),
+            'scripts' => array($this, 'block_scripts'),
         );
     }
 
@@ -22,140 +23,142 @@ class __TwigTemplate_29582a25f12d7cbda3d77a14261f8996bcd03c6741389ebfb9dad61f17c
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
-        $context["exibir"] = $this->loadTemplate("Admin::helpers.link_display", "/var/www/app/app/Modules/Admin/views/Escolas/index.twig", 3);
+        $context["form"] = $this->loadTemplate("Admin::helpers.form_campanha", "/var/www/app/app/Modules/Admin/views/Escolas/index.twig", 3);
+        // line 5
+        $context["title"] = "Escolas";
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 5
+    // line 7
     public function block_content($context, array $blocks = array())
     {
-        // line 6
-        echo "\t<div
-\t\tclass=\"right_col\" role=\"main\">
-
-\t\t<!-- WYSWYG -->
-\t\t<link rel=\"stylesheet\" href=\"/wysiwyg/bootstrap3-wysihtml5.min.css\"/>
-    <style>
-    table{
-      display:block;
-      position:relative;
-      margin: 0 auto !important;
-      width:100%;
-    }
-\tth,td{
-\t\twidth: 180px;
-\t}
-\t.id{
-\t\twidth:30px;
-\t}
-    .x_panel{
-      width:125%;
-      left: -25%;
-    }
-    </style>
-\t\t<script src=\"/wysiwyg/wysihtml5x-toolbar.min.js\"></script>
-\t\t<script src=\"/wysiwyg/handlebars.runtime.min.js\"></script>
-\t\t<script src=\"/wysiwyg/bootstrap3-wysihtml5.min.js\"></script>
-
-\t\t<!-- Aplicar WYSWYG -->
-
-\t\t<script type=\"text/javascript\">
-\t\t\t\$('textarea').wysihtml5({
-locale: 'pt-BR',
-toolbar: {
-'color': false,
-'image': false,
-'blockquote': false,
-'ident-left': false,
-'Outdent': false,
-'small': false
-}
-});
-\t\t</script>
-
-\t\t<!-- page content -->
-\t\t<div class=\"right_col\" role=\"main\">
+        // line 8
+        echo "\t<div class=\"right_col\" role=\"main\">
+\t\t<div class=\"\">
 \t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"col-md-18 col-sm-12 col-xs-12\">
+\t\t\t\t<div class=\"col-md-12 col-sm-12 col-xs-12\">
 \t\t\t\t\t<div class=\"x_panel\">
 \t\t\t\t\t\t<div class=\"x_title\">
 \t\t\t\t\t\t\t<h2>Escolas</h2>
+
 \t\t\t\t\t\t\t<div class=\"clearfix\"></div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"x_content\">
-\t\t\t\t\t\t\t<table id=\"tabela_alunos\" class=\"table table-striped\">
+
+\t\t\t\t\t\t\t<table class=\"table table-striped\">
 \t\t\t\t\t\t\t\t<thead>
 \t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t<th class=\"id\">ID</th>
-\t\t\t\t\t\t\t\t\t\t<th>Nome</th>
-\t\t\t\t\t\t\t\t\t\t<th>Cidade</th>
-\t\t\t\t\t\t\t\t\t\t<th>Responsavel</th>
-\t\t\t\t\t\t\t\t\t\t<th>E-Mail</th>
-\t\t\t\t\t\t\t\t\t\t<th>Telefone</th>
-\t\t\t\t\t\t\t\t\t\t<th>Data</th>
+\t\t\t\t\t\t\t\t\t\t<!--<th class=\"id\">ID</th>-->
+\t\t\t\t\t\t\t\t\t\t <th class=\"all\">Nome</th>
+\t\t\t\t\t\t\t\t\t\t<th class=\"min-tablet\">Cidade</th>
+\t\t\t\t\t\t\t\t\t\t<th class=\"min-tablet\">Responsavel</th>
+\t\t\t\t\t\t\t\t\t\t<th class=\"min-tablet\">E-Mail</th>
+\t\t\t\t\t\t\t\t\t\t<th class=\"min-tablet\">Telefone</th>
+\t\t\t\t\t\t\t\t\t\t<th class=\"min-tablet\">Data</th>
 \t\t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t\t<tbody>
 \t\t\t\t\t\t\t\t\t";
-        // line 72
+        // line 33
         if ((twig_length_filter($this->env, ($context["escolas"] ?? null)) > 0)) {
-            // line 73
+            // line 34
             echo "\t\t\t\t\t\t\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["escolas"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["escola"]) {
-                // line 74
+                // line 35
                 echo "\t\t\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t\t\t<td class=\"id\">";
-                // line 75
-                echo twig_escape_filter($this->env, $this->getAttribute($context["escola"], "id", array()));
-                echo "</td>
+\t\t\t\t\t\t\t\t\t\t\t\t<!--<td class=\"id\">";
+                // line 36
+                echo "</td>-->
 \t\t\t\t\t\t\t\t\t\t\t\t<td>";
-                // line 76
+                // line 37
                 echo twig_escape_filter($this->env, $this->getAttribute($context["escola"], "nome", array()));
                 echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t<td>";
-                // line 77
+                // line 38
                 echo twig_escape_filter($this->env, $this->getAttribute($context["escola"], "cidade", array()));
                 echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t<td>";
-                // line 78
+                // line 39
                 echo twig_escape_filter($this->env, $this->getAttribute($context["escola"], "responsavel", array()));
                 echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t<td>";
-                // line 79
+                // line 40
                 echo twig_escape_filter($this->env, $this->getAttribute($context["escola"], "responsavel_email", array()));
                 echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t<td>";
-                // line 80
+                // line 41
                 echo twig_escape_filter($this->env, $this->getAttribute($context["escola"], "responsavel_telefone", array()));
                 echo "</td>
 \t\t\t\t\t\t\t\t\t\t\t\t<td>";
-                // line 81
+                // line 42
                 echo twig_escape_filter($this->env, $this->getAttribute($context["escola"], "data", array()));
                 echo "</td>
-
 \t\t\t\t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['escola'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 85
+            // line 45
             echo "\t\t\t\t\t\t\t\t\t";
         }
-        // line 86
+        // line 46
         echo "\t\t\t\t\t\t\t\t</tbody>
 \t\t\t\t\t\t\t</table>
+
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
+
+\t\t\t\t<div class=\"clearfix\"></div>
 \t\t\t</div>
-    </div>
 
+\t\t</div>
+\t</div>
 
-\t\t";
+";
+    }
+
+    // line 61
+    public function block_scripts($context, array $blocks = array())
+    {
+        // line 62
+        echo "\t<script>
+
+\t\t\$('table').DataTable({
+title: '";
+        // line 65
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["escola"] ?? null), "nome", array()), "html", null, true);
+        echo "',
+dom: \"Bfrtip\",
+buttons: [
+{
+extend: \"copy\",
+className: \"btn-sm\"
+},
+{
+extend: \"csv\",
+className: \"btn-sm\"
+},
+{
+extend: \"excel\",
+className: \"btn-sm\"
+},
+{
+extend: \"pdfHtml5\",
+className: \"btn-sm\"
+}, {
+extend: \"print\",
+className: \"btn-sm\"
+},
+],
+responsive: true
+});
+\t</script>
+";
     }
 
     public function getTemplateName()
@@ -170,7 +173,7 @@ toolbar: {
 
     public function getDebugInfo()
     {
-        return array (  149 => 86,  146 => 85,  136 => 81,  132 => 80,  128 => 79,  124 => 78,  120 => 77,  116 => 76,  112 => 75,  109 => 74,  104 => 73,  102 => 72,  34 => 6,  31 => 5,  27 => 1,  25 => 3,  11 => 1,);
+        return array (  134 => 65,  129 => 62,  126 => 61,  109 => 46,  106 => 45,  97 => 42,  93 => 41,  89 => 40,  85 => 39,  81 => 38,  77 => 37,  74 => 36,  71 => 35,  66 => 34,  64 => 33,  37 => 8,  34 => 7,  30 => 1,  28 => 5,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
