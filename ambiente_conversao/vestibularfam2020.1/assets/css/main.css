@@ -2,6 +2,10 @@
 img {
   max-width: 100%; }
 
+
+
+
+
 .pulse {
   animation-delay: 5s;
   animation: pulse 0.7s infinite;
@@ -13,6 +17,9 @@ img {
   animation-name: pulse;
 }
 
+
+
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale(0.8);
@@ -23,6 +30,8 @@ img {
     -webkit-filter: brightness(120%);
   }
 }
+
+
 
 @keyframes pulse {
   0% {
