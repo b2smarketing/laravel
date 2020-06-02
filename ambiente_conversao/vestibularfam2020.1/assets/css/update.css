@@ -1,0 +1,40 @@
+.vestibular, .enem, .formado{
+    display: none;
+}
+
+.arquivo{
+    border-top: 1px solid #2B347C;
+    display: block;
+    margin-top: 50px;
+    background-color: #1EADE9;
+    color: #fff;
+    margin-left: 15px;
+    height: 50px;
+    padding-left: 50px;
+    padding-top: 10px;   
+    padding-right: 10px;
+    border-radius: 3px;
+    width: 96% !important;
+}
+.arquivo p span{
+    float: right;
+}
+
+@media (min-width: 768px) {
+.pontosenem{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    left: 230px;
+    color: #fff;
+
+}}
+
+@media (max-width: 768px) {
+    .pontosenem{
+        display: block;
+        position: relative;
+        margin: 0 auto;        
+        color: #fff;
+    
+    }}
