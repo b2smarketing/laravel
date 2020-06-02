@@ -1,6 +1,11 @@
+/* ALTERÇÕES EVERTON 02-06-2020 */
+
 .vestibular, .enem, .formado{
     display: none;
 }
+
+
+
 
 .arquivo{
     border-top: 1px solid #2B347C;
@@ -20,6 +25,9 @@
     float: right;
 }
 
+
+
+
 @media (min-width: 768px) {
 .pontosenem{
     display: block;
@@ -29,6 +37,8 @@
     color: #fff;
 
 }}
+
+
 
 @media (max-width: 768px) {
     .pontosenem{
