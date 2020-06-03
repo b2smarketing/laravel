@@ -159,15 +159,15 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 
 \t\t\t\t<!-- Informações da Campanha -->
 \t\t\t\t<!--<section id=\"acfam-inscricao-infos\" class=\"container\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"inicio-aulas\">Início das Aulas Agosto 2018</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong class=\"desconto-regressivo\">Desconto Regressivo</strong>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"./assets/images/inscricao-desconto-regressivo.png\" />
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>Aproveite os Descontos na Matrícula</strong>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tO desconto regressivo refere-se ao pagamento da matrícula (1ª mensalidade) realizada dentro do mês indicado na figura.<br />
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t** Exceto para cursos de Tecnologia e Letras.
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</section>-->
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"inicio-aulas\">Início das Aulas Agosto 2018</span>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong class=\"desconto-regressivo\">Desconto Regressivo</strong>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"./assets/images/inscricao-desconto-regressivo.png\" />
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<strong>Aproveite os Descontos na Matrícula</strong>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tO desconto regressivo refere-se ao pagamento da matrícula (1ª mensalidade) realizada dentro do mês indicado na figura.<br />
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t** Exceto para cursos de Tecnologia e Letras.
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</section>-->
 
 \t\t\t\t<!-- Formulário de Inscrição -->
 \t\t\t\t\t<section id=\"acfam-inscricao-form\" class=\"container\"> <div
@@ -231,13 +231,13 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 
 \t\t\t\t\t\t<!-- E-mail -->
 \t\t\t\t\t\t<div class=\"col-xs-12 col-md-6 col-lg-8 v-spacing\">
-\t\t\t\t\t\t\t<input class=\"form-control\" name=\"candidato[email]\" type=\"email\" placeholder=\"E-mail\" required v-model=\"aluno.email\"/>
+\t\t\t\t\t\t\t<input class=\"email1 form-control\" name=\"candidato[email]\" type=\"email\" placeholder=\"E-mail\" required v-model=\"aluno.email\"/>
 \t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t<!-- RG -->
 \t\t\t\t\t\t<!--<div class=\"col-xs-12 col-md-6 col-lg-4 v-spacing\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<the-mask class=\"form-control\" name=\"candidato[rg]\" type=\"text\" placeholder=\"RG\" required :mask=\"['##.###.###-X']\" v-model=\"aluno.rg\" />
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>-->
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<the-mask class=\"form-control\" name=\"candidato[rg]\" type=\"text\" placeholder=\"RG\" required :mask=\"['##.###.###-X']\" v-model=\"aluno.rg\" />
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>-->
 
 \t\t\t\t\t\t<!-- Data Nascimento -->
 \t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-6 col-lg-4 v-spacing\"> <the-mask class=\"form-control nasc\" name=\"candidato[data_nascimento]\" type=\"tel\" placeholder=\"Data de Nascimento\" required :mask=\"['##/##/####']\" v-model=\"aluno.data_nascimento\"/>
@@ -261,7 +261,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 
 \t\t\t\t\t\t<!-- Sexo -->
 \t\t\t\t\t\t<div class=\"col-xs-12 col-md-6 col-lg-4 v-spacing\">
-\t\t\t\t\t\t\t<select size required class=\"form-control\" name=\"candidato[sexo]\" v-model=\"aluno.sexo\">
+\t\t\t\t\t\t\t<select size required class=\"form-control\" name=\"candidato[sexo]\">
 \t\t\t\t\t\t\t\t<option :value=\"null\" selected>Sexo:</option>
 \t\t\t\t\t\t\t\t<option value=\"Masculino\">Masculino</option>
 \t\t\t\t\t\t\t\t<option value=\"Feminino\">Feminino</option>
@@ -270,32 +270,32 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 
 \t\t\t\t\t\t<!-- PCD -->
 \t\t\t\t\t\t<div class=\"col-xs-12 col-md-12 col-lg-8 v-spacing\">
-\t\t\t\t\t\t\t<select size required class=\"form-control\" name=\"dados_adicionais[deficiencia]\" v-model=\"lead.dados_adicionais.deficiencia\">
+\t\t\t\t\t\t\t<select onchange=\"tipodeficiencia()\" id=\"deficiencia\" size required class=\"form-control\" name=\"dados_adicionais[deficiencia]\" v-model=\"lead.dados_adicionais.deficiencia\">
 \t\t\t\t\t\t\t\t<option :value=\"null\">Possui alguma deficiência?</option>
 \t\t\t\t\t\t\t\t<option value=\"nao\">Não</option>
 \t\t\t\t\t\t\t\t<option value=\"sim\">Sim</option>
 \t\t\t\t\t\t\t</select>
 \t\t\t\t\t\t</div>
-\t\t\t\t\t\t<transition name=\"fade\">
-\t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-12 col-lg-12 v-spacing\" v-if=\"lead.dados_adicionais.deficiencia && lead.dados_adicionais.deficiencia == 'sim'\">
-\t\t\t\t\t\t\t\t<select size required class=\"form-control\" name=\"dados_adicionais[deficiencia_qual]\" v=\"model=\" lead.dados_adicionais.deficiencia_qual\"\">
-\t\t\t\t\t\t\t\t\t<option :value=\"null\">Qual deficiência?</option>
-\t\t\t\t\t\t\t\t\t<!--<option value=\"0\">Sem deficiência</option>-->
-\t\t\t\t\t\t\t\t\t<option value=\"1\">Cegueira</option>
-\t\t\t\t\t\t\t\t\t<option value=\"2\">Baixa Visão</option>
-\t\t\t\t\t\t\t\t\t<option value=\"3\">Surdez</option>
-\t\t\t\t\t\t\t\t\t<option value=\"4\">Deficiência Auditiva</option>
-\t\t\t\t\t\t\t\t\t<option value=\"5\">Deficiência fisica</option>
-\t\t\t\t\t\t\t\t\t<option value=\"6\">Surdocegueira</option>
-\t\t\t\t\t\t\t\t\t<option value=\"7\">Deficiência Múltipla</option>
-\t\t\t\t\t\t\t\t\t<option value=\"8\">Deficiência Mental</option>
-\t\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</transition>
+\t\t\t\t\t\t<!--<transition name=\"fade\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-12 col-lg-12 v-spacing\" v-if=\"lead.dados_adicionais.deficiencia && lead.dados_adicionais.deficiencia == 'sim'\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<select size required class=\"form-control\" name=\"dados_adicionais[deficiencia_qual]\" v=\"model=\" lead.dados_adicionais.deficiencia_qual\"\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option :value=\"null\">Qual deficiência?</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"0\">Sem deficiência</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"1\">Cegueira</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"2\">Baixa Visão</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"3\">Surdez</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"4\">Deficiência Auditiva</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"5\">Deficiência fisica</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"6\">Surdocegueira</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"7\">Deficiência Múltipla</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"8\">Deficiência Mental</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</transition>-->
 
 \t\t\t\t\t\t<!-- Necessidades Educacionais Especiais (Distúrbios /Transtornos/Síndromes) -->
-\t\t\t\t\t\t<div class=\"col-xs-12 col-md-12 v-spacing\">
-\t\t\t\t\t\t\t<input class=\"form-control\" name=\"dados_adicionais[necessidades_especiais]\" type=\"text\" placeholder=\"Necessidades Educacionais Especiais (Distúrbios /Transtornos/Síndromes)\" v-model=\"lead.dados_adicionais.necessidades_especiais\" title=\"Descreva aqui suas necessidades educacionais especiais, como alguém para acompanhar a leitura, tempo extra de prova, folha de prova especial e etc.\"/>
+\t\t\t\t\t\t<div class=\"deficiencia col-xs-12 col-md-12 v-spacing\">
+\t\t\t\t\t\t\t<input class=\"form-control\" name=\"dados_adicionais[necessidades_especiais]\" type=\"text\" placeholder=\"Descreva: Necessidades Educacionais Especiais (Distúrbios /Transtornos/Síndromes)\" v-model=\"lead.dados_adicionais.necessidades_especiais\" title=\"Descreva aqui suas necessidades educacionais especiais, como alguém para acompanhar a leitura, tempo extra de prova, folha de prova especial e etc.\"/>
 \t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t<!-- Dados do Responsável -->
@@ -336,86 +336,98 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
         echo "
 
 \t\t\t\t\t<!-- Data da Prova 
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-12 col-lg-12 v-spacing\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<select size required class=\"form-control\" name=\"data_prova\" v-model=\"data_prova\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option :value=\"null\" v-if=\"!lead.dados_adicionais.usar_enem || lead.dados_adicionais.usar_enem == 'nao'\">Escolher data e local da prova:</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option :value=\"null\" v-if=\"lead.dados_adicionais.usar_enem == 'sim'\">Escolher data e local para entrega da documentação:</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-12 col-lg-12 v-spacing\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<select size required class=\"form-control\" name=\"data_prova\" v-model=\"data_prova\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option :value=\"null\" v-if=\"!lead.dados_adicionais.usar_enem || lead.dados_adicionais.usar_enem == 'nao'\">Escolher data e local da prova:</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option :value=\"null\" v-if=\"lead.dados_adicionais.usar_enem == 'sim'\">Escolher data e local para entrega da documentação:</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
         // line 325
-        echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>-->
+        echo "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>-->
 
-\t\t\t<input type=\"hidden\" name=\"data_prova\" value=\"2825\">
+\t\t\t\t\t<input
+\t\t\t\t\ttype=\"hidden\" name=\"data_prova\" value=\"2825\">
 
 \t\t\t\t\t<!-- Aviso Vestibular/ENEM/Segunda Graduação -->
 \t\t\t\t\t<div class=\"col-md-8 offset-md-2 v-spacing\">
 \t\t\t\t\t\t<div class=\"vestibular\">
-\t\t\t\t\t\t\t<p class=\"align center text-white\">
-\t\t\t\t\t\t\t\tVejo que você escolheu prestar vestibular, certo? <br/>
-\t\t\t\t\t\t\t\tAs informações sobre a prova serão encaminharas via e-mail\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t<p class=\"align center text-white\" style=\"text-align:justify;\">
+\t\t\t\t\t\t\t\tDurante a pandemia, a FAM - Faculdade de Americana está operacionalizando
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tas provas do vestibular de forma online. Após a conclusão de sua inscrição
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tvocê receberá em seu e-mail instruções adicionais sobre como proceder para
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\ta realização da mesma.
 \t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"enem row\">
-\t\t\t\t\t\t<!--
-\t\t\t\t\t\t\t<div style=\"position:relative;padding:1em;padding-bottom:56%;width:100%;margin-bottom:1em;border-radius:4px;overflow:hidden\">
-\t\t\t\t\t\t\t\t<iframe style=\"position:absolute;top:0px;left:0px;width:100%;height:100%\" src=\"https://www.youtube.com/embed/rwcOxLOrRz0\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t<p class=\"align center text-white\">
-\t\t\t\t\t\t\t\tVocê sabia que com a nota da redação do ENEM você fica isento de fazer a prova do vestibular e ainda pode ganhar um desconto de até 100% em todas as mensalidades?
-\t\t\t\t\t\t\t</p>
-\t\t\t\t\t\t\t<p class=\"align center text-white\">
-\t\t\t\t\t\t\t\tSe você tirou nota acima de 400 pontos na redação basta agendar aqui a data para fazer a sua matrícula e fazer a requisição para análise da bolsa de estudos.<br>
-\t\t\t\t\t\t\t\tNão se esqueça de trazer cópias de todos os documentos e o resultado do ENEM impresso. Só não vale ser treineiro, ok?
-\t\t\t\t\t\t\t</p>-->
+\t\t\t\t\t\t<div
+\t\t\t\t\t\t\tclass=\"enem row\">
+\t\t\t\t\t\t\t<!--
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"position:relative;padding:1em;padding-bottom:56%;width:100%;margin-bottom:1em;border-radius:4px;overflow:hidden\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<iframe style=\"position:absolute;top:0px;left:0px;width:100%;height:100%\" src=\"https://www.youtube.com/embed/rwcOxLOrRz0\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"align center text-white\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tVocê sabia que com a nota da redação do ENEM você fica isento de fazer a prova do vestibular e ainda pode ganhar um desconto de até 100% em todas as mensalidades?
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"align center text-white\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSe você tirou nota acima de 400 pontos na redação basta agendar aqui a data para fazer a sua matrícula e fazer a requisição para análise da bolsa de estudos.<br>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tNão se esqueça de trazer cópias de todos os documentos e o resultado do ENEM impresso. Só não vale ser treineiro, ok?
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</p>-->
 \t\t\t\t\t\t\t<p class=\"align center text-white\">
 \t\t\t\t\t\t\t\t<strong>Ingresso ENEM:</strong><br>
-\t\t\t\t\t\t\t\tA sua Nota de Redação deverá ser igual ou superior a 400 pontos.<br> 
+\t\t\t\t\t\t\t\t<span style=\"text-align:justify !important;\">
+\t\t\t\t\t\t\t\t\tVocê&ensp;optou&ensp;por utilizar&ensp;a sua&ensp;nota do&ensp;ENEM como&ensp;mecanismo de ingresso<br>
+\t\t\t\t\t\t\t\t\tno&ensp; Ensino&ensp;Superior&ensp;e &ensp;não&ensp;será&ensp; necessário&ensp; realizar a prova de vestibular.<br>
+\t\t\t\t\t\t\t\t\tSeu&ensp;desconto&ensp;&ensp;será calculado&ensp;com&ensp;base&ensp;na&ensp; tabela&ensp;abaixo e será validado<br>
+\t\t\t\t\t\t\t\t\tdurante o&ensp;processo&ensp;de&ensp; matrícula,&ensp;conduzida  pela equipe comercial da FAM<br>
+\t\t\t\t\t\t\t\t\tde forma online. Você&ensp; receberá&ensp; instruções adicionais através de seu e-mail.<br><br>
+\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t\tA sua Nota de Redação deverá ser igual ou superior a 400 pontos.<br>
 \t\t\t\t\t\t\t\tPoderá ser qualquer resultado desde o ano de 2010.
 \t\t\t\t\t\t\t\t<br>
-\t\t\t\t\t\t\t\t<ul class=\"pontosenem\">\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<li>Até 500 pontos = 10%</li>
-\t\t\t\t\t\t\t\t<li>De 501 a 550 pontos = 15%</li>
-\t\t\t\t\t\t\t\t<li>De 551 a 600 pontos = 20%</li>
-\t\t\t\t\t\t\t\t<li>De 601 a 650 pontos = 25%</li>
-\t\t\t\t\t\t\t\t<li>De 651 a 749 pontos = 50%</li>
-\t\t\t\t\t\t\t\t<li>De 750 a 849 pontos = 80%</li>
-\t\t\t\t\t\t\t\t<li>Acima de 850 pontos = Poderá estudar de graça.</li>
+\t\t\t\t\t\t\t\t<ul class=\"pontosenem\">
+\t\t\t\t\t\t\t\t\t<li>Até 500 pontos = 10%</li>
+\t\t\t\t\t\t\t\t\t<li>De 501 a 550 pontos = 15%</li>
+\t\t\t\t\t\t\t\t\t<li>De 551 a 600 pontos = 20%</li>
+\t\t\t\t\t\t\t\t\t<li>De 601 a 650 pontos = 25%</li>
+\t\t\t\t\t\t\t\t\t<li>De 651 a 749 pontos = 50%</li>
+\t\t\t\t\t\t\t\t\t<li>De 750 a 849 pontos = 80%</li>
+\t\t\t\t\t\t\t\t\t<li>Acima de 850 pontos = Poderá estudar de graça.</li>
 \t\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t\t\t</p>
-\t\t\t\t\t\t\t\t<p class=\"align center text-white\">\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t<p class=\"align center text-white\">
 \t\t\t\t\t\t\t\t* Exceto para cursos Tecnológicos, EAD, Letras, 2ª Graduação e Transferências.<br>
 \t\t\t\t\t\t\t\t* Não serão aceitos resultados de ENEM \"Treineiros\"
-\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t</p>
 
 \t\t\t\t\t\t\t";
-        // line 375
+        // line 386
         echo "
-\t\t\t\t\t\t<!--ARQUIVO, máx 3MB ; Obs.: php artisan storage:link 
-\t\t\t\t\t\t\t<div class=\"arquivo\">\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"3145728\">
-\t\t\t\t\t\t\t\t<p><input type=\"file\" name=\"arquivo\"><span>(envie um PDF com suas Notas)</span>
-\t\t\t\t\t\t\t\t</p>
-\t\t\t\t\t\t\t</div>-->
+\t\t\t\t\t\t\t<!--ARQUIVO, máx 3MB ; Obs.: php artisan storage:link 
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"arquivo\">\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"3145728\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><input type=\"file\" name=\"arquivo\"><span>(envie um PDF com suas Notas)</span>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>-->
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"formado\">
 \t\t\t\t\t\t\t<p class=\"align center text-white\">
-\t\t\t\t\t\t\t\tSe você já é graduado e deseja fazer outro curso superior, você não precisa 
-\t\t\t\t\t\t\t\tprestar vestibular, basta agendar aqui a data para fazer sua matricula. 
-\t\t\t\t\t\t\t\tPara isso envie todos os documentos e a cópia de um comprovante da sua graduação como diploma e certificado.
-\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\tSe você já realizou uma Graduação não será necessário realizar a prova de vestibular.</p>
 
 \t\t\t\t\t\t\t<!--ARQUIVO ; Obs.: php artisan storage:link 
-\t\t\t\t\t\t\t<div class=\"arquivo\">\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"3145728\">
-\t\t\t\t\t\t\t\t<p><input type=\"file\" name=\"arquivo\"><span>(envie um PDF do seu Diploma)</span>
-\t\t\t\t\t\t\t\t</p>
-\t\t\t\t\t\t\t</div>-->
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"arquivo\">\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"3145728\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p><input type=\"file\" name=\"arquivo\"><span>(envie um PDF do seu Diploma)</span>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>-->
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<!-- Confirma E-mail -->
+\t\t\t\t\t\t<div class=\"confirmaemail\">
+\t\t\t\t\t\t\t<input class=\"email2 form-control\" type=\"email\" placeholder=\"Confirme seu E-mail\"/>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t\ta
 \t\t\t\t\t<!-- Finalizar Inscrição -->
 \t\t\t\t\t<div class=\"col-xs-12 col-md-12 col-lg-12 v-spacing align center\">
-\t\t\t\t\t\t<input class=\"btn cta large centered btn-concluir\" type=\"submit\" value=\"Concluir Inscrição\"/>
+\t\t\t\t\t\t<input class=\"btn cta large centered btn-concluir\" type=\"button\" value=\"Concluir Inscrição\"/>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t</section>
@@ -427,27 +439,27 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 ";
     }
 
-    // line 412
+    // line 424
     public function block_scripts($context, array $blocks = array())
     {
-        // line 413
+        // line 425
         echo "\t<!-- Variáveis (BI -> VueJS) -->
 \t<script type=\"text/javascript\">
 \t\twindow.history.forward(1);
 let midias = ";
-        // line 416
+        // line 428
         echo twig_jsonencode_filter($this->getAttribute(($context["campanha"] ?? null), "midias", array()));
         echo ";
 let aluno = ";
-        // line 417
+        // line 429
         echo twig_jsonencode_filter(($context["aluno"] ?? null));
         echo ";
 let lead = ";
-        // line 418
+        // line 430
         echo twig_jsonencode_filter(($context["lead"] ?? null));
         echo ";
 let curso = ";
-        // line 419
+        // line 431
         echo twig_escape_filter($this->env, ($context["curso"] ?? null), "html", null, true);
         echo ";
 
@@ -484,6 +496,21 @@ aluno.data_nascimento = aluno.datanascimento.split('-').reverse().join('/');
 
 
 window.onload = function () {
+
+
+\$(\".btn-concluir\").click(function () {
+if (\$(\"#prova\").val() == \"sim\" || \$(\"#prova\").val() == \"segunda_graduacao\") {
+if (\$(\".email1\").val() == \$(\".email2\").val()) {
+\$(\".js-form\").submit();
+} else {
+alert(\"E-Mail não confere !\");
+}
+} else {
+\$(\".js-form\").submit();
+}
+});
+
+
 \$(\".js-form\").on(\"submit\", function () {
 \$(\".btn-concluir\").attr(\"disabled\", \"true\");
 setTimeout(function () {
@@ -497,12 +524,12 @@ setTimeout(function () {
 \t<script type=\"text/javascript\" src=\"./assets/js/page-inscricao.js\"></script>
 
 \t";
-        // line 466
+        // line 493
         if (($context["error"] ?? null)) {
-            // line 467
+            // line 494
             echo "\t\t<script>
 \t\t\talert('";
-            // line 468
+            // line 495
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');
 \t\t</script>
@@ -522,7 +549,7 @@ setTimeout(function () {
 
     public function getDebugInfo()
     {
-        return array (  506 => 468,  503 => 467,  501 => 466,  451 => 419,  447 => 418,  443 => 417,  439 => 416,  434 => 413,  431 => 412,  392 => 375,  345 => 325,  44 => 301,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  533 => 495,  530 => 494,  528 => 493,  463 => 431,  459 => 430,  455 => 429,  451 => 428,  446 => 425,  443 => 424,  403 => 386,  345 => 325,  44 => 301,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
