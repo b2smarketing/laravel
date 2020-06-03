@@ -1,5 +1,7 @@
 /* ALTERÇÕES EVERTON 03-06-2020 */
 
+
+
 function tipoprova() {
     var prova = $("#prova").val();
     if (prova == "nao") {
