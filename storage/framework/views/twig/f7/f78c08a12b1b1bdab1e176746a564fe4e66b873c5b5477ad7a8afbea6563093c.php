@@ -312,50 +312,42 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
         // line 259
         if ((($context["usarenem"] ?? null) == "sim")) {
             // line 260
-            echo "                                        <p>
+            echo "                                            <p style=\"text-align:justify;\">\t\t\t\t\t
+                                            Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando
+                                            as provas do vestibular de forma online. Após a conclusão de sua inscrição
+                                            você receberá em seu e-mail instruções adicionais sobre como proceder para
+                                            a realização da mesma.\t\t\t\t\t
+                                            </p>
+                                        <!-- ALTERÇÕES EVERTON 02-06-2020 -->
+                                        <!--<p>
                                             <strong>Data entrega da documentação:</strong><br />
                                             ";
-            // line 262
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora", array(), "method"), "d/m/Y"), "html", null, true);
-            echo "<br />
-                                            <strong>Horário</strong><br />
-                                            ";
-            // line 264
-            if (($context["periodo_manha"] ?? null)) {
-                echo "das 08:30 às 11:30";
-            } else {
-                echo "das 9:00 às 21:00";
-            }
+            // line 271
             echo "<br />
                                             <strong>Não se esqueça de trazer sua nota do ENEM válida!</strong>
-                                        </p>
+                                        </p>-->
                                     ";
         } else {
-            // line 268
-            echo "                                        <p>
+            // line 275
+            echo "                           \t\t\t\t\t<p style=\"text-align:justify;\">\t\t\t\t\t
+                                            Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando<br>
+                                            as provas do vestibular de forma online. Após a conclusão de sua inscrição<br>
+                                            você receberá em seu e-mail instruções adicionais sobre como proceder para<br>
+                                            a realização da mesma.\t\t\t\t\t
+                                            </p>                                        
+                                        <!--<p>
                                             <strong>Data da prova:</strong><br />
                                             ";
-            // line 270
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora", array(), "method"), "d/m/Y"), "html", null, true);
-            echo "<br />
-                                            <strong>Hora da prova:</strong><br />
-                                            ";
-            // line 272
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora", array(), "method"), "H:i"), "html", null, true);
-            if ($this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora_final", array(), "method")) {
-                echo " às ";
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora_final", array(), "method"), "H:i"), "html", null, true);
-            }
-            // line 273
-            echo "                                        </p>
+            // line 286
+            echo "                                        </p>-->
                                     ";
         }
-        // line 275
-        echo "                                        <p>
+        // line 288
+        echo "                                        <!--<p>
                                             <strong>Local da prova:</strong><br />
                                             Av. Joaquim Bôer, 733 - Jardim Luciene - Americana/SP<br />
                                             Recepção Portaria 4
-                                        </p>
+                                        </p>-->
                                     </td>
                                 </tr>
                             </table>
@@ -378,6 +370,21 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                     <td>
                         <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\">
                             <tr>
+                                <td style=\"background-color:#F5BF3E;padding: 40px; text-align: center; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;\">
+                                    <strong style=\"font-size: 1.4em; display:block; color: #111111;\">Prezado candidato,</strong>
+                                    <p style=\"color: #000;\"><b>
+                                    Por medidas de segurança devido ao COVID-19, caso apresente algum dos sintomas abaixo, procure atendimento médico e reagende uma nova data para realizar seu vestibular.
+                                    </b></p>
+                                    <ul style=\"color: #000;text-align: left;\">
+                                    <li>Tosse;</li>
+                                    <li>Coriza;</li>
+                                    <li>Febre;</li>
+                                    <li>Dor de garganta;</li>
+                                    <li>Dificuldade para respirar</li>
+                                    </ul>                                    
+                                </td>
+                            </tr>
+                            <tr>
                                 <td style=\"padding: 40px; text-align: center; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;\">
                                     <strong style=\"font-size: 1.4em; display:block; color: #111111;\">Documentos Necessários</strong>
                                     <ul style=\"text-align: left;\">
@@ -394,16 +401,13 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                         <strong>Obs: </strong>
                                         Para os candidatos menores de 18 anos é necessária a presença do responsável legal com fotocópias da Carteira de Identidade e do CPF, para a assinatura do Contrato de Prestação de Serviços Educacionais.
                                     </p><br />
-                                    <p>
-                                        Os cursos de Letras, Tecnologia em Logística, Tecnologia em Redes de Computadores, Tecnologia em Marketing, Tecnologia em Recursos Humanos, Tecnologia em Design Gráfico possuem 50% de desconto nas mensalidades durante todo o curso mediante o preenchimento do PSE (Perfil Sócio Econômico) e entrega dos documentos requeridos no Depto. Social.
-                                    </p><br />
-                                    <p>
+                                    <p><b>
                                         Esperamos por você!
-                                    </p>
+                                    </b></p>
                                     <strong>Veja como chegar:</strong>
                                     <a href=\"https://goo.gl/maps/tBKjGzKqmAA2\" target=\"_blank\">
                                         <img src=\"http://";
-        // line 326
+        // line 351
         echo twig_escape_filter($this->env, $this->getAttribute(($context["modulo"] ?? null), "url", array()), "html", null, true);
         echo "/assets/imagens_email/mapa-fam.png\" width=\"100%\" border=\"0\" />
                                     </a>
@@ -431,7 +435,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                 <!--<tr>
                     <td>
                         <img src=\"http://";
-        // line 351
+        // line 376
         echo twig_escape_filter($this->env, $this->getAttribute(($context["modulo"] ?? null), "url", array()), "html", null, true);
         echo "/assets/imagens_email/rodape.png?utc=";
         echo twig_escape_filter($this->env, ($context["utc"] ?? null), "html", null, true);
@@ -482,7 +486,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
 
     public function getDebugInfo()
     {
-        return array (  435 => 351,  407 => 326,  354 => 275,  350 => 273,  344 => 272,  339 => 270,  335 => 268,  324 => 264,  319 => 262,  315 => 260,  313 => 259,  310 => 258,  307 => 257,  301 => 255,  299 => 254,  294 => 253,  292 => 252,  288 => 251,  239 => 207,  223 => 196,  188 => 164,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
+        return array (  439 => 376,  411 => 351,  346 => 288,  342 => 286,  332 => 275,  326 => 271,  315 => 260,  313 => 259,  310 => 258,  307 => 257,  301 => 255,  299 => 254,  294 => 253,  292 => 252,  288 => 251,  239 => 207,  223 => 196,  188 => 164,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

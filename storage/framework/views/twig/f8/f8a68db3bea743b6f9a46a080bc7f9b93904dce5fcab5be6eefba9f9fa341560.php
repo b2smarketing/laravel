@@ -137,7 +137,7 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
         echo "
 \t\t<!-- Rodapé -->
 \t\t<footer>
-\t\t\t<div class=\"container\">
+\t\t\t<div class=\"container\"><br><br>
 \t\t\t\t<p>Atendimento das 9 às 21 horas ";
         // line 94
         if ($this->getAttribute(($context["opcoes"] ?? null), "url_edital", array())) {
@@ -181,10 +181,15 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
 \t\t</footer>
 \t</div>
 
+
+                                        <!-- ALTERÇÕES EVERTON 02-06-2020 -->
 \t<!-- Styles -->
 \t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" crossorigin=\"anonymous\">
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/main.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/update.css\">
+
+
 
 \t<!-- Bootstrap -->
 \t<script src=\"https://code.jquery.com/jquery-3.2.1.min.js\" crossorigin=\"anonymous\"></script>
@@ -226,16 +231,17 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
 
 \t<!-- Main Script -->
 \t<script type=\"text/javascript\" src=\"/assets/js/main.js\"></script>
+\t<script type=\"text/javascript\" src=\"/assets/js/update.js\"></script>
 
 \t<!-- Page Scripts -->
 \t";
-        // line 160
+        // line 166
         $this->displayBlock('scripts', $context, $blocks);
-        // line 161
+        // line 167
         echo "
 \t<!-- Tags Footer -->
 \t";
-        // line 163
+        // line 169
         echo $this->getAttribute(($context["tags"] ?? null), "foot", array());
         echo "
 
@@ -253,7 +259,7 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
     {
     }
 
-    // line 160
+    // line 166
     public function block_scripts($context, array $blocks = array())
     {
     }
@@ -270,7 +276,7 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
 
     public function getDebugInfo()
     {
-        return array (  257 => 160,  252 => 89,  239 => 163,  235 => 161,  233 => 160,  155 => 95,  143 => 94,  137 => 90,  135 => 89,  124 => 80,  118 => 77,  115 => 76,  112 => 75,  106 => 72,  102 => 70,  100 => 69,  76 => 48,  68 => 43,  52 => 30,  21 => 1,);
+        return array (  263 => 166,  258 => 89,  245 => 169,  241 => 167,  239 => 166,  155 => 95,  143 => 94,  137 => 90,  135 => 89,  124 => 80,  118 => 77,  115 => 76,  112 => 75,  106 => 72,  102 => 70,  100 => 69,  76 => 48,  68 => 43,  52 => 30,  21 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

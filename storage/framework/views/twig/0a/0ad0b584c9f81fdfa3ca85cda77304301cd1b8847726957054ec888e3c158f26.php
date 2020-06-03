@@ -97,65 +97,27 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-12\">
 \t\t\t\t\t<h2>Detalhes da Inscrição</h2>
-\t\t\t\t\t<p><strong>Enviamos um e-mail com mais detalhes sobre sua inscrição.</strong></p>
-\t\t\t\t";
-        // line 45
-        if (($this->getAttribute(($context["dados_adicionais"] ?? null), "usar_enem", array()) == "sim")) {
-            // line 46
-            echo "\t\t\t\t\t<p>
+\t\t\t\t\t<p><strong>";
+        // line 44
+        echo twig_escape_filter($this->env, ($context["msgemail"] ?? null), "html", null, true);
+        echo "Enviamos um e-mail com mais detalhes sobre sua inscrição.</strong></p>
+
+\t\t\t\t\t<p style=\"text-align:justify;\">\t\t\t\t\t
+\t\t\t\t\tDurante a pandemia, a FAM - Faculdade de Americana está operacionalizando<br>
+\t\t\t\t\tas provas do vestibular de forma online. Após a conclusão de sua inscrição<br>
+\t\t\t\t\tvocê receberá em seu e-mail instruções adicionais sobre como proceder para<br>
+\t\t\t\t\ta realização da mesma.\t\t\t\t\t
+\t\t\t\t\t</p>
+<!-- ALTERÇÕES EVERTON 02-06-2020 -->
+\t\t\t\t\t<!--
+\t\t\t#% if dados_adicionais.usar_enem == 'sim' %}
+\t\t\t\t\t<p>
 \t\t\t\t\t\t<strong>Data entrega da documentação:</strong><br />
 \t\t\t\t\t\t";
-            // line 48
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora", array()), "d/m/Y"), "html", null, true);
-            echo "
-\t\t\t\t\t</p>
-\t\t\t\t\t<p>
-\t\t\t\t\t\t<strong>Horário:</strong><br />
-\t\t\t\t\t\t";
-            // line 52
-            if ((twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora", array()), "H") < 12)) {
-                echo "das 08:30 às 11:30";
-            } else {
-                echo "das 9:00 às 21:00";
-            }
-            // line 53
-            echo "\t\t\t\t\t\t</p>
-\t\t\t\t\t<p>Não se esqueça de trazer sua nota do ENEM válida.</p>
-\t\t\t\t";
-        } else {
-            // line 56
-            echo "\t\t\t\t\t<p>
-\t\t\t\t\t\t<strong>Data da prova:</strong><br />
-\t\t\t\t\t\t";
-            // line 58
-            echo twig_escape_filter($this->env, $this->env->getExtension('App\TwigExtended')->dia_semana(twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora", array()), "w")), "html", null, true);
-            echo ", ";
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora", array()), "d/m/Y"), "html", null, true);
-            echo "
-\t\t\t\t\t</p>
-\t\t\t\t\t<p>
-\t\t\t\t\t\t<strong>Hora da prova:</strong><br />
-\t\t\t\t\t\t";
-            // line 62
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora", array()), "H:i"), "html", null, true);
-            if ($this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora_final", array())) {
-                echo " às ";
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "data", array()), "hora_final", array()), "H:i"), "html", null, true);
-            }
-            // line 63
-            echo "\t\t\t\t\t</p>
-\t\t\t\t";
-        }
-        // line 65
-        echo "\t\t\t\t\t<p>
-\t\t\t\t\t\t<strong>Local da prova:</strong><br />
-\t\t\t\t\t\t";
-        // line 67
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "local", array()), "local", array()), "html", null, true);
-        echo "<br />";
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["prova"] ?? null), "local", array()), "endereco", array()), "html", null, true);
-        echo "
-\t\t\t\t\t</p>
+        // line 77
+        echo "\t\t\t\t\t</p>
+
+\t\t\t\t\t-->
 
 \t\t\t\t\t<p class=\"accent\"><strong>Esperamos por você!</strong></p>
 \t\t\t\t</div>
@@ -167,10 +129,10 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 ";
     }
 
-    // line 79
+    // line 90
     public function block_scripts($context, array $blocks = array())
     {
-        // line 80
+        // line 91
         echo "\t
 ";
     }
@@ -187,7 +149,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 
     public function getDebugInfo()
     {
-        return array (  174 => 80,  171 => 79,  154 => 67,  150 => 65,  146 => 63,  140 => 62,  131 => 58,  127 => 56,  122 => 53,  116 => 52,  109 => 48,  105 => 46,  103 => 45,  89 => 34,  81 => 31,  73 => 26,  65 => 23,  57 => 18,  49 => 15,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  136 => 91,  133 => 90,  118 => 77,  102 => 44,  89 => 34,  81 => 31,  73 => 26,  65 => 23,  57 => 18,  49 => 15,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
