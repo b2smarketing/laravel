@@ -34,7 +34,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
         // line 6
         echo "
 \t<!-- Principal -->
-\t<form method=\"post\" action=\"/inscricao/finaliza\" class=\"js-form\" enctype=\"multipart/form-data\">
+\t<form  method=\"post\" action=\"/inscricao/finaliza\" class=\"js-form\" enctype=\"multipart/form-data\">
 \t\t";
         // line 9
         echo csrf_field();
@@ -427,7 +427,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\ta
 \t\t\t\t\t<!-- Finalizar Inscrição -->
 \t\t\t\t\t<div class=\"col-xs-12 col-md-12 col-lg-12 v-spacing align center\">
-\t\t\t\t\t\t<input class=\"btn cta large centered btn-concluir\" type=\"submit\" value=\"Concluir Inscrição\"/>
+\t\t\t\t\t\t<input onclick=\"validar()\" class=\"btn cta large centered btn-concluir\" type=\"button\" value=\"Concluir Inscrição\"/>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t</section>
@@ -496,20 +496,8 @@ aluno.data_nascimento = aluno.datanascimento.split('-').reverse().join('/');
 window.onload = function () {
 
 \$(\".js-form\").on(\"submit\", function () {
-
 \$(\".btn-concluir\").attr(\"disabled\", \"true\");
-
-if (\$(\"#prova\").val() == \"sim\" || \$(\"#prova\").val() == \"segunda_graduacao\") {
-if (\$(\".email1\").val() == \$(\".email2\").val()) {
 setTimeout(function () {\$(\".btn-concluir\").removeAttr(\"disabled\");}, 5000);
-} else {
-alert(\"E-Mail não confere !\");
-window.location.reload();
-}
-} else {
-setTimeout(function () {\$(\".btn-concluir\").removeAttr(\"disabled\");}, 5000);
-}
-
 });
 }
 \t</script>
@@ -518,12 +506,12 @@ setTimeout(function () {\$(\".btn-concluir\").removeAttr(\"disabled\");}, 5000);
 \t<script type=\"text/javascript\" src=\"./assets/js/page-inscricao.js\"></script>
 
 \t";
-        // line 487
+        // line 475
         if (($context["error"] ?? null)) {
-            // line 488
+            // line 476
             echo "\t\t<script>
 \t\t\talert('";
-            // line 489
+            // line 477
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');
 \t\t</script>
@@ -543,7 +531,7 @@ setTimeout(function () {\$(\".btn-concluir\").removeAttr(\"disabled\");}, 5000);
 
     public function getDebugInfo()
     {
-        return array (  527 => 489,  524 => 488,  522 => 487,  463 => 431,  459 => 430,  455 => 429,  451 => 428,  446 => 425,  443 => 424,  403 => 386,  345 => 325,  44 => 301,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  515 => 477,  512 => 476,  510 => 475,  463 => 431,  459 => 430,  455 => 429,  451 => 428,  446 => 425,  443 => 424,  403 => 386,  345 => 325,  44 => 301,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
