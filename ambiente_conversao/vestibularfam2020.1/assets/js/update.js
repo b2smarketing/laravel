@@ -1,16 +1,12 @@
 /* ALTERÇÕES EVERTON 03-06-2020 */
 
-function validar(){
+function validar() {
     var f = $(".js-form")[0];
-    if (!f.checkValidity()){
+    if (!f.checkValidity()) {
         alert("Erro, Preencha TODOS os campos antes de enviar !!!");
-    }else if ($("#prova").val() == "sim" || $("#prova").val() == "segunda_graduacao") {
-        if ($(".email1").val() != $(".email2").val()) {
-            alert("Erro, E-Mail não confere !!!");
-        }else{
-            f.submit();
-        }
-    }else{
+    } else if ($(".email1").val() != $(".email2").val()) {
+        alert("Erro, E-Mail não confere !!!");
+    } else {
         f.submit();
     }
 }
@@ -18,24 +14,24 @@ function validar(){
 function tipoprova() {
     var prova = $("#prova").val();
     if (prova == "nao") {
-        $(".enem").css({"display":"none"})
-        $(".formado").css({"display":"none"})
+        $(".enem").css({ "display": "none" })
+        $(".formado").css({ "display": "none" })
         $(".vestibular").slideDown(500);
-        $(".confirmaemail").css({"display":"none"})
+        $(".confirmaemail").slideDown(500);
     }
     else if (prova == "sim") {
-        $(".formado").css({"display":"none"})
-        $(".vestibular").css({"display":"none"})
+        $(".formado").css({ "display": "none" })
+        $(".vestibular").css({ "display": "none" })
         $(".enem").slideDown(500);
         $(".confirmaemail").slideDown(500);
     }
     else if (prova == "segunda_graduacao") {
-        $(".vestibular").css({"display":"none"})
-        $(".enem").css({"display":"none"})
+        $(".vestibular").css({ "display": "none" })
+        $(".enem").css({ "display": "none" })
         $(".formado").slideDown(500);
         $(".confirmaemail").slideDown(500);
     }
-    
+
 }
 
 function tipodeficiencia() {
@@ -43,7 +39,7 @@ function tipodeficiencia() {
     if (deficiencia == "sim") {
         $(".deficiencia").slideDown(500);
     }
-    else if(deficiencia == "nao") {
-        $(".deficiencia").css({"display":"none"})
-    }    
+    else if (deficiencia == "nao") {
+        $(".deficiencia").css({ "display": "none" })
+    }
 }
