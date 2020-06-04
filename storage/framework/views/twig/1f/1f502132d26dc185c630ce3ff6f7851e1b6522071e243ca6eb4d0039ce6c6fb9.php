@@ -502,6 +502,7 @@ if (\$(\".email1\").val() == \$(\".email2\").val()) {
 \$(\".js-form\").submit();
 } else {
 alert(\"E-Mail não confere !\");
+window.location.reload();
 }
 } else {
 \$(\".js-form\").submit();
@@ -522,12 +523,12 @@ setTimeout(function () {
 \t<script type=\"text/javascript\" src=\"./assets/js/page-inscricao.js\"></script>
 
 \t";
-        // line 491
+        // line 492
         if (($context["error"] ?? null)) {
-            // line 492
+            // line 493
             echo "\t\t<script>
 \t\t\talert('";
-            // line 493
+            // line 494
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');
 \t\t</script>
@@ -547,7 +548,7 @@ setTimeout(function () {
 
     public function getDebugInfo()
     {
-        return array (  531 => 493,  528 => 492,  526 => 491,  463 => 431,  459 => 430,  455 => 429,  451 => 428,  446 => 425,  443 => 424,  403 => 386,  345 => 325,  44 => 301,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  532 => 494,  529 => 493,  527 => 492,  463 => 431,  459 => 430,  455 => 429,  451 => 428,  446 => 425,  443 => 424,  403 => 386,  345 => 325,  44 => 301,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
