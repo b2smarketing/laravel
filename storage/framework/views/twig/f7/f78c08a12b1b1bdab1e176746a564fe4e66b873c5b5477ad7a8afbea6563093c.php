@@ -308,27 +308,32 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
         }
         // line 258
         echo "                                        </p>
+
+                                        <!-- ALTERÇÕES EVERTON 03-06-2020 -->
+
+
+
                                     ";
-        // line 259
+        // line 264
         if ((($context["usarenem"] ?? null) == "sim")) {
-            // line 260
+            // line 265
             echo "                                            <p style=\"text-align:justify;\">\t\t\t\t\t
                                             Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando
                                             as provas do vestibular de forma online. Após a conclusão de sua inscrição
                                             você receberá em seu e-mail instruções adicionais sobre como proceder para
                                             a realização da mesma.\t\t\t\t\t
                                             </p>
-                                        <!-- ALTERÇÕES EVERTON 02-06-2020 -->
+                                        
                                         <!--<p>
                                             <strong>Data entrega da documentação:</strong><br />
                                             ";
-            // line 271
+            // line 276
             echo "<br />
                                             <strong>Não se esqueça de trazer sua nota do ENEM válida!</strong>
                                         </p>-->
                                     ";
         } else {
-            // line 275
+            // line 280
             echo "                           \t\t\t\t\t<p style=\"text-align:justify;\">\t\t\t\t\t
                                             Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando<br>
                                             as provas do vestibular de forma online. Após a conclusão de sua inscrição<br>
@@ -338,11 +343,11 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                         <!--<p>
                                             <strong>Data da prova:</strong><br />
                                             ";
-            // line 286
+            // line 291
             echo "                                        </p>-->
                                     ";
         }
-        // line 288
+        // line 293
         echo "                                        <!--<p>
                                             <strong>Local da prova:</strong><br />
                                             Av. Joaquim Bôer, 733 - Jardim Luciene - Americana/SP<br />
@@ -407,7 +412,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                     <strong>Veja como chegar:</strong>
                                     <a href=\"https://goo.gl/maps/tBKjGzKqmAA2\" target=\"_blank\">
                                         <img src=\"http://";
-        // line 351
+        // line 356
         echo twig_escape_filter($this->env, $this->getAttribute(($context["modulo"] ?? null), "url", array()), "html", null, true);
         echo "/assets/imagens_email/mapa-fam.png\" width=\"100%\" border=\"0\" />
                                     </a>
@@ -435,7 +440,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                 <!--<tr>
                     <td>
                         <img src=\"http://";
-        // line 376
+        // line 381
         echo twig_escape_filter($this->env, $this->getAttribute(($context["modulo"] ?? null), "url", array()), "html", null, true);
         echo "/assets/imagens_email/rodape.png?utc=";
         echo twig_escape_filter($this->env, ($context["utc"] ?? null), "html", null, true);
@@ -486,7 +491,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
 
     public function getDebugInfo()
     {
-        return array (  439 => 376,  411 => 351,  346 => 288,  342 => 286,  332 => 275,  326 => 271,  315 => 260,  313 => 259,  310 => 258,  307 => 257,  301 => 255,  299 => 254,  294 => 253,  292 => 252,  288 => 251,  239 => 207,  223 => 196,  188 => 164,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
+        return array (  444 => 381,  416 => 356,  351 => 293,  347 => 291,  337 => 280,  331 => 276,  320 => 265,  318 => 264,  310 => 258,  307 => 257,  301 => 255,  299 => 254,  294 => 253,  292 => 252,  288 => 251,  239 => 207,  223 => 196,  188 => 164,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
