@@ -330,7 +330,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t</select>
 \t\t\t\t\t\t</div>
 
-\t\t\t\t\t\t<!-- ALTERÇÕES EVERTON 02-06-2020 -->
+\t\t\t\t\t\t<!-- ALTERÇÕES EVERTON 03-06-2020 -->
 
 \t\t\t\t\t";
         echo "
@@ -493,8 +493,6 @@ usar_enem: null
 if (typeof aluno.data_nascimento !== \"undefined\") 
 aluno.data_nascimento = aluno.datanascimento.split('-').reverse().join('/');
 
-
-
 window.onload = function () {
 
 
@@ -524,12 +522,12 @@ setTimeout(function () {
 \t<script type=\"text/javascript\" src=\"./assets/js/page-inscricao.js\"></script>
 
 \t";
-        // line 493
+        // line 491
         if (($context["error"] ?? null)) {
-            // line 494
+            // line 492
             echo "\t\t<script>
 \t\t\talert('";
-            // line 495
+            // line 493
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');
 \t\t</script>
@@ -549,7 +547,7 @@ setTimeout(function () {
 
     public function getDebugInfo()
     {
-        return array (  533 => 495,  530 => 494,  528 => 493,  463 => 431,  459 => 430,  455 => 429,  451 => 428,  446 => 425,  443 => 424,  403 => 386,  345 => 325,  44 => 301,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  531 => 493,  528 => 492,  526 => 491,  463 => 431,  459 => 430,  455 => 429,  451 => 428,  446 => 425,  443 => 424,  403 => 386,  345 => 325,  44 => 301,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
