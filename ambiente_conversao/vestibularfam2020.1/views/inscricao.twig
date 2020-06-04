@@ -5,7 +5,7 @@
 {% block body %}
 
 	<!-- Principal -->
-	<form method="post" action="/inscricao/finaliza" class="js-form" enctype="multipart/form-data">
+	<form  method="post" action="/inscricao/finaliza" class="js-form" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		{% verbatim %}
 			<main
@@ -410,7 +410,7 @@
 					a
 					<!-- Finalizar Inscrição -->
 					<div class="col-xs-12 col-md-12 col-lg-12 v-spacing align center">
-						<input class="btn cta large centered btn-concluir" type="submit" value="Concluir Inscrição"/>
+						<input onclick="validar()" class="btn cta large centered btn-concluir" type="button" value="Concluir Inscrição"/>
 					</div>
 				</div>
 			</section>
@@ -463,20 +463,8 @@ aluno.data_nascimento = aluno.datanascimento.split('-').reverse().join('/');
 window.onload = function () {
 
 $(".js-form").on("submit", function () {
-
 $(".btn-concluir").attr("disabled", "true");
-
-if ($("#prova").val() == "sim" || $("#prova").val() == "segunda_graduacao") {
-if ($(".email1").val() == $(".email2").val()) {
 setTimeout(function () {$(".btn-concluir").removeAttr("disabled");}, 5000);
-} else {
-alert("E-Mail não confere !");
-window.location.reload();
-}
-} else {
-setTimeout(function () {$(".btn-concluir").removeAttr("disabled");}, 5000);
-}
-
 });
 }
 	</script>

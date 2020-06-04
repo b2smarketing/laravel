@@ -1,5 +1,20 @@
 /* ALTERÇÕES EVERTON 03-06-2020 */
 
+function validar(){
+    var f = $(".js-form")[0];
+    if (!f.checkValidity()){
+        alert("Erro, Preencha TODOS os campos antes de enviar !!!");
+    }else if ($("#prova").val() == "sim" || $("#prova").val() == "segunda_graduacao") {
+        if ($(".email1").val() != $(".email2").val()) {
+            alert("Erro, E-Mail não confere !!!");
+        }else{
+            f.submit();
+        }
+    }else{
+        f.submit();
+    }
+}
+
 function tipoprova() {
     var prova = $("#prova").val();
     if (prova == "nao") {
