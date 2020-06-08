@@ -323,7 +323,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t<!-- Tipo de Prova -->
 \t\t\t\t\t\t<div class=\"col-xs-12 col-md-6 col-lg-6 v-spacing\">
 \t\t\t\t\t\t\t<select onchange=\"tipoprova()\" id=\"prova\" size required class=\"form-control\" name=\"dados_adicionais[usar_enem]\" v-model=\"lead.dados_adicionais.usar_enem\">
-\t\t\t\t\t\t\t\t<option :value=\"null\">Deseja ingressar através de:</option>
+\t\t\t\t\t\t\t\t<option value=\"null\" selected>Deseja ingressar através de:</option>
 \t\t\t\t\t\t\t\t<option value=\"nao\">Vestibular</option>
 \t\t\t\t\t\t\t\t<option value=\"sim\">Nota do ENEM</option>
 \t\t\t\t\t\t\t\t<option value=\"segunda_graduacao\">Segunda Graduação</option>
