@@ -320,7 +320,7 @@ class __TwigTemplate_14e0d0254959173951accd3f121f4195fbdeeba5b5c12e8356cfdbc7a9e
 \t\t\t</div>
 \t\t</div>
 \t</div>
-    <img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4 mb-4 apoio\" alt=\"Faculdade é FAM\"/>
+    <!--<img src=\"/assets/images/home-campanha-logo.png\" class=\"d-block d-md-none mt-4 mb-4 apoio\" alt=\"Faculdade é FAM\"/>-->
 </main>
 ";
     }
