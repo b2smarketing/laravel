@@ -43,7 +43,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
         echo csrf_field();
         echo "
 \t\t\t";
-        // line 300
+        // line 288
         echo "
 \t\t\t\t<main
 \t\t\t\t\tid=\"page-inscricao\">
@@ -306,8 +306,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t\t</select>
 \t\t\t\t\t\t\t</div>
 
-<<<<<<< HEAD
-\t\t\t\t\t\t\t<!-- Tipo de Prova -->
+\t\t\t\t\t\t\t<!-- Tipo de Prova alteração final  -->
 \t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-6 col-lg-6 v-spacing\">
 \t\t\t\t\t\t\t\t<select onchange=\"tipoprova()\" id=\"prova\" size required class=\"form-control\" name=\"candidato[ingresso]\">
 \t\t\t\t\t\t\t\t\t<option value=\"null\" selected>Deseja ingressar através de:</option>
@@ -316,17 +315,6 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t\t\t<option value=\"segunda_graduacao\">Segunda Graduação</option>
 \t\t\t\t\t\t\t\t</select>
 \t\t\t\t\t\t\t</div>
-=======
-\t\t\t\t\t\t<!-- Tipo de Prova -->
-\t\t\t\t\t\t<div class=\"col-xs-12 col-md-6 col-lg-6 v-spacing\">
-\t\t\t\t\t\t\t<select onchange=\"tipoprova()\" id=\"prova\" size required class=\"form-control\" name=\"dados_adicionais[usar_enem]\" v-model=\"lead.dados_adicionais.usar_enem\">
-\t\t\t\t\t\t\t\t<option value=\"null\" selected>Deseja ingressar através de:</option>
-\t\t\t\t\t\t\t\t<option value=\"nao\">Vestibular</option>
-\t\t\t\t\t\t\t\t<option value=\"sim\">Nota do ENEM</option>
-\t\t\t\t\t\t\t\t<option value=\"segunda_graduacao\">Segunda Graduação</option>
-\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t</div>
->>>>>>> 375104b445aa8a64b284e04add694b3ab4c0a00d
 
 \t\t\t\t\t\t\t<!-- ALTERAÇÕES EVERTON 04-06-2020 -->
 
@@ -357,7 +345,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</p>\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
-        // line 330
+        // line 318
         echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"formado\">
 \t\t\t\t\t\t\t\t<p class=\"align center text-white\">
@@ -388,27 +376,27 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 ";
     }
 
-    // line 360
+    // line 348
     public function block_scripts($context, array $blocks = array())
     {
-        // line 361
+        // line 349
         echo "\t<!-- Variáveis (BI -> VueJS) -->
 \t<script type=\"text/javascript\">
 \t\twindow.history.forward(1);
 let midias = ";
-        // line 364
+        // line 352
         echo twig_jsonencode_filter($this->getAttribute(($context["campanha"] ?? null), "midias", array()));
         echo ";
 let aluno = ";
-        // line 365
+        // line 353
         echo twig_jsonencode_filter(($context["aluno"] ?? null));
         echo ";
 let lead = ";
-        // line 366
+        // line 354
         echo twig_jsonencode_filter(($context["lead"] ?? null));
         echo ";
 let curso = ";
-        // line 367
+        // line 355
         echo twig_escape_filter($this->env, ($context["curso"] ?? null), "html", null, true);
         echo ";
 
@@ -458,12 +446,12 @@ setTimeout(function () {
 \t<script type=\"text/javascript\" src=\"./assets/js/page-inscricao.js\"></script>
 
 \t";
-        // line 414
+        // line 402
         if (($context["error"] ?? null)) {
-            // line 415
+            // line 403
             echo "\t\t<script>
 \t\t\talert('";
-            // line 416
+            // line 404
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');
 \t\t</script>
@@ -483,7 +471,7 @@ setTimeout(function () {
 
     public function getDebugInfo()
     {
-        return array (  467 => 416,  464 => 415,  462 => 414,  412 => 367,  408 => 366,  404 => 365,  400 => 364,  395 => 361,  392 => 360,  361 => 330,  47 => 300,  43 => 13,  35 => 7,  32 => 6,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  455 => 404,  452 => 403,  450 => 402,  400 => 355,  396 => 354,  392 => 353,  388 => 352,  383 => 349,  380 => 348,  349 => 318,  47 => 288,  43 => 13,  35 => 7,  32 => 6,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
