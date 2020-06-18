@@ -26,7 +26,7 @@ $(document).ready(() => {
 
 			return this.estados[this.estado];
 		},
-		candidato_idade: {
+		/*candidato_idade: {
 			cache: false,
 			get () {
 				if (!(this.aluno && this.aluno.data_nascimento))
@@ -40,7 +40,7 @@ $(document).ready(() => {
 				let idade = Math.floor(dataNascimentoDiff / (365.25 * 24 * 3600 * 1000))
 				return idade
 			},
-		}
+		}*/
 	};
 
 	// Métodos

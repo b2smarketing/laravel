@@ -79,9 +79,13 @@ class Univestibular extends Migration
             $table->string('numero')->nullable();
             $table->string('bairro')->nullable();
             $table->string('complemento')->nullable();
-            $table->integer('cidade_id')->unsigned()->nullable();
+            $table->integer('cidade_id')->unsigned()->nullable();            
             $table->string('celular')->nullable();
             $table->string('telefone')->nullable();
+            $table->integer('nome_social')->nullable();
+            $table->string('deficiencia')->nullable();
+            $table->string('ingresso')->nullable(); 
+            $table->string('arquivos')->nullable();            
             $table->timestamps();
 
             $table->foreign('cidade_id')->references('id')->on('cidades');

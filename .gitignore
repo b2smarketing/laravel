@@ -2,3 +2,4 @@
 /vendor
 .env
 /storage/framework/
+/public/documentos/*

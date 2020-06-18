@@ -242,8 +242,8 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$aluno['telefone_numero'] = isset($aluno->telefone) ? trim(substr($aluno->telefone, 4, strlen($aluno->telefone) - 3)) : '';
 		$aluno['celular_ddd'] = isset($aluno->celular) ? trim(substr($aluno->celular, 1, 2)) : '';
 		$aluno['celular_numero'] = isset($aluno->celular) ? trim(substr($aluno->celular, 4, strlen($aluno->celular) - 3)) : '';
-		$aluno['enem'] = $aluno->enem;
-		$aluno['campos_enem'] = $aluno->getCamposEnem();
+		//$aluno['enem'] = $aluno->enem;
+		//$aluno['campos_enem'] = $aluno->getCamposEnem();
 
 		// Lead atual
 		$lead = $leads->first();
@@ -294,7 +294,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$dadosRaw = $req->all();
 
 		// Verificar se estamos usando Nome + Sobrenome
-		
+
 		if (!empty($req->input('candidato.primeiro_nome'))) {
 			$post['nome'] = $dadosRaw['candidato']['nome'];
 			$post['sobrenome'] = $dadosRaw['candidato']['sobrenome'];
@@ -353,7 +353,9 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		unset($aluno->sobrenome);
 		unset($aluno->celular_ddd);
 		unset($aluno->celular_numero);
-		unset($aluno->campos_enem);
+		unset($aluno->deficiencia);
+		unset($aluno->ingresso);
+		//unset($aluno->campos_enem);
 
 		// Atualizar dados
 		if (isset($post['nome'])) $aluno->nome = $post['nome'];
@@ -364,12 +366,15 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		if (isset($post['celular'])) $aluno->celular = $post['celular'];
 		if (isset($post['telefone'])) $aluno->telefone = $post['telefone'];
 		if (isset($post['data_nascimento'])) $aluno->datanascimento = $post['data_nascimento'];
-		if (isset($post['enem'])) $aluno->enem = $post['enem'];
+		//if (isset($post['enem'])) $aluno->enem = $post['enem'];
+		if (isset($post['deficiencia'])) $aluno->deficiencia = $post['deficiencia'];
+		if (isset($post['ingresso'])) $aluno->ingresso = $post['ingresso'];
 
 		// Salvar dados
 		$aluno->save();
 
 		// Validação de idade => Se a idade do candidato no dia da inscrição for menor de 18 anos, os dados dos pais são obrigatórios
+		/*		
 		if ($aluno->idadeNaData(Carbon\Carbon::now()) < 18) {
 			$validatorIdade = Validator::make($dados_adicionais, [
 				'responsavel_nome' => 'required',
@@ -388,7 +393,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 				$aluno->dados_adicionais('responsavel_nascimento', $dados_adicionais['responsavel_nascimento']);
 				$aluno->save();
 			}
-		}
+		}*/
 
 		// Agendar prova
 		$prova = new Prova();
@@ -473,30 +478,30 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$inf_aluno = json_decode($aluno, TRUE);
 		//print_r($inf_aluno);
 
-        $nomealuno = $inf_aluno['nome'];
-        $cpfaluno = $inf_aluno['cpf'];
-        $emailaluno = $inf_aluno['email'];
-        $fammsg = "Sua inscrição foi realizada! Aguarde o contato dos organizadores do evento via email ou telefone para confirmar sua inscrição";
-        $famemail = 'informativo@fam.br';
-        $famassunto = 'Mensagem Vestibular FAM';
+		$nomealuno = $inf_aluno['nome'];
+		$cpfaluno = $inf_aluno['cpf'];
+		$emailaluno = $inf_aluno['email'];
+		$fammsg = "Sua inscrição foi realizada! Aguarde o contato dos organizadores do evento via email ou telefone para confirmar sua inscrição";
+		$famemail = 'informativo@fam.br';
+		$famassunto = 'Mensagem Vestibular FAM';
 
-        $cabecalho =
-            'MIME-Version: 1.0' . "\r\n" .
-            'Content-type: text/html; charset=UTF-8;' . "\r\n" .
-            'From: ' . $emailaluno . "\r\n" .
-            'Reply-To: ' . $famemail . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
+		$cabecalho =
+			'MIME-Version: 1.0' . "\r\n" .
+			'Content-type: text/html; charset=UTF-8;' . "\r\n" .
+			'From: ' . $emailaluno . "\r\n" .
+			'Reply-To: ' . $famemail . "\r\n" .
+			'X-Mailer: PHP/' . phpversion();
 
-        $mensagem = "<h5>Nome: " . $nomealuno . "<br>CPF: " . $cpfaluno . "<br><br>FAM informa: </h5><p>" . $fammsg . "</p>";
+		$mensagem = "<h5>Nome: " . $nomealuno . "<br>CPF: " . $cpfaluno . "<br><br>FAM informa: </h5><p>" . $fammsg . "</p>";
 
-        $enviar = mail($famemail, $famassunto, $mensagem, $cabecalho);
-      
-        if ($enviar) {
-            $msgemail = "Sucesso !! ";
-        } else {
-            $msgemail = "";
-        }
-	
+		$enviar = mail($famemail, $famassunto, $mensagem, $cabecalho);
+
+		if ($enviar) {
+			$msgemail = "Sucesso !! ";
+		} else {
+			$msgemail = "";
+		}
+
 		// fim bloco
 
 
@@ -591,6 +596,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 	});
 
 	Route::post('/inscricao/adicionais', function (Request $req) use ($module) {
+
 		$cpf = $req->input('cpf');
 		$aluno = Aluno::porCPF($cpf);
 
@@ -599,16 +605,50 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 		// Dados do aluno
 
+		$aluno->rg = $req->input('rg');
 		$aluno->endereco = $req->input('endereco');
 		$aluno->numero = $req->input('numero');
-		$aluno->complemento = $req->input('complemento');
 		$aluno->bairro = $req->input('bairro');
+		$aluno->complemento = $req->input('complemento');
+		$aluno->cep = $req->input('cep');
+		$aluno->nome_social = $req->input('nome_social');
+		
+		# Loop de arquivos
+		$i = 0;
+		$total = 0;
+
+		function limpaCPF($valor){
+			$valor = trim($valor);
+			$valor = str_replace(".", "", $valor);			
+			$valor = str_replace("-", "", $valor);
+			return $valor;
+		}
+
+		$path = "documentos/".limpaCPF($cpf);
+
+		if (!file_exists($path)) {
+			mkdir($path, 0777, true);
+		}		
+
+		foreach ($_FILES["arquivos"]["error"] as $key => $error) {			
+			request()->validate(['imagem' => 'mimes:pdf']);
+			$novapasta = $path."/".limpaCPF($cpf) . "_" . $key . '.pdf';
+			if (file_exists($_FILES["arquivos"]["tmp_name"][$key])) {
+			move_uploaded_file($_FILES["arquivos"]["tmp_name"][$key], $novapasta);
+			$total++;
+			}
+			$i++;
+		}
+
+		$aluno->arquivos = $total;
 
 		// Salvar dados adicionais
 
 		foreach ($req->dados_adicionais as $prop => $val) {
 			$aluno->dados_adicionais($prop, $val);
 		}
+
+
 
 		// Salvar aluno
 
@@ -617,7 +657,6 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$aluno->converter('Preencheu Dados Adicionais');
 
 		// Redirecionar
-
 		return view('AmbienteConversao::finaliza-adicionais');
 	});
 
