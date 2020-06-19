@@ -32,12 +32,16 @@ if (!function_exists('array_to_xml')) {
 
 Route::group(['middleware' => $middle], function () {
 	Route::get('/', function () {
-		$alunos = Aluno::orderBy('nome', 'ASC');
+		$alunos = Aluno::orderBy('id', 'ASC');		
 
+		return view ('Admin::Alunos.index', [
+			'alunos' => $alunos
+		]);		
+		/*
 		$dados = [
 			'c_alunos' => $alunos
 		];
-		return view('Admin::Alunos.index', $dados);
+		return view('Admin::Alunos.index', $dados);*/
 	});
 	Route::get('/{id}/', function ($id) {
 		$aluno = Aluno::with('leads', 'leads.curso', 'leads.historico')->find($id);

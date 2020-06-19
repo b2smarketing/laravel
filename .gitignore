@@ -1,5 +1,6 @@
 /backup
 /vendor
 .env
-/storage/framework/
+/storage/framework/*
+/storage/log/*
 /public/documentos/*
