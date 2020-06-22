@@ -17,10 +17,12 @@
                   <table id="tabela_alunos" class="table table-striped">
                     <thead>
                       <tr>
-                        <th>#</th>
-                        <th class="all">Nome</th>
-                        <th>CPF</th>
-                        <th>CPF (numérico)</th>
+                        <th style="width:30px !important;">#</th>
+                        <th class="all" style="width:80px !important;">Nome</th>
+                        <th style="width:150px !important;">Sobrenome</th>
+                        <th style="width:150px !important;">E-Mail</th>
+                        <th style="width:50px !important;">Ingresso</th> 
+                        <th style="width:100px !important;">CPF</th>                         
                       </tr>
                     </thead>
                     <tbody>
@@ -59,8 +61,11 @@ $(document).ready(function () {
 		    		out.push([
 		    			aluno.id,
               aluno.nome || '-[ SEM NOME ]-',
-		    			aluno.cpf,
-		    			aluno.cpf.replace(/\./gi, "").replace(/\-/gi, "")
+              aluno.sobrenome || '-[ SEM NOME ]-',
+		    			aluno.email,
+              aluno.ingresso,
+              aluno.cpf,              
+		    			aluno.cpf.replace(/\./gi, "").replace(/\-/gi, "")            
 		    		]);
 		    	}
 		    	return out;
@@ -74,7 +79,7 @@ $(document).ready(function () {
   		responsive: true,
       order: [[ 0, 'desc' ]],
       columnDefs: [
-        { targets: 3, visible: false, searchable: true }
+        { targets: 6, visible: false, searchable: true }
       ]
     } );
 

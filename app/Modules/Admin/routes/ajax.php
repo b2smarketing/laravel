@@ -11,7 +11,7 @@ use Carbon\Carbon;
 
 Route::group(['prefix' => 'alunos'], function () {
 	Route::get('/', function () {
-		return response()->json(Aluno::select('id', 'nome', 'cpf')->get()->sortBy('nome')->values());
+		return response()->json(Aluno::select('id', 'nome', 'sobrenome', 'email', 'cpf','ingresso')->get()->sortBy('nome')->values());
 	});
 	Route::get('/{id}/', function ($id) {
 		return response()->json(Aluno::find($id));
