@@ -612,35 +612,54 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$aluno->complemento = $req->input('complemento');
 		$aluno->cep = $req->input('cep');
 		$aluno->nome_social = $req->input('nome_social');
-		
+
 		# Loop de arquivos
 		$i = 0;
 		$total = 0;
 
-		function limpaCPF($valor){
+		function limpaCPF($valor)
+		{
 			$valor = trim($valor);
-			$valor = str_replace(".", "", $valor);			
+			$valor = str_replace(".", "", $valor);
 			$valor = str_replace("-", "", $valor);
 			return $valor;
 		}
 
-		$path = "documentos/".limpaCPF($cpf);
+		$path = "documentos/" . limpaCPF($cpf);
 
 		if (!file_exists($path)) {
 			mkdir($path, 0777, true);
-		}		
+		}
 
-		foreach ($_FILES["arquivos"]["error"] as $key => $error) {			
+		foreach ($_FILES["arquivos"]["error"] as $key => $error) {
 			request()->validate(['imagem' => 'mimes:pdf']);
-			$novapasta = $path."/".limpaCPF($cpf) . "_" . $key . '.pdf';
+			$novapasta = $path . "/" . limpaCPF($cpf) . "_" . $key . '.pdf';
 			if (file_exists($_FILES["arquivos"]["tmp_name"][$key])) {
-			move_uploaded_file($_FILES["arquivos"]["tmp_name"][$key], $novapasta);
-			$total++;
+				move_uploaded_file($_FILES["arquivos"]["tmp_name"][$key], $novapasta);
+				$total++;
 			}
 			$i++;
 		}
 
 		$aluno->arquivos = $total;
+
+		// Aceite ( data e IP )
+
+		function _date($format, $timezone)
+		{
+			$timestamp = false;
+			$defaultTimeZone = 'UTC';
+			if (date_default_timezone_get() != $defaultTimeZone) date_default_timezone_set($defaultTimeZone);
+			$userTimezone = new DateTimeZone(!empty($timezone) ? $timezone : 'GMT');
+			$gmtTimezone = new DateTimeZone('GMT');
+			$myDateTime = new DateTime(($timestamp != false ? date("r", (int) $timestamp) : date("r")), $gmtTimezone);
+			$offset = $userTimezone->getOffset($myDateTime);
+			return date($format, ($timestamp != false ? (int) $timestamp : $myDateTime->format('U')) + $offset);
+		}
+
+		$aceitou = "Data: " . _date("d-m-Y, H:i:s", 'America/Sao_Paulo') . " ; IP: " . $_SERVER['REMOTE_ADDR'];
+
+		$aluno->aceite = $aceitou;
 
 		// Salvar dados adicionais
 
