@@ -46,10 +46,12 @@ class __TwigTemplate_46f23fa4b0be55566bab7a9dfd0a8f98787974b545aedf94fc1fbc773ea
                   <table id=\"tabela_alunos\" class=\"table table-striped\">
                     <thead>
                       <tr>
-                        <th>#</th>
-                        <th class=\"all\">Nome</th>
-                        <th>CPF</th>
-                        <th>CPF (numérico)</th>
+                        <th style=\"width:30px !important;\">#</th>
+                        <th class=\"all\" style=\"width:80px !important;\">Nome</th>
+                        <th style=\"width:150px !important;\">Sobrenome</th>
+                        <th style=\"width:150px !important;\">E-Mail</th>
+                        <th style=\"width:50px !important;\">Ingresso</th> 
+                        <th style=\"width:100px !important;\">CPF</th>                         
                       </tr>
                     </thead>
                     <tbody>
@@ -67,10 +69,10 @@ class __TwigTemplate_46f23fa4b0be55566bab7a9dfd0a8f98787974b545aedf94fc1fbc773ea
 ";
     }
 
-    // line 40
+    // line 42
     public function block_scripts($context, array $blocks = array())
     {
-        // line 41
+        // line 43
         echo "<style type=\"text/css\" media=\"screen\">
 /*#tabela_alunos { min-height: 100em; }*/
 #tabela_alunos tr { cursor: pointer; }
@@ -92,8 +94,11 @@ class __TwigTemplate_46f23fa4b0be55566bab7a9dfd0a8f98787974b545aedf94fc1fbc773ea
 \t\t    \t\tout.push([
 \t\t    \t\t\taluno.id,
               aluno.nome || '-[ SEM NOME ]-',
-\t\t    \t\t\taluno.cpf,
-\t\t    \t\t\taluno.cpf.replace(/\\./gi, \"\").replace(/\\-/gi, \"\")
+              aluno.sobrenome || '-[ SEM NOME ]-',
+\t\t    \t\t\taluno.email,
+              aluno.ingresso,
+              aluno.cpf,              
+\t\t    \t\t\taluno.cpf.replace(/\\./gi, \"\").replace(/\\-/gi, \"\")            
 \t\t    \t\t]);
 \t\t    \t}
 \t\t    \treturn out;
@@ -107,7 +112,7 @@ class __TwigTemplate_46f23fa4b0be55566bab7a9dfd0a8f98787974b545aedf94fc1fbc773ea
   \t\tresponsive: true,
       order: [[ 0, 'desc' ]],
       columnDefs: [
-        { targets: 3, visible: false, searchable: true }
+        { targets: 6, visible: false, searchable: true }
       ]
     } );
 
@@ -133,7 +138,7 @@ class __TwigTemplate_46f23fa4b0be55566bab7a9dfd0a8f98787974b545aedf94fc1fbc773ea
 
     public function getDebugInfo()
     {
-        return array (  74 => 41,  71 => 40,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  76 => 43,  73 => 42,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
