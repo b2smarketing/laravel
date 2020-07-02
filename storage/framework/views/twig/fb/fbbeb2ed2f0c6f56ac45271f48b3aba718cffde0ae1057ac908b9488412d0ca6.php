@@ -164,12 +164,21 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
         echo "</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
-\t\t\t\t\t\t<br />
-
+\t\t\t\t\t\t<br><hr>
+\t\t\t\t\t\t<div class=\"row\">
+\t\t\t\t\t\t<div style=\"margin-left:15px;\">
+\t\t\t\t\t\t\t\t<label>Aceite:</label>
+\t\t\t\t\t\t\t\t<div>";
+        // line 107
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["aluno"] ?? null), "aceite", array()), "html", null, true);
+        echo "</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<br><hr>
 \t\t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t\t<div class=\"col-xs-12\">
 \t\t\t\t\t\t\t\t<a class=\"btn btn-warning\" href=\"/alunos/";
-        // line 107
+        // line 113
         echo twig_escape_filter($this->env, $this->getAttribute(($context["aluno"] ?? null), "id", array()), "html", null, true);
         echo "/edit\">Editar</a>
 \t\t\t\t\t\t\t</div>
@@ -180,9 +189,9 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t</div>
 \t\t\t
 \t\t\t";
-        // line 115
+        // line 121
         if ($this->getAttribute(($context["aluno"] ?? null), "enem", array())) {
-            // line 116
+            // line 122
             echo "\t\t\t<div class=\"col-lg-4 col-md-12 col-sm-12 col-xs-12\">
 \t\t\t\t<div class=\"x_panel\">
 \t\t\t\t\t<div class=\"x_title\">
@@ -200,18 +209,18 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t<tbody>
 \t\t\t\t\t\t\t";
-            // line 132
+            // line 138
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["aluno"] ?? null), "getCamposEnem", array(), "method"));
             foreach ($context['_seq'] as $context["_key"] => $context["campo"]) {
-                // line 133
+                // line 139
                 echo "\t\t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t\t<td style=\"text-align:right;\"><strong>";
-                // line 134
+                // line 140
                 echo twig_escape_filter($this->env, $this->getAttribute($context["campo"], "label", array()), "html", null, true);
                 echo "</strong></td>
 \t\t\t\t\t\t\t\t\t<td>";
-                // line 135
+                // line 141
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["aluno"] ?? null), "enem", array()), $this->getAttribute($context["campo"], "name", array()), array(), "array"), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t\t</tr>
@@ -220,7 +229,7 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['campo'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 138
+            // line 144
             echo "\t\t\t\t\t\t\t</tbody>
 \t\t\t\t\t\t</table>
 \t\t\t\t\t\t<br />
@@ -230,12 +239,12 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t</div>
 \t\t\t";
         }
-        // line 146
+        // line 152
         echo "
 \t\t\t";
-        // line 147
+        // line 153
         if (($this->getAttribute(($context["aluno"] ?? null), "dados_adicionais", array()) && $this->getAttribute($this->getAttribute(($context["aluno"] ?? null), "dados_adicionais", array()), "responsavel_cpf", array()))) {
-            // line 148
+            // line 154
             echo "\t\t\t<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">
 \t\t\t\t<div class=\"x_panel\">
 \t\t\t\t\t<div class=\"x_title\">
@@ -248,7 +257,7 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t\t\t\t\t<div class=\"col-md-12 col-sm-12 col-xs-12\">
 \t\t\t\t\t\t\t\t<label>Nome do Responsável :</label>
 \t\t\t\t\t\t\t\t<div>";
-            // line 159
+            // line 165
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["aluno"] ?? null), "dados_adicionais", array()), "responsavel_nome", array()), "html", null, true);
             echo "</div>
 \t\t\t\t\t\t\t</div>
@@ -259,7 +268,7 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t\t\t\t\t<div class=\"col-md-12 col-sm-12 col-xs-12\">
 \t\t\t\t\t\t\t\t<label>CPF do Responsável :</label>
 \t\t\t\t\t\t\t\t<div>";
-            // line 167
+            // line 173
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["aluno"] ?? null), "dados_adicionais", array()), "responsavel_cpf", array()), "html", null, true);
             echo "</div>
 \t\t\t\t\t\t\t</div>
@@ -270,7 +279,7 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t\t\t\t\t<div class=\"col-md-12 col-sm-12 col-xs-12\">
 \t\t\t\t\t\t\t\t<label>Telefone do Responsável :</label>
 \t\t\t\t\t\t\t\t<div>";
-            // line 175
+            // line 181
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["aluno"] ?? null), "dados_adicionais", array()), "responsavel_telefone", array()), "html", null, true);
             echo "</div>
 \t\t\t\t\t\t\t</div>
@@ -281,7 +290,7 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t\t\t\t\t<div class=\"col-md-12 col-sm-12 col-xs-12\">
 \t\t\t\t\t\t\t\t<label>Data de Nascimento do Responsável :</label>
 \t\t\t\t\t\t\t\t<div>";
-            // line 183
+            // line 189
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["aluno"] ?? null), "dados_adicionais", array()), "responsavel_nascimento", array()), "html", null, true);
             echo "</div>
 \t\t\t\t\t\t\t</div>
@@ -295,7 +304,7 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t</div>
 \t\t\t";
         }
-        // line 194
+        // line 200
         echo "
 \t\t\t<div class=\"clearfix\"></div>
 \t\t</div>
@@ -323,43 +332,43 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t\t\t\t\t\t\t</thead>
 \t\t\t\t\t\t\t\t\t<tbody>
 \t\t\t\t\t\t\t\t\t\t";
-        // line 220
+        // line 226
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["leads"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["lead"]) {
-            // line 221
+            // line 227
             echo "\t\t\t\t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t\t<div>";
-            // line 223
+            // line 229
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["lead"], "at", array(0 => "-3"), "method"), "d/m/Y"), "html", null, true);
             echo "</div>
 \t\t\t\t\t\t\t\t\t\t\t\t<div>";
-            // line 224
+            // line 230
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["lead"], "at", array(0 => "-3"), "method"), "H:i:s"), "html", null, true);
             echo "</div>
 \t\t\t\t\t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t\t<div><strong>";
-            // line 227
+            // line 233
             echo twig_escape_filter($this->env, $this->getAttribute($context["lead"], "title", array()), "html", null, true);
             echo "</strong></div>
 \t\t\t\t\t\t\t\t\t\t\t\t<div><small>";
-            // line 228
+            // line 234
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["lead"], "curso", array()), "nome", array()), "html", null, true);
             echo "</small></div>
 \t\t\t\t\t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t\t<div style=\"text-align: center; color: #000; text-shadow: 0px 1px 2px #FFF;\"
 \t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"alert-";
-            // line 232
+            // line 238
             echo twig_escape_filter($this->env, $this->getAttribute(($context["lead_color"] ?? null), $this->getAttribute($context["lead"], "status_new", array()), array(), "array"), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["lead"], "status_new", array()), "html", null, true);
             echo "</div>
 \t\t\t\t\t\t\t\t\t\t\t\t<div style=\"text-align: center; color: #000; text-shadow: 0px 1px 2px #FFF;\"
 \t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"alert-";
-            // line 234
+            // line 240
             echo twig_escape_filter($this->env, $this->getAttribute(($context["lead_color"] ?? null), $this->getAttribute($context["lead"], "status_was", array()), array(), "array"), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["lead"], "status_was", array()), "html", null, true);
@@ -367,7 +376,7 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t\t\t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t\t<a title=\"Editar Lead\" href=\"/alunos/";
-            // line 237
+            // line 243
             echo twig_escape_filter($this->env, $this->getAttribute(($context["aluno"] ?? null), "id", array()), "html", null, true);
             echo "/lead/";
             echo twig_escape_filter($this->env, $this->getAttribute($context["lead"], "lead_id", array()), "html", null, true);
@@ -376,7 +385,7 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 \t\t\t\t\t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t\t<div>#";
-            // line 241
+            // line 247
             echo twig_escape_filter($this->env, $this->getAttribute($context["lead"], "lead_id", array()), "html", null, true);
             echo "</div>
 \t\t\t\t\t\t\t\t\t\t\t</td>
@@ -386,14 +395,14 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['lead'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 245
+        // line 251
         echo "\t\t\t\t\t\t\t\t\t</tbody>
 \t\t\t\t\t\t\t\t</table>
 \t\t\t\t\t\t\t</ul>
 \t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t";
-        // line 286
+        // line 292
         echo "
 \t\t\t\t\t\t<div class=\"clearfix\"></div>
 \t\t\t\t\t</div>
@@ -419,7 +428,7 @@ class __TwigTemplate_321db8f096f65cfffe1c75536556ade303cde275e738e9abdf90ed2d4f1
 
     public function getDebugInfo()
     {
-        return array (  397 => 286,  390 => 245,  380 => 241,  371 => 237,  363 => 234,  356 => 232,  349 => 228,  345 => 227,  339 => 224,  335 => 223,  331 => 221,  327 => 220,  299 => 194,  285 => 183,  274 => 175,  263 => 167,  252 => 159,  239 => 148,  237 => 147,  234 => 146,  224 => 138,  215 => 135,  211 => 134,  208 => 133,  204 => 132,  186 => 116,  184 => 115,  173 => 107,  163 => 100,  156 => 96,  149 => 92,  140 => 88,  127 => 78,  120 => 74,  113 => 70,  102 => 61,  96 => 59,  94 => 58,  87 => 54,  80 => 50,  69 => 42,  62 => 38,  55 => 34,  44 => 26,  36 => 20,  33 => 19,  29 => 1,  27 => 4,  25 => 3,  11 => 1,);
+        return array (  406 => 292,  399 => 251,  389 => 247,  380 => 243,  372 => 240,  365 => 238,  358 => 234,  354 => 233,  348 => 230,  344 => 229,  340 => 227,  336 => 226,  308 => 200,  294 => 189,  283 => 181,  272 => 173,  261 => 165,  248 => 154,  246 => 153,  243 => 152,  233 => 144,  224 => 141,  220 => 140,  217 => 139,  213 => 138,  195 => 122,  193 => 121,  182 => 113,  173 => 107,  163 => 100,  156 => 96,  149 => 92,  140 => 88,  127 => 78,  120 => 74,  113 => 70,  102 => 61,  96 => 59,  94 => 58,  87 => 54,  80 => 50,  69 => 42,  62 => 38,  55 => 34,  44 => 26,  36 => 20,  33 => 19,  29 => 1,  27 => 4,  25 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
