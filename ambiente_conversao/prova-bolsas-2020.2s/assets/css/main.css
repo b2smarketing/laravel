@@ -502,10 +502,7 @@
         width: 100%;
     }
     
-    @media (max-width: 576px) {
-        body#page-home body#page-home {
-            background-image: url("../images/institucional-background.png") !important;
-        }
+    @media (max-width: 576px) {     
         body#page-home main {
             position: relative;
             z-index: 999;
@@ -542,6 +539,11 @@
         body#page-home {
             background-image: url("../images/bolsas_index.png");
             background-size: 500px;
+        }
+        body#page-home form {
+            display: block;
+            position: relative;
+            top:-150px; 
         }
     }
     
