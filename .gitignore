@@ -2,5 +2,5 @@
 /vendor
 .env
 /storage/framework/*
-/storage/log/*
+/storage/log/laravel.log
 /public/documentos/*
