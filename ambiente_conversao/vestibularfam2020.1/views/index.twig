@@ -9,6 +9,12 @@
 
 
 <!-- Principal -->
+<div class="pop">
+<div class="msg">
+<img src="/assets/images/bolsa.png" onclick="apaga()"></a>
+<a href="https://provadebolsas.com.br" target="_blank"><button class="bolsa">Clique Aqui e Inscreva-se</button></a>
+</div>
+</div>
 <main id="page-home" class="container fit-height">
 	<img class="img-home-person d-none d-md-block" src="/assets/images/img-home-person2.png" style="transform: scale(1.1); position:absolute;bottom:0;right:5%;">
 	<div class="row fit mt-4 mt-md-0">
@@ -45,6 +51,28 @@
 		</div>
 	</div>
 </main>
+
+
+
+
+
+
+<script language=javascript type="text/javascript">
+function apaga() {
+	$('.pop').css({'display':'none'});	
+}
+/*
+window.open('/assets/pop/pop.html','page','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=520,height=520');
+*/
+</script>
+
+
+
+
+
+
+
+
 {% endblock %}
 
 {% block scripts %}

@@ -1,4 +1,48 @@
     /* ALTERAÇÕES EVERTON 04-06-2020 */
+
+    .pop{        
+        margin:0;
+        padding: 0;
+        display: block;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 120%;
+        background-color: rgba(0,0,0,0.7);
+        z-index: 2000;
+            }
+    .pop .msg{
+        margin:0;
+        padding: 0;
+        display: block;
+        position: absolute;
+        top: 15%;
+        left: 35%;
+        width: 500px;
+        height: 500px;
+        background-color: #f0506f;
+        z-index: 2500;        
+    }
+
+    .pop .bolsa{
+        display: block;
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        top:445px;
+        left: 255px;
+        border-radius: 5px;
+        background-color: #c6d92c;
+        color: #fff;
+        font-weight: 600;
+        z-index: 3000;    
+    }
+    @media (max-width: 768px) {
+        .pop .msg{
+            transform: scale(0.65);
+            left: -3em;
+        }
+    }
     
     @media (min-width: 768px) {
         #pageinscricao {
