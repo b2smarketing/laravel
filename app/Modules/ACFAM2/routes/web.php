@@ -147,10 +147,10 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		// Validar celular
 		if (isset($infosCandidato['celular']) && strlen($infosCandidato['celular']) < 14) {
 			return redirect('/?e=Celular inválido');
-		}	
+		}
 
 		$aluno = Aluno::porCPF($cpf);
-		
+
 
 		// Aluno não cadastrado? Criamos um cadastro antes de atualizar os dados
 
@@ -601,7 +601,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			'candidato.data_nascimento' => 'required',
 			'candidato.estado' => 'required',
 			'candidato.cidade' => 'required',
-			'como_conheceu' => 'required'			
+			'como_conheceu' => 'required'
 		]);
 
 		if ($validator->fails())
@@ -653,7 +653,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$lead->midia()->associate($midia);
 		$lead->prova()->associate($prova);
 		$lead->dados_adicionais = $dados_adicionais;
-		
+
 		// Opção 1
 		$lead->opcao_curso_1 = $primeira_opcao->id;
 
@@ -939,6 +939,59 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$req->session()->put('aluno', $aluno);
 
 		return redirect('/resultados');
+	});
+
+	Route::get('/import_csv', function (Request $req) use ($module) {
+
+		echo "<img src='/documentos/foto.jpg'/><br><br>";
+		$path = public_path('/documentos/bolsa.csv');
+		$csv = utf8_encode(file_get_contents($path));
+		$vetor = explode(',',$csv);
+		$linha = (count($vetor)-2)/14;
+		$matriz = array(array());
+		$i = 0;
+		for($l=0;$l<$linha;$l++){
+		for($c=0;$c<14;$c++){
+			$matriz[$l][$c] = $vetor[$i];
+			$i++;
+		}}
+
+		for($l=1;$l<$linha;$l++){			
+			echo $matriz[$l][0]." | ";
+			echo $matriz[$l][1]." | ";
+			echo $matriz[$l][2]." | ";
+			echo $matriz[$l][3]." | ";
+			echo $matriz[$l][4]." | ";
+			echo $matriz[$l][5]." | ";
+			echo $matriz[$l][6]." | ";
+			echo $matriz[$l][7]." | ";
+			echo $matriz[$l][8]." | ";
+			echo $matriz[$l][9]." | ";
+			echo $matriz[$l][10]." | ";
+			echo $matriz[$l][11]." | ";
+			echo $matriz[$l][12]." | ";
+			echo $matriz[$l][13]." <hr> ";		
+		}
+
+		/*		
+		$aluno = new Aluno();
+		for($l=1;$l<$linha;$l++){			
+			$aluno->cpf = $matriz[$l][0];
+			$aluno->nome = $matriz[$l][1];
+			$aluno->sobrenome = $matriz[$l][2];
+			$aluno->email = $matriz[$l][3];
+			$aluno->telefone = $matriz[$l][4];
+			$aluno->celular = $matriz[$l][5];
+			$aluno->datanascimento = $matriz[$l][6];
+			$aluno->cidade = $matriz[$l][7];
+			$aluno->estado = $matriz[$l][8];
+			$aluno->como_conheceu = $matriz[$l][9];
+			$aluno->dados_adicionais = $matriz[$l][10];
+			$aluno->sexo = $matriz[$l][11];
+			$aluno->deficiencia = $matriz[$l][12];
+			$aluno->ingresso = $matriz[$l][13];		
+		}
+		*/
 	});
 
 	Route::get('/resultados', function (Request $req) use ($module) {
