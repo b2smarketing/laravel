@@ -33,15 +33,19 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
     {
         // line 8
         echo "
-
-
 <!-- Principal -->
+<div class=\"pop\">
+<div class=\"msg\">
+<img src=\"/assets/images/bolsa.png\" onclick=\"apaga()\"></a>
+<a href=\"https://provadebolsas.com.br\" target=\"_blank\"><button class=\"bolsa\">Clique Aqui e Inscreva-se</button></a>
+</div>
+</div>
 <main id=\"page-home\" class=\"container fit-height\">
 \t<img class=\"img-home-person d-none d-md-block\" src=\"/assets/images/img-home-person2.png\" style=\"transform: scale(1.1); position:absolute;bottom:0;right:5%;\">
 \t<div class=\"row fit mt-4 mt-md-0\">
         <!--div id=\"acfam-home-artwork\" class=\"col-md-8 full-height d-none d-md-block\">
 \t\t\t";
-        // line 17
+        // line 21
         echo "\t\t</div-->
 \t\t<div id=\"acfam-home-form\" class=\"col-md-7 pt-md-5 full-height\">
 \t\t\t<!-- Centralizar verticamente o formulário -->
@@ -52,7 +56,7 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 \t\t\t\t\t<!-- Aqui é o formulário padrão de cadastro -->
 \t\t\t\t\t<form id=\"form\" action=\"/inscricao\" method=\"post\" class=\"form-home\">
 \t\t\t\t\t\t";
-        // line 26
+        // line 30
         echo csrf_field();
         echo "
 \t\t\t\t\t\t<the-mask onkeypress=\"Valida();\" required name=\"cpf\" id=\"cpf\" class=\"form-control cpf\" type=\"tel\" placeholder=\"Insira seu CPF\" :mask=\"['###.###.###-##']\" title=\"Por favor insira seu CPF\"></the-mask>
@@ -76,13 +80,35 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 \t\t</div>
 \t</div>
 </main>
+
+
+
+
+
+
+<script language=javascript type=\"text/javascript\">
+function apaga() {
+\t\$('.pop').css({'display':'none'});\t
+}
+/*
+window.open('/assets/pop/pop.html','page','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=520,height=520');
+*/
+</script>
+
+
+
+
+
+
+
+
 ";
     }
 
-    // line 50
+    // line 76
     public function block_scripts($context, array $blocks = array())
     {
-        // line 51
+        // line 77
         echo "\t<!-- Script da Página -->
 \t<script type=\"text/javascript\" src=\"/assets/js/page-index.js\"></script>
 \t<script type=\"text/javascript\" src=\"/assets/js/update.js\"></script>
@@ -93,9 +119,9 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/update.css\" />
 
 \t";
-        // line 60
+        // line 86
         if (($context["error"] ?? null)) {
-            // line 61
+            // line 87
             echo "\t\t<script>alert('";
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');</script>
@@ -115,7 +141,7 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 
     public function getDebugInfo()
     {
-        return array (  99 => 61,  97 => 60,  86 => 51,  83 => 50,  56 => 26,  45 => 17,  35 => 8,  32 => 7,  28 => 3,  26 => 5,  11 => 3,);
+        return array (  125 => 87,  123 => 86,  112 => 77,  109 => 76,  60 => 30,  49 => 21,  35 => 8,  32 => 7,  28 => 3,  26 => 5,  11 => 3,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
