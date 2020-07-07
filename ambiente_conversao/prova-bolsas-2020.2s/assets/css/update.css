@@ -19,17 +19,21 @@
             margin-left: 18%;
         }
         .imginscricao {
-            transform: scale(0.9);
+            transform: scale(1.5);
             display: block;
             position: relative;
             margin: 0 auto;
-            margin-top: 10em !important;
+            margin-top: -2em !important;
+            margin-left: 10em !important;
         }
         .js-form {
             display: block;
             position: relative;
             margin-top: -480px !important;
-        }      
+        }   
+        .form-home {
+            margin-top: -23em !important;
+        }  
 
     }
     
@@ -39,6 +43,17 @@
             position: relative;
             margin-top: -260px !important;
         }
+        .imginscricao {
+            transform: scale(1.2);
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 1em !important;
+            margin-left: 1em !important;
+        }
+        .form-home {
+            margin-top: 10em !important;           
+        } 
     }
     
     .btn-concluir {

@@ -383,8 +383,7 @@
         height: 18px;
     }
     
-    body#page-home {
-        background-image: url("../images/bolsas_index.png");
+    body#page-home {        
         background-color: #f0506f;
         background-size: 800px;
         background-repeat: no-repeat;
@@ -536,8 +535,7 @@
     }
     
     @media (max-width: 768px) {
-        body#page-home {
-            background-image: url("../images/bolsas_index.png");
+        body#page-home {            
             background-size: 500px;
         }
         body#page-home form {

@@ -217,11 +217,19 @@
                                     Seu pedido de inscrição foi realizado com sucesso.<br />
                                     Esperamos por você no centro de uma poderosa estrutura de ensino.
                                     <br><br>
-                                    {% if aluno.ingresso != 'vestibular' %}
+                                    {% if aluno.ingresso == 'vestibular' %}
+                                    <p>Você optou por ingressar através de vestibular.. Você receberá em instantes um email com orientações para realização da sua prova, mas você pode adiantar o processo de pré-matrícula.</p>
+                                    {% endif %}
+                                    {% if aluno.ingresso == 'enem' %}
+                                    <p>Se você optou por ingressar através da sua nota do ENEM, clique no link abaixo para iniciar seu processo de matrícula.</p>
+                                    {% endif %}
+                                    {% if aluno.ingresso == 'segunda_graduacao' %}
+                                    <p>Se você já é graduado e essa é sua 2ª graduação, clique no link abaixo para iniciar seu processo de matrícula.</p>
+                                    {% endif %}
+                                    <br>
                                     <a href="https://vestibularfam.com.br/inscricao/adicionais?cpf={{ aluno.cpf }}" target="_blank"><b>Clique aqui para realizar sua matrícula</b></a>
                                     <br><br>
                                     <a href="https://www.fam.br/wp-content/uploads/2020/06/ebook-Como-enviar-os-documentos-para-matricula.pdf" target="_blank"><i>(Como enviar seus documentos digitalizados para matrícula)</i></a>
-                                    {% endif %}
                                     <!-- Button : Begin -->
                                     <!-- <table cellspacing="0" cellpadding="0" border="0" align="center" style="Margin: auto">
 										<tr>
