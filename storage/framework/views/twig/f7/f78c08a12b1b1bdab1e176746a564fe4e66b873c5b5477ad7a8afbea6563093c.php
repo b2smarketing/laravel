@@ -254,17 +254,34 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                     <br><br>
                                     ";
         // line 220
-        if (($this->getAttribute(($context["aluno"] ?? null), "ingresso", array()) != "vestibular")) {
+        if (($this->getAttribute(($context["aluno"] ?? null), "ingresso", array()) == "vestibular")) {
             // line 221
-            echo "                                    <a href=\"https://vestibularfam.com.br/inscricao/adicionais?cpf=";
-            echo twig_escape_filter($this->env, $this->getAttribute(($context["aluno"] ?? null), "cpf", array()), "html", null, true);
-            echo "\" target=\"_blank\"><b>Clique aqui para realizar sua matrícula</b></a>
-                                    <br><br>
-                                    <a href=\"https://www.fam.br/wp-content/uploads/2020/06/ebook-Como-enviar-os-documentos-para-matricula.pdf\" target=\"_blank\"><i>(Como enviar seus documentos digitalizados para matrícula)</i></a>
+            echo "                                    <p>Você optou por ingressar através de vestibular.. Você receberá em instantes um email com orientações para realização da sua prova, mas você pode adiantar o processo de pré-matrícula.</p>
                                     ";
         }
-        // line 225
-        echo "                                    <!-- Button : Begin -->
+        // line 223
+        echo "                                    ";
+        if (($this->getAttribute(($context["aluno"] ?? null), "ingresso", array()) == "enem")) {
+            // line 224
+            echo "                                    <p>Se você optou por ingressar através da sua nota do ENEM, clique no link abaixo para iniciar seu processo de matrícula.</p>
+                                    ";
+        }
+        // line 226
+        echo "                                    ";
+        if (($this->getAttribute(($context["aluno"] ?? null), "ingresso", array()) == "segunda_graduacao")) {
+            // line 227
+            echo "                                    <p>Se você já é graduado e essa é sua 2ª graduação, clique no link abaixo para iniciar seu processo de matrícula.</p>
+                                    ";
+        }
+        // line 229
+        echo "                                    <br>
+                                    <a href=\"https://vestibularfam.com.br/inscricao/adicionais?cpf=";
+        // line 230
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["aluno"] ?? null), "cpf", array()), "html", null, true);
+        echo "\" target=\"_blank\"><b>Clique aqui para realizar sua matrícula</b></a>
+                                    <br><br>
+                                    <a href=\"https://www.fam.br/wp-content/uploads/2020/06/ebook-Como-enviar-os-documentos-para-matricula.pdf\" target=\"_blank\"><i>(Como enviar seus documentos digitalizados para matrícula)</i></a>
+                                    <!-- Button : Begin -->
                                     <!-- <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" style=\"Margin: auto\">
 \t\t\t\t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t\t\t\t<td style=\"border-radius: 3px; background: #222222; text-align: center;\" class=\"button-td\">
@@ -308,37 +325,37 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                         <p>
                                             <strong>Opções de Curso:</strong><br />
                                             Primeira opção: ";
-        // line 268
+        // line 276
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["opcoes_curso"] ?? null), 0, array(), "array"), "nome", array()), "html", null, true);
         echo "
                                             ";
-        // line 269
+        // line 277
         if ($this->getAttribute(($context["opcoes_curso"] ?? null), 1, array(), "array")) {
-            // line 270
+            // line 278
             echo "                                            <br />Segunda opção: ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["opcoes_curso"] ?? null), 1, array(), "array"), "nome", array()), "html", null, true);
             echo "
                                             ";
-            // line 271
+            // line 279
             if ($this->getAttribute(($context["opcoes_curso"] ?? null), 2, array(), "array")) {
-                // line 272
+                // line 280
                 echo "                                            <br />Terceira opção: ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["opcoes_curso"] ?? null), 2, array(), "array"), "nome", array()), "html", null, true);
                 echo "
                                             ";
             }
-            // line 274
+            // line 282
             echo "                                            ";
         }
-        // line 275
+        // line 283
         echo "                                        </p>
 
                                         <!-- ALTERÇÕES EVERTON 03-06-2020 
 
                                     ";
-        // line 279
+        // line 287
         if ((($context["usarenem"] ?? null) == "sim")) {
-            // line 280
+            // line 288
             echo "                                            <p style=\"text-align:justify;\">\t\t\t\t\t
                                             Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando
                                             as provas do vestibular de forma online. Após a conclusão de sua inscrição
@@ -349,19 +366,19 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                         <p>
                                             <strong>Data entrega da documentação:</strong><br />
                                             ";
-            // line 291
+            // line 299
             echo "<br />
                                             <strong>Não se esqueça de trazer sua nota do ENEM válida!</strong>
                                         </p>                                       
                                     ";
         } else {
-            // line 295
+            // line 303
             echo "                                    -->
                                     <br>
                                     ";
-            // line 297
+            // line 305
             if (($this->getAttribute(($context["aluno"] ?? null), "ingresso", array()) == "vestibular")) {
-                // line 298
+                // line 306
                 echo "                           \t\t\t\t\t<p style=\"text-align:justify;\">\t\t\t\t\t
                                             Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando
                                              as provas do vestibular de forma online. Após a conclusão de sua inscrição 
@@ -370,17 +387,17 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                             </p>  
                                     ";
             }
-            // line 304
+            // line 312
             echo " 
                                              <!--                                     
                                         <p>
                                             <strong>Data da prova:</strong><br />
                                             ";
-            // line 311
+            // line 319
             echo "                                        </p>
                                         ";
         }
-        // line 313
+        // line 321
         echo "                                       <p>
                                             <strong>Local da prova:</strong><br />
                                             Av. Joaquim Bôer, 733 - Jardim Luciene - Americana/SP<br />
@@ -453,7 +470,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                     <strong>Veja como chegar:</strong>
                                     <a href=\"https://goo.gl/maps/tBKjGzKqmAA2\" target=\"_blank\">
                                         <img src=\"http://";
-        // line 384
+        // line 392
         echo twig_escape_filter($this->env, $this->getAttribute(($context["modulo"] ?? null), "url", array()), "html", null, true);
         echo "/assets/imagens_email/mapa-fam.png\"
                                             width=\"100%\" border=\"0\" />
@@ -487,7 +504,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                 <!--<tr>
                     <td>
                         <img src=\"http://";
-        // line 415
+        // line 423
         echo twig_escape_filter($this->env, $this->getAttribute(($context["modulo"] ?? null), "url", array()), "html", null, true);
         echo "/assets/imagens_email/rodape.png?utc=";
         echo twig_escape_filter($this->env, ($context["utc"] ?? null), "html", null, true);
@@ -539,7 +556,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
 
     public function getDebugInfo()
     {
-        return array (  491 => 415,  457 => 384,  384 => 313,  380 => 311,  374 => 304,  365 => 298,  363 => 297,  359 => 295,  353 => 291,  342 => 280,  340 => 279,  334 => 275,  331 => 274,  325 => 272,  323 => 271,  318 => 270,  316 => 269,  312 => 268,  267 => 225,  259 => 221,  257 => 220,  248 => 216,  230 => 203,  193 => 169,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
+        return array (  508 => 423,  474 => 392,  401 => 321,  397 => 319,  391 => 312,  382 => 306,  380 => 305,  376 => 303,  370 => 299,  359 => 288,  357 => 287,  351 => 283,  348 => 282,  342 => 280,  340 => 279,  335 => 278,  333 => 277,  329 => 276,  280 => 230,  277 => 229,  273 => 227,  270 => 226,  266 => 224,  263 => 223,  259 => 221,  257 => 220,  248 => 216,  230 => 203,  193 => 169,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
