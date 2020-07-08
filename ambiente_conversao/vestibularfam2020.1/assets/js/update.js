@@ -80,8 +80,8 @@ function verificar(ficheiro){
     var fnome = ficheiro.value;
     var extficheiro = fnome.substr(fnome.lastIndexOf('.'));
     if(extensoes.indexOf(extficheiro) >= 0){
-        if(ficheiro.files[0].size > 3000000){
-            alert('Erro: Arquivo muito grande ! Máx. permitido é 3MB');            
+        if(ficheiro.files[0].size > 1000000){
+            alert('Erro: Arquivo muito grande ! Máx. permitido é 1000KB');            
             ficheiro.value = "";
         }
     } else {
