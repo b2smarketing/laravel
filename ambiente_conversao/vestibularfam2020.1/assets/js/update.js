@@ -75,6 +75,22 @@ function tipodeficiencia() {
     }
 }
 
+function verificar(ficheiro){
+    var extensoes = [".pdf", ".doc"];
+    var fnome = ficheiro.value;
+    var extficheiro = fnome.substr(fnome.lastIndexOf('.'));
+    if(extensoes.indexOf(extficheiro) >= 0){
+        if(ficheiro.files[0].size > 3000000){
+            alert('Erro: Arquivo muito grande ! Máx. permitido é 3MB');            
+            ficheiro.value = "";
+        }
+    } else {
+        alert('Erro: Extensao inválida (' + extficheiro + ') - Permitido somente PDF');        
+        ficheiro.value = "";        
+    }
+    return false;
+}
+
 
 function aceitar() { // adicionais 
 
