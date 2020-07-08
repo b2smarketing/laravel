@@ -109,7 +109,7 @@ $("[type=file]").on("change", function(){
 				<input class="form-control afazer" onfocus="mudacor(this);" onfocusout="mudacor(this);" name="nome_social" type="text" placeholder="Nome Social (opcional)"/><br>
 				<hr><br>
 				<!--ARQUIVO ; Obs.: php artisan storage:link -->
-				<p><b><span style="color:#f00">ATENÇÃO:</span><br>Envie seus arquivos utilizando formato PDF.<br>(Máx.: 3Mb / arquivo)<b></p>												
+				<p><b><span style="color:#f00">ATENÇÃO:</span><br>Envie seus arquivos utilizando formato PDF.<br>(Máx.: 1000KB / arquivo)<b></p>												
 				<input type="hidden" name="MAX_FILE_SIZE" value="1000000">				
 				
 				<input required id="cpf" name="arquivos[cpf]" type="file" style="display:none" placeholder="Envie seu CPF *" onchange="verificar(this);"/>
