@@ -124,7 +124,7 @@ $schedule->call(function () {
                     ->to('gustavo@fam.br', 'Gustavo')
                     ->to('eryvelton@fam.br','Eryvelton')
                     ->to('gabriela@fam.br','Gabriela')
-                    ->to('nicom@fam.br','Nicom')
+                    //->to('nicom@fam.br','Nicom')
                     ->html($mail_body);
 
                 // Realizar disparo
