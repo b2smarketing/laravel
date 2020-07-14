@@ -294,13 +294,15 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                     ";
         }
         // line 249
-        echo "                                    <br><br>
-\t\t\t\t\t\t\t\t\t<a class=\"bemail\" href=\"https://www.fam.br/wp-content/uploads/2020/06/ebook-Como-enviar-os-documentos-para-matricula.pdf\" target=\"_blank\"><button class=\"botaoemail\">Como enviar seus documentos digitalizados para matrícula</button></a>                                    
-                                    <br>
-\t\t\t\t\t\t\t\t\t<a class=\"bemail\" href=\"https://vestibularfam.com.br/inscricao/adicionais?cpf=";
-        // line 252
+        echo "                                    <br><br><br>
+                                    <a class=\"bemail\" href=\"https://www.fam.br/wp-content/uploads/2020/06/ebook-Como-enviar-os-documentos-para-matricula.pdf\" target=\"_blank\">
+                                        <button class=\"botaoemail\">Como enviar seus documentos digitalizados para matrícula</button></a>                                    
+                                    <br><br>
+                                    <a class=\"bemail\" href=\"https://vestibularfam.com.br/inscricao/adicionais?cpf=";
+        // line 253
         echo twig_escape_filter($this->env, $this->getAttribute(($context["aluno"] ?? null), "cpf", array()), "html", null, true);
-        echo "\" target=\"_blank\"><button class=\"botaoemail matricula\">Clique aqui para realizar sua matrícula</button></a>                                    
+        echo "\" target=\"_blank\">
+                                        <button class=\"botaoemail matricula\">Clique aqui para realizar sua matrícula</button></a>                                    
                                     <!-- Button : Begin -->
                                     <!-- <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\" style=\"Margin: auto\">
 \t\t\t\t\t\t\t\t\t\t<tr>
@@ -345,37 +347,37 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                         <p>
                                             <strong>Opções de Curso:</strong><br />
                                             Primeira opção: ";
-        // line 296
+        // line 298
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["opcoes_curso"] ?? null), 0, array(), "array"), "nome", array()), "html", null, true);
         echo "
                                             ";
-        // line 297
+        // line 299
         if ($this->getAttribute(($context["opcoes_curso"] ?? null), 1, array(), "array")) {
-            // line 298
+            // line 300
             echo "                                            <br />Segunda opção: ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["opcoes_curso"] ?? null), 1, array(), "array"), "nome", array()), "html", null, true);
             echo "
                                             ";
-            // line 299
+            // line 301
             if ($this->getAttribute(($context["opcoes_curso"] ?? null), 2, array(), "array")) {
-                // line 300
+                // line 302
                 echo "                                            <br />Terceira opção: ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["opcoes_curso"] ?? null), 2, array(), "array"), "nome", array()), "html", null, true);
                 echo "
                                             ";
             }
-            // line 302
+            // line 304
             echo "                                            ";
         }
-        // line 303
+        // line 305
         echo "                                        </p>
 
                                         <!-- ALTERÇÕES EVERTON 03-06-2020 
 
                                     ";
-        // line 307
+        // line 309
         if ((($context["usarenem"] ?? null) == "sim")) {
-            // line 308
+            // line 310
             echo "                                            <p style=\"text-align:justify;\">\t\t\t\t\t
                                             Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando
                                             as provas do vestibular de forma online. Após a conclusão de sua inscrição
@@ -386,19 +388,19 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                         <p>
                                             <strong>Data entrega da documentação:</strong><br />
                                             ";
-            // line 319
+            // line 321
             echo "<br />
                                             <strong>Não se esqueça de trazer sua nota do ENEM válida!</strong>
                                         </p>                                       
                                     ";
         } else {
-            // line 323
+            // line 325
             echo "                                    -->
                                     <br>
                                     ";
-            // line 325
+            // line 327
             if (($this->getAttribute(($context["aluno"] ?? null), "ingresso", array()) == "vestibular")) {
-                // line 326
+                // line 328
                 echo "                           \t\t\t\t\t<p style=\"text-align:justify;\">\t\t\t\t\t
                                             Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando
                                              as provas do vestibular de forma online. Após a conclusão de sua inscrição 
@@ -407,17 +409,17 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                             </p>  
                                     ";
             }
-            // line 332
+            // line 334
             echo " 
                                              <!--                                     
                                         <p>
                                             <strong>Data da prova:</strong><br />
                                             ";
-            // line 339
+            // line 341
             echo "                                        </p>
                                         ";
         }
-        // line 341
+        // line 343
         echo "                                       <p>
                                             <strong>Local da prova:</strong><br />
                                             Av. Joaquim Bôer, 733 - Jardim Luciene - Americana/SP<br />
@@ -490,7 +492,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                                     <strong>Veja como chegar:</strong>
                                     <a href=\"https://goo.gl/maps/tBKjGzKqmAA2\" target=\"_blank\">
                                         <img src=\"http://";
-        // line 412
+        // line 414
         echo twig_escape_filter($this->env, $this->getAttribute(($context["modulo"] ?? null), "url", array()), "html", null, true);
         echo "/assets/imagens_email/mapa-fam.png\"
                                             width=\"100%\" border=\"0\" />
@@ -524,7 +526,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
                 <!--<tr>
                     <td>
                         <img src=\"http://";
-        // line 443
+        // line 445
         echo twig_escape_filter($this->env, $this->getAttribute(($context["modulo"] ?? null), "url", array()), "html", null, true);
         echo "/assets/imagens_email/rodape.png?utc=";
         echo twig_escape_filter($this->env, ($context["utc"] ?? null), "html", null, true);
@@ -576,7 +578,7 @@ class __TwigTemplate_4543c2e3c188d5121c5cd01f6c44c06d03dc817c9a2b3fe0f90b5a7ae5b
 
     public function getDebugInfo()
     {
-        return array (  528 => 443,  494 => 412,  421 => 341,  417 => 339,  411 => 332,  402 => 326,  400 => 325,  396 => 323,  390 => 319,  379 => 308,  377 => 307,  371 => 303,  368 => 302,  362 => 300,  360 => 299,  355 => 298,  353 => 297,  349 => 296,  302 => 252,  297 => 249,  293 => 247,  290 => 246,  286 => 244,  283 => 243,  279 => 241,  277 => 240,  268 => 236,  250 => 223,  213 => 189,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
+        return array (  530 => 445,  496 => 414,  423 => 343,  419 => 341,  413 => 334,  404 => 328,  402 => 327,  398 => 325,  392 => 321,  381 => 310,  379 => 309,  373 => 305,  370 => 304,  364 => 302,  362 => 301,  357 => 300,  355 => 299,  351 => 298,  303 => 253,  297 => 249,  293 => 247,  290 => 246,  286 => 244,  283 => 243,  279 => 241,  277 => 240,  268 => 236,  250 => 223,  213 => 189,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
