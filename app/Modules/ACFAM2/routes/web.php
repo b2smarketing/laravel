@@ -920,10 +920,14 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$cpf = $req->input('cpf');
 		$aluno = Aluno::porCPF($cpf);
 
+		$campanha = Campanha::find($module->options['campanha']);
+		$lead = $aluno->leads()->where('campanha_id', $campanha->id)->first();		
+
 		if (is_null($aluno))
 			return redirect('/');
 
 		$dados = [
+			'lead' => $lead,
 			'aluno' => $aluno,
 			'deficiencias' => Autodeclaracao_Deficiencia::all(),
 			'racas' => Autodeclaracao_Raca::all()

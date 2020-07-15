@@ -47,18 +47,28 @@ function tipoprova() {
     if (prova == "vestibular") {
         $(".enem").css({ "display": "none" })
         $(".formado").css({ "display": "none" })
+        $(".tecnico").css({ "display": "none" })
         $(".vestibular").slideDown(500);
         $(".confirmaemail").slideDown(500);
     }
     else if (prova == "enem") {
         $(".formado").css({ "display": "none" })
         $(".vestibular").css({ "display": "none" })
+        $(".tecnico").css({ "display": "none" })
         $(".enem").slideDown(500);
+        $(".confirmaemail").slideDown(500);
+    }
+    else if (prova == "tecnico") {
+        $(".formado").css({ "display": "none" })
+        $(".vestibular").css({ "display": "none" })        
+        $(".enem").css({ "display": "none" })
+        $(".tecnico").slideDown(500);
         $(".confirmaemail").slideDown(500);
     }
     else if (prova == "segunda_graduacao") {
         $(".vestibular").css({ "display": "none" })
         $(".enem").css({ "display": "none" })
+        $(".tecnico").css({ "display": "none" })
         $(".formado").slideDown(500);
         $(".confirmaemail").slideDown(500);
     }
@@ -69,9 +79,11 @@ function tipodeficiencia() {
     var deficiencia = $("#deficiencia").val();
     if (deficiencia == "sim") {
         $(".deficiencia").slideDown(500);
+        $(".defic").css({ "display": "none" }) 
     }
     else if (deficiencia == "nao") {
         $(".deficiencia").css({ "display": "none" })
+        $(".defic").slideDown(500);
     }
 }
 

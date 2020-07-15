@@ -247,8 +247,8 @@
 								</select>
 							</div>
 							<!-- Necessidades Educacionais Especiais (Distúrbios /Transtornos/Síndromes) -->
-							<div class="deficiencia col-xs-12 col-md-12 v-spacing">
-								<input class="form-control" name="candidato[deficiencia]" type="text" placeholder="Descreva: Necessidades Educacionais Especiais (Distúrbios /Transtornos/Síndromes)" />
+							<div class="deficiencia align center text-white" style="text-align:justify;margin-left:10%;width:80%;font-size:18px;">
+								<br><p><i>No edital geral, temos para os portadores de necessidades especiais um vestibular específico que deverá ser agendado previamente para realização presencial.</i></p>
 							</div>
 
 							<!-- Dados do Responsável 
@@ -266,7 +266,7 @@
 							</div>
 								-->
 							<!-- Como conheceu a FAM? -->
-							<div class="col-xs-12 col-md-6 col-lg-6 v-spacing">
+							<div class="defic col-xs-12 col-md-6 col-lg-6 v-spacing">
 								<select size required class="form-control" name="como_conheceu" v-model="lead.midia_id">
 									<option :value="null">Como nos conheceu?</option>
 									<option v-for="midia in midias" :value="midia.id">{{ midia.nome }}</option>
@@ -274,12 +274,13 @@
 							</div>
 
 							<!-- Tipo de Prova alteração final  -->
-							<div class="col-xs-12 col-md-6 col-lg-6 v-spacing">
+							<div class="defic col-xs-12 col-md-6 col-lg-6 v-spacing">							
 								<select onchange="tipoprova()" id="prova" size required class="form-control" name="candidato[ingresso]">
-									<option value="null" selected>Deseja ingressar através de:</option>
-									<option value="vestibular">Vestibular</option>
-									<option value="enem">Nota do ENEM</option>
-									<option value="segunda_graduacao">Segunda Graduação</option>
+									<option value="null" selected>Deseja ingressar através de:</option>									
+									<option class="tec" value="tecnico">Técnico</option>
+									<option class="ves" value="vestibular">Vestibular</option>
+									<option class="ene" value="enem">Nota do ENEM</option>
+									<option class="seg" value="segunda_graduacao">Segunda Graduação</option>
 								</select>
 							</div>
 
@@ -290,7 +291,7 @@
 						type="hidden" name="data_prova" value="2825">
 
 						<!-- Aviso Vestibular/ENEM/Segunda Graduação -->
-						<div class="col-md-8 offset-md-2 v-spacing">
+						<div class="defic col-md-8 offset-md-2 v-spacing">
 							<div class="vestibular">
 								<p class="align center text-white" style="text-align:justify;">
 									Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando
@@ -324,6 +325,12 @@
 									</p>
 								
 							</div>
+							<div class="tecnico">
+								<p class="align center text-white">
+								Você optou por Cursos Técnicos. Confirme seu E-Mail e Clique no botão abaixo para iniciar seu processo de matrícula.
+								</p>
+								
+							</div>
 							<!-- Confirma E-mail -->
 							<div class="confirmaemail">
 								<input class="email2 form-control" type="email" onpaste="return false" ondrop="return false" placeholder="Confirme seu E-mail"/>
@@ -331,7 +338,7 @@
 						</div>
 						a
 						<!-- Finalizar Inscrição -->
-						<div class="col-xs-12 col-md-12 col-lg-12 v-spacing align center">
+						<div class="defic col-xs-12 col-md-12 col-lg-12 v-spacing align center">
 							<input onclick="validar()" class="btn cta large centered btn-concluir" type="button" value="Concluir Inscrição"/>
 						</div>
 					</div>
@@ -386,6 +393,20 @@ aluno.data_nascimento = aluno.datanascimento.split('-').reverse().join('/');
 
 
 window.onload = function () {
+
+var ingresso = $("#acfam-inscricao-opcoes-curso-1 option:selected").val();
+if(ingresso == 59 || ingresso == 52 || ingresso == 57 || ingresso == 63){
+	$(".ene").css({ "display": "none" })
+	$(".seg").css({ "display": "none" })
+	$(".ves").css({ "display": "none" })
+	$(".tec").css({ "display": "block" })
+}else{
+	$(".ene").css({ "display": "block" })
+	$(".seg").css({ "display": "block" })
+	$(".ves").css({ "display": "block" })
+	$(".tec").css({ "display": "none" })
+}
+
 
 $(".js-form").on("submit", function () {
 $(".btn-concluir").attr("disabled", "true");

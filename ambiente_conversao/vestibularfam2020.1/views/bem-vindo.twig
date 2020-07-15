@@ -246,6 +246,9 @@
                                     {% if aluno.ingresso == 'segunda_graduacao' %}
                                     <p>Se você já é graduado e essa é sua 2ª graduação, clique no link abaixo para iniciar seu processo de matrícula.</p>
                                     {% endif %}
+                                    {% if aluno.ingresso == 'tecnico' %}
+                                    <p>Você optou por Curso Técnico. Clique no link abaixo para realizar sua matrícula</p>
+                                    {% endif %}
                                     <br><br><br>
                                     <a class="bemail" href="https://www.fam.br/wp-content/uploads/2020/06/ebook-Como-enviar-os-documentos-para-matricula.pdf" target="_blank">
                                         <button class="botaoemail">Como enviar seus documentos digitalizados para matrícula</button></a>                                    

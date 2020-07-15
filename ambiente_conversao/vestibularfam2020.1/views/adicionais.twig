@@ -153,8 +153,14 @@ $("[type=file]").on("change", function(){
 				<label class="arquivo" for="programa" onclick="amarelo(this);">Conteúdo Programático (se houver)</label><br><br>
 				
 				<br><hr>
-				<br><p>
-					<a class="aceita" href="/assets/docs/Termo-de-Aceite_Graduacao_190620_PDF.pdf" target="_blank">Aceita o Contrato de Serviços Educacionais ?</a>&emsp;<input type="checkbox" id="aceito1"></p>
+				<br><p>				
+					<a class="aceita" 
+					{% if  (lead.curso_id == 63) or (lead.curso_id == 57) or (lead.curso_id == 52) or (lead.curso_id == 59) %}
+					href="/assets/docs/Termo-de-Aceite_Tecnico_010720_PDF.pdf" 
+					{% else %}
+					href="/assets/docs/Termo-de-Aceite_Graduacao_190620_PDF.pdf"
+					{% endif %}					
+					target="_blank">Aceita o Contrato de Serviços Educacionais ?</a>&emsp;<input type="checkbox" id="aceito1"></p>
 				<br><p>
 					<a class="aceita" href="/assets/docs/Termo_LGPD.pdf" target="_blank">Aceita Termo para Tratamento de Dados Pessoais ?</a>&emsp;<input type="checkbox" id="aceito2"></p>
 				<br><hr><br>
