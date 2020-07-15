@@ -43,7 +43,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
         echo csrf_field();
         echo "
 \t\t\t";
-        // line 288
+        // line 289
         echo "
 \t\t\t\t<main
 \t\t\t\t\tid=\"page-inscricao\">
@@ -280,8 +280,8 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t\t</select>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<!-- Necessidades Educacionais Especiais (Distúrbios /Transtornos/Síndromes) -->
-\t\t\t\t\t\t\t<div class=\"deficiencia col-xs-12 col-md-12 v-spacing\">
-\t\t\t\t\t\t\t\t<input class=\"form-control\" name=\"candidato[deficiencia]\" type=\"text\" placeholder=\"Descreva: Necessidades Educacionais Especiais (Distúrbios /Transtornos/Síndromes)\" />
+\t\t\t\t\t\t\t<div class=\"deficiencia align center text-white\" style=\"text-align:justify;margin-left:10%;width:80%;font-size:18px;\">
+\t\t\t\t\t\t\t\t<br><p><i>No edital geral, temos para os portadores de necessidades especiais um vestibular específico que deverá ser agendado previamente para realização presencial.</i></p>
 \t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t<!-- Dados do Responsável 
@@ -299,7 +299,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t-->
 \t\t\t\t\t\t\t<!-- Como conheceu a FAM? -->
-\t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-6 col-lg-6 v-spacing\">
+\t\t\t\t\t\t\t<div class=\"defic col-xs-12 col-md-6 col-lg-6 v-spacing\">
 \t\t\t\t\t\t\t\t<select size required class=\"form-control\" name=\"como_conheceu\" v-model=\"lead.midia_id\">
 \t\t\t\t\t\t\t\t\t<option :value=\"null\">Como nos conheceu?</option>
 \t\t\t\t\t\t\t\t\t<option v-for=\"midia in midias\" :value=\"midia.id\">{{ midia.nome }}</option>
@@ -307,12 +307,13 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t<!-- Tipo de Prova alteração final  -->
-\t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-6 col-lg-6 v-spacing\">
+\t\t\t\t\t\t\t<div class=\"defic col-xs-12 col-md-6 col-lg-6 v-spacing\">\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<select onchange=\"tipoprova()\" id=\"prova\" size required class=\"form-control\" name=\"candidato[ingresso]\">
-\t\t\t\t\t\t\t\t\t<option value=\"null\" selected>Deseja ingressar através de:</option>
-\t\t\t\t\t\t\t\t\t<option value=\"vestibular\">Vestibular</option>
-\t\t\t\t\t\t\t\t\t<option value=\"enem\">Nota do ENEM</option>
-\t\t\t\t\t\t\t\t\t<option value=\"segunda_graduacao\">Segunda Graduação</option>
+\t\t\t\t\t\t\t\t\t<option value=\"null\" selected>Deseja ingressar através de:</option>\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t<option class=\"tec\" value=\"tecnico\">Técnico</option>
+\t\t\t\t\t\t\t\t\t<option class=\"ves\" value=\"vestibular\">Vestibular</option>
+\t\t\t\t\t\t\t\t\t<option class=\"ene\" value=\"enem\">Nota do ENEM</option>
+\t\t\t\t\t\t\t\t\t<option class=\"seg\" value=\"segunda_graduacao\">Segunda Graduação</option>
 \t\t\t\t\t\t\t\t</select>
 \t\t\t\t\t\t\t</div>
 
@@ -324,7 +325,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\ttype=\"hidden\" name=\"data_prova\" value=\"2825\">
 
 \t\t\t\t\t\t<!-- Aviso Vestibular/ENEM/Segunda Graduação -->
-\t\t\t\t\t\t<div class=\"col-md-8 offset-md-2 v-spacing\">
+\t\t\t\t\t\t<div class=\"defic col-md-8 offset-md-2 v-spacing\">
 \t\t\t\t\t\t\t<div class=\"vestibular\">
 \t\t\t\t\t\t\t\t<p class=\"align center text-white\" style=\"text-align:justify;\">
 \t\t\t\t\t\t\t\t\tDurante a pandemia, a FAM - Faculdade de Americana está operacionalizando
@@ -345,7 +346,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</p>\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
-        // line 318
+        // line 319
         echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"formado\">
 \t\t\t\t\t\t\t\t<p class=\"align center text-white\">
@@ -355,6 +356,12 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"tecnico\">
+\t\t\t\t\t\t\t\t<p class=\"align center text-white\">
+\t\t\t\t\t\t\t\tVocê optou por Cursos Técnicos. Confirme seu E-Mail e Clique no botão abaixo para iniciar seu processo de matrícula.
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<!-- Confirma E-mail -->
 \t\t\t\t\t\t\t<div class=\"confirmaemail\">
 \t\t\t\t\t\t\t\t<input class=\"email2 form-control\" type=\"email\" onpaste=\"return false\" ondrop=\"return false\" placeholder=\"Confirme seu E-mail\"/>
@@ -362,7 +369,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\ta
 \t\t\t\t\t\t<!-- Finalizar Inscrição -->
-\t\t\t\t\t\t<div class=\"col-xs-12 col-md-12 col-lg-12 v-spacing align center\">
+\t\t\t\t\t\t<div class=\"defic col-xs-12 col-md-12 col-lg-12 v-spacing align center\">
 \t\t\t\t\t\t\t<input onclick=\"validar()\" class=\"btn cta large centered btn-concluir\" type=\"button\" value=\"Concluir Inscrição\"/>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -376,27 +383,27 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 ";
     }
 
-    // line 348
+    // line 355
     public function block_scripts($context, array $blocks = array())
     {
-        // line 349
+        // line 356
         echo "\t<!-- Variáveis (BI -> VueJS) -->
 \t<script type=\"text/javascript\">
 \t\twindow.history.forward(1);
 let midias = ";
-        // line 352
+        // line 359
         echo twig_jsonencode_filter($this->getAttribute(($context["campanha"] ?? null), "midias", array()));
         echo ";
 let aluno = ";
-        // line 353
+        // line 360
         echo twig_jsonencode_filter(($context["aluno"] ?? null));
         echo ";
 let lead = ";
-        // line 354
+        // line 361
         echo twig_jsonencode_filter(($context["lead"] ?? null));
         echo ";
 let curso = ";
-        // line 355
+        // line 362
         echo twig_escape_filter($this->env, ($context["curso"] ?? null), "html", null, true);
         echo ";
 
@@ -433,6 +440,20 @@ aluno.data_nascimento = aluno.datanascimento.split('-').reverse().join('/');
 
 window.onload = function () {
 
+var ingresso = \$(\"#acfam-inscricao-opcoes-curso-1 option:selected\").val();
+if(ingresso == 59 || ingresso == 52 || ingresso == 57 || ingresso == 63){
+\t\$(\".ene\").css({ \"display\": \"none\" })
+\t\$(\".seg\").css({ \"display\": \"none\" })
+\t\$(\".ves\").css({ \"display\": \"none\" })
+\t\$(\".tec\").css({ \"display\": \"block\" })
+}else{
+\t\$(\".ene\").css({ \"display\": \"block\" })
+\t\$(\".seg\").css({ \"display\": \"block\" })
+\t\$(\".ves\").css({ \"display\": \"block\" })
+\t\$(\".tec\").css({ \"display\": \"none\" })
+}
+
+
 \$(\".js-form\").on(\"submit\", function () {
 \$(\".btn-concluir\").attr(\"disabled\", \"true\");
 setTimeout(function () {
@@ -446,12 +467,12 @@ setTimeout(function () {
 \t<script type=\"text/javascript\" src=\"./assets/js/page-inscricao.js\"></script>
 
 \t";
-        // line 402
+        // line 423
         if (($context["error"] ?? null)) {
-            // line 403
+            // line 424
             echo "\t\t<script>
 \t\t\talert('";
-            // line 404
+            // line 425
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');
 \t\t</script>
@@ -471,7 +492,7 @@ setTimeout(function () {
 
     public function getDebugInfo()
     {
-        return array (  455 => 404,  452 => 403,  450 => 402,  400 => 355,  396 => 354,  392 => 353,  388 => 352,  383 => 349,  380 => 348,  349 => 318,  47 => 288,  43 => 13,  35 => 7,  32 => 6,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  476 => 425,  473 => 424,  471 => 423,  407 => 362,  403 => 361,  399 => 360,  395 => 359,  390 => 356,  387 => 355,  350 => 319,  47 => 289,  43 => 13,  35 => 7,  32 => 6,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
