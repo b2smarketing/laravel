@@ -43,7 +43,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
         echo csrf_field();
         echo "
 \t\t\t";
-        // line 289
+        // line 292
         echo "
 \t\t\t\t<main
 \t\t\t\t\tid=\"page-inscricao\">
@@ -281,7 +281,10 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<!-- Necessidades Educacionais Especiais (Distúrbios /Transtornos/Síndromes) -->
 \t\t\t\t\t\t\t<div class=\"deficiencia align center text-white\" style=\"text-align:justify;margin-left:10%;width:80%;font-size:18px;\">
-\t\t\t\t\t\t\t\t<br><p><i>No edital geral, temos para os portadores de necessidades especiais um vestibular específico que deverá ser agendado previamente para realização presencial.</i></p>
+\t\t\t\t\t\t\t\t<br><p><i>No edital geral, temos para os portadores de necessidades 
+\t\t\t\t\t\t\t\tespeciais um vestibular específico que deverá ser agendado previamente
+\t\t\t\t\t\t\t\t para realização presencial. Para fazer seu agendamento entre em contato
+\t\t\t\t\t\t\t\t  no telefone (19) 3465.8100</i></p>
 \t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t<!-- Dados do Responsável 
@@ -346,7 +349,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</p>\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
-        // line 319
+        // line 322
         echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"formado\">
 \t\t\t\t\t\t\t\t<p class=\"align center text-white\">
@@ -383,27 +386,27 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 ";
     }
 
-    // line 355
+    // line 358
     public function block_scripts($context, array $blocks = array())
     {
-        // line 356
+        // line 359
         echo "\t<!-- Variáveis (BI -> VueJS) -->
 \t<script type=\"text/javascript\">
 \t\twindow.history.forward(1);
 let midias = ";
-        // line 359
+        // line 362
         echo twig_jsonencode_filter($this->getAttribute(($context["campanha"] ?? null), "midias", array()));
         echo ";
 let aluno = ";
-        // line 360
+        // line 363
         echo twig_jsonencode_filter(($context["aluno"] ?? null));
         echo ";
 let lead = ";
-        // line 361
+        // line 364
         echo twig_jsonencode_filter(($context["lead"] ?? null));
         echo ";
 let curso = ";
-        // line 362
+        // line 365
         echo twig_escape_filter($this->env, ($context["curso"] ?? null), "html", null, true);
         echo ";
 
@@ -467,12 +470,12 @@ setTimeout(function () {
 \t<script type=\"text/javascript\" src=\"./assets/js/page-inscricao.js\"></script>
 
 \t";
-        // line 423
+        // line 426
         if (($context["error"] ?? null)) {
-            // line 424
+            // line 427
             echo "\t\t<script>
 \t\t\talert('";
-            // line 425
+            // line 428
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');
 \t\t</script>
@@ -492,7 +495,7 @@ setTimeout(function () {
 
     public function getDebugInfo()
     {
-        return array (  476 => 425,  473 => 424,  471 => 423,  407 => 362,  403 => 361,  399 => 360,  395 => 359,  390 => 356,  387 => 355,  350 => 319,  47 => 289,  43 => 13,  35 => 7,  32 => 6,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  479 => 428,  476 => 427,  474 => 426,  410 => 365,  406 => 364,  402 => 363,  398 => 362,  393 => 359,  390 => 358,  353 => 322,  47 => 292,  43 => 13,  35 => 7,  32 => 6,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
