@@ -21,7 +21,7 @@
 				<div class="col">								
 					<!-- Aqui é o formulário padrão de cadastro -->
 					<img class="imginscricao" src="/assets/images/bolsas_index.png">
-					<form id="form" action="/inscricao" method="post" class="form-home">
+					<form id="form" action="/inscricaobolsa" method="post" class="form-home">
 						{{ csrf_field() }}
 						<the-mask onkeypress="Valida();" required name="cpf" id="cpf" class="form-control cpf" type="tel" placeholder="Insira seu CPF" :mask="['###.###.###-##']" title="Por favor insira seu CPF"></the-mask>
 						<div class="oculto">
