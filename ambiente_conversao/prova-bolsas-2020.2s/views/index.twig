@@ -18,9 +18,11 @@
 		<div id="acfam-home-form" class="col-md-7 pt-md-5 full-height">
 			<!-- Centralizar verticamente o formulário -->
 			<div class="row full-height align-items-end">
-				<div class="col">								
+				<div class="col">
 					<!-- Aqui é o formulário padrão de cadastro -->
 					<img class="imginscricao" src="/assets/images/bolsas_index.png">
+					<h1 class="encerrado">Inscrições Encerradas !</h1>								
+					<!--
 					<form id="form" action="/inscricaobolsa" method="post" class="form-home">
 						{{ csrf_field() }}
 						<the-mask onkeypress="Valida();" required name="cpf" id="cpf" class="form-control cpf" type="tel" placeholder="Insira seu CPF" :mask="['###.###.###-##']" title="Por favor insira seu CPF"></the-mask>
@@ -34,11 +36,12 @@
                                 <option v-for="curso in cursos_sort" :value="curso.id" v-html="curso.nome"></option>
                             </select>
 						</div>
-						<!--<fb:login-button onclick="fb_login_start" onlogin="fb_login" scope="public_profile,email" max-rows="1" size="large" button-type="continue_with" show-faces="false" auto-logout-link="false" use-continue-as="true"></fb:login-button>
+						<fb:login-button onclick="fb_login_start" onlogin="fb_login" scope="public_profile,email" max-rows="1" size="large" button-type="continue_with" show-faces="false" auto-logout-link="false" use-continue-as="true"></fb:login-button>
 						<br>
-						<input class="btn cta" type="submit" value="Continuar" />-->
+						<input class="btn cta" type="submit" value="Continuar" />
 
 					</form>
+					-->
 				</div>
 			</div>
 		</div>
