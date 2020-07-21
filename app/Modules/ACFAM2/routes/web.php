@@ -1092,8 +1092,10 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$tc = 14;	//total colunas
 		echo "<img src='/documentos/foto.jpg'/><br><br>";
 		$path = public_path('/documentos/bolsa.csv');
-		$csv = utf8_encode(file_get_contents($path));
-		$vetor = explode(';',$csv);
+		$csv = file_get_contents($path);
+		$vetor = explode(',',$csv);
+		echo count($vetor)."<br><br>";
+
 		$linha = (count($vetor)-1)/$tc;
 		$matriz = array(array());
 		$i = 0;
