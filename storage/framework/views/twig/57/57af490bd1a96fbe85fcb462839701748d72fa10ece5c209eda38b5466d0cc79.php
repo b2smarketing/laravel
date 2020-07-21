@@ -34,18 +34,23 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
         // line 8
         echo "
 <!-- Principal -->
+
+<!-- pop 
 <div class=\"pop\">
 <div class=\"msg\">
 <img src=\"/assets/images/bolsa.png\" onclick=\"apaga()\"></a>
 <a href=\"https://provadebolsas.com.br\" target=\"_blank\"><button class=\"bolsa\">Clique Aqui e Inscreva-se</button></a>
 </div>
 </div>
+-->
+
+
 <main id=\"page-home\" class=\"container fit-height\">
 \t<img class=\"img-home-person d-none d-md-block\" src=\"/assets/images/img-home-person2.png\" style=\"transform: scale(1.1); position:absolute;bottom:0;right:5%;\">
 \t<div class=\"row fit mt-4 mt-md-0\">
         <!--div id=\"acfam-home-artwork\" class=\"col-md-8 full-height d-none d-md-block\">
 \t\t\t";
-        // line 21
+        // line 26
         echo "\t\t</div-->
 \t\t<div id=\"acfam-home-form\" class=\"col-md-7 pt-md-5 full-height\">
 \t\t\t<!-- Centralizar verticamente o formulário -->
@@ -56,7 +61,7 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 \t\t\t\t\t<!-- Aqui é o formulário padrão de cadastro -->
 \t\t\t\t\t<form id=\"form\" action=\"/inscricao\" method=\"post\" class=\"form-home\">
 \t\t\t\t\t\t";
-        // line 30
+        // line 35
         echo csrf_field();
         echo "
 \t\t\t\t\t\t<the-mask onkeypress=\"Valida();\" required name=\"cpf\" id=\"cpf\" class=\"form-control cpf\" type=\"tel\" placeholder=\"Insira seu CPF\" :mask=\"['###.###.###-##']\" title=\"Por favor insira seu CPF\"></the-mask>
@@ -105,10 +110,10 @@ window.open('/assets/pop/pop.html','page','toolbar=no,location=no,status=no,menu
 ";
     }
 
-    // line 76
+    // line 81
     public function block_scripts($context, array $blocks = array())
     {
-        // line 77
+        // line 82
         echo "\t<!-- Script da Página -->
 \t<script type=\"text/javascript\" src=\"/assets/js/page-index.js\"></script>
 \t<script type=\"text/javascript\" src=\"/assets/js/update.js\"></script>
@@ -119,9 +124,9 @@ window.open('/assets/pop/pop.html','page','toolbar=no,location=no,status=no,menu
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/css/update.css\" />
 
 \t";
-        // line 86
+        // line 91
         if (($context["error"] ?? null)) {
-            // line 87
+            // line 92
             echo "\t\t<script>alert('";
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');</script>
@@ -141,7 +146,7 @@ window.open('/assets/pop/pop.html','page','toolbar=no,location=no,status=no,menu
 
     public function getDebugInfo()
     {
-        return array (  125 => 87,  123 => 86,  112 => 77,  109 => 76,  60 => 30,  49 => 21,  35 => 8,  32 => 7,  28 => 3,  26 => 5,  11 => 3,);
+        return array (  130 => 92,  128 => 91,  117 => 82,  114 => 81,  65 => 35,  54 => 26,  35 => 8,  32 => 7,  28 => 3,  26 => 5,  11 => 3,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
