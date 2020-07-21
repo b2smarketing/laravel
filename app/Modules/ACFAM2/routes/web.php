@@ -1089,12 +1089,12 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 	Route::get('/import_csv', function (Request $req) use ($module) {
 		
-		$tc = 17;	
+		$tc = 14;	//total colunas
 		echo "<img src='/documentos/foto.jpg'/><br><br>";
 		$path = public_path('/documentos/bolsa.csv');
 		$csv = utf8_encode(file_get_contents($path));
-		$vetor = explode(',',$csv);
-		$linha = (count($vetor)-2)/$tc;
+		$vetor = explode(';',$csv);
+		$linha = (count($vetor)-1)/$tc;
 		$matriz = array(array());
 		$i = 0;
 		for($l=0;$l<$linha;$l++){
@@ -1116,11 +1116,8 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			echo $matriz[$l][9]." | ";
 			echo $matriz[$l][10]." | ";
 			echo $matriz[$l][11]." | ";
-			echo $matriz[$l][12]." | ";
-			echo $matriz[$l][13]." | ";
-			echo $matriz[$l][14]." | ";	
-			echo $matriz[$l][15]." | ";				
-			echo $matriz[$l][16]." <hr> ";		
+			echo $matriz[$l][12]." | ";			
+			echo $matriz[$l][13]." <hr> ";		
 		}
 		/*		
 		$aluno = new Aluno();
