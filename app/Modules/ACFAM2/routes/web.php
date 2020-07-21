@@ -1087,6 +1087,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 	/////// fim bloco BOLSAS *******************************
 
 
+	// Importar dados via CSV
 	Route::get('/import_csv', function (Request $req) use ($module) {
 		
 		$tc = 14;	//total colunas
@@ -1094,32 +1095,34 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$path = public_path('/documentos/bolsa.csv');
 		$csv = file_get_contents($path);
 		$vetor = explode(',',$csv);
-		echo count($vetor)."<br><br>";
-
 		$linha = (count($vetor)-1)/$tc;
 		$matriz = array(array());
 		$i = 0;
+
+		echo count($vetor)."<br><br>";
+		echo $linha."<br><br>";
+
 		for($l=0;$l<$linha;$l++){
 		for($c=0;$c<$tc;$c++){
 			$matriz[$l][$c] = $vetor[$i];
 			$i++;
 		}}
 
-		for($l=1;$l<$linha;$l++){			
-			echo $matriz[$l][0]." | ";
-			echo $matriz[$l][1]." | ";
-			echo $matriz[$l][2]." | ";
-			echo $matriz[$l][3]." | ";
-			echo $matriz[$l][4]." | ";
-			echo $matriz[$l][5]." | ";
-			echo $matriz[$l][6]." | ";
-			echo $matriz[$l][7]." | ";
-			echo $matriz[$l][8]." | ";
-			echo $matriz[$l][9]." | ";
-			echo $matriz[$l][10]." | ";
-			echo $matriz[$l][11]." | ";
-			echo $matriz[$l][12]." | ";			
-			echo $matriz[$l][13]." <hr> ";		
+		for($l=1;$l<$linha;$l++){				
+			echo $matriz[$l][0]." | "; // nome
+			echo $matriz[$l][1]." | "; // sobrenome
+			echo $matriz[$l][2]." | "; // email
+			echo $matriz[$l][3]." | "; // celular
+			echo $matriz[$l][4]." | "; // telefone
+			echo $matriz[$l][5]." | "; // cpf
+			echo $matriz[$l][6]." | "; // datanascimento
+			echo $matriz[$l][7]." | "; // cidade
+			echo $matriz[$l][8]." | "; // uf
+			echo $matriz[$l][9]." | "; // como conheceu
+			echo $matriz[$l][10]." | "; // sexo
+			echo $matriz[$l][11]." | "; // deficiencia
+			echo $matriz[$l][12]." | ";	// curso		
+			echo $matriz[$l][13]." <hr> ";	// ingresso	 			
 		}
 		/*		
 		$aluno = new Aluno();
