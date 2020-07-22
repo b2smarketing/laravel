@@ -685,7 +685,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$aluno = Aluno::porCPF($cpf);
 
 		$campanha = Campanha::find($module->options['campanha']);
-		$lead = $aluno->leads()->where('campanha_id', $campanha->id)->first();		
+		$lead = $aluno->leads()->where('campanha_id', $campanha->id)->first();
 
 		if (is_null($aluno))
 			return redirect('/');
@@ -708,7 +708,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 		return redirect('/resultados');
 	});
-	
+
 	// Inscrição Bolsas ***************************************
 
 	Route::post('/inscricaobolsa', function (Request $req) use ($module) {
@@ -855,295 +855,321 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		return view('AmbienteConversao::inscricao', $dados);
 	});
 
-		Route::post('/inscricao/bolsa', function (Request $req) use ($module) {
+	Route::post('/inscricao/bolsa', function (Request $req) use ($module) {
 
-			$campanha = $req->session()->get('campanha');
-			$dados = $req->session()->get('obj');
-			$leads = $req->session()->get('leads');
-			$aluno = $req->session()->get('aluno');
-			$post = $req->input('candidato');
-			$dados_adicionais = $req->input('dados_adicionais');
-	
-			$opcoes_curso = collect($req->input('opcoes_curso'))->transform(function ($id) {
-				return Curso::find($id);
-			});
-			$primeira_opcao = $opcoes_curso[0];
-	
-			$midia = Midia_Tipo::find($req->input('como_conheceu'));
-			$data_prova = Prova_Data::find($req->input('data_prova'));
-	
-			// Cidade/Estado
-			$cidade = Cidade::find($post['cidade']);
-			$estado = $cidade->estado;
-	
-			$aluno->cidade()->associate($cidade);
-	
-			// Não permitir mudança de CPF
-			unset($post['cpf']);
-	
-			$dadosRaw = $req->all();
-	
-			// Verificar se estamos usando Nome + Sobrenome
-	
-			if (!empty($req->input('candidato.primeiro_nome'))) {
-				$post['nome'] = $dadosRaw['candidato']['nome'];
-				$post['sobrenome'] = $dadosRaw['candidato']['sobrenome'];
-			}
-	
-			// Verificar se estamos usando DDD + Numero no Celular
-			if (!empty($req->input('candidato.celular_ddd'))) {
-				$post['celular'] = $dadosRaw['candidato']['celular'] = trim(
-					$req->input('candidato.celular_ddd') .
-						' ' .
-						$req->input('candidato.celular_numero')
-				);
-			}
-	
-			// Verificar se estamos usando DDD + Numero no Telefone
-			if (!empty($req->input('candidato.telefone_ddd'))) {
-				$post['telefone'] = $dadosRaw['candidato']['telefone'] = trim(
-					$req->input('candidato.telefone_ddd') .
-						' ' .
-						$req->input('candidato.telefone_numero')
-				);
-			}
-	
-			// Formatar corretamente número de celular
-			if (isset($dadosRaw['candidato']) && isset($dadosRaw['candidato']['celular'])) {
-				$post['celular'] = $dadosRaw['candidato']['celular'] = (new Celular($dadosRaw['candidato']['celular']))->formatted();
-			}
-	
-			// Formatar corretamente número de telefone
-			if (isset($dadosRaw['candidato']) && isset($dadosRaw['candidato']['telefone'])) {
-				$post['telefone'] = $dadosRaw['candidato']['telefone'] = (new Celular($dadosRaw['candidato']['telefone']))->formatted();
-			}
-	
-			// Validação extra de dados
-			$validator = Validator::make($dadosRaw, [
-				'candidato.nome' => 'required',
-				'candidato.sobrenome' => 'required',
-				'candidato.email' => 'required',
-				'candidato.sexo' => 'required',
-				'candidato.celular' => 'required',
-				'candidato.data_nascimento' => 'required',
-				'candidato.estado' => 'required',
-				'candidato.cidade' => 'required',
-				'como_conheceu' => 'required'
-			]);
-	
-			if ($validator->fails())
-				return redirect('/inscricao?e=Preencha+todos+os+dados');
-	
-			// Limpar dados antes de salvar
-			unset($aluno->primeiro_nome);
-			unset($aluno->sobrenome);
-			unset($aluno->telefone_ddd);
-			unset($aluno->telefone_numero);
-			unset($aluno->sobrenome);
-			unset($aluno->celular_ddd);
-			unset($aluno->celular_numero);
-			unset($aluno->deficiencia);
-			unset($aluno->ingresso);
-			//unset($aluno->campos_enem);
-	
-			// Atualizar dados
-			if (isset($post['nome'])) $aluno->nome = $post['nome'];
-			if (isset($post['sobrenome'])) $aluno->sobrenome = $post['sobrenome'];
-			if (isset($post['email'])) $aluno->email = $post['email'];
-			if (isset($post['sexo'])) $aluno->sexo = $post['sexo'];
-			if (isset($post['rg'])) $aluno->rg = $post['rg'];
-			if (isset($post['celular'])) $aluno->celular = $post['celular'];
-			if (isset($post['telefone'])) $aluno->telefone = $post['telefone'];
-			if (isset($post['data_nascimento'])) $aluno->datanascimento = $post['data_nascimento'];
-			//if (isset($post['enem'])) $aluno->enem = $post['enem'];
-			if (isset($post['deficiencia'])) $aluno->deficiencia = $post['deficiencia'];
-			if (isset($post['ingresso'])) $aluno->ingresso = $post['ingresso'];
-	
-			// Salvar dados
-			$aluno->save();
-	
-			// Agendar prova
-			$prova = new Prova();
-			$prova->aluno()->associate($aluno);
-			$prova->campanha()->associate($campanha);
-			$prova->curso()->associate($primeira_opcao);
-			$prova->data()->associate($data_prova);
-	
-			$prova->save();
-	
-			// Sempre o primeiro lead, pois será a única inscrição
-			$lead = $leads->first();
-	
-			// Primeira opção de curso
-			$lead->touch();
-			$lead->curso()->associate($primeira_opcao);
-			$lead->midia()->associate($midia);
-			$lead->prova()->associate($prova);
-			$lead->dados_adicionais = $dados_adicionais;
-	
-			// Opção 1
-			$lead->opcao_curso_1 = $primeira_opcao->id;
-	
-			// Opção 2
-			if (isset($opcoes_curso[1])) {
-				$lead->opcao_curso_2 = $opcoes_curso[1]->id;
-	
-				// Opção 3
-				if (isset($opcoes_curso[2]))
-					$lead->opcao_curso_3 = $opcoes_curso[2]->id;
-			}
-	
-			// Converter e salvar dados
-			$lead->converter('INSC', 'Inscrição via Ambiente de Conversão [Prova: ' . $prova->data->hora . ']');
-			$lead->save();
-	
-			// Preparar e-mail
-	
-			// Identidade de Gênero
-			$assunto = 'Seja bem-vind' . $aluno->genero_letra . ', ' . $aluno->primeiro_nome . '!';
-	
-			// Preparar dados
-			$dados_email = array_merge([
-				'aluno' => $aluno,
-				'opcoes_curso' => $opcoes_curso,
-				'prova' => $prova,
-				'local' => $prova->local,
-				'modulo' => $module
-			]);
-	
-			// Criar e-mail
-			$email = Email::create($assunto)
-				->smtp_auth()
-				->from('no-reply@vestibularfam.com.br', 'Vestibular FAM')
-				->to($aluno->email, $aluno->nome)
-				->html(view('AmbienteConversao::bem-vindo', $dados_email)->render());
-	
-			// Enviar
-			$email->send();
-	
-			// Atualizar Sessão
-			$req->session()->put('opcoes_curso', $opcoes_curso);
-			$req->session()->put('prova', $prova);
-			$req->session()->put('local', $prova->local);
-			$req->session()->put('dados_adicionais', $dados_adicionais);
-			// Para não deixar atualizar
-			$req->session()->put('aluno_inscrito', "sim");
-	
-			return redirect('/inscricao/bolsa');
+		$campanha = $req->session()->get('campanha');
+		$dados = $req->session()->get('obj');
+		$leads = $req->session()->get('leads');
+		$aluno = $req->session()->get('aluno');
+		$post = $req->input('candidato');
+		$dados_adicionais = $req->input('dados_adicionais');
+
+		$opcoes_curso = collect($req->input('opcoes_curso'))->transform(function ($id) {
+			return Curso::find($id);
 		});
-	
-		Route::get('/inscricao/bolsa', function (Request $req) use ($module) {
-			$aluno = $req->session()->get('aluno');
-			$prova = $req->session()->get('prova');
-			$local = $req->session()->get('local');
-			$opcoes_curso = $req->session()->get('opcoes_curso');
-			$dados_adicionais = $req->session()->get('dados_adicionais');
-	
-			// inicio bloco Enviar e-mail
-	
-			$inf_aluno = json_decode($aluno, TRUE);
-			//print_r($inf_aluno);
-	
-			$nomealuno = $inf_aluno['nome'];
-			$cpfaluno = $inf_aluno['cpf'];
-			$emailaluno = $inf_aluno['email'];
-			$fammsg = "Sua inscrição foi realizada! Aguarde o contato dos organizadores do evento via email ou telefone para confirmar sua inscrição";
-			$famemail = 'informativo@fam.br';
-			$famassunto = 'Mensagem Vestibular FAM';
-	
-			$cabecalho =
-				'MIME-Version: 1.0' . "\r\n" .
-				'Content-type: text/html; charset=UTF-8;' . "\r\n" .
-				'From: ' . $emailaluno . "\r\n" .
-				'Reply-To: ' . $famemail . "\r\n" .
-				'X-Mailer: PHP/' . phpversion();
-	
-			$mensagem = "<h5>Nome: " . $nomealuno . "<br>CPF: " . $cpfaluno . "<br><br>FAM informa: </h5><p>" . $fammsg . "</p>";
-	
-			$enviar = mail($famemail, $famassunto, $mensagem, $cabecalho);
-	
-			if ($enviar) {
-				$msgemail = "Sucesso !! ";
-			} else {
-				$msgemail = "";
-			}
-	
-			// fim bloco
-	
-			// WTF
-	
-			$dados = [
-				'aluno' => $aluno,
-				'opcoes_curso' => $opcoes_curso,
-				'prova' => $prova,
-				'dados_adicionais' => $dados_adicionais,
-				'msgemail' => $msgemail
-			];
-	
-			if (isset($_GET['debug']) && $_GET['debug'] == 'dump') dd($dados);
-			return view('AmbienteConversao::finaliza', $dados);
-		});
-	
+		$primeira_opcao = $opcoes_curso[0];
+
+		$midia = Midia_Tipo::find($req->input('como_conheceu'));
+		$data_prova = Prova_Data::find($req->input('data_prova'));
+
+		// Cidade/Estado
+		$cidade = Cidade::find($post['cidade']);
+		$estado = $cidade->estado;
+
+		$aluno->cidade()->associate($cidade);
+
+		// Não permitir mudança de CPF
+		unset($post['cpf']);
+
+		$dadosRaw = $req->all();
+
+		// Verificar se estamos usando Nome + Sobrenome
+
+		if (!empty($req->input('candidato.primeiro_nome'))) {
+			$post['nome'] = $dadosRaw['candidato']['nome'];
+			$post['sobrenome'] = $dadosRaw['candidato']['sobrenome'];
+		}
+
+		// Verificar se estamos usando DDD + Numero no Celular
+		if (!empty($req->input('candidato.celular_ddd'))) {
+			$post['celular'] = $dadosRaw['candidato']['celular'] = trim(
+				$req->input('candidato.celular_ddd') .
+					' ' .
+					$req->input('candidato.celular_numero')
+			);
+		}
+
+		// Verificar se estamos usando DDD + Numero no Telefone
+		if (!empty($req->input('candidato.telefone_ddd'))) {
+			$post['telefone'] = $dadosRaw['candidato']['telefone'] = trim(
+				$req->input('candidato.telefone_ddd') .
+					' ' .
+					$req->input('candidato.telefone_numero')
+			);
+		}
+
+		// Formatar corretamente número de celular
+		if (isset($dadosRaw['candidato']) && isset($dadosRaw['candidato']['celular'])) {
+			$post['celular'] = $dadosRaw['candidato']['celular'] = (new Celular($dadosRaw['candidato']['celular']))->formatted();
+		}
+
+		// Formatar corretamente número de telefone
+		if (isset($dadosRaw['candidato']) && isset($dadosRaw['candidato']['telefone'])) {
+			$post['telefone'] = $dadosRaw['candidato']['telefone'] = (new Celular($dadosRaw['candidato']['telefone']))->formatted();
+		}
+
+		// Validação extra de dados
+		$validator = Validator::make($dadosRaw, [
+			'candidato.nome' => 'required',
+			'candidato.sobrenome' => 'required',
+			'candidato.email' => 'required',
+			'candidato.sexo' => 'required',
+			'candidato.celular' => 'required',
+			'candidato.data_nascimento' => 'required',
+			'candidato.estado' => 'required',
+			'candidato.cidade' => 'required',
+			'como_conheceu' => 'required'
+		]);
+
+		if ($validator->fails())
+			return redirect('/inscricao?e=Preencha+todos+os+dados');
+
+		// Limpar dados antes de salvar
+		unset($aluno->primeiro_nome);
+		unset($aluno->sobrenome);
+		unset($aluno->telefone_ddd);
+		unset($aluno->telefone_numero);
+		unset($aluno->sobrenome);
+		unset($aluno->celular_ddd);
+		unset($aluno->celular_numero);
+		unset($aluno->deficiencia);
+		unset($aluno->ingresso);
+		//unset($aluno->campos_enem);
+
+		// Atualizar dados
+		if (isset($post['nome'])) $aluno->nome = $post['nome'];
+		if (isset($post['sobrenome'])) $aluno->sobrenome = $post['sobrenome'];
+		if (isset($post['email'])) $aluno->email = $post['email'];
+		if (isset($post['sexo'])) $aluno->sexo = $post['sexo'];
+		if (isset($post['rg'])) $aluno->rg = $post['rg'];
+		if (isset($post['celular'])) $aluno->celular = $post['celular'];
+		if (isset($post['telefone'])) $aluno->telefone = $post['telefone'];
+		if (isset($post['data_nascimento'])) $aluno->datanascimento = $post['data_nascimento'];
+		//if (isset($post['enem'])) $aluno->enem = $post['enem'];
+		if (isset($post['deficiencia'])) $aluno->deficiencia = $post['deficiencia'];
+		if (isset($post['ingresso'])) $aluno->ingresso = $post['ingresso'];
+
+		// Salvar dados
+		$aluno->save();
+
+		// Agendar prova
+		$prova = new Prova();
+		$prova->aluno()->associate($aluno);
+		$prova->campanha()->associate($campanha);
+		$prova->curso()->associate($primeira_opcao);
+		$prova->data()->associate($data_prova);
+
+		$prova->save();
+
+		// Sempre o primeiro lead, pois será a única inscrição
+		$lead = $leads->first();
+
+		// Primeira opção de curso
+		$lead->touch();
+		$lead->curso()->associate($primeira_opcao);
+		$lead->midia()->associate($midia);
+		$lead->prova()->associate($prova);
+		$lead->dados_adicionais = $dados_adicionais;
+
+		// Opção 1
+		$lead->opcao_curso_1 = $primeira_opcao->id;
+
+		// Opção 2
+		if (isset($opcoes_curso[1])) {
+			$lead->opcao_curso_2 = $opcoes_curso[1]->id;
+
+			// Opção 3
+			if (isset($opcoes_curso[2]))
+				$lead->opcao_curso_3 = $opcoes_curso[2]->id;
+		}
+
+		// Converter e salvar dados
+		$lead->converter('INSC', 'Inscrição via Ambiente de Conversão [Prova: ' . $prova->data->hora . ']');
+		$lead->save();
+
+		// Preparar e-mail
+
+		// Identidade de Gênero
+		$assunto = 'Seja bem-vind' . $aluno->genero_letra . ', ' . $aluno->primeiro_nome . '!';
+
+		// Preparar dados
+		$dados_email = array_merge([
+			'aluno' => $aluno,
+			'opcoes_curso' => $opcoes_curso,
+			'prova' => $prova,
+			'local' => $prova->local,
+			'modulo' => $module
+		]);
+
+		// Criar e-mail
+		$email = Email::create($assunto)
+			->smtp_auth()
+			->from('no-reply@vestibularfam.com.br', 'Vestibular FAM')
+			->to($aluno->email, $aluno->nome)
+			->html(view('AmbienteConversao::bem-vindo', $dados_email)->render());
+
+		// Enviar
+		$email->send();
+
+		// Atualizar Sessão
+		$req->session()->put('opcoes_curso', $opcoes_curso);
+		$req->session()->put('prova', $prova);
+		$req->session()->put('local', $prova->local);
+		$req->session()->put('dados_adicionais', $dados_adicionais);
+		// Para não deixar atualizar
+		$req->session()->put('aluno_inscrito', "sim");
+
+		return redirect('/inscricao/bolsa');
+	});
+
+	Route::get('/inscricao/bolsa', function (Request $req) use ($module) {
+		$aluno = $req->session()->get('aluno');
+		$prova = $req->session()->get('prova');
+		$local = $req->session()->get('local');
+		$opcoes_curso = $req->session()->get('opcoes_curso');
+		$dados_adicionais = $req->session()->get('dados_adicionais');
+
+		// inicio bloco Enviar e-mail
+
+		$inf_aluno = json_decode($aluno, TRUE);
+		//print_r($inf_aluno);
+
+		$nomealuno = $inf_aluno['nome'];
+		$cpfaluno = $inf_aluno['cpf'];
+		$emailaluno = $inf_aluno['email'];
+		$fammsg = "Sua inscrição foi realizada! Aguarde o contato dos organizadores do evento via email ou telefone para confirmar sua inscrição";
+		$famemail = 'informativo@fam.br';
+		$famassunto = 'Mensagem Vestibular FAM';
+
+		$cabecalho =
+			'MIME-Version: 1.0' . "\r\n" .
+			'Content-type: text/html; charset=UTF-8;' . "\r\n" .
+			'From: ' . $emailaluno . "\r\n" .
+			'Reply-To: ' . $famemail . "\r\n" .
+			'X-Mailer: PHP/' . phpversion();
+
+		$mensagem = "<h5>Nome: " . $nomealuno . "<br>CPF: " . $cpfaluno . "<br><br>FAM informa: </h5><p>" . $fammsg . "</p>";
+
+		$enviar = mail($famemail, $famassunto, $mensagem, $cabecalho);
+
+		if ($enviar) {
+			$msgemail = "Sucesso !! ";
+		} else {
+			$msgemail = "";
+		}
+
+		// fim bloco
+
+		// WTF
+
+		$dados = [
+			'aluno' => $aluno,
+			'opcoes_curso' => $opcoes_curso,
+			'prova' => $prova,
+			'dados_adicionais' => $dados_adicionais,
+			'msgemail' => $msgemail
+		];
+
+		if (isset($_GET['debug']) && $_GET['debug'] == 'dump') dd($dados);
+		return view('AmbienteConversao::finaliza', $dados);
+	});
+
 	/////// fim bloco BOLSAS *******************************
 
 
 	// Importar dados via CSV
 	Route::get('/import_csv', function (Request $req) use ($module) {
-		
-		$tc = 14;	//total colunas
+
+		$tc = 15;	//total colunas
 		echo "<img src='/documentos/foto.jpg'/><br><br>";
 		$path = public_path('/documentos/bolsa.csv');
 		$csv = file_get_contents($path);
-		$vetor = explode(',',$csv);
-		$linha = (count($vetor)-1)/$tc;
+		$vetor = explode(',', $csv);
+		$linha = (count($vetor) - 1) / $tc;
 		$matriz = array(array());
 		$i = 0;
 
-		echo count($vetor)."<br><br>";
-		echo $linha."<br><br>";
+		$campanha = Campanha::find($module->options['campanha']);
 
-		for($l=0;$l<$linha;$l++){
-		for($c=0;$c<$tc;$c++){
-			$matriz[$l][$c] = $vetor[$i];
-			$i++;
-		}}
+		echo count($vetor) . " - " . $linha . "<br>";
+		echo $campanha->nome . "<br><br>";
 
-		for($l=1;$l<$linha;$l++){				
-			echo $matriz[$l][0]." | "; // nome
-			echo $matriz[$l][1]." | "; // sobrenome
-			echo $matriz[$l][2]." | "; // email
-			echo $matriz[$l][3]." | "; // celular
-			echo $matriz[$l][4]." | "; // telefone
-			echo $matriz[$l][5]." | "; // cpf
-			echo $matriz[$l][6]." | "; // datanascimento
-			echo $matriz[$l][7]." | "; // cidade
-			echo $matriz[$l][8]." | "; // uf
-			echo $matriz[$l][9]." | "; // como conheceu
-			echo $matriz[$l][10]." | "; // sexo
-			echo $matriz[$l][11]." | "; // deficiencia
-			echo $matriz[$l][12]." | ";	// curso		
-			echo $matriz[$l][13]." <hr> ";	// ingresso	 			
+		for ($l = 0; $l < $linha; $l++) {
+			for ($c = 0; $c < $tc; $c++) {
+				$matriz[$l][$c] = $vetor[$i];
+				$i++;
+			}
 		}
-		/*		
-		$aluno = new Aluno();
-		//for($l=1;$l<$linha;$l++){	
-			$l = 1;		
-			$aluno->cpf = $matriz[$l][0];	
-			$aluno->nome = $matriz[$l][1];
-			$aluno->sobrenome = $matriz[$l][2];
-			$aluno->email = $matriz[$l][3];			
-			$aluno->telefone = $matriz[$l][4];
-			$aluno->celular = $matriz[$l][5];			
-			//$aluno->datanascimento = $matriz[$l][6];
-			$aluno->cidade = $matriz[$l][7];
-			$aluno->estado = $matriz[$l][8];
-			$aluno->como_conheceu = $matriz[$l][9];
-			$aluno->dados_adicionais = $matriz[$l][10];
-			$aluno->sexo = $matriz[$l][11];
-			$aluno->deficiencia = $matriz[$l][12];
-			$aluno->ingresso = $matriz[$l][13];	
-		//}*/
-		
+
+		for ($l = 1; $l < $linha; $l++) {
+
+			$cpf = $matriz[$l][5]; // cpf
+			$aluno = Aluno::porCPF($cpf);
+			if (is_null($aluno)) {
+				$aluno = new Aluno(array_merge([
+					'cpf' => $cpf
+				]));
+			}
+			$aluno->nome = $matriz[$l][0]; // nome
+			$aluno->sobrenome = $matriz[$l][1]; // sobrenome
+			$aluno->email = $matriz[$l][2]; // email
+			$aluno->celular = $matriz[$l][3]; // celular
+			$aluno->telefone = $matriz[$l][4]; // telefone
+			$aluno->data_nascimento = $matriz[$l][6]; // datanascimento
+			$aluno->rg = "xxxxxxxxxx";
+			//$aluno->cidade = $matriz[$l][7]; // cidade
+			//$aluno->estado = $matriz[$l][8]; // uf
+			//$aluno->como_conheceu = $matriz[$l][9]; // como conheceu
+			$aluno->sexo = $matriz[$l][10]; // sexo
+			$aluno->deficiencia = $matriz[$l][11]; // deficiencia				
+			$aluno->ingresso = $matriz[$l][13];	// ingresso				
+			$curso_id = $matriz[$l][14];	// curso
+
+			$aluno->save();
+
+			$curso = Curso::find($curso_id);
+
+			$lead = new Lead();
+			$lead->aluno()->associate($aluno->id);
+			$lead->campanha()->associate($campanha->id);
+			// Curso
+			if ($curso) {
+				$lead->curso()->associate($curso);
+				$lead->opcao_curso_1 = $curso->id;
+				$cursonome = $curso->nome . " - " . $curso_id;
+			} else {					
+				$cursonome = $matriz[$l][12] . " - " . $matriz[$l][14]. " (Obs.)";
+			}
+			$lead->save();
+
+
+			echo $l	. " , ";
+			echo $matriz[$l][0] . " , "; // nome
+			echo $matriz[$l][1] . " , "; // sobrenome
+			echo $matriz[$l][2] . " , "; // email
+			echo $matriz[$l][3] . " , "; // celular
+			echo $matriz[$l][4] . " , "; // telefone
+			echo $matriz[$l][5] . " , "; // cpf
+			echo $matriz[$l][6] . " , "; // datanascimento
+			//echo $matriz[$l][7]." , "; // cidade
+			//echo $matriz[$l][8]." , "; // uf
+			//echo $matriz[$l][9]." , "; // como conheceu
+			echo $matriz[$l][10] . " , "; // sexo
+			echo $matriz[$l][11] . " , "; // deficiencia
+			echo $cursonome . " , ";	// curso		
+			echo $matriz[$l][13] . ", <br> ";	// ingresso		
+
+		}
 	});
 
 	Route::get('/resultados', function (Request $req) use ($module) {
