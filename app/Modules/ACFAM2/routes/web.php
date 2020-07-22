@@ -1088,6 +1088,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 
 	// Importar dados via CSV
+	/*
 	Route::get('/import_csv', function (Request $req) use ($module) {
 
 		$tc = 15;	//total colunas
@@ -1171,6 +1172,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 		}
 	});
+	*/
 
 	Route::get('/resultados', function (Request $req) use ($module) {
 		$aluno = $req->session()->get('aluno');
