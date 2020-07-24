@@ -700,6 +700,10 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		return view('AmbienteConversao::adicionais', $dados);
 	});
 
+	Route::get('/matricula', function (Request $req) use ($module) {		
+		return view('AmbienteConversao::matricula');
+	});
+
 	Route::post('/resultados', function (Request $req) use ($module) {
 		$cpf = $req->input('cpf');
 		$aluno = Aluno::porCPF($cpf);

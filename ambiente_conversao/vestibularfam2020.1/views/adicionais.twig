@@ -118,20 +118,20 @@ $("[type=file]").on("change", function(){
 				<input required id="rg" name="arquivos[rg]"  type="file" style="display:none" placeholder="Envie seu RG *" onchange="verificar(this);"/>
 				<label class="arquivo" for="rg" onclick="amarelo(this);">Envie seu RG *</label><br><br>
 
-				<input required id="titulo" name="arquivos[titulo]"  type="file" style="display:none" placeholder="Título de Eleitor *" onchange="verificar(this);"/>
-				<label class="arquivo" for="titulo" onclick="amarelo(this);">Título de Eleitor *</label><br><br>
+				<input id="titulo" name="arquivos[titulo]"  type="file" style="display:none" placeholder="Título de Eleitor *" onchange="verificar(this);"/>
+				<label class="arquivo" for="titulo" onclick="amarelo(this);">Título de Eleitor</label><br><br>
 				
 				<input required id="end" name="arquivos[endereco]"  type="file" style="display:none" placeholder="Comprovante de Endereço *" onchange="verificar(this);"/>
 				<label class="arquivo" for="end" onclick="amarelo(this);">Comprovante de Endereço *</label><br><br>
 				
-				<input required id="cert" name="arquivos[certidao]"  type="file" style="display:none" placeholder="Certidão de Nascimento ou Casamento *" onchange="verificar(this);"/>
-				<label class="arquivo" for="cert" onclick="amarelo(this);">Certidão de Nascimento ou Casamento *</label><br><br>
+				<input id="cert" name="arquivos[certidao]"  type="file" style="display:none" placeholder="Certidão de Nascimento ou Casamento *" onchange="verificar(this);"/>
+				<label class="arquivo" for="cert" onclick="amarelo(this);">Certidão de Nascimento ou Casamento</label><br><br>
 				
-				<input required id="hist" name="arquivos[diploma_medio]"  type="file" style="display:none" placeholder="Histórico e Diploma do Ensino Médio *" onchange="verificar(this);"/>
-				<label class="arquivo" for="hist" onclick="amarelo(this);">Histórico e Diploma do Ensino Médio *</label><br><br>
+				<input id="hist" name="arquivos[diploma_medio]"  type="file" style="display:none" placeholder="Histórico e Diploma do Ensino Médio *" onchange="verificar(this);"/>
+				<label class="arquivo" for="hist" onclick="amarelo(this);">Histórico e Diploma do Ensino Médio</label><br><br>
 
-				<input required id="foto" name="arquivos[foto]"  type="file" style="display:none" placeholder="Foto 3X4 *" onchange="verificar(this);"/>
-				<label class="arquivo" for="foto" onclick="amarelo(this);">Foto 3X4 *</label><br><br>
+				<input id="foto" name="arquivos[foto]"  type="file" style="display:none" placeholder="Foto 3X4 *" onchange="verificar(this);"/>
+				<label class="arquivo" for="foto" onclick="amarelo(this);">Foto 3X4</label><br><br>
 				
 				 {% if aluno.ingresso == "enem" %}
 				 <input id="enem" name="arquivos[enem]"  type="file" style="display:none" placeholder="Boletim Enem *" onchange="verificar(this);"/>

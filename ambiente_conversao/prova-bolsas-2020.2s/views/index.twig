@@ -9,6 +9,15 @@
 
 
 <!-- Principal -->
+
+<div class="pop">
+<div class="msg">
+<img src="/assets/images/pop-up-aviso.jpg" onclick="apaga()"></a>
+<!--<a href="https://provadebolsas.com.br" target="_blank"><button class="bolsa">Clique Aqui e Inscreva-se</button></a>-->
+</div>
+</div>
+
+
 <main id="page-home" class="container fit-height">
 	<!--<img class="img-home-person d-none d-md-block" src="/assets/images/img-home-person2.png" style="transform: scale(1.1); position:absolute;bottom:0;right:5%;">-->
 	<div class="row fit mt-4 mt-md-0">
@@ -21,8 +30,8 @@
 				<div class="col">
 					<!-- Aqui é o formulário padrão de cadastro -->
 					<img class="imginscricao" src="/assets/images/bolsas_index.png">
-					<h1 class="encerrado">Inscrições Encerradas !</h1>								
-					<!--
+					<!--<h1 class="encerrado">Inscrições Encerradas !</h1>	-->							
+					
 					<form id="form" action="/inscricaobolsa" method="post" class="form-home">
 						{{ csrf_field() }}
 						<the-mask onkeypress="Valida();" required name="cpf" id="cpf" class="form-control cpf" type="tel" placeholder="Insira seu CPF" :mask="['###.###.###-##']" title="Por favor insira seu CPF"></the-mask>
@@ -36,17 +45,27 @@
                                 <option v-for="curso in cursos_sort" :value="curso.id" v-html="curso.nome"></option>
                             </select>
 						</div>
-						<fb:login-button onclick="fb_login_start" onlogin="fb_login" scope="public_profile,email" max-rows="1" size="large" button-type="continue_with" show-faces="false" auto-logout-link="false" use-continue-as="true"></fb:login-button>
+						<!--<fb:login-button onclick="fb_login_start" onlogin="fb_login" scope="public_profile,email" max-rows="1" size="large" button-type="continue_with" show-faces="false" auto-logout-link="false" use-continue-as="true"></fb:login-button>
 						<br>
-						<input class="btn cta" type="submit" value="Continuar" />
+						<input class="btn cta" type="submit" value="Continuar" />-->
 
 					</form>
-					-->
+					
 				</div>
 			</div>
 		</div>
 	</div>
 </main>
+
+<script language=javascript type="text/javascript">
+function apaga() {
+	$('.pop').css({'display':'none'});	
+}
+/*
+window.open('/assets/pop/pop.html','page','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=520,height=520');
+*/
+</script>
+
 {% endblock %}
 
 {% block scripts %}
