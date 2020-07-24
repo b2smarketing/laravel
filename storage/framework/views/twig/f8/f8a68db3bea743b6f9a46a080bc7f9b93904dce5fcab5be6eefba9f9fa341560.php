@@ -121,9 +121,9 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
                             ";
         }
         // line 80
-        echo "                            <li class=\"nav-item\">
+        echo "                            <!--<li class=\"nav-item\">
                                 <a class=\"nav-link\" href=\"https://assets.fam.br/arquivos/Programa-Desconto-Especial-pelo-ENEM-2020.1.pdf\" target=\"_blank\">Bolsas ENEM</a>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </div>

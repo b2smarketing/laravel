@@ -35,14 +35,14 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
         echo "
 <!-- Principal -->
 
-<!-- pop 
+
 <div class=\"pop\">
 <div class=\"msg\">
-<img src=\"/assets/images/bolsa.png\" onclick=\"apaga()\"></a>
+<img src=\"/assets/images/pop-up-aviso.jpg\" onclick=\"apaga()\"></a>
 <a href=\"https://provadebolsas.com.br\" target=\"_blank\"><button class=\"bolsa\">Clique Aqui e Inscreva-se</button></a>
 </div>
 </div>
--->
+
 
 
 <main id=\"page-home\" class=\"container fit-height\">
