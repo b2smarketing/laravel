@@ -24,20 +24,20 @@ resp.css({"display": "none"});
 resp.css({"display": "block"});
 }
 
-$("[type=file]").on("change", function(){
-  // Name of file and placeholder
-  var file = this.files[0].name;
-  var dflt = $(this).attr("placeholder");
-  if($(this).val()!=""){
-	$(this).next().text(file);	
-  } else {
-	$(this).next().text(dflt);
-  }
+$("[type=file]").on("change", function () { // Name of file and placeholder
+var file = this.files[0].name;
+var dflt = $(this).attr("placeholder");
+if ($(this).val() != "") {
+$(this).next().text(file);
+} else {
+$(this).next().text(dflt);
+}
 });
 
 });
 		</script>
 	</head>
+	<div class="poparq"></div>
 	<body id='page-adicionais'>
 		<div class="alteracoes">
 			<img class="imgadd" src="/assets/images/fam2020.png">
@@ -89,15 +89,17 @@ $("[type=file]").on("change", function(){
 					<input class="form-control afazer" onfocus="mudacor(this);" onfocusout="mudacor(this);" placeholder="*Bairro:" type="text" id="r11" name="dados_adicionais[responsavel_bairro]"/><br>
 					<input class="form-control afazer" onfocus="mudacor(this);" onfocusout="mudacor(this);" placeholder="*Cidade/UF:" type="text" id="r12" name="dados_adicionais[responsavel_cidade_uf]"/><br>
 					<br>
-					
-					<input id="r13" name="arquivos[cpf_responsavel]" type="file" style="display:none" placeholder="Envie CPF do Responsável *" />
-					<label class="arquivo" for="r13" onclick="amarelo(this);">Envie CPF do Responsável *</label><br><br>
-				
-					<input id="r14" name="arquivos[rg_responsavel]"  type="file" style="display:none" placeholder="Envie RG do Responsável *" />
+
+					<input id="r13" name="arquivos[cpf_responsavel]" type="file" style="display:none" placeholder="Envie CPF do Responsável *"/>
+					<label class="arquivo" for="r13" onclick="amarelo(this);">Envie CPF do Responsável *</label>
+						&emsp;<span class="tutoarq" onclick="manual(1)">?</span>
+						<img class="imgarq" src="" onclick="apagamanual()"><br><br>
+
+					<input id="r14" name="arquivos[rg_responsavel]" type="file" style="display:none" placeholder="Envie RG do Responsável *"/>
 					<label class="arquivo" for="r14" onclick="amarelo(this);">Envie RG do Responsável *</label><br>
 
 				</div>
-				<hr>				
+				<hr>
 				<p>Atendendo à Portaria Normativa não 21, de 28 de agosto de 2013, com relação à raça/cor, o candidato se autodeclara:</p>
 				<select class="form-control afazer" onfocus="mudacor(this);" onfocusout="mudacor(this);" name="dados_adicionais[raca]">
 					<option value="">Autodeclaração de raça/cor:</option>
@@ -109,58 +111,79 @@ $("[type=file]").on("change", function(){
 				<input class="form-control afazer" onfocus="mudacor(this);" onfocusout="mudacor(this);" name="nome_social" type="text" placeholder="Nome Social (opcional)"/><br>
 				<hr><br>
 				<!--ARQUIVO ; Obs.: php artisan storage:link -->
-				<p><b><span style="color:#f00">ATENÇÃO:</span><br>Envie seus arquivos utilizando formato PDF.<br>(Máx.: 1000KB / arquivo)<b></p>												
-				<input type="hidden" name="MAX_FILE_SIZE" value="1000000">				
-				
-				<input required id="cpf" name="arquivos[cpf]" type="file" style="display:none" placeholder="Envie seu CPF *" onchange="verificar(this);"/>
-				<label class="arquivo" for="cpf" onclick="amarelo(this);">Envie seu CPF *</label><br><br>
-				
-				<input required id="rg" name="arquivos[rg]"  type="file" style="display:none" placeholder="Envie seu RG *" onchange="verificar(this);"/>
-				<label class="arquivo" for="rg" onclick="amarelo(this);">Envie seu RG *</label><br><br>
+				<p>
+					<b>
+						<span style="color:#f00">ATENÇÃO:</span><br>Envie seus arquivos utilizando formato PDF.<br>(Máx.: 1000KB / arquivo)<b></p>
+						<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
 
-				<input id="titulo" name="arquivos[titulo]"  type="file" style="display:none" placeholder="Título de Eleitor *" onchange="verificar(this);"/>
-				<label class="arquivo" for="titulo" onclick="amarelo(this);">Título de Eleitor</label><br><br>
-				
-				<input required id="end" name="arquivos[endereco]"  type="file" style="display:none" placeholder="Comprovante de Endereço *" onchange="verificar(this);"/>
-				<label class="arquivo" for="end" onclick="amarelo(this);">Comprovante de Endereço *</label><br><br>
-				
-				<input id="cert" name="arquivos[certidao]"  type="file" style="display:none" placeholder="Certidão de Nascimento ou Casamento *" onchange="verificar(this);"/>
-				<label class="arquivo" for="cert" onclick="amarelo(this);">Certidão de Nascimento ou Casamento</label><br><br>
-				
-				<input id="hist" name="arquivos[diploma_medio]"  type="file" style="display:none" placeholder="Histórico e Diploma do Ensino Médio *" onchange="verificar(this);"/>
-				<label class="arquivo" for="hist" onclick="amarelo(this);">Histórico e Diploma do Ensino Médio</label><br><br>
+						<input required id="cpf" name="arquivos[cpf]" type="file" style="display:none" placeholder="Envie seu CPF *" onchange="verificar(this);"/>
+						<label class="arquivo" for="cpf" onclick="amarelo(this);">Envie seu CPF *</label>
+						&emsp;<span class="tutoarq" onclick="manual(1)">?</span>
+						<img class="imgarq1" src="" onclick="apagamanual(1)"><br><br>
 
-				<input id="foto" name="arquivos[foto]"  type="file" style="display:none" placeholder="Foto 3X4 *" onchange="verificar(this);"/>
-				<label class="arquivo" for="foto" onclick="amarelo(this);">Foto 3X4</label><br><br>
-				
-				 {% if aluno.ingresso == "enem" %}
-				 <input id="enem" name="arquivos[enem]"  type="file" style="display:none" placeholder="Boletim Enem *" onchange="verificar(this);"/>
-				 <label class="arquivo" for="enem" onclick="amarelo(this);">Boletim Enem *</label><br><br>
-				 {% endif %}
+					<input required id="rg" name="arquivos[rg]" type="file" style="display:none" placeholder="Envie seu RG *" onchange="verificar(this);"/>
+					<label class="arquivo" for="rg" onclick="amarelo(this);">Envie seu RG *</label>
+						&emsp;<span class="tutoarq" onclick="manual(2)">?</span>
+						<img class="imgarq2" src="" onclick="apagamanual(2)"><br><br>
 
-				 {% if aluno.ingresso == "segunda_graduacao" %}
-				 <input id="diploma" name="arquivos[diploma_superior]"  type="file" style="display:none" placeholder="Diploma Ensino Superior *" onchange="verificar(this);"/>
-				 <label class="arquivo" for="diploma" onclick="amarelo(this);">Diploma Ensino Superior *</label><br><br>
-				 {% endif %}
+					<input id="titulo" name="arquivos[titulo]" type="file" style="display:none" placeholder="Título de Eleitor *" onchange="verificar(this);"/>
+					<label class="arquivo" for="titulo" onclick="amarelo(this);">Título de Eleitor</label>
+						&emsp;<span class="tutoarq" onclick="manual(3)">?</span>
+						<img class="imgarq3" src="" onclick="apagamanual(3)"><br><br>
 
-				<input id="militar" name="arquivos[militar]"  type="file" style="display:none" placeholder="Certificado Militar (se houver)" onchange="verificar(this);"/>
-				<label class="arquivo" for="militar" onclick="amarelo(this);">Certificado Militar (se houver)</label><br><br>
-				
-				<input id="cnh" name="arquivos[cnh]"  type="file" style="display:none" placeholder="CNH (se houver)" onchange="verificar(this);"/>
-				<label class="arquivo" for="cnh" onclick="amarelo(this);">CNH (se houver)</label><br><br>
+					<input required id="end" name="arquivos[endereco]" type="file" style="display:none" placeholder="Comprovante de Endereço *" onchange="verificar(this);"/>
+					<label class="arquivo" for="end" onclick="amarelo(this);">Comprovante de Endereço *</label>
+						&emsp;<span class="tutoarq" onclick="manual(4)">?</span>
+						<img class="imgarq4" src="" onclick="apagamanual(4)"><br><br>
 
-				<input id="programa" name="arquivos[programa]"  type="file" style="display:none" placeholder="Conteúdo Programático (se houver)" onchange="verificar(this);"/>
-				<label class="arquivo" for="programa" onclick="amarelo(this);">Conteúdo Programático (se houver)</label><br><br>
-				
-				<br><hr>
-				<br><p>				
-					<a class="aceita" 
-					{% if  (lead.curso_id == 63) or (lead.curso_id == 57) or (lead.curso_id == 52) or (lead.curso_id == 59) %}
-					href="/assets/docs/Termo-de-Aceite_Tecnico_010720_PDF.pdf" 
-					{% else %}
-					href="/assets/docs/Termo-de-Aceite_Graduacao_190620_PDF.pdf"
-					{% endif %}					
-					target="_blank">Aceita o Contrato de Serviços Educacionais ?</a>&emsp;<input type="checkbox" id="aceito1"></p>
+					<input id="cert" name="arquivos[certidao]" type="file" style="display:none" placeholder="Certidão de Nascimento ou Casamento *" onchange="verificar(this);"/>
+					<label class="arquivo" for="cert" onclick="amarelo(this);">Certidão de Nascimento ou Casamento</label>
+						&emsp;<span class="tutoarq" onclick="manual(5)">?</span>
+						<img class="imgarq5" src="" onclick="apagamanual(5)"><br><br>
+
+					<input id="hist" name="arquivos[diploma_medio]" type="file" style="display:none" placeholder="Histórico e Diploma do Ensino Médio *" onchange="verificar(this);"/>
+					<label class="arquivo" for="hist" onclick="amarelo(this);">Histórico e Diploma do Ensino Médio</label>
+						&emsp;<span class="tutoarq" onclick="manual(6)">?</span>
+						<img class="imgarq6" src="" onclick="apagamanual(6)"><br><br>
+
+					<input id="foto" name="arquivos[foto]" type="file" style="display:none" placeholder="Foto 3X4 *" onchange="verificar(this);"/>
+					<label class="arquivo" for="foto" onclick="amarelo(this);">Foto 3X4</label>
+						&emsp;<span class="tutoarq" onclick="manual(7)">?</span>
+						<img class="imgarq7" src="" onclick="apagamanual(7)"><br><br>
+
+					{% if aluno.ingresso == "enem" %}
+						<input id="enem" name="arquivos[enem]" type="file" style="display:none" placeholder="Boletim Enem *" onchange="verificar(this);"/>
+						<label class="arquivo" for="enem" onclick="amarelo(this);">Boletim Enem *</label>
+						&emsp;<span class="tutoarq" onclick="manual(8)">?</span>
+						<img class="imgarq8" src="" onclick="apagamanual(8)"><br><br>
+					{% endif %}
+
+					{% if aluno.ingresso == "segunda_graduacao" %}
+						<input id="diploma" name="arquivos[diploma_superior]" type="file" style="display:none" placeholder="Diploma Ensino Superior *" onchange="verificar(this);"/>
+						<label class="arquivo" for="diploma" onclick="amarelo(this);">Diploma Ensino Superior *</label>
+						&emsp;<span class="tutoarq" onclick="manual(9)">?</span>
+						<img class="imgarq9" src="" onclick="apagamanual(9)"><br><br>
+					{% endif %}
+
+					<input id="militar" name="arquivos[militar]" type="file" style="display:none" placeholder="Certificado Militar (se houver)" onchange="verificar(this);"/>
+					<label class="arquivo" for="militar" onclick="amarelo(this);">Certificado Militar (se houver)</label>
+						&emsp;<span class="tutoarq" onclick="manual(10)">?</span>
+						<img class="imgarq10" src="" onclick="apagamanual(10)"><br><br>
+
+					<input id="cnh" name="arquivos[cnh]" type="file" style="display:none" placeholder="CNH (se houver)" onchange="verificar(this);"/>
+					<label class="arquivo" for="cnh" onclick="amarelo(this);">CNH (se houver)</label>
+						&emsp;<span class="tutoarq" onclick="manual(11)">?</span>
+						<img class="imgarq11" src="" onclick="apagamanual(11)"><br><br>
+
+					<input id="programa" name="arquivos[programa]" type="file" style="display:none" placeholder="Conteúdo Programático (se houver)" onchange="verificar(this);"/>
+					<label class="arquivo" for="programa" onclick="amarelo(this);">Conteúdo Programático (se houver)</label>
+						<!--&emsp;<span class="tutoarq" onclick="manual(12)">?</span>
+						<img class="imgarq12" src="" onclick="apagamanual(12)">--><br><br>
+
+					<br><hr><br>
+				</p>
+				<p>
+					<a class="aceita" {% if (lead.curso_id == 63) or (lead.curso_id == 57) or (lead.curso_id == 52) or (lead.curso_id == 59) %} href="/assets/docs/Termo-de-Aceite_Tecnico_010720_PDF.pdf" {% elseif (lead.curso_id == 69) or (lead.curso_id == 74) or (lead.curso_id == 75) or (lead.curso_id == 76) or (lead.curso_id == 77) %} href="/assets/docs/Termo-de-Aceite_EAD_190620_PDF.pdf" {% else %} href="/assets/docs/Termo-de-Aceite_Graduacao_190620_PDF.pdf" {% endif %} target="_blank">Aceita o Contrato de Serviços Educacionais ?</a>&emsp;<input type="checkbox" id="aceito1"></p>
 				<br><p>
 					<a class="aceita" href="/assets/docs/Termo_LGPD.pdf" target="_blank">Aceita Termo para Tratamento de Dados Pessoais ?</a>&emsp;<input type="checkbox" id="aceito2"></p>
 				<br><hr><br>

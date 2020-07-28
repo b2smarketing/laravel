@@ -103,6 +103,62 @@ function verificar(ficheiro){
     return false;
 }
 
+function manual(x){
+    if (x == 1){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq1').attr('src','/assets/images/1.jpg').css({'display':'block'});
+    }
+    if (x == 2){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq2').attr('src','/assets/images/2.jpg').css({'display':'block'});
+    }
+    if (x == 3){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq3').attr('src','/assets/images/3.jpg').css({'display':'block'});
+    }
+    if (x == 4){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq4').attr('src','/assets/images/4.jpg').css({'display':'block'});
+    }
+    if (x == 5){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq5').attr('src','/assets/images/5.jpg').css({'display':'block'});
+    }
+    if (x == 6){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq6').attr('src','/assets/images/6.jpg').css({'display':'block'});
+    }
+    if (x == 7){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq7').attr('src','/assets/images/7.jpg').css({'display':'block'});
+    }
+    if (x == 8){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq8').attr('src','/assets/images/8.jpg').css({'display':'block'});
+    }
+    if (x == 9){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq9').attr('src','/assets/images/9.jpg').css({'display':'block'});
+    }
+    if (x == 10){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq10').attr('src','/assets/images/10.jpg').css({'display':'block'});
+    }
+    if (x == 11){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq11').attr('src','/assets/images/11.jpg').css({'display':'block'});
+    }
+    if (x == 12){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq12').attr('src','/assets/images/12.jpg').css({'display':'block'});
+    }
+}
+
+function apagamanual(x){
+    $('.poparq').css({'display':'none'});
+    $('.imgarq'+x).css({'display':'none'});
+}
+
 
 function aceitar() { // adicionais 
 
