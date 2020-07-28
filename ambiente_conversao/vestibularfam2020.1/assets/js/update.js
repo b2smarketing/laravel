@@ -103,6 +103,7 @@ function verificar(ficheiro){
     return false;
 }
 
+//exibe manuais 
 function manual(x){
     if (x == 1){
         $('.poparq').css({'display':'block'});
@@ -154,6 +155,7 @@ function manual(x){
     }
 }
 
+//esconde manual
 function apagamanual(x){
     $('.poparq').css({'display':'none'});
     $('.imgarq'+x).css({'display':'none'});
