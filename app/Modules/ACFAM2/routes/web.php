@@ -1092,7 +1092,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 
 	// Importar dados via CSV - atualizado dia 30/07/2020
-	
+	/*
 	Route::get('/import_csv', function (Request $req) use ($module) {
 		$tc = 15;	//total colunas
 		echo "<img src='/documentos/foto.jpg'/><br><br>";
@@ -1179,6 +1179,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			'aluno' => $aluno
 		]);
 	});
+	*/
 
 	Route::any('/assets/{all?}', function (Request $req, $file) use ($module) {
 		$dados = $req->session()->get('obj');
