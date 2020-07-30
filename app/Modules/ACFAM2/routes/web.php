@@ -700,7 +700,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		return view('AmbienteConversao::adicionais', $dados);
 	});
 
-	Route::get('/matricula', function (Request $req) use ($module) {		
+	Route::get('/matricula', function (Request $req) use ($module) {
 		return view('AmbienteConversao::matricula');
 	});
 
@@ -1091,10 +1091,9 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 	/////// fim bloco BOLSAS *******************************
 
 
-	// Importar dados via CSV
-	/*
+	// Importar dados via CSV - atualizado dia 30/07/2020
+	
 	Route::get('/import_csv', function (Request $req) use ($module) {
-
 		$tc = 15;	//total colunas
 		echo "<img src='/documentos/foto.jpg'/><br><br>";
 		$path = public_path('/documentos/bolsa.csv');
@@ -1103,21 +1102,16 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$linha = (count($vetor) - 1) / $tc;
 		$matriz = array(array());
 		$i = 0;
-
 		$campanha = Campanha::find($module->options['campanha']);
-
 		echo count($vetor) . " - " . $linha . "<br>";
 		echo $campanha->nome . "<br><br>";
-
 		for ($l = 0; $l < $linha; $l++) {
 			for ($c = 0; $c < $tc; $c++) {
 				$matriz[$l][$c] = $vetor[$i];
 				$i++;
 			}
 		}
-
 		for ($l = 1; $l < $linha; $l++) {
-
 			$cpf = $matriz[$l][5]; // cpf
 			$aluno = Aluno::porCPF($cpf);
 			if (is_null($aluno)) {
@@ -1139,14 +1133,13 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			$aluno->deficiencia = $matriz[$l][11]; // deficiencia				
 			$aluno->ingresso = $matriz[$l][13];	// ingresso				
 			$curso_id = $matriz[$l][14];	// curso
-
+			
 			$aluno->save();
-
+			
 			$curso = Curso::find($curso_id);
-
 			$lead = new Lead();
 			$lead->aluno()->associate($aluno->id);
-			$lead->campanha()->associate($campanha->id);
+			$lead->campanha()->associate(33);
 			// Curso
 			if ($curso) {
 				$lead->curso()->associate($curso);
@@ -1156,8 +1149,6 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 				$cursonome = $matriz[$l][12] . " - " . $matriz[$l][14]. " (Obs.)";
 			}
 			$lead->save();
-
-
 			echo $l	. " , ";
 			echo $matriz[$l][0] . " , "; // nome
 			echo $matriz[$l][1] . " , "; // sobrenome
@@ -1173,10 +1164,9 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			echo $matriz[$l][11] . " , "; // deficiencia
 			echo $cursonome . " , ";	// curso		
 			echo $matriz[$l][13] . ", <br> ";	// ingresso		
-
 		}
 	});
-	*/
+	
 
 	Route::get('/resultados', function (Request $req) use ($module) {
 		$aluno = $req->session()->get('aluno');
