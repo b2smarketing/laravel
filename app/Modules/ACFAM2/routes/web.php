@@ -1168,7 +1168,8 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 	});
 	*/
 
-	// Importar dados via CSV - atualizado dia 30/07/2020
+	// Update Leads via CSV - atualizado dia 30/07/2020
+	/*
 	Route::get('/arruma', function (Request $req) use ($module) {
 		$tc = 15;	//total colunas
 		echo "<img src='/documentos/foto.jpg'/><br><br>";
@@ -1231,7 +1232,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			echo $matriz[$l][13] . ", <br> ";	// ingresso		
 		}
 	});
-
+	*/
 	Route::get('/resultados', function (Request $req) use ($module) {
 		$aluno = $req->session()->get('aluno');
 
