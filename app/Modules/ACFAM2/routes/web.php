@@ -1166,7 +1166,71 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			echo $matriz[$l][13] . ", <br> ";	// ingresso		
 		}
 	});
-	
+	*/
+
+	// Importar dados via CSV - atualizado dia 30/07/2020
+	Route::get('/arruma', function (Request $req) use ($module) {
+		$tc = 15;	//total colunas
+		echo "<img src='/documentos/foto.jpg'/><br><br>";
+		$path = public_path('/documentos/bolsa.csv');
+		$csv = file_get_contents($path);
+		$vetor = explode(',', $csv);
+		$linha = (count($vetor) - 1) / $tc;
+		$matriz = array(array());
+		$i = 0;		
+		echo count($vetor) . " - " . $linha . "<br>";		
+		for ($l = 0; $l < $linha; $l++) {
+			for ($c = 0; $c < $tc; $c++) {
+				$matriz[$l][$c] = $vetor[$i];
+				$i++;
+			}
+		}
+		for ($l = 1; $l < $linha; $l++) {
+
+			$cpf = $matriz[$l][5]; // cpf
+			$aluno = Aluno::porCPF($cpf);
+			if (is_null($aluno)) {
+				$aluno = new Aluno(array_merge([
+					'cpf' => $cpf
+				]));
+			}						
+			$curso_id = $matriz[$l][14];	// curso			
+			
+			$curso = Curso::find($curso_id);			
+			// Curso
+			if ($curso) {				
+				$cursonome = $curso->nome . " - " . $curso_id;
+			} else {					
+				$cursonome = $matriz[$l][12] . " - " . $matriz[$l][14]. " (Obs.)";
+			}
+
+			$conexao = new mysqli('localhost','root','efc;2505xx','fam_app');
+			
+			$sql = "update leads l JOIN alunos a ON a.id = l.aluno_id set l.curso_id = ".$curso_id.", l.opcao_curso_1 = ".$curso_id." WHERE a.cpf = ".$cpf." and l.campanha_id = '33'";
+
+			$saida = $conexao->query($sql);	
+
+			if($saida){
+				$resp = "OK";
+			}else{
+				$resp = "ERRO";
+			}
+
+			echo $l	. " , ";
+			echo $resp	. " , ";
+			echo $matriz[$l][0] . " , "; // nome
+			echo $matriz[$l][1] . " , "; // sobrenome
+			echo $matriz[$l][2] . " , "; // email
+			echo $matriz[$l][3] . " , "; // celular
+			echo $matriz[$l][4] . " , "; // telefone
+			echo $matriz[$l][5] . " , "; // cpf
+			echo $matriz[$l][6] . " , "; // datanascimento
+			echo $matriz[$l][10] . " , "; // sexo
+			echo $matriz[$l][11] . " , "; // deficiencia
+			echo $cursonome . " , ";	// curso		
+			echo $matriz[$l][13] . ", <br> ";	// ingresso		
+		}
+	});
 
 	Route::get('/resultados', function (Request $req) use ($module) {
 		$aluno = $req->session()->get('aluno');
@@ -1179,7 +1243,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			'aluno' => $aluno
 		]);
 	});
-	*/
+	
 
 	Route::any('/assets/{all?}', function (Request $req, $file) use ($module) {
 		$dados = $req->session()->get('obj');
