@@ -1204,7 +1204,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 				$cursonome = $matriz[$l][12] . " - " . $matriz[$l][14]. " (Obs.)";
 			}
 
-			$conexao = new mysqli('localhost','root','efc;2505xx','fam_app');
+			$conexao = new mysqli('localhost','root','b2smkt@2018#','fam_app');
 			
 			$sql = "update leads l JOIN alunos a ON a.id = l.aluno_id set l.curso_id = ".$curso_id.", l.opcao_curso_1 = ".$curso_id." WHERE a.cpf = ".$cpf." and l.campanha_id = '33'";
 
