@@ -62,7 +62,7 @@
     }
     
     .icone.logo-fam {
-        background-image: url(../images/logo-fam.svg), none;
+        background-image: url(../images/fam.png), none;
         width: 203px;
         height: 51px;
     }
@@ -278,7 +278,7 @@
         display: block;
         padding: 0.5em 1em;
         border-radius: 0.2em;
-        background-color: #004a85;
+        background-color: #fff;
         color: #fff;
         transition: all 0.2s ease;
     }
@@ -345,7 +345,7 @@
             bottom: 0px;
             transform: scale(1.2);
             opacity: 0.1;
-            background-image: url("../images/bg.gif");
+            
             background-position: top center;
             background-size: cover;
             filter: blur(16px);
@@ -377,9 +377,8 @@
         height: 18px;
     }
     
-    body#page-home {
-        background-image: url("../images/bg.gif");
-        background-color: #004a85;
+    body#page-home {        
+        background-color: #fff;
         color: #fff;
         background-size: cover;
         min-height: 100vh;
@@ -445,7 +444,7 @@
     }
     
     body#page-home body {
-        background-color: #004a85;
+        background-color: #fff;
         color: #fff;
     }
     
@@ -495,10 +494,9 @@
     }
     
     @media (max-width: 576px) {
-        body#page-home body#page-home {
-            background-image: url("../images/institucional-background.png") !important;
-        }
-        body#page-home main {
+           body#page-home main {
+            background-image: url("../images/indexm.png");  
+            background-size: cover; 
             position: relative;
             z-index: 999;
             overflow: hidden;
@@ -530,23 +528,13 @@
         font-weight: 300;
     }
     
-    @media (max-width: 768px) {
-        body#page-home {
-            background-image: url("../images/bg.gif");
-        }
-    }
-    
-    body#page-inscricao {
-        background-image: url("../images/background.png");
-        background-color: #0A4174;
-        color: #2b347c;
-        background-size: auto;
-        background-repeat: no-repeat;
+    body#page-inscricao {        
+        color: #0e2e7c;
     }
     
     #page-adicionais {
         margin: 0; padding: 0;
-        background-image: url("../images/background.png");
+        
         background-color: #0A4174;
         color: #fff;
         background-size: cover;
@@ -659,14 +647,13 @@
     }
     
     body#page-finalizar-inscricao {
-        background-image: url("../images/background.png");
-        background-color: #2b347c;
+        background-color:#fff;        
         color: #121215;
     }
     
     @media (max-width: 1500px) {
         body#page-finalizar-inscricao {
-            background-image: url("../images/background.png");
+            
         }
     }
     
@@ -775,19 +762,19 @@
     
     @media (max-width: 768px) {
         body#page-finalizar-inscricao {
-            background-image: url("../images/background.png");
+            
         }
     }
     
     body#page-acompanhar-inscricao {
-        background-image: url("../images/background.png");
+        
         background-color: #2b347c;
         color: #121215;
     }
     
     @media (max-width: 1500px) {
         body#page-acompanhar-inscricao {
-            background-image: url("../images/background.png");
+            
         }
     }
     
@@ -861,7 +848,7 @@
     
     @media (max-width: 768px) {
         body#page-acompanhar-inscricao {
-            background-image: url("../images/background.png");
+            
         }
     }
     

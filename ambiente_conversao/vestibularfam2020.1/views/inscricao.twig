@@ -2,18 +2,17 @@
 
 {% set page_id = 'page-inscricao' %}
 
-
 {% block body %}
-
-	<div
-		id="pageinscricao">
-		<!-- Principal -->
-		<img class="imginscricao" src="/assets/images/fam2020.png">
+    <a href="/"><img src="/assets/images/fam.png" class="logo-azul"></a>
+	<div id="pageinscricao" class="container fit-height inscricaofundo">
+		<!-- Principal -->	
 		<form method="post" action="/inscricao/finaliza" class="js-form" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			{% verbatim %}
 				<main
 					id="page-inscricao">
+						<img class="imginscricao" src="/assets/images/inscricao.png" style="top:20px">
+
 					<!-- Cabeçalho -->
 					<header class="fit-height">
 						<div class="container fit fit-height">
