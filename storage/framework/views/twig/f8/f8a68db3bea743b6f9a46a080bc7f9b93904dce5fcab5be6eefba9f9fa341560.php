@@ -82,8 +82,7 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
             <nav id=\"acfam-nav-main\" class=\"navbar navbar-expand-lg\">
                 <div class=\"container flex-mobile justify-content-around\">
                     <!-- Logo no menu -->
-                    <a class=\"navbar-brand\" href=\"/\"><i class=\"icone logo-fam\"></i></a>
-
+ \t\t\t\t\t<a class=\"navbar-brand\" href=\"/\"><i class=\"icone logo-fam\"></i></a>
                     <!-- Botão para exibir/ocultar menu no mobile -->
                     <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#acfam-nav-main-inner\" aria-controls=\"acfam-nav-main-inner\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                         <i class=\"fa fa-bars\"></i>
@@ -96,31 +95,31 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
                                 <a target=\"_blank\" class=\"nav-link\" href=\"https://fam.br\">Portal FAM</a>
                             </li>
                             ";
-        // line 69
+        // line 68
         if ($this->getAttribute(($context["opcoes"] ?? null), "url_cursos", array())) {
-            // line 70
+            // line 69
             echo "                            <li class=\"nav-item\">
                                 <a target=\"_blank\" class=\"nav-link\" href=\"https://issuu.com/famfaculdadedeamericana/docs/fam_-_faculdade_de_americana_-_guia_de_cursos_vv20\">Guia de Cursos</a>
 <!--                                 <a target=\"_blank\" class=\"nav-link\" href=\"";
-            // line 72
+            // line 71
             echo twig_escape_filter($this->env, $this->getAttribute(($context["opcoes"] ?? null), "url_cursos", array()), "html", null, true);
             echo "\">Guia de Cursos</a>
  -->                            </li>
                             ";
         }
-        // line 75
+        // line 74
         echo "                            ";
         if ($this->getAttribute(($context["opcoes"] ?? null), "url_edital", array())) {
-            // line 76
+            // line 75
             echo "                            <li class=\"nav-item\">
                                 <a target=\"_blank\" class=\"nav-link\" href=\"";
-            // line 77
+            // line 76
             echo twig_escape_filter($this->env, $this->getAttribute(($context["opcoes"] ?? null), "url_edital", array()), "html", null, true);
             echo "\">Edital</a>
                             </li>
                             ";
         }
-        // line 80
+        // line 79
         echo "                            <!--<li class=\"nav-item\">
                                 <a class=\"nav-link\" href=\"https://assets.fam.br/arquivos/Programa-Desconto-Especial-pelo-ENEM-2020.1.pdf\" target=\"_blank\">Bolsas ENEM</a>
                             </li>-->
@@ -131,15 +130,15 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
         </div>
 
 \t\t";
-        // line 89
+        // line 88
         $this->displayBlock('body', $context, $blocks);
-        // line 90
+        // line 89
         echo "
 \t\t<!-- Rodapé -->
-\t\t<footer>
+\t\t<br><br><footer class=\"rodape\">
 \t\t\t<div class=\"container\"><br><br>
 \t\t\t\t<p>Atendimento das 9 às 21 horas ";
-        // line 94
+        // line 93
         if ($this->getAttribute(($context["opcoes"] ?? null), "url_edital", array())) {
             echo "| <a target=\"_blank\" href=\"";
             echo twig_escape_filter($this->env, $this->getAttribute(($context["opcoes"] ?? null), "url_edital", array()), "html", null, true);
@@ -151,7 +150,7 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
         }
         echo "</p>
 <!-- \t\t\t\t<p>Atendimento das 9 às 21 horas ";
-        // line 95
+        // line 94
         if ($this->getAttribute(($context["opcoes"] ?? null), "url_edital", array())) {
             echo "| <a target=\"_blank\" href=\"";
             echo twig_escape_filter($this->env, $this->getAttribute(($context["opcoes"] ?? null), "url_edital", array()), "html", null, true);
@@ -236,13 +235,13 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
 
 \t<!-- Page Scripts -->
 \t";
-        // line 167
+        // line 166
         $this->displayBlock('scripts', $context, $blocks);
-        // line 168
+        // line 167
         echo "
 \t<!-- Tags Footer -->
 \t";
-        // line 170
+        // line 169
         echo $this->getAttribute(($context["tags"] ?? null), "foot", array());
         echo "
 
@@ -255,12 +254,12 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
 </html>";
     }
 
-    // line 89
+    // line 88
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 167
+    // line 166
     public function block_scripts($context, array $blocks = array())
     {
     }
@@ -277,7 +276,7 @@ class __TwigTemplate_e659b37e4dab5fdf21ac799f541af4e7bfdc201f6192d64473a9aeba09b
 
     public function getDebugInfo()
     {
-        return array (  264 => 167,  259 => 89,  246 => 170,  242 => 168,  240 => 167,  155 => 95,  143 => 94,  137 => 90,  135 => 89,  124 => 80,  118 => 77,  115 => 76,  112 => 75,  106 => 72,  102 => 70,  100 => 69,  76 => 48,  68 => 43,  52 => 30,  21 => 1,);
+        return array (  263 => 166,  258 => 88,  245 => 169,  241 => 167,  239 => 166,  154 => 94,  142 => 93,  136 => 89,  134 => 88,  123 => 79,  117 => 76,  114 => 75,  111 => 74,  105 => 71,  101 => 69,  99 => 68,  76 => 48,  68 => 43,  52 => 30,  21 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

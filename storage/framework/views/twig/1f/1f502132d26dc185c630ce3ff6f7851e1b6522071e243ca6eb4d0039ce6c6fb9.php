@@ -28,25 +28,25 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 6
+    // line 5
     public function block_body($context, array $blocks = array())
     {
-        // line 7
-        echo "
-\t<div
-\t\tid=\"pageinscricao\">
-\t\t<!-- Principal -->
-\t\t<img class=\"imginscricao\" src=\"/assets/images/fam2020.png\">
+        // line 6
+        echo "    <a href=\"/\"><img src=\"/assets/images/fam.png\" class=\"logo-azul\"></a>
+\t<div id=\"pageinscricao\" class=\"container fit-height inscricaofundo\">
+\t\t<!-- Principal -->\t
 \t\t<form method=\"post\" action=\"/inscricao/finaliza\" class=\"js-form\" enctype=\"multipart/form-data\">
 \t\t\t";
-        // line 13
+        // line 10
         echo csrf_field();
         echo "
 \t\t\t";
-        // line 292
+        // line 291
         echo "
 \t\t\t\t<main
 \t\t\t\t\tid=\"page-inscricao\">
+\t\t\t\t\t\t<img class=\"imginscricao\" src=\"/assets/images/inscricao.png\" style=\"top:20px\">
+
 \t\t\t\t\t<!-- Cabeçalho -->
 \t\t\t\t\t<header class=\"fit-height\">
 \t\t\t\t\t\t<div class=\"container fit fit-height\">
@@ -349,7 +349,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</p>\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
-        // line 322
+        // line 321
         echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"formado\">
 \t\t\t\t\t\t\t\t<p class=\"align center text-white\">
@@ -386,27 +386,27 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 ";
     }
 
-    // line 358
+    // line 357
     public function block_scripts($context, array $blocks = array())
     {
-        // line 359
+        // line 358
         echo "\t<!-- Variáveis (BI -> VueJS) -->
 \t<script type=\"text/javascript\">
 \t\twindow.history.forward(1);
 let midias = ";
-        // line 362
+        // line 361
         echo twig_jsonencode_filter($this->getAttribute(($context["campanha"] ?? null), "midias", array()));
         echo ";
 let aluno = ";
-        // line 363
+        // line 362
         echo twig_jsonencode_filter(($context["aluno"] ?? null));
         echo ";
 let lead = ";
-        // line 364
+        // line 363
         echo twig_jsonencode_filter(($context["lead"] ?? null));
         echo ";
 let curso = ";
-        // line 365
+        // line 364
         echo twig_escape_filter($this->env, ($context["curso"] ?? null), "html", null, true);
         echo ";
 
@@ -470,12 +470,12 @@ setTimeout(function () {
 \t<script type=\"text/javascript\" src=\"./assets/js/page-inscricao.js\"></script>
 
 \t";
-        // line 426
+        // line 425
         if (($context["error"] ?? null)) {
-            // line 427
+            // line 426
             echo "\t\t<script>
 \t\t\talert('";
-            // line 428
+            // line 427
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');
 \t\t</script>
@@ -495,7 +495,7 @@ setTimeout(function () {
 
     public function getDebugInfo()
     {
-        return array (  479 => 428,  476 => 427,  474 => 426,  410 => 365,  406 => 364,  402 => 363,  398 => 362,  393 => 359,  390 => 358,  353 => 322,  47 => 292,  43 => 13,  35 => 7,  32 => 6,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  479 => 427,  476 => 426,  474 => 425,  410 => 364,  406 => 363,  402 => 362,  398 => 361,  393 => 358,  390 => 357,  353 => 321,  45 => 291,  41 => 10,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
