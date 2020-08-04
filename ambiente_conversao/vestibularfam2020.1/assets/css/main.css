@@ -94,8 +94,8 @@
     #page-inscricao input[type="text"].form-control,
     #page-inscricao input[type="email"].form-control,
     #page-inscricao input[type="number"].form-control,
-    #page-inscricao input[type="tel"].form-control,
-    #page-inscricao select.form-control,
+    #page-inscricao input[type="tel"].form-control,   
+    #page-inscricao select,
     #page-adicionais input[type="text"],
     #page-adicionais input[type="email"],
     #page-adicionais input[type="tel"],
@@ -104,8 +104,15 @@
     #page-adicionais {
         border-radius: 3px;
         background-color: #ffca30;
-        color: #fff;
+        color: #0e2e7c !important;
         box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.15), 0 -1px 0 #29295f;
+    }
+
+    #page-inscricao .form-control.nasc::placeholder,
+    #page-inscricao .form-control.fone::placeholder,
+    #page-inscricao .form-control.cmail::placeholder{
+        color: #0e2e7c !important;
+        font-weight: 800;
     }
     
     select:not([size]):not([multiple]).form-control {
@@ -650,13 +657,7 @@
         background-color:#fff;        
         color: #121215;
     }
-    
-    @media (max-width: 1500px) {
-        body#page-finalizar-inscricao {
-            
-        }
-    }
-    
+        
     body#page-finalizar-inscricao main .row-header {
         padding: 2em;
     }

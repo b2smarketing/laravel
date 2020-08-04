@@ -38,7 +38,47 @@
         font-weight: 600;
         z-index: 3000;
     }
-    
+
+    @media (min-width: 768px) {
+        .navbar {
+            top: 10px;
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            background-color: #0e2e7c;
+            width: 1110px;
+            height: 110px;
+            border-radius: 30px;
+        }
+        .index {
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            background-color: #0e2e7c;
+            margin-top: -3em !important;
+            padding-top: 30em !important;
+            border-radius: 30px;            
+        }
+        .img-home-person {
+            transform: scale(0.8);
+            position: absolute; 
+            top: 3px !important;           
+            left: 3em;
+        }
+        .form-home {
+            position: absolute;
+            margin-left: 12.5em !important;
+            margin-top: -4em !important;
+        }
+        
+    }
+    .form-home {z-index: 500 !important;}
+    .form-home input, .form-home select{
+        color: #0e2e7c !important;
+        background-color: #FFCA30 !important;
+        border: 1px solid #0e2e7c;        
+    }
+
     @media (max-width: 768px) {
         .pop .msg {
             transform: scale(0.65);
@@ -62,6 +102,7 @@
     }
 
     /*manuais*/
+
     .poparq {
         margin: 0;
         padding: 0;
@@ -73,18 +114,8 @@
         background-color: rgba(0, 0, 0, 0.7);
         z-index: 2000;
     }
-    .imgarq1,
-    .imgarq2,
-    .imgarq3,
-    .imgarq4,
-    .imgarq5,
-    .imgarq6,
-    .imgarq7,
-    .imgarq8,
-    .imgarq9,
-    .imgarq10,
-    .imgarq11,
-    .imgarq12{
+
+    .imgarq1, .imgarq2, .imgarq3, .imgarq4, .imgarq5, .imgarq6, .imgarq7, .imgarq8, .imgarq9, .imgarq10, .imgarq11, .imgarq12 {
         display: none;
         position: absolute;
         margin-left: 2em;
@@ -119,38 +150,47 @@
         .js-form {
             display: block;
             position: relative;
-            margin-top: -480px !important;
-        } 
-        .inscricaofundo{
-            border-radius: 30px;
-            top:70px;
-            left:-50px;
-            background-color: #0e2e7c;
-        } 
-        .finalizado{
+            margin-top: -450px !important;            
+        }
+        .inscricaofundo {            
             display: block;
-            width: 1000px !important;
-            padding-left: 150px !important;
+            position: relative;
+            width: 1110px !important;
             border-radius: 30px;
-            top:-50px;
-            background-color: #0e2e7c;    
-        }   
-        .logo-azul{
-            display:block;
-            position:absolute;
-            left:14em;top:20px;height :50px;z-index:1000 !important;
-        }        
+            top: -2em;
+            background-color: #0e2e7c;
+        }
+        .finalizado {
+            display: block;
+            position: relative;
+            left: -4.3em;
+            width: 1110px !important;
+            padding-left: 150px !important;
+            padding-top: 20px !important;
+            border-radius: 30px;
+            top: -2.5em !important;
+            background-color: #0e2e7c;
+            margin-bottom: -18em !important;
+        }
+        .logo-azul {
+            display: block;
+            position: absolute;
+            left: 14em;
+            top: 20px;
+            height: 50px;
+            z-index: 1000 !important;
+        }
     }
 
-    ul a.nav-link{
+    ul a.nav-link {
         background-color: #0e2e7c !important;
         color: #fff !important;
     }
-    ul a.nav-link:hover{
-        background-color: #ffff00 !important;
-        color: #0e2e7c !important;
-    } 
 
+    ul a.nav-link:hover {
+        background-color: #ffca30 !important;
+        color: #fff !important;
+    }
 
     @media (max-width: 768px) {
         .js-form {
@@ -158,17 +198,15 @@
             position: relative;
             margin-top: -260px !important;
         }
-        .inscricaofundo{
+        .inscricaofundo {
             background-color: #0e2e7c;
         }
-        .finalizado{
+        .finalizado {
             background-color: #0e2e7c;
         }
-
-        .logo-azul{
+        .logo-azul {
             display: none;
         }
-
     }
 
     .btn-concluir {
@@ -295,6 +333,11 @@
         font-size: 16px;
         color: #fff;
     }
-    .rodape{
+
+    .rodape {
+        display: block;
+        position: relative;
+        margin-top: -2em !important;
+        z-index: 1;
         color: #0e2e7c !important;
     }

@@ -3,15 +3,14 @@
 {% set page_id = 'page-inscricao' %}
 
 {% block body %}
-    <a href="/"><img src="/assets/images/fam.png" class="logo-azul"></a>
-	<div id="pageinscricao" class="container fit-height inscricaofundo">
+    <div id="pageinscricao" class="container fit-height inscricaofundo">	
 		<!-- Principal -->	
 		<form method="post" action="/inscricao/finaliza" class="js-form" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			{% verbatim %}
 				<main
 					id="page-inscricao">
-						<img class="imginscricao" src="/assets/images/inscricao.png" style="top:20px">
+						<img class="imginscricao" src="/assets/images/inscricao.png" style="top:30px">
 
 					<!-- Cabeçalho -->
 					<header class="fit-height">
@@ -214,18 +213,18 @@
 
 							<!-- WhatsApp / Celular -->
 							<div class="col-xs-12 col-md-2 col-lg-1 v-spacing">
-								<the-mask class="form-control" name="candidato[celular_ddd]" type="tel" placeholder="DDD" required :mask="['(##)']" v-model="aluno.celular_ddd"/>
+								<the-mask class="form-control fone" name="candidato[celular_ddd]" type="tel" placeholder="DDD" required :mask="['(##)']" v-model="aluno.celular_ddd"/>
 							</div>
 							<div class="col-xs-12 col-md-4 col-lg-3 v-spacing">
-								<the-mask class="form-control" name="candidato[celular_numero]" type="tel" placeholder="WhatsApp / Celular" required :mask="['####-####', '#####-####']" v-model="aluno.celular_numero"/>
+								<the-mask class="form-control fone" name="candidato[celular_numero]" type="tel" placeholder="WhatsApp / Celular" required :mask="['####-####', '#####-####']" v-model="aluno.celular_numero"/>
 							</div>
 
 							<!-- Telefone Residencial -->
 							<div class="col-xs-12 col-md-2 col-lg-1 v-spacing">
-								<the-mask class="form-control" name="candidato[telefone_ddd]" type="tel" placeholder="DDD" :mask="['(##)']" v-model="aluno.telefone_ddd"/>
+								<the-mask class="form-control fone" name="candidato[telefone_ddd]" type="tel" placeholder="DDD" :mask="['(##)']" v-model="aluno.telefone_ddd"/>
 							</div>
 							<div class="col-xs-12 col-md-4 col-lg-3 v-spacing">
-								<the-mask class="form-control" name="candidato[telefone_numero]" type="tel" placeholder="Telefone Residencial" :mask="['####-####']" v-model="aluno.telefone_numero"/>
+								<the-mask class="form-control fone" name="candidato[telefone_numero]" type="tel" placeholder="Telefone Residencial" :mask="['####-####']" v-model="aluno.telefone_numero"/>
 							</div>
 
 							<!-- Sexo -->
@@ -335,7 +334,7 @@
 							</div>
 							<!-- Confirma E-mail -->
 							<div class="confirmaemail">
-								<input class="email2 form-control" type="email" onpaste="return false" ondrop="return false" placeholder="Confirme seu E-mail"/>
+								<input class="email2 form-control cmail" type="email" onpaste="return false" ondrop="return false" placeholder="Confirme seu E-mail"/>
 							</div>
 						</div>
 						a
