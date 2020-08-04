@@ -35,7 +35,7 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
         echo "
 \t<!-- Principal -->
 
-
+<!--
 \t<div class=\"pop\">
 \t\t<div class=\"msg\">
 \t\t\t<img src=\"/assets/images/pop-up-aviso.jpg\" onclick=\"apaga()\"></a>
@@ -44,7 +44,7 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 \t\t</a>
 \t</div>
 </div>
-
+-->
 
 <main id=\"page-home\" class=\"container fit-height\">
 \t<div

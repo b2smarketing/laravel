@@ -32,12 +32,13 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
     public function block_body($context, array $blocks = array())
     {
         // line 6
-        echo "<div id=\"pagefinaliza\">
+        echo " <a href=\"/\"><img src=\"/assets/images/fam.png\" class=\"logo-azul\" style=\"left:20em !important;\"></a>
+<div id=\"pagefinaliza\">
 <main class=\"container\">
-\t<div class=\"row\">
+\t<div class=\"row finalizado\">
 \t\t<div class=\"row-header offset-md-1 col-md-7\">
 \t\t\t<h1>Parabéns<br/><span>";
-        // line 10
+        // line 11
         echo twig_escape_filter($this->env, $this->getAttribute(($context["aluno"] ?? null), "primeiro_nome", array()), "html", null, true);
         echo "!</span></h1>
             <p>seu pedido de inscrição foi realizado com sucesso!</p>
@@ -46,7 +47,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 \t\t\t<div class=\"row\">
 \t\t\t\t<div class=\"col-md-4 fit-height\">
 \t\t\t\t\t<div class=\"opcao-curso principal fit ";
-        // line 16
+        // line 17
         if ($this->getAttribute(($context["lead"] ?? null), "isMatriculado", array(0 => $this->getAttribute(($context["opcoes_curso"] ?? null), 0, array(), "array")), "method")) {
             echo "matriculado";
         }
@@ -54,7 +55,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 \t\t\t\t\t\t<h2>Primeira Opção de Curso</h2>
 \t\t\t\t\t\t<p>
 \t\t\t\t\t\t\t";
-        // line 19
+        // line 20
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["opcoes_curso"] ?? null), 0, array(), "array"), "nome", array()), "html", null, true);
         echo "
 \t\t\t\t\t\t</p>
@@ -62,7 +63,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 \t\t\t\t</div>
 \t\t\t\t<div class=\"col-md-4 fit-height\">
 \t\t\t\t\t<div class=\"opcao-curso fit ";
-        // line 24
+        // line 25
         if ($this->getAttribute(($context["lead"] ?? null), "isMatriculado", array(0 => $this->getAttribute(($context["opcoes_curso"] ?? null), 1, array(), "array")), "method")) {
             echo "matriculado";
         }
@@ -70,7 +71,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 \t\t\t\t\t\t<h2>Segunda Opção de Curso</h2>
 \t\t\t\t\t\t<p>
 \t\t\t\t\t\t\t";
-        // line 27
+        // line 28
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["opcoes_curso"] ?? null), 1, array(), "array"), "nome", array()), "html", null, true);
         echo "
 \t\t\t\t\t\t</p>
@@ -78,7 +79,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 \t\t\t\t</div>
 \t\t\t\t<div class=\"col-md-4 fit-height\">
 \t\t\t\t\t<div class=\"opcao-curso fit ";
-        // line 32
+        // line 33
         if ($this->getAttribute(($context["lead"] ?? null), "isMatriculado", array(0 => $this->getAttribute(($context["opcoes_curso"] ?? null), 2, array(), "array")), "method")) {
             echo "matriculado";
         }
@@ -86,7 +87,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 \t\t\t\t\t\t<h2>Terceira Opção de Curso</h2>
 \t\t\t\t\t\t<p>
 \t\t\t\t\t\t\t";
-        // line 35
+        // line 36
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["opcoes_curso"] ?? null), 2, array(), "array"), "nome", array()), "html", null, true);
         echo "
 \t\t\t\t\t\t</p>
@@ -99,7 +100,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 \t\t\t\t<div class=\"col-md-12\">
 \t\t\t\t\t<h2>Detalhes da Inscrição</h2>
 \t\t\t\t\t<p><strong>";
-        // line 45
+        // line 46
         echo twig_escape_filter($this->env, ($context["msgemail"] ?? null), "html", null, true);
         echo "Enviamos um e-mail com mais detalhes sobre sua inscrição.</strong></p>
 
@@ -115,7 +116,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 \t\t\t\t\t<p>
 \t\t\t\t\t\t<strong>Data entrega da documentação:</strong><br />
 \t\t\t\t\t\t";
-        // line 78
+        // line 79
         echo "\t\t\t\t\t</p>
 
 \t\t\t\t\t-->
@@ -131,10 +132,10 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 ";
     }
 
-    // line 92
+    // line 93
     public function block_scripts($context, array $blocks = array())
     {
-        // line 93
+        // line 94
         echo "\t
 ";
     }
@@ -151,7 +152,7 @@ class __TwigTemplate_689b0346c75493848e517b9a2a01c9697426814a518ff040fe33153dbd5
 
     public function getDebugInfo()
     {
-        return array (  138 => 93,  135 => 92,  119 => 78,  103 => 45,  90 => 35,  82 => 32,  74 => 27,  66 => 24,  58 => 19,  50 => 16,  41 => 10,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  139 => 94,  136 => 93,  120 => 79,  104 => 46,  91 => 36,  83 => 33,  75 => 28,  67 => 25,  59 => 20,  51 => 17,  42 => 11,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
