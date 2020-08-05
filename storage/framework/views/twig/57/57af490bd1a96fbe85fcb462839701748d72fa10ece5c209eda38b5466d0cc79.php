@@ -48,12 +48,12 @@ class __TwigTemplate_6e4dbb9217c4e4d93b0aa28f13ab72d4aad648a969e8c01bb7191a8af75
 
 <main id=\"page-home\" class=\"container fit-height\">
 \t<div
-\t\tclass=\"row fit mt-4 mt-md-0\">
+\t\tclass=\"row fit mt-4 mt-md-0 index\">
 \t\t<!--div id=\"acfam-home-artwork\" class=\"col-md-8 full-height d-none d-md-block\">
 \t\t\t\t\t";
         // line 25
         echo "\t\t\t\t</div-->
-\t\t<img class=\"img-home-person d-none d-md-block\" src=\"/assets/images/index.png\" style=\"transform: scale(0.8); position:absolute;bottom:0;left:2em;\">
+\t\t<img class=\"img-home-person d-none d-md-block\" src=\"/assets/images/index.png\">
 \t\t<div
 \t\t\tid=\"acfam-home-form\" class=\"col-md-7 pt-md-5 full-height\">
 \t\t\t<!-- Centralizar verticamente o formulário -->

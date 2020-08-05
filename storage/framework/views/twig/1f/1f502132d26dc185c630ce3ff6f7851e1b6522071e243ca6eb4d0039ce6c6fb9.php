@@ -32,20 +32,19 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
     public function block_body($context, array $blocks = array())
     {
         // line 6
-        echo "    <a href=\"/\"><img src=\"/assets/images/fam.png\" class=\"logo-azul\"></a>
-\t<div id=\"pageinscricao\" class=\"container fit-height inscricaofundo\">
+        echo "    <div id=\"pageinscricao\" class=\"container fit-height inscricaofundo\">\t
 \t\t<!-- Principal -->\t
 \t\t<form method=\"post\" action=\"/inscricao/finaliza\" class=\"js-form\" enctype=\"multipart/form-data\">
 \t\t\t";
-        // line 10
+        // line 9
         echo csrf_field();
         echo "
 \t\t\t";
-        // line 291
+        // line 290
         echo "
 \t\t\t\t<main
 \t\t\t\t\tid=\"page-inscricao\">
-\t\t\t\t\t\t<img class=\"imginscricao\" src=\"/assets/images/inscricao.png\" style=\"top:20px\">
+\t\t\t\t\t\t<img class=\"imginscricao\" src=\"/assets/images/inscricao.png\" style=\"top:30px\">
 
 \t\t\t\t\t<!-- Cabeçalho -->
 \t\t\t\t\t<header class=\"fit-height\">
@@ -248,18 +247,18 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 
 \t\t\t\t\t\t\t<!-- WhatsApp / Celular -->
 \t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-2 col-lg-1 v-spacing\">
-\t\t\t\t\t\t\t\t<the-mask class=\"form-control\" name=\"candidato[celular_ddd]\" type=\"tel\" placeholder=\"DDD\" required :mask=\"['(##)']\" v-model=\"aluno.celular_ddd\"/>
+\t\t\t\t\t\t\t\t<the-mask class=\"form-control fone\" name=\"candidato[celular_ddd]\" type=\"tel\" placeholder=\"DDD\" required :mask=\"['(##)']\" v-model=\"aluno.celular_ddd\"/>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-4 col-lg-3 v-spacing\">
-\t\t\t\t\t\t\t\t<the-mask class=\"form-control\" name=\"candidato[celular_numero]\" type=\"tel\" placeholder=\"WhatsApp / Celular\" required :mask=\"['####-####', '#####-####']\" v-model=\"aluno.celular_numero\"/>
+\t\t\t\t\t\t\t\t<the-mask class=\"form-control fone\" name=\"candidato[celular_numero]\" type=\"tel\" placeholder=\"WhatsApp / Celular\" required :mask=\"['####-####', '#####-####']\" v-model=\"aluno.celular_numero\"/>
 \t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t<!-- Telefone Residencial -->
 \t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-2 col-lg-1 v-spacing\">
-\t\t\t\t\t\t\t\t<the-mask class=\"form-control\" name=\"candidato[telefone_ddd]\" type=\"tel\" placeholder=\"DDD\" :mask=\"['(##)']\" v-model=\"aluno.telefone_ddd\"/>
+\t\t\t\t\t\t\t\t<the-mask class=\"form-control fone\" name=\"candidato[telefone_ddd]\" type=\"tel\" placeholder=\"DDD\" :mask=\"['(##)']\" v-model=\"aluno.telefone_ddd\"/>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"col-xs-12 col-md-4 col-lg-3 v-spacing\">
-\t\t\t\t\t\t\t\t<the-mask class=\"form-control\" name=\"candidato[telefone_numero]\" type=\"tel\" placeholder=\"Telefone Residencial\" :mask=\"['####-####']\" v-model=\"aluno.telefone_numero\"/>
+\t\t\t\t\t\t\t\t<the-mask class=\"form-control fone\" name=\"candidato[telefone_numero]\" type=\"tel\" placeholder=\"Telefone Residencial\" :mask=\"['####-####']\" v-model=\"aluno.telefone_numero\"/>
 \t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t\t<!-- Sexo -->
@@ -349,7 +348,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t</p>\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t";
-        // line 321
+        // line 320
         echo "\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"formado\">
 \t\t\t\t\t\t\t\t<p class=\"align center text-white\">
@@ -367,7 +366,7 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<!-- Confirma E-mail -->
 \t\t\t\t\t\t\t<div class=\"confirmaemail\">
-\t\t\t\t\t\t\t\t<input class=\"email2 form-control\" type=\"email\" onpaste=\"return false\" ondrop=\"return false\" placeholder=\"Confirme seu E-mail\"/>
+\t\t\t\t\t\t\t\t<input class=\"email2 form-control cmail\" type=\"email\" onpaste=\"return false\" ondrop=\"return false\" placeholder=\"Confirme seu E-mail\"/>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\ta
@@ -386,27 +385,27 @@ class __TwigTemplate_7d82412b96cd4dcdd2c4bc70d9cd41ada05ace640983ee67f74fbc5e9bc
 ";
     }
 
-    // line 357
+    // line 356
     public function block_scripts($context, array $blocks = array())
     {
-        // line 358
+        // line 357
         echo "\t<!-- Variáveis (BI -> VueJS) -->
 \t<script type=\"text/javascript\">
 \t\twindow.history.forward(1);
 let midias = ";
-        // line 361
+        // line 360
         echo twig_jsonencode_filter($this->getAttribute(($context["campanha"] ?? null), "midias", array()));
         echo ";
 let aluno = ";
-        // line 362
+        // line 361
         echo twig_jsonencode_filter(($context["aluno"] ?? null));
         echo ";
 let lead = ";
-        // line 363
+        // line 362
         echo twig_jsonencode_filter(($context["lead"] ?? null));
         echo ";
 let curso = ";
-        // line 364
+        // line 363
         echo twig_escape_filter($this->env, ($context["curso"] ?? null), "html", null, true);
         echo ";
 
@@ -470,12 +469,12 @@ setTimeout(function () {
 \t<script type=\"text/javascript\" src=\"./assets/js/page-inscricao.js\"></script>
 
 \t";
-        // line 425
+        // line 424
         if (($context["error"] ?? null)) {
-            // line 426
+            // line 425
             echo "\t\t<script>
 \t\t\talert('";
-            // line 427
+            // line 426
             echo twig_escape_filter($this->env, ($context["error"] ?? null), "html", null, true);
             echo "');
 \t\t</script>
@@ -495,7 +494,7 @@ setTimeout(function () {
 
     public function getDebugInfo()
     {
-        return array (  479 => 427,  476 => 426,  474 => 425,  410 => 364,  406 => 363,  402 => 362,  398 => 361,  393 => 358,  390 => 357,  353 => 321,  45 => 291,  41 => 10,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
+        return array (  478 => 426,  475 => 425,  473 => 424,  409 => 363,  405 => 362,  401 => 361,  397 => 360,  392 => 357,  389 => 356,  352 => 320,  44 => 290,  40 => 9,  35 => 6,  32 => 5,  28 => 1,  26 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
