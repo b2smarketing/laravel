@@ -682,22 +682,24 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 	Route::get('/inscricao/adicionais', function (Request $req) use ($module) {
 		$cpf = $req->input('cpf');
-		$aluno = Aluno::porCPF($cpf);
+		$aluno = Aluno::porCPF($cpf);		
 
-		$campanha = Campanha::find($module->options['campanha']);
-		$lead = $aluno->leads()->where('campanha_id', $campanha->id)->first();
+		if (is_null($aluno)) {
+			return view('AmbienteConversao::erro');
+		} else {
 
-		if (is_null($aluno))
-			return redirect('/');
+			$campanha = Campanha::find($module->options['campanha']);
+			$lead = $aluno->leads()->where('campanha_id', $campanha->id)->first();
 
-		$dados = [
-			'lead' => $lead,
-			'aluno' => $aluno,
-			'deficiencias' => Autodeclaracao_Deficiencia::all(),
-			'racas' => Autodeclaracao_Raca::all()
-		];
+			$dados = [
+				'lead' => $lead,
+				'aluno' => $aluno,
+				'deficiencias' => Autodeclaracao_Deficiencia::all(),
+				'racas' => Autodeclaracao_Raca::all()
+			];
 
-		return view('AmbienteConversao::adicionais', $dados);
+			return view('AmbienteConversao::adicionais', $dados);
+		}
 	});
 
 	Route::get('/matricula', function (Request $req) use ($module) {
@@ -1244,7 +1246,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			'aluno' => $aluno
 		]);
 	});
-	
+
 
 	Route::any('/assets/{all?}', function (Request $req, $file) use ($module) {
 		$dados = $req->session()->get('obj');

@@ -348,11 +348,16 @@
     .vmatricula h3{
         color: #fff;
     }
-    .vmatricula input{
+    .vmatricula input, .vmatricula select, .vmatricula label{
         background-color: #FFCA30 !important;
         color: #0e2e7c !important;
     }
+    .vmatricula input[type="checkbox"]{
+        transform: scale(1.5);
+        float: right;
+    }
     .vmatricula input[type="button"]{
+        cursor: pointer;
         background-color: #ec008c !important;
         color: #fff !important;
     }

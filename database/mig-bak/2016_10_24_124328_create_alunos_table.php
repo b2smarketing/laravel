@@ -17,7 +17,7 @@ class CreateAlunosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('sobrenome');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('cpf')->unique();
             $table->string('rg');
             $table->date('datanascimento');
