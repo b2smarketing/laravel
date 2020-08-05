@@ -331,12 +331,10 @@
     #page-adicionais input[type="text"].afazer, #page-adicionais select.afazer, #page-adicionais input[type="email"].afazer, #page-adicionais input[type="tel"].afazer, #page-adicionais input[type="file"].afazer {
         background-color: #ccc;
     }
-
     a.aceita {
         font-size: 16px;
         color: #fff;
     }
-
     .rodape {
         display: block;
         position: relative;
@@ -344,11 +342,9 @@
         z-index: 1;
         color: #0e2e7c !important;
     }
-
     .vmatricula h3{
         color: #fff;
     }
-
     .vmatricula input{
         background-color: #FFCA30 !important;
         color: #0e2e7c !important;
