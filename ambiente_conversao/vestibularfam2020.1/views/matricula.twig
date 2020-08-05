@@ -29,8 +29,7 @@
 			Digite seu CPF e clique em Prosseguir</h3>
 			<form id="form1">
 				{{ csrf_field() }}
-				<input class="form-control afazer" onfocus="mudacor(this);" onfocusout="mudacor(this);" id="cpf" maxlength="14" type="tel" placeholder="* Digite seu CPF" onkeypress="MascaraCPF(this);" onblur="if(ValidarCPF(this)==false){this.value=''}"/><br>
-				
+				<input class="form-control afazer" onfocus="mudacor(this);" onfocusout="mudacor(this);" id="cpf" maxlength="14" type="tel" placeholder="* Digite seu CPF" onkeypress="MascaraCPF(this);" onblur="if(ValidarCPF(this)==false){this.value=''}"/><br>				
 				<br><input type="button" onclick="matricula()" class="add" value="Prosseguir"/><br>
 				<br><br><br>
 			</form>
