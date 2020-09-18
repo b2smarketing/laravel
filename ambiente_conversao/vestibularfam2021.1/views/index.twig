@@ -30,8 +30,7 @@
 			<div class="row full-height align-items-end">
 				<div
 					class="col">
-					<!-- Aqui é o formulário padrão de cadastro -->
-					<p>2021</p>
+					<!-- Aqui é o formulário padrão de cadastro -->					
 					<form id="form" action="/inscricao" method="post" class="form-home">
 						{{ csrf_field() }}
 						<the-mask onkeypress="Valida();" required name="cpf" id="cpf" class="form-control cpf" type="tel" placeholder="Insira seu CPF" :mask="['###.###.###-##']" title="Por favor insira seu CPF"></the-mask>

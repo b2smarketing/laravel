@@ -255,7 +255,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			'aluno' => $aluno,
 			'lead' => $lead,
 			'locais_prova' => $locais_provas,
-			'unidade' => $unidades[0],
+			'unidade' => $unidades,
 			'campanha' => $campanha,
 			'curso' => $curso
 		];
