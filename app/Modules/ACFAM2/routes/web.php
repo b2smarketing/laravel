@@ -87,9 +87,38 @@ $middle_dados = function ($req, Closure $next) use ($module) {
 	View::addNamespace('AmbienteConversao', $dir . '/views/');
 
 	// Compartilhar dados com View
+
+
+	$cursograd = [];
+	$cursotec = [];
+	$cursodist = [];
+	$cursototal = [];
+
+foreach($campanha->cursos as $curso){
+	if($curso->id != 79)$cursototal[] = $curso;
+}
+		
+foreach($campanha->cursos as $curso){
+	if($curso->id != 79){
+		if( $curso->id == 49 || $curso->id == 63 || $curso->id == 67 || $curso->id == 56 || $curso->id == 57 || $curso->id == 52 || $curso->id == 50 || $curso->id == 65 || $curso->id == 54 ||$curso->id == 59 || $curso->id == 61){
+					$cursotec[] = $curso;
+		}
+		else if ( $curso->id == 69 || $curso->id == 77 ||  $curso->id == 76 || $curso->id == 74 ||  $curso->id == 75){
+					$cursodist[] = $curso;
+		}
+		else{
+			$cursograd[] = $curso;
+		}
+	}
+}		
+	
+
 	View::share('dados', $dados);
 	View::share('opcoes', $module->options);
-	View::share('cursos', $campanha->cursos);
+	View::share('cursostotal', $cursototal);
+	View::share('cursosgrad', $cursograd);
+	View::share('cursostec', $cursotec);
+	View::share('cursosdist', $cursodist);
 	View::share('settings', Settings::get_all());
 
 	$req->session()->put('obj', $dados);
@@ -385,7 +414,6 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 				'responsavel_telefone' => 'required',
 				'responsavel_nascimento' => 'required',
 			]);
-
 			if ($validatorIdade->fails()) {
 				return redirect('/inscricao?e=Os+campos+de+responsavel+sao+obrigatorios+para+menores+de+idade');
 			} else {
@@ -1189,7 +1217,6 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			}
 		}
 		for ($l = 1; $l < $linha; $l++) {
-
 			$cpf = $matriz[$l][5]; // cpf
 			$aluno = Aluno::porCPF($cpf);
 			if (is_null($aluno)) {
@@ -1206,19 +1233,15 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			} else {					
 				$cursonome = $matriz[$l][12] . " - " . $matriz[$l][14]. " (Obs.)";
 			}
-
 			$conexao = new mysqli('localhost','root','b2smkt@2018#','fam_app');
 			
 			$sql = "update leads l JOIN alunos a ON a.id = l.aluno_id set l.curso_id = ".$curso_id.", l.opcao_curso_1 = ".$curso_id." WHERE a.cpf = ".$cpf." and l.campanha_id = '33'";
-
 			$saida = $conexao->query($sql);	
-
 			if($saida){
 				$resp = "OK";
 			}else{
 				$resp = "ERRO";
 			}
-
 			echo $l	. " , ";
 			echo $resp	. " , ";
 			echo $matriz[$l][0] . " , "; // nome

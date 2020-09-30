@@ -1,11 +1,10 @@
 /* ALTERÇÕES EVERTON 11-06-2020 */
 
 function Submeter() {
-    if ($("#nome").val() != "" && $("#sobrenome").val() != "" && $("#email").val() != "" && $("#celular").val() != "" && $("#curso").val() != "") {
-        console.log("FOI");
+    if ($("#nome").val() != "" && $("#sobrenome").val() != "" && $("#email").val() != "" && $("#celular").val() != "" && $("#curso").val() != "") {      
         document.getElementById("form").submit();
     } else {
-        console.log("FALTA >>>")
+        $('.erro').css({ "display": "block" });
     }
 }
 

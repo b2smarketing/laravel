@@ -1,5 +1,8 @@
-    /* ALTERAÇÕES EVERTON 04-06-2020 */
+    /* ALTERAÇÕES EVERTON 29-09-2020 */
 
+    #app{
+        background-image: url(../images/fundo.png);
+    }
     .pop {
         margin: 0;
         padding: 0;
@@ -45,19 +48,21 @@
             display: block;
             position: relative;
             margin: 0 auto;
-            background-color: #0e2e7c;
             width: 1110px;
-            height: 110px;
-            border-radius: 30px;
+            height: 110px;            
         }
         .index {
             display: block;
             position: relative;
             margin: 0 auto;
-            background-color: #0e2e7c;
-            margin-top: -3em !important;
-            padding-top: 30em !important;
-            border-radius: 30px;
+            width: 1110px !important; 
+            min-height: 38em;
+            margin-top: -3em !important;   
+            background-color: rgba(255,255,255,0.1); 
+            border-radius: 10px;          
+        }
+        #imgindeximg{
+            width: 730px;            
         }
         .img-home-person {
             transform: scale(0.8);
@@ -65,11 +70,35 @@
             top: 3px !important;
             left: 3em;
         }
-        .form-home {
-            position: absolute;
-            margin-left: 12.5em !important;
-            margin-top: -30em !important;
+        .colindex {
+            display: block;
+            position: relative;
+            float: left;
+            margin-top: 4em;
+            margin-left: 3em;
+            width: 30em;
+            text-align: center;
         }
+        .colindex .form-home{
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            width: 20em; 
+        }
+        .colindex .form-home input, .colindex .form-home select{
+            margin-top: 3px;
+            border-radius: 3px;
+            height: 50px;
+        }
+        .imgindex{
+            display: block;
+            position: relative;
+            float: right;
+            margin-top: 3em;
+            margin-right: 0em;
+            width: 34em;  
+        }
+
     }
 
     .form-home {
@@ -161,7 +190,7 @@
             width: 1110px !important;
             border-radius: 30px;
             top: -2em;
-            background-color: #0e2e7c;
+            background-color: rgba(255,255,255,0.1);
         }
         .finalizado {
             display: block;
@@ -172,7 +201,7 @@
             padding-top: 20px !important;
             border-radius: 30px;
             top: -2.5em !important;
-            background-color: #0e2e7c;
+            background-color: rgba(255,255,255,0.1);
             margin-bottom: -18em !important;
         }
         .logo-azul {
@@ -202,10 +231,10 @@
             margin-top: -260px !important;
         }
         .inscricaofundo {
-            background-color: #0e2e7c;
+            background-color: rgba(255,255,255,0.1);
         }
         .finalizado {
-            background-color: #0e2e7c;
+            background-color: rgba(255,255,255,0.1);
         }
         .logo-azul {
             display: none;
@@ -236,8 +265,22 @@
         left: -15px;
     }
 
-    .oculto, .vestibular, .enem, .formado, .tecnico, .confirmaemail, .deficiencia {
+    .oculto, .erro, .cursoop, .curso-nao, .vestibular, .enem, .formado, .tecnico, .confirmaemail, .deficiencia {
         display: none;
+    }
+
+    .botaoindex{
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        float: left;
+        width: 100px !important;        
+        font-weight: 700 !important;
+        margin-left: 2.5em;
+    }
+
+    .erro h5{
+      color: #f00;
     }
 
     .datanascimento {

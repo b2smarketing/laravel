@@ -10,7 +10,7 @@
 			{% verbatim %}
 				<main
 					id="page-inscricao">
-						<img class="imginscricao" src="/assets/images/inscricao.png" style="top:30px">
+						<img class="imginscricao" src="/assets/images/inscricao.png" style="width:900px;top:30px">
 
 					<!-- Cabeçalho -->
 					<header class="fit-height">
@@ -24,13 +24,15 @@
 										class="row">
 										<!-- Primeira Opção -->
 										<div class="opcao-curso col-xs-12 col-md-4">
-											<label for="acfam-inscricao-opcoes-curso-1">Primeira Opção *:</label>
+											<label for="acfam-inscricao-opcoes-curso-1">Primeira Opção : <b>{{ cursos[opcao1].nome }}</b></label>
 
-											<!-- Listagem de Cursos -->
+											<!-- Listagem de Cursos 1a opcao ESCONDIDA !!! -->
+											<div class="esconder">
 											<select required name="opcoes_curso[]" v-model="opcao1" v-on:change="opcao2 = opcao3 = null" class="form-control" id="acfam-inscricao-opcoes-curso-1">
 												<option selected :value="null">Selecione um curso...</option>
 												<option v-for="curso in cursos_sort" :value="curso.id">{{ curso.nome }}</option>
 											</select>
+											</div>
 
 											<!-- Detalhes do Curso -->
 											<transition name="fade_resize">
@@ -39,23 +41,19 @@
 													<span>R$
 														{{ cursos[opcao1].valor|currency }}</span>
 													<strong>Modalidade</strong>
-													<span>{{ cursos[opcao1].dados_adicionais
-.modalidade }}</span>
+													<span>{{ cursos[opcao1].dados_adicionais.modalidade }}</span>
 													<strong>Duração</strong>
 													<span>{{ cursos[opcao1].duracao }}
 														semestres</span>
 													<strong>Modo/Período</strong>
-													<span>{{ cursos[opcao1].dados_adicionais
-.modo }}
-														{{ cursos[opcao1].dados_adicionais
-.periodo }}</span>
+													<span>{{ cursos[opcao1].dados_adicionais.modo }}
+														{{ cursos[opcao1].dados_adicionais.periodo }}</span>
 												</div>
 											</transition>
-										</div>
-
+										</div>																						
 										<!-- Segunda Opção -->
 										<transition name="fade">
-											<div class="opcao-curso col-xs-12 col-md-4" v-if="opcao1">
+											<div class="opcao-curso col-xs-12 col-md-4 segundaeterceiraopcao" v-if="opcao1">
 												<label for="acfam-inscricao-opcoes-curso-1">Segunda Opção:</label>
 
 												<!-- Listagem de Cursos -->
@@ -77,10 +75,8 @@
 														<span>{{ cursos[opcao2].duracao }}
 															semestres</span>
 														<strong>Modo/Período</strong>
-														<span>{{ cursos[opcao2].dados_adicionais
-.modo }}
-															{{ cursos[opcao2].dados_adicionais
-.periodo }}</span>
+														<span>{{ cursos[opcao2].dados_adicionais.modo }}
+															{{ cursos[opcao2].dados_adicionais.periodo }}</span>
 													</div>
 												</transition>
 											</div>
@@ -88,7 +84,7 @@
 
 										<!-- Terceira Opção -->
 										<transition name="fade">
-											<div class="opcao-curso col-xs-12 col-md-4" v-if="opcao2">
+											<div class="opcao-curso col-xs-12 col-md-4 segundaeterceiraopcao" v-if="opcao2">
 												<label for="acfam-inscricao-opcoes-curso-1">Terceira Opção:</label>
 
 												<!-- Listagem de Cursos -->
@@ -110,10 +106,8 @@
 														<span>{{ cursos[opcao3].duracao }}
 															semestres</span>
 														<strong>Modo/Período</strong>
-														<span>{{ cursos[opcao3].dados_adicionais
-.modo }}
-															{{ cursos[opcao3].dados_adicionais
-.periodo }}</span>
+														<span>{{ cursos[opcao3].dados_adicionais.modo }}
+															{{ cursos[opcao3].dados_adicionais.periodo }}</span>
 													</div>
 												</transition>
 											</div>
@@ -336,8 +330,7 @@
 							<div class="confirmaemail">
 								<input class="email2 form-control cmail" type="email" onpaste="return false" ondrop="return false" placeholder="Confirme seu E-mail"/>
 							</div>
-						</div>
-						a
+						</div>						
 						<!-- Finalizar Inscrição -->
 						<div class="defic col-xs-12 col-md-12 col-lg-12 v-spacing align center">
 							<input onclick="validar()" class="btn cta large centered btn-concluir" type="button" value="Concluir Inscrição"/>
@@ -394,18 +387,21 @@ aluno.data_nascimento = aluno.datanascimento.split('-').reverse().join('/');
 
 
 window.onload = function () {
-
-var ingresso = $("#acfam-inscricao-opcoes-curso-1 option:selected").val();
-if(ingresso == 59 || ingresso == 52 || ingresso == 57 || ingresso == 63){
+$(".esconder").css({ "display": "none" })
+var ingresso = {{ curso|json_encode()|raw }}
+console.log("Curso: "+ingresso)
+if(ingresso == 49 || ingresso == 63 || ingresso == 67 || ingresso == 56 || ingresso == 57 || ingresso == 52 || ingresso == 50 || ingresso == 65 || ingresso == 54 || ingresso == 59 || ingresso == 61){
 	$(".ene").css({ "display": "none" })
 	$(".seg").css({ "display": "none" })
 	$(".ves").css({ "display": "none" })
 	$(".tec").css({ "display": "block" })
+	$(".segundaeterceiraopcao").css({ "display": "none" })
 }else{
 	$(".ene").css({ "display": "block" })
 	$(".seg").css({ "display": "block" })
 	$(".ves").css({ "display": "block" })
 	$(".tec").css({ "display": "none" })
+	$(".segundaeterceiraopcao").css({ "display": "block" })
 }
 
 

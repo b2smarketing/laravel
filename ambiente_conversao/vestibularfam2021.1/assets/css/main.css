@@ -502,7 +502,7 @@
     
     @media (max-width: 576px) {
            body#page-home main {
-            background-image: url("../images/indexm.png");  
+            /*background-image: url("../images/index.png");  */
             background-size: cover; 
             position: relative;
             z-index: 999;
