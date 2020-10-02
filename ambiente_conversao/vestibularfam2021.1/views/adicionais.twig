@@ -182,7 +182,14 @@ $(this).next().text(dflt);
 				<br><br><hr><br>
 		</p>
 		</p>
-			<p><a class="aceita" {% if (lead.curso_id == 63) or (lead.curso_id == 57) or (lead.curso_id == 52) or (lead.curso_id == 59) %} href="/assets/docs/Termo-de-Aceite_Tecnico_010720_PDF.pdf" {% elseif (lead.curso_id == 69) or (lead.curso_id == 74) or (lead.curso_id == 75) or (lead.curso_id == 76) or (lead.curso_id == 77) %} href="/assets/docs/Termo-de-Aceite_EAD_190620_PDF.pdf" {% else %} href="/assets/docs/Termo-de-Aceite_Graduacao_190620_PDF.pdf" {% endif %} target="_blank"> Aceita o Contrato de Serviços Educacionais ?</a>&emsp;<input type="checkbox" id="aceito1"></p>
+		<!--  -->
+			<p><a class="aceita" 			
+			{% if (lead.curso_id == 49) or (lead.curso_id == 63) or (lead.curso_id == 67) or (lead.curso_id == 56) or (lead.curso_id == 57) or (lead.curso_id == 52) or (lead.curso_id == 50) or (lead.curso_id == 65) or (lead.curso_id == 54) or (lead.curso_id == 59) or (lead.curso_id == 61) %} 
+			href="/assets/docs/Termo-de-Aceite_Tecnico_010720_PDF.pdf" 
+			{% elseif (lead.curso_id == 69) or (lead.curso_id == 74) or (lead.curso_id == 75) or (lead.curso_id == 76) or (lead.curso_id == 77) %} 
+			href="/assets/docs/Termo-de-Aceite_EAD_190620_PDF.pdf" 
+			{% else %} 
+			href="/assets/docs/Termo-de-Aceite_Graduacao_190620_PDF.pdf" {% endif %} target="_blank"> Aceita o Contrato de Serviços Educacionais ?</a>&emsp;<input type="checkbox" id="aceito1"></p>
 		<br><p>
 			<a class="aceita" href="/assets/docs/Termo_LGPD.pdf" target="_blank">Aceita Termo para Tratamento de Dados Pessoais ?</a>&emsp;<input type="checkbox" id="aceito2"></p>
 		<br><hr><br>

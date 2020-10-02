@@ -180,8 +180,8 @@
 
 </head>
 
-<body width="100%" bgcolor="#0b2f7f" style="Margin: 0;">
-    <center style="width: 100%; background: #092668;">
+<body width="100%" bgcolor="#61D1F3" style="Margin: 0;">
+    <center style="width: 100%; background: #61D1F3;">
 
         <!-- Visually Hidden Preheader Text : BEGIN -->
         <div
@@ -230,15 +230,26 @@
                     <td>
                         <table cellspacing="0" cellpadding="0" border="0" width="100%">
                             <tr>
+                            <!--
+                            
+                           
+                             
+
+                            
+                            -->
                                 <td
                                     style="padding: 40px; text-align: center; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;">
                                     <strong style="font-size: 1.4em; display:block; color: #111111;">Seja
                                         bem-vind{{ aluno.genero_letra }}, {{ aluno.primeiro_nome }}!!</strong>
-                                    Seu pedido de inscrição foi realizado com sucesso.<br />
+                                    Seu pedido de inscrição está confirmado!<br />
                                     Esperamos por você no centro de uma poderosa estrutura de ensino.
                                     <br><br>
                                     {% if aluno.ingresso == 'vestibular' %}
-                                    <p>Você optou por ingressar através de vestibular.. Você receberá em instantes um email com orientações para realização da sua prova, mas você pode adiantar o processo de pré-matrícula.</p>
+                                    <p>Você optou por ingressar através de vestibular. <br>
+                                    No dia e horário escolhido no cadastro, você receberá sua 
+                                    prova por este e-mail, com instruções de como realizá-la. 
+                                    Fique atento, pois a prova é válida somente para a data 
+                                    escolhida.</p>
                                     {% endif %}
                                     {% if aluno.ingresso == 'enem' %}
                                     <p>Se você optou por ingressar através da sua nota do ENEM, clique no link abaixo para iniciar seu processo de matrícula.</p>
@@ -253,6 +264,11 @@
                                     <a class="bemail" href="https://www.fam.br/wp-content/uploads/2020/06/ebook-Como-enviar-os-documentos-para-matricula.pdf" target="_blank">
                                         <button class="botaoemail">Como enviar seus documentos digitalizados para matrícula</button></a>                                    
                                     <br><br>
+                                    <p>Você também pode adiantar sua pré-matrícula abaixo: <br>
+                                    (caso seja aprovado (a) no vestibular, o processo de 
+                                    matrícula já estará 98% completo para você iniciar 
+                                    sua vida universitária numa poderosa estrutura de 
+                                    ensino que é a FAM!)</p>
                                     <a class="bemail" href="https://vestibularfam.com.br/inscricao/adicionais?cpf={{ aluno.cpf }}" target="_blank">
                                         <button class="botaoemail matricula">Clique aqui para realizar sua matrícula</button></a>                                    
                                     <!-- Button : Begin -->

@@ -24,15 +24,15 @@
 										class="row">
 										<!-- Primeira Opção -->
 										<div class="opcao-curso col-xs-12 col-md-4">
-											<label for="acfam-inscricao-opcoes-curso-1">Primeira Opção : <b>{{ cursos[opcao1].nome }}</b></label>
+											<label for="acfam-inscricao-opcoes-curso-1">Primeira Opção:</label>
 
 											<!-- Listagem de Cursos 1a opcao ESCONDIDA !!! -->
-											<div class="esconder">
+											
 											<select required name="opcoes_curso[]" v-model="opcao1" v-on:change="opcao2 = opcao3 = null" class="form-control" id="acfam-inscricao-opcoes-curso-1">
 												<option selected :value="null">Selecione um curso...</option>
 												<option v-for="curso in cursos_sort" :value="curso.id">{{ curso.nome }}</option>
 											</select>
-											</div>
+											
 
 											<!-- Detalhes do Curso -->
 											<transition name="fade_resize">
@@ -261,15 +261,23 @@
 							</div>
 								-->
 							<!-- Como conheceu a FAM? -->
-							<div class="defic col-xs-12 col-md-6 col-lg-6 v-spacing">
+							<div class="defic col-xs-12 col-md-4 col-lg-4 v-spacing">
 								<select size required class="form-control" name="como_conheceu" v-model="lead.midia_id">
 									<option :value="null">Como nos conheceu?</option>
 									<option v-for="midia in midias" :value="midia.id">{{ midia.nome }}</option>
 								</select>
 							</div>
 
+							<!-- Selecionar data prova -->
+							<div class="defic col-xs-12 col-md-4 col-lg-4 v-spacing">
+								<select size required class="form-control" name="data_prova">
+									<option :value="null">Escolha a data da Prova:</option>
+									<option v-for="prova in aluno.data_provas" :value="prova[0]">{{ prova[1] }}</option>						
+        						</select>								
+							</div>	
+
 							<!-- Tipo de Prova alteração final  -->
-							<div class="defic col-xs-12 col-md-6 col-lg-6 v-spacing">							
+							<div class="defic col-xs-12 col-md-4 col-lg-4 v-spacing">							
 								<select onchange="tipoprova()" id="prova" size required class="form-control" name="candidato[ingresso]">
 									<option value="null" selected>Deseja ingressar através de:</option>									
 									<option class="tec" value="tecnico">Técnico</option>
@@ -354,12 +362,8 @@ let midias = {{ campanha.midias|json_encode|raw }};
 let aluno = {{ aluno|json_encode|raw }};
 let lead = {{ lead|json_encode|raw }};
 let curso = {{ curso }};
-
 if (Array.isArray(aluno.dados_adicionais)) 
 delete aluno.dados_adicionais;
-
-
-
 aluno = Object.assign({
 dados_adicionais: {
 responsavel_cpf: null,
@@ -368,12 +372,8 @@ responsavel_telefone: null,
 responsavel_nascimento: null
 }
 }, aluno);
-
 if (Array.isArray(lead.dados_adicionais)) 
 delete lead.dados_adicionais;
-
-
-
 lead = Object.assign({
 dados_adicionais: {
 deficiencia: null,
@@ -381,13 +381,10 @@ deficiencia_qual: null,
 usar_enem: null
 }
 }, lead);
-
 if (typeof aluno.data_nascimento !== "undefined") 
 aluno.data_nascimento = aluno.datanascimento.split('-').reverse().join('/');
-
-
 window.onload = function () {
-$(".esconder").css({ "display": "none" })
+
 var ingresso = {{ curso|json_encode()|raw }}
 console.log("Curso: "+ingresso)
 if(ingresso == 49 || ingresso == 63 || ingresso == 67 || ingresso == 56 || ingresso == 57 || ingresso == 52 || ingresso == 50 || ingresso == 65 || ingresso == 54 || ingresso == 59 || ingresso == 61){

@@ -264,6 +264,16 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		// Listar Unidades
 		$unidades = $campanha->unidades;
 
+		// Listar datas de provas
+		$data_provas = array();
+		$listaprovas = Prova_Data::all();
+		$hoje = date('Y/m/d 23:59:59');
+		foreach ($listaprovas as $prova){
+			if(strtotime($prova->hora) > strtotime($hoje)){				
+			$data_provas[] = array($prova->id,date_format(date_create($prova->hora),"d/m/Y - H:i:s"));
+			}
+		}//echo json_encode($data_provas);
+
 		// Listar Locais de Prova
 		$locais_provas = $campanha->locais_provas;
 
@@ -274,6 +284,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$aluno['telefone_numero'] = isset($aluno->telefone) ? trim(substr($aluno->telefone, 4, strlen($aluno->telefone) - 3)) : '';
 		$aluno['celular_ddd'] = isset($aluno->celular) ? trim(substr($aluno->celular, 1, 2)) : '';
 		$aluno['celular_numero'] = isset($aluno->celular) ? trim(substr($aluno->celular, 4, strlen($aluno->celular) - 3)) : '';
+		$aluno['data_provas'] = $data_provas;
 		//$aluno['enem'] = $aluno->enem;
 		//$aluno['campos_enem'] = $aluno->getCamposEnem();
 
@@ -387,7 +398,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		unset($aluno->celular_numero);
 		unset($aluno->deficiencia);
 		unset($aluno->ingresso);
-		//unset($aluno->campos_enem);
+		unset($aluno->data_provas);
 
 		// Atualizar dados
 		if (isset($post['nome'])) $aluno->nome = $post['nome'];
