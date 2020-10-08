@@ -269,7 +269,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$listaprovas = Prova_Data::all();
 		$hoje = date('Y/m/d 23:59:59');
 		foreach ($listaprovas as $prova){
-			if(strtotime($prova->hora) > strtotime($hoje)){				
+			if(strtotime($prova->hora) > strtotime($hoje) && $prova->id != 2856){				
 			$data_provas[] = array($prova->id,date_format(date_create($prova->hora),"d/m/Y - H:i:s"));
 			}
 		}//echo json_encode($data_provas);

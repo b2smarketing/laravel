@@ -3,15 +3,79 @@
 {% set page_id = 'page-inscricao' %}
 
 {% block body %}
-    <div id="pageinscricao" class="container fit-height inscricaofundo">	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+var ingresso = {{ curso|json_encode()|raw }}
+console.log("Curso: "+ingresso)
+if(ingresso == 49 || ingresso == 63 || ingresso == 67 || ingresso == 56 || ingresso == 57 || ingresso == 52 || ingresso == 50 || ingresso == 65 || ingresso == 54 || ingresso == 59 || ingresso == 61){
+	$(".ene").css({ "display": "none" })
+	$(".seg").css({ "display": "none" })
+	$(".ves").css({ "display": "none" })
+	$(".tec").css({ "display": "block" })
+	$(".segundaeterceiraopcao").css({ "display": "none" })
+}else{
+	$(".ene").css({ "display": "block" })
+	$(".seg").css({ "display": "block" })
+	$(".ves").css({ "display": "block" })
+	$(".tec").css({ "display": "none" })
+	$(".segundaeterceiraopcao").css({ "display": "block" })
+}
+})
+
+
+var select = document.createElement("select");
+    select.setAttribute("name", "data_prova"); 
+	select.setAttribute("required", "");   
+	if(screen.width >= 700){
+		select.setAttribute("style", "display:block;position:relative;width:435px;height:45px;font-size:18px;font-weight:800!important;");	
+	}else{
+		select.setAttribute("style", "display:block;position:relative;width:435px;height:45px;font-size:18px;font-weight:800!important;");	
+	}
+	var option = document.createElement("option");
+	select.setAttribute("selected","selected");
+    option.setAttribute("value", null);
+    option.innerHTML = 'Escolha a data da Prova:';
+    select.appendChild(option);
+
+	function FormaIngresso(resp){	
+		console.log(resp);  
+		if (resp == "bolsa"){	
+			$(".formingresso").css({ "display": "none" })			
+			var option = document.createElement("option");
+			option.setAttribute("value",' 2856 ');
+			option.innerHTML = 'Prova de Bolsa: 29/11 - 14:00';
+			select.appendChild(option);		  
+			$(".listaprova").append(select);
+		}else{
+			$(".formingresso").css({ "display": "none" })
+			{% for prova in aluno.data_provas %}
+			var option = document.createElement("option");
+			option.setAttribute("value",'{{ prova[0] }}');
+			option.innerHTML = '{{ prova[1] }}';
+			select.appendChild(option);
+			{% endfor %}   
+			$(".listaprova").append(select);			    
+		}
+	}
+
+
+</script>
+		<!-- Selecionar data prova 
+			<div class="defic col-xs-12 col-md-4 col-lg-4 v-spacing">
+			<select size required class="form-control" name="data_prova">
+			<option :value="null">Escolha a data da Prova:</option>
+			<option v-for="prova in aluno.data_provas" :value="prova[0]">{{ prova[1] }}</option>						
+        	</select>								
+		</div>-->
+    <div id="pageinscricao" class="container fit-height inscricaofundo">
 		<!-- Principal -->	
 		<form method="post" action="/inscricao/finaliza" class="js-form" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			{% verbatim %}
 				<main
 					id="page-inscricao">
-						<img class="imginscricao" src="/assets/images/inscricao.png" style="width:900px;top:30px">
-
+					<img class="imginscricao" src="/assets/images/inscricao.png" style="width:900px;top:30px">
 					<!-- Cabeçalho -->
 					<header class="fit-height">
 						<div class="container fit fit-height">
@@ -261,38 +325,40 @@
 							</div>
 								-->
 							<!-- Como conheceu a FAM? -->
-							<div class="defic col-xs-12 col-md-4 col-lg-4 v-spacing">
+							<div class="defic col-xs-12 col-md-6 v-spacing">
 								<select size required class="form-control" name="como_conheceu" v-model="lead.midia_id">
 									<option :value="null">Como nos conheceu?</option>
 									<option v-for="midia in midias" :value="midia.id">{{ midia.nome }}</option>
 								</select>
 							</div>
 
-							<!-- Selecionar data prova -->
-							<div class="defic col-xs-12 col-md-4 col-lg-4 v-spacing">
-								<select size required class="form-control" name="data_prova">
-									<option :value="null">Escolha a data da Prova:</option>
-									<option v-for="prova in aluno.data_provas" :value="prova[0]">{{ prova[1] }}</option>						
-        						</select>								
-							</div>	
-
-							<!-- Tipo de Prova alteração final  -->
-							<div class="defic col-xs-12 col-md-4 col-lg-4 v-spacing">							
-								<select onchange="tipoprova()" id="prova" size required class="form-control" name="candidato[ingresso]">
+							<!-- Tipo de ingresso  -->
+							<div class="formingresso defic col-xs-12 col-md-6 v-spacing">							
+								<select onchange="tipoprova()" oninput="FormaIngresso(value)" id="prova" size required class="form-control" name="candidato[ingresso]">
 									<option value="null" selected>Deseja ingressar através de:</option>									
 									<option class="tec" value="tecnico">Técnico</option>
 									<option class="ves" value="vestibular">Vestibular</option>
 									<option class="ene" value="enem">Nota do ENEM</option>
 									<option class="seg" value="segunda_graduacao">Segunda Graduação</option>
+									<option class="bol" value="bolsa">Bolsa</option>
 								</select>
 							</div>
 
-							<!-- ALTERAÇÕES EVERTON 04-06-2020 -->
-
+							<!-- Selecionar data prova 
+							<div class="defic col-xs-12 col-md-4 col-lg-4 v-spacing">
+								<select size required class="form-control" name="data_prova">
+									<option :value="null">Escolha a data da Prova:</option>
+									<option v-for="prova in aluno.data_provas" :value="prova[0]">{{ prova[1] }}</option>						
+        						</select>								
+							</div>-->
+							
+							<div class="listaprova col-xs-12 col-md-6 v-spacing"></div>						
+							
 						{% endverbatim %}
 						
 						<!-- Aviso Vestibular/ENEM/Segunda Graduação -->
 						<div class="defic col-md-8 offset-md-2 v-spacing">
+						<br>
 							<div class="vestibular">
 								<p class="align center text-white" style="text-align:justify;">
 									Durante a pandemia, a FAM - Faculdade de Americana está operacionalizando
@@ -332,6 +398,14 @@
 								</p>
 								
 							</div>
+
+							<div class="bolsa">
+								<p class="align center text-white">
+								Você optou por Concorrer a uma Bolsa. Confirme seu E-Mail e Clique no botão abaixo para iniciar seu processo de matrícula.
+								</p>
+								
+							</div>
+
 							<!-- Confirma E-mail -->
 							<div class="confirmaemail">
 								<input class="email2 form-control cmail" type="email" onpaste="return false" ondrop="return false" placeholder="Confirme seu E-mail"/>
@@ -339,7 +413,8 @@
 						</div>						
 						<!-- Finalizar Inscrição -->
 						<div class="defic col-xs-12 col-md-12 col-lg-12 v-spacing align center">
-							<input onclick="validar()" class="btn cta large centered btn-concluir" type="button" value="Concluir Inscrição"/>
+							<input onclick="validar()" class="btn cta large centered btn-concluir" type="button" value="Concluir Inscrição"/><br>
+							<input onclick="window.location.reload()" class="btn centered" type="reset" value="Reiniciar Inscrição"/>
 						</div>
 					</div>
 				</section>
@@ -381,25 +456,8 @@ usar_enem: null
 }, lead);
 if (typeof aluno.data_nascimento !== "undefined") 
 aluno.data_nascimento = aluno.datanascimento.split('-').reverse().join('/');
+
 window.onload = function () {
-
-var ingresso = {{ curso|json_encode()|raw }}
-console.log("Curso: "+ingresso)
-if(ingresso == 49 || ingresso == 63 || ingresso == 67 || ingresso == 56 || ingresso == 57 || ingresso == 52 || ingresso == 50 || ingresso == 65 || ingresso == 54 || ingresso == 59 || ingresso == 61){
-	$(".ene").css({ "display": "none" })
-	$(".seg").css({ "display": "none" })
-	$(".ves").css({ "display": "none" })
-	$(".tec").css({ "display": "block" })
-	$(".segundaeterceiraopcao").css({ "display": "none" })
-}else{
-	$(".ene").css({ "display": "block" })
-	$(".seg").css({ "display": "block" })
-	$(".ves").css({ "display": "block" })
-	$(".tec").css({ "display": "none" })
-	$(".segundaeterceiraopcao").css({ "display": "block" })
-}
-
-
 $(".js-form").on("submit", function () {
 $(".btn-concluir").attr("disabled", "true");
 setTimeout(function () {
@@ -407,7 +465,7 @@ $(".btn-concluir").removeAttr("disabled");
 }, 5000);
 });
 }
-	</script>
+</script>
 
 	<!-- Script da Página -->
 	<script type="text/javascript" src="./assets/js/page-inscricao.js"></script>

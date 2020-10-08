@@ -48,6 +48,7 @@ function tipoprova() {
         $(".formado").css({ "display": "none" })
         $(".tecnico").css({ "display": "none" })
         $(".vestibular").slideDown(500);
+        $(".bolsa").css({ "display": "none" })
         $(".confirmaemail").slideDown(500);
     }
     else if (prova == "enem") {
@@ -55,6 +56,7 @@ function tipoprova() {
         $(".vestibular").css({ "display": "none" })
         $(".tecnico").css({ "display": "none" })
         $(".enem").slideDown(500);
+        $(".bolsa").css({ "display": "none" })
         $(".confirmaemail").slideDown(500);
     }
     else if (prova == "tecnico") {
@@ -62,6 +64,7 @@ function tipoprova() {
         $(".vestibular").css({ "display": "none" })        
         $(".enem").css({ "display": "none" })
         $(".tecnico").slideDown(500);
+        $(".bolsa").css({ "display": "none" })
         $(".confirmaemail").slideDown(500);
     }
     else if (prova == "segunda_graduacao") {
@@ -69,8 +72,18 @@ function tipoprova() {
         $(".enem").css({ "display": "none" })
         $(".tecnico").css({ "display": "none" })
         $(".formado").slideDown(500);
+        $(".bolsa").css({ "display": "none" })
         $(".confirmaemail").slideDown(500);
     }
+    else if (prova == "bolsa") {
+        $(".vestibular").css({ "display": "none" })
+        $(".enem").css({ "display": "none" })
+        $(".tecnico").css({ "display": "none" })
+        $(".formado").css({ "display": "none" })
+        $(".bolsa").slideDown(500);
+        $(".confirmaemail").slideDown(500);
+    }
+    
 
 }
 
