@@ -172,13 +172,7 @@
             height: 100%;
             margin-left: 18%;
         }
-        .imginscricao {
-            transform: scale(0.9);
-            display: block;
-            position: relative;
-            margin: 0 auto;
-            margin-top: 10em !important;
-        }
+        
         .js-form {
             display: block;
             position: relative;
@@ -224,7 +218,20 @@
         color: #fff !important;
     }
 
+    .imginscricao {
+        transform: scale(1);
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        margin-top: 1em !important;
+        width: 1050px;
+        border-radius: 5px;
+    }
+
     @media (max-width: 768px) {
+        header.fit-height{
+            top:2em;
+        }
         .js-form {
             display: block;
             position: relative;

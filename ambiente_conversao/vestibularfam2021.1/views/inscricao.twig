@@ -61,13 +61,7 @@ var select = document.createElement("select");
 
 
 </script>
-		<!-- Selecionar data prova 
-			<div class="defic col-xs-12 col-md-4 col-lg-4 v-spacing">
-			<select size required class="form-control" name="data_prova">
-			<option :value="null">Escolha a data da Prova:</option>
-			<option v-for="prova in aluno.data_provas" :value="prova[0]">{{ prova[1] }}</option>						
-        	</select>								
-		</div>-->
+	<img class="imginscricao" src="/assets/images/institucional2.png">
     <div id="pageinscricao" class="container fit-height inscricaofundo">
 		<!-- Principal -->	
 		<form method="post" action="/inscricao/finaliza" class="js-form" enctype="multipart/form-data">
@@ -75,7 +69,6 @@ var select = document.createElement("select");
 			{% verbatim %}
 				<main
 					id="page-inscricao">
-					<img class="imginscricao" src="/assets/images/inscricao.png" style="width:900px;top:30px">
 					<!-- Cabeçalho -->
 					<header class="fit-height">
 						<div class="container fit fit-height">
