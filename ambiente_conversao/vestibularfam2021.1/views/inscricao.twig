@@ -356,7 +356,7 @@ var select = document.createElement("select");
 							
 						{% endverbatim %}
 						
-						<!-- Aviso Vestibular/ENEM/Segunda Graduação -->
+						<!-- Avisos Vestibular/ENEM/Segunda Graduação/Bolsa -->
 						<div class="defic col-md-8 offset-md-2 v-spacing">
 						<br>
 							<div class="vestibular">
@@ -378,11 +378,6 @@ var select = document.createElement("select");
 										<br>** Não serão aceitos resultados de ENEM “treineiros”.
 								
 									</p>							
-								{#% for campo in aluno.campos_enem %}
-								<div class="col-md-12">
-								<input class="form-control" name="candidato[enem][{{campo.name}}]" type="number" max="1000" min="0" step=".1" placeholder="{{campo.label}}" v-model="aluno.enem.{{campo.name}}"/>
-								</div>
-								{% endfor %#}
 								</div>
 							<div class="formado">
 								<p class="align center text-white">
@@ -394,14 +389,16 @@ var select = document.createElement("select");
 							</div>
 							<div class="tecnico">
 								<p class="align center text-white">
-								Você optou por Cursos Técnicos. Confirme seu E-Mail e Clique no botão abaixo para iniciar seu processo de matrícula.
+								Você optou por Cursos Técnicos. 
+								Confirme seu E-Mail e Clique no botão abaixo para iniciar seu processo de matrícula.
 								</p>
 								
 							</div>
 
 							<div class="bolsa">
 								<p class="align center text-white">
-								Você optou por Concorrer a uma Bolsa. Confirme seu E-Mail e Clique no botão abaixo para iniciar seu processo de matrícula.
+								Você optou por ingressar através da Prova de Bolsas. 
+								Confirme seu e-mail no campo abaixo e fique atento as informações que encaminharemos no por lá. Boa sorte!
 								</p>
 								
 							</div>
