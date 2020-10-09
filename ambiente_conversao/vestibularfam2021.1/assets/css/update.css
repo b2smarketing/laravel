@@ -217,6 +217,7 @@
         background-color: #ffca30 !important;
         color: #fff !important;
     }
+    
 
     .imginscricao {
         transform: scale(1);
@@ -227,6 +228,7 @@
         width: 1050px;
         border-radius: 5px;
     }
+
 
     @media (max-width: 768px) {
         header.fit-height{
