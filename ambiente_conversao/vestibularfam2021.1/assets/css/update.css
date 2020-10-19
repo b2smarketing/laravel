@@ -105,6 +105,19 @@
         z-index: 500 !important;
     }
 
+    .curso-1-op{
+        display: block;
+        position: relative;
+        width: 318px;
+        height: 40px;
+        top: 6px;
+        padding-left: 10px;
+        line-height: 40px;
+        background-color: #FFCA30;
+        border-top: 1px solid #0e2e7c;
+        border-radius: 3px;
+    }
+
     .form-home input, .form-home select {
         color: #0e2e7c !important;
         background-color: #FFCA30 !important;

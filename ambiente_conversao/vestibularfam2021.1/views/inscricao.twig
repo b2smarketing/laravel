@@ -82,14 +82,16 @@ var select = document.createElement("select");
 										class="row">
 										<!-- Primeira Opção -->
 										<div class="opcao-curso col-xs-12 col-md-4">
-											<label for="acfam-inscricao-opcoes-curso-1">Primeira Opção:</label>
+											<label for="acfam-inscricao-opcoes-curso-1">Primeira Opção: <br><strong class="curso-1-op">{{ cursos[opcao1].nome }}</strong></label>
 
-											<!-- Listagem de Cursos 1a opcao ESCONDIDA !!! -->
+											<!-- Listagem de Cursos 1a opcao ESCONDIDA !!! 
 											
 											<select required name="opcoes_curso[]" v-model="opcao1" v-on:change="opcao2 = opcao3 = null" class="form-control" id="acfam-inscricao-opcoes-curso-1">
 												<option selected :value="null">Selecione um curso...</option>
 												<option v-for="curso in cursos_sort" :value="curso.id">{{ curso.nome }}</option>
-											</select>
+											</select>-->
+
+											<input type="hidden" name="opcoes_curso[]" v-model="opcao1" v-on:change="opcao2 = opcao3 = null"  value="{{ cursos[opcao1].id }}">
 											
 
 											<!-- Detalhes do Curso -->
