@@ -15,19 +15,32 @@
 					<input required name="candidato[sobrenome]" id="sobrenome" class="form-control" type="text" placeholder="Sobrenome" title="Por favor insira seu Sobrenome"/>
 					<input required name="candidato[email]" id="email" class="form-control" type="email" placeholder="E-mail" title="Por favor insira seu e-mail"/>
 					<the-mask class="form-control" name="candidato[celular]" id="celular" type="tel" placeholder="Celular/WhatsApp" required :mask="['(##) ####-####', '(##) #####-####']" title="Por favor insira seu celular"></the-mask>
+					
+					<!-- Tipo de ingresso  -->
+					<div class="forma-ingresso">							
+						<select oninput="FormaIngresso(value);" id="ingresso" class="form-control cingresso" name="candidato[ingresso]">
+							<option value="null" selected>Deseja ingressar através de:</option>									
+							<option class="tec" value="tecnico">Técnico</option>
+							<option class="ves" value="vestibular">Vestibular</option>
+							<option class="ene" value="enem">Nota do ENEM</option>
+							<option class="seg" value="segunda_graduacao">Segunda Graduação</option>
+							<option class="bol" value="bolsa">Prova de Bolsas</option>
+						</select>
+					</div>
+					<!-- Ja sabe ?  -->
 					<div class="curso-pergunta">
 					<select oninput="CursoSIM(value);" class="form-control curso cursoescolha">
 						<option selected :value="null">Você ja sabe qual curso ?</option>
 						<option value="sim">SIM</option>
 						<option value="nao">NÃO</option>
 					</select>	
-					</div>				
+					</div>	
+					<!-- Ajuda  -->			
 					<div class="curso-nao">
 						<select oninput="TipoCurso(value);" class="form-control curso">
 							<option selected :value="null">Nós te ajudamos:</option>
 							<option value="gpresencial">Graduação Presencial ?</option>
-							<option value="tpresencial">Técnico Presencial ?</option>
-							<option value="adistancia">A Distância ?</option>
+							<option value="adistancia">Graduação a Distância ?</option>
 						</select>
 					</div>
 					<div class="cursoop">
@@ -67,6 +80,25 @@
     option.innerHTML = 'Selecione um curso...';
     select.appendChild(option);
 
+	function FormaIngresso(resp){
+		if (resp == "tecnico"){
+			document.getElementById("imgindeximg").src="./assets/images/index1.png";
+			$("#app").css("background-image", "url('./assets/images/fundo1.png')");
+			$(".cingresso").prop('disabled', 'disabled');			
+			$(".cursoop").slideDown(500); 
+			{% for curso in cursostec %}
+			var optiont = document.createElement("option");
+			optiont.setAttribute("value",'{{ curso.id }}');
+			optiont.innerHTML = '{{ curso.nome }}';
+			select.append(optiont);
+			{% endfor %}   
+			$(".cursolista").append(select);
+		}else{
+			$(".cingresso").prop('disabled', 'disabled');
+			$(".curso-pergunta").slideDown(500); 		   
+		}
+	}
+
 	function CursoSIM(resp){	  
 		if (resp == "sim"){
 			$(".cursoop").slideDown(500);
@@ -98,18 +130,6 @@
 		select.append(optiong);
 		{% endfor %}   
 		$(".cursolista").append(select);      
-    }else if(resp == "tpresencial"){
-		document.getElementById("imgindeximg").src="./assets/images/index1.png";
-		$("#app").css("background-image", "url('./assets/images/fundo1.png')");
-		$(".curso-nao").css({ "display": "none" })
-        $(".cursoop").slideDown(500); 
-		{% for curso in cursostec %}
-		var optiont = document.createElement("option");
-		optiont.setAttribute("value",'{{ curso.id }}');
-		optiont.innerHTML = '{{ curso.nome }}';
-		select.append(optiont);
-		{% endfor %}   
-		$(".cursolista").append(select);        
     }else {
 		document.getElementById("imgindeximg").src="./assets/images/index2.png";
 		$("#app").css("background-image", "url('./assets/images/fundo2.png')");

@@ -12,6 +12,7 @@ if(ingresso == 49 || ingresso == 63 || ingresso == 67 || ingresso == 56 || ingre
 	$(".ene").css({ "display": "none" })
 	$(".seg").css({ "display": "none" })
 	$(".ves").css({ "display": "none" })
+	$(".bol").css({ "display": "none" })
 	$(".tec").css({ "display": "block" })
 	$(".segundaeterceiraopcao").css({ "display": "none" })
 }else{
@@ -28,9 +29,9 @@ var select = document.createElement("select");
     select.setAttribute("name", "data_prova"); 
 	select.setAttribute("required", "");   
 	if(screen.width >= 700){
-		select.setAttribute("style", "display:block;position:relative;width:435px;height:45px;font-size:18px;font-weight:800!important;");	
+		select.setAttribute("style", "display:block;position:relative;width:510px;height:45px;font-size:18px;font-weight:800!important;");	
 	}else{
-		select.setAttribute("style", "display:block;position:relative;width:435px;height:45px;font-size:18px;font-weight:800!important;");	
+		select.setAttribute("style", "display:block;position:relative;width:510px;height:45px;font-size:18px;font-weight:800!important;");	
 	}
 	var option = document.createElement("option");
 	select.setAttribute("selected","selected");
@@ -328,7 +329,7 @@ var select = document.createElement("select");
 							<!-- Tipo de ingresso  -->
 							<div class="formingresso defic col-xs-12 col-md-6 v-spacing">							
 								<select onchange="tipoprova()" oninput="FormaIngresso(value)" id="prova" size required class="form-control" name="candidato[ingresso]">
-									<option value="null" selected>Deseja ingressar através de:</option>									
+									<option value="null" selected>Confirme a forma de ingresso:</option>									
 									<option class="tec" value="tecnico">Técnico</option>
 									<option class="ves" value="vestibular">Vestibular</option>
 									<option class="ene" value="enem">Nota do ENEM</option>
@@ -404,7 +405,8 @@ var select = document.createElement("select");
 						<!-- Finalizar Inscrição -->
 						<div class="defic col-xs-12 col-md-12 col-lg-12 v-spacing align center">
 							<input onclick="validar()" class="btn cta large centered btn-concluir" type="button" value="Concluir Inscrição"/><br>
-							<input onclick="window.location.reload()" class="btn centered" type="reset" value="Reiniciar Inscrição"/>
+							<input onclick="window.location.reload()" class="btn centered btn-final" type="reset" value="Apagar Tudo"/>&emsp;
+							<!--<input onclick="window.location.href='/'" class="btn centered btn-final" type="reset" value="Reiniciar Inscrição"/>-->
 						</div>
 					</div>
 				</section>

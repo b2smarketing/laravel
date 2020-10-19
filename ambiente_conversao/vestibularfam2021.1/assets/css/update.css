@@ -250,6 +250,10 @@
         }
     }
 
+    .btn-final{
+        width: 200px;
+    }
+
     .btn-concluir {
         background-color: #ffca30 !important;
         color: #ec008c !important;
@@ -274,7 +278,7 @@
         left: -15px;
     }
 
-    .oculto, .erro, .cursoop, .curso-nao, .vestibular, .enem, .formado, .tecnico, .bolsa, .confirmaemail, .deficiencia {
+    .oculto, .erro, .curso-pergunta, .cursoop, .curso-nao, .vestibular, .enem, .formado, .tecnico, .bolsa, .confirmaemail, .deficiencia {
         display: none;
     }
 
