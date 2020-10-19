@@ -100,10 +100,12 @@
         }
 
     }
+    
 
     .form-home {
         z-index: 500 !important;
     }
+
 
     .curso-1-op{
         display: block;
