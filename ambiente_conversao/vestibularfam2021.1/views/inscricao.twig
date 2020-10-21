@@ -26,8 +26,9 @@ if(ingresso == 49 || ingresso == 63 || ingresso == 67 || ingresso == 56 || ingre
 
 
 var select = document.createElement("select");
-    select.setAttribute("name", "data_prova"); 
-	select.setAttribute("required", "");   
+    select.setAttribute("name", "data_prova");
+	select.setAttribute("onchange", "tipoprova()"); 
+	select.setAttribute("required", "required");   
 	if(screen.width >= 700){
 		select.setAttribute("style", "display:block;position:relative;width:510px;height:45px;font-size:18px;font-weight:800!important;");	
 	}else{
@@ -36,16 +37,23 @@ var select = document.createElement("select");
 	var option = document.createElement("option");
 	select.setAttribute("selected","selected");
     option.setAttribute("value", null);
-    option.innerHTML = 'ESCOLHA DA DATA DA PROVA:';
-    select.appendChild(option);
+    option.innerHTML = '***** CONFIRME DATA DA PROVA *****';
+    select.appendChild(option);	
 
 	function FormaIngresso(resp){	
 		console.log(resp);  
 		if (resp == "bolsa"){	
 			$(".formingresso").css({ "display": "none" })			
 			var option = document.createElement("option");
-			option.setAttribute("value",' 2856 ');
+			option.setAttribute("value",'2856');
 			option.innerHTML = 'Prova de Bolsa: 29/11 - 14:00';
+			select.appendChild(option);		  
+			$(".listaprova").append(select);
+		}else if (resp == "enem"){	
+			$(".formingresso").css({ "display": "none" })			
+			var option = document.createElement("option");
+			option.setAttribute("value",'2895');
+			option.innerHTML = 'NOTA DO ENEM';
 			select.appendChild(option);		  
 			$(".listaprova").append(select);
 		}else{
@@ -56,7 +64,7 @@ var select = document.createElement("select");
 			option.innerHTML = '{{ prova[1] }}';
 			select.appendChild(option);
 			{% endfor %}   
-			$(".listaprova").append(select);			    
+			$(".listaprova").append(select);		    
 		}
 	}
 
@@ -330,7 +338,7 @@ var select = document.createElement("select");
 
 							<!-- Tipo de ingresso  -->
 							<div class="formingresso defic col-xs-12 col-md-6 v-spacing">							
-								<select onchange="tipoprova()" oninput="FormaIngresso(value)" id="prova" size required class="form-control" name="candidato[ingresso]">
+								<select oninput="FormaIngresso(value)" id="prova" size required class="form-control" name="candidato[ingresso]">
 									<option value="null" selected>Confirme a forma de ingresso:</option>									
 									<option class="tec" value="tecnico">Técnico</option>
 									<option class="ves" value="vestibular">Vestibular</option>
