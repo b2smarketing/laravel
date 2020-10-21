@@ -165,6 +165,9 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		// Converte CPF em numérico, para processamento no BD
 
 		$cpf = $req->input('cpf');
+		$ingresso = $req->input('ingresso');
+		$distancia = $req->input('distancia');
+		
 		$infosCandidato = $req->input('candidato');
 		if (is_null($infosCandidato) || !is_array($infosCandidato)) $infosCandidato = [];
 
@@ -238,6 +241,8 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$req->session()->put('aluno', $aluno);
 		$req->session()->put('leads', $leads);
 		$req->session()->put('campanha', $campanha);
+		$req->session()->put('ingresso', $ingresso);
+		$req->session()->put('distancia', $distancia);
 		if ($curso) {
 			$req->session()->put('curso', $curso->id);
 		} else {
@@ -250,6 +255,8 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 	Route::get('/inscricao', function (Request $req) use ($module) {
 		$aluno = $req->session()->get('aluno');
+		$ingresso = $req->session()->get('ingresso');
+		$distancia = $req->session()->get('distancia');
 		$leads = $req->session()->get('leads');
 		$campanha = $req->session()->get('campanha');
 		$inscrito = $req->session()->get('aluno_inscrito');
@@ -285,7 +292,8 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$aluno['celular_ddd'] = isset($aluno->celular) ? trim(substr($aluno->celular, 1, 2)) : '';
 		$aluno['celular_numero'] = isset($aluno->celular) ? trim(substr($aluno->celular, 4, strlen($aluno->celular) - 3)) : '';
 		$aluno['data_provas'] = $data_provas;
-		//$aluno['enem'] = $aluno->enem;
+		$aluno['ingresso'] = $ingresso;
+		$aluno['distancia'] = $distancia;
 		//$aluno['campos_enem'] = $aluno->getCamposEnem();
 
 		// Lead atual
@@ -297,9 +305,11 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			'locais_prova' => $locais_provas,
 			'unidade' => $unidades,
 			'campanha' => $campanha,
-			'curso' => $curso
+			'curso' => $curso,
+			'ingresso' => $ingresso,
+			'distancia' => $distancia
 		];
-
+		
 		if ($req->query('e'))
 			$dados['error'] = $req->query('e');
 

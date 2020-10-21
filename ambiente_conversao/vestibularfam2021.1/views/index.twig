@@ -18,7 +18,7 @@
 					
 					<!-- Tipo de ingresso  -->
 					<div class="forma-ingresso">							
-						<select oninput="FormaIngresso(value);" id="ingresso" class="form-control cingresso" name="candidato[ingresso]">
+						<select oninput="FormaIngresso(value);" id="ingresso" class="form-control cingresso" name="ingresso">
 							<option value="null" selected>Deseja ingressar através de:</option>									
 							<option class="tec" value="tecnico">Técnico</option>
 							<option class="ves" value="vestibular">Vestibular</option>
@@ -37,7 +37,7 @@
 					</div>	
 					<!-- Ajuda  -->			
 					<div class="curso-nao">
-						<select oninput="TipoCurso(value);" class="form-control curso">
+						<select oninput="TipoCurso(value);" name="distancia" class="form-control curso">
 							<option selected :value="null">Nós te ajudamos:</option>
 							<option value="gpresencial">Graduação Presencial ?</option>
 							<option value="adistancia">Graduação a Distância ?</option>
@@ -84,7 +84,7 @@
 		if (resp == "tecnico"){
 			document.getElementById("imgindeximg").src="./assets/images/index1.png";
 			$("#app").css("background-image", "url('./assets/images/fundo1.png')");
-			$(".cingresso").prop('disabled', 'disabled');			
+			//$(".cingresso").prop('disabled', 'disabled');			
 			$(".cursoop").slideDown(500); 
 			{% for curso in cursostec %}
 			var optiont = document.createElement("option");
@@ -94,7 +94,7 @@
 			{% endfor %}   
 			$(".cursolista").append(select);
 		}else{
-			$(".cingresso").prop('disabled', 'disabled');
+			//$(".cingresso").prop('disabled', 'disabled');
 			$(".curso-pergunta").slideDown(500); 		   
 		}
 	}

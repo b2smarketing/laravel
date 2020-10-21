@@ -7,19 +7,78 @@ $(document).ready(() => {
 		cursos2() {
 			let cursos = Vue.util.extend({}, this.cursos_sort);
 			for (var i in cursos) {
-				if (cursos[i].id == this.opcao1 || cursos[i].id == 49 || cursos[i].id == 63 || cursos[i].id == 67 || cursos[i].id == 56 || cursos[i].id == 57 || cursos[i].id == 52 || cursos[i].id == 50 || cursos[i].id == 65 || cursos[i].id == 54 ||cursos[i].id == 59 || cursos[i].id == 61){
+				if (cursos[i].id == this.opcao1) {
 					delete cursos[i];
-			}}
+				}
+			}
 			return cursos;
 		},
 		cursos3() {
 			let cursos = Vue.util.extend({}, this.cursos_sort);
 			for (var i in cursos) {
-				if (cursos[i].id == this.opcao1 || cursos[i].id == this.opcao2 || cursos[i].id == 49 || cursos[i].id == 63 || cursos[i].id == 67 || cursos[i].id == 56 || cursos[i].id == 57 || cursos[i].id == 52 || cursos[i].id == 50 || cursos[i].id == 65 || cursos[i].id == 54 ||cursos[i].id == 59 || cursos[i].id == 61){
+				if (cursos[i].id == this.opcao1 || cursos[i].id == this.opcao2) {
 					delete cursos[i];
-			}}
+				}
+			}
 			return cursos;
 		},
+		cursos2_semTec() {
+			let cursos = Vue.util.extend({}, this.cursos_sort);
+			for (var i in cursos) {
+				if (cursos[i].id == this.opcao1 || cursos[i].id == 49 || cursos[i].id == 63 || cursos[i].id == 67 || cursos[i].id == 56 || cursos[i].id == 57 || cursos[i].id == 52 || cursos[i].id == 50 || cursos[i].id == 65 || cursos[i].id == 54 || cursos[i].id == 59 || cursos[i].id == 61) {
+					delete cursos[i];
+				}
+			}
+			return cursos;
+		},
+		cursos3_semTec() {
+			let cursos = Vue.util.extend({}, this.cursos_sort);
+			for (var i in cursos) {
+				if (cursos[i].id == this.opcao1 || cursos[i].id == this.opcao2 || cursos[i].id == 49 || cursos[i].id == 63 || cursos[i].id == 67 || cursos[i].id == 56 || cursos[i].id == 57 || cursos[i].id == 52 || cursos[i].id == 50 || cursos[i].id == 65 || cursos[i].id == 54 || cursos[i].id == 59 || cursos[i].id == 61) {
+					delete cursos[i];
+				}
+			}
+			return cursos;
+		},
+
+		cursos2_so_presencial() {
+			let cursos = Vue.util.extend({}, this.cursos_sort);
+			for (var i in cursos) {
+				if (cursos[i].id == this.opcao1 || cursos[i].id == 69 || cursos[i].id == 77 || cursos[i].id == 76 || cursos[i].id == 74 || cursos[i].id == 75 || cursos[i].id == 49 || cursos[i].id == 63 || cursos[i].id == 67 || cursos[i].id == 56 || cursos[i].id == 57 || cursos[i].id == 52 || cursos[i].id == 50 || cursos[i].id == 65 || cursos[i].id == 54 || cursos[i].id == 59 || cursos[i].id == 61) {
+					delete cursos[i];
+				}
+			}
+			return cursos;
+		},
+		cursos3_so_presencial() {
+			let cursos = Vue.util.extend({}, this.cursos_sort);
+			for (var i in cursos) {
+				if (cursos[i].id == this.opcao1 || cursos[i].id == this.opcao2 || cursos[i].id == 69 || cursos[i].id == 77 || cursos[i].id == 76 || cursos[i].id == 74 || cursos[i].id == 75 || cursos[i].id == 49 || cursos[i].id == 63 || cursos[i].id == 67 || cursos[i].id == 56 || cursos[i].id == 57 || cursos[i].id == 52 || cursos[i].id == 50 || cursos[i].id == 65 || cursos[i].id == 54 || cursos[i].id == 59 || cursos[i].id == 61) {
+					delete cursos[i];
+				}
+			}
+			return cursos;
+		},
+		cursos2_ead() {
+			let cursos = Vue.util.extend({}, this.cursos_sort);
+			for (var i in cursos) {
+				if (cursos[i].id == this.opcao1 || (cursos[i].id != 69 && cursos[i].id != 77 && cursos[i].id != 76 && cursos[i].id != 74 && cursos[i].id != 75)) {
+					delete cursos[i];
+				}
+			}
+			return cursos;
+		},
+		cursos3_ead() {
+			let cursos = Vue.util.extend({}, this.cursos_sort);
+			for (var i in cursos) {
+				if (cursos[i].id == this.opcao1 || cursos[i].id == this.opcao2 || (cursos[i].id != 69 && cursos[i].id != 77 && cursos[i].id != 76 && cursos[i].id != 74 && cursos[i].id != 75)) {
+					delete cursos[i];
+				}
+
+			}
+			return cursos;
+		},
+
 		cidades_estado() {
 			if (!this.estados || !this.estado)
 				return [];
@@ -57,9 +116,9 @@ $(document).ready(() => {
 		setEstado(estado) {
 			this.estado = estado;
 		}
-    };
-    
-    let cursoInicial = curso ? curso : null;
+	};
+
+	let cursoInicial = curso ? curso : null;
 
 	// Inicializar VueJS
 	let $app = acfam.init({

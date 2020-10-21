@@ -90,7 +90,7 @@ var select = document.createElement("select");
 										class="row">
 										<!-- Primeira Opção -->
 										<div class="opcao-curso col-xs-12 col-md-4">
-											<label for="acfam-inscricao-opcoes-curso-1">Primeira Opção: <br><strong class="curso-1-op">{{ cursos[opcao1].nome }}</strong></label>
+											<label for="acfam-inscricao-opcoes-curso-1">Primeira Opção ( {{ aluno.ingresso }} ): <br><strong class="curso-1-op">{{ cursos[opcao1].nome }}</strong></label>
 
 											<!-- Listagem de Cursos 1a opcao ESCONDIDA !!! 
 											
@@ -122,13 +122,55 @@ var select = document.createElement("select");
 										<!-- Segunda Opção -->
 										<transition name="fade">
 											<div class="opcao-curso col-xs-12 col-md-4 segundaeterceiraopcao" v-if="opcao1">
-												<label for="acfam-inscricao-opcoes-curso-1">Segunda Opção:</label>
+												
+												<!-- Listagem de Cursos BLOCO DE ESCOLHAS -->
+												<div v-if="aluno.distancia != 'adistancia'">
 
-												<!-- Listagem de Cursos -->
+												<div v-if="aluno.ingresso === 'segunda_graduacao'">
+												<label for="acfam-inscricao-opcoes-curso-1">Segunda Opção:</label>
+												<!-- Listagem de Cursos -->												
 												<select name="opcoes_curso[]" v-model="opcao2" v-on:change="opcao3 = null" class="form-control" id="acfam-inscricao-opcoes-curso-2">
 													<option></option>
 													<option v-for="curso in cursos2" :value="curso.id">{{ curso.nome }}</option>
 												</select>
+												</div>
+
+												<div v-if="aluno.ingresso === 'vestibular'">
+												<label for="acfam-inscricao-opcoes-curso-1">Segunda Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao2" v-on:change="opcao3 = null" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos2_semTec" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+
+												<div v-if="aluno.ingresso === 'enem'">
+												<label for="acfam-inscricao-opcoes-curso-1">Segunda Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao2" v-on:change="opcao3 = null" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos2_semTec" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+
+												<div v-if="aluno.ingresso === 'bolsa'">
+												<label for="acfam-inscricao-opcoes-curso-1">Segunda Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao2" v-on:change="opcao3 = null" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos2_so_presencial" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+												</div>
+												<div v-if="aluno.distancia === 'adistancia'">
+												<label for="acfam-inscricao-opcoes-curso-1">Segunda Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao2" v-on:change="opcao3 = null" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos2_ead" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+												<!-- Listagem de Cursos FIM DO BLOCO -->	
 
 												<!-- Detalhes do Curso -->
 												<transition name="fade_resize">
@@ -153,13 +195,58 @@ var select = document.createElement("select");
 										<!-- Terceira Opção -->
 										<transition name="fade">
 											<div class="opcao-curso col-xs-12 col-md-4 segundaeterceiraopcao" v-if="opcao2">
-												<label for="acfam-inscricao-opcoes-curso-1">Terceira Opção:</label>
+											
 
-												<!-- Listagem de Cursos -->
-												<select name="opcoes_curso[]" v-model="opcao3" class="form-control" id="acfam-inscricao-opcoes-curso-3">
+												<!-- Listagem de Cursos BLOCO DE ESCOLHAS -->
+												<div v-if="aluno.distancia != 'adistancia'">
+
+												<div v-if="aluno.ingresso === 'segunda_graduacao'">
+												<label for="acfam-inscricao-opcoes-curso-1">Terceira Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao3" class="form-control" id="acfam-inscricao-opcoes-curso-2">
 													<option></option>
 													<option v-for="curso in cursos3" :value="curso.id">{{ curso.nome }}</option>
 												</select>
+												</div>
+
+												<div v-if="aluno.ingresso === 'vestibular'">
+												<label for="acfam-inscricao-opcoes-curso-1">Terceira Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao3" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos3_semTec" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+
+												<div v-if="aluno.ingresso === 'enem'">
+												<label for="acfam-inscricao-opcoes-curso-1">Terceira Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao3" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos3_semTec" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+
+												<div v-if="aluno.ingresso === 'bolsa'">
+												<label for="acfam-inscricao-opcoes-curso-1">Terceira Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao3" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos3_so_presencial" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+												</div>
+												<div v-if="aluno.distancia === 'adistancia'">
+												<label for="acfam-inscricao-opcoes-curso-1">Terceira Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao3" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos3_ead" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+												<!-- Listagem de Cursos FIM DO BLOCO -->
+
+
 
 												<!-- Detalhes do Curso -->
 												<transition name="fade_resize">

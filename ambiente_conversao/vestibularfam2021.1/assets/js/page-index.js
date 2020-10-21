@@ -163,5 +163,5 @@ $(document).ready(() => {
 			submitForm();
 		}
 	});
-	form.on('submit', submitForm);
+	//form.on('submit', submitForm);
 });
