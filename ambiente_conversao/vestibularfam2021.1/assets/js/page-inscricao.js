@@ -1,5 +1,5 @@
 $(document).ready(() => {
-	// Métodos Computados
+	// Métodos Computados ,Everton 21/10/2020
 	let computed = {
 		cursos_sort() {
 			return _.orderBy(this.cursos, 'nome');
