@@ -7,17 +7,17 @@ $(document).ready(() => {
 		cursos2() {
 			let cursos = Vue.util.extend({}, this.cursos_sort);
 			for (var i in cursos) {
-				if (cursos[i].id == this.opcao1)
+				if (cursos[i].id == this.opcao1 || cursos[i].id == 49 || cursos[i].id == 63 || cursos[i].id == 67 || cursos[i].id == 56 || cursos[i].id == 57 || cursos[i].id == 52 || cursos[i].id == 50 || cursos[i].id == 65 || cursos[i].id == 54 ||cursos[i].id == 59 || cursos[i].id == 61){
 					delete cursos[i];
-			}
+			}}
 			return cursos;
 		},
 		cursos3() {
 			let cursos = Vue.util.extend({}, this.cursos_sort);
 			for (var i in cursos) {
-				if (cursos[i].id == this.opcao1 || cursos[i].id == this.opcao2)
+				if (cursos[i].id == this.opcao1 || cursos[i].id == this.opcao2 || cursos[i].id == 49 || cursos[i].id == 63 || cursos[i].id == 67 || cursos[i].id == 56 || cursos[i].id == 57 || cursos[i].id == 52 || cursos[i].id == 50 || cursos[i].id == 65 || cursos[i].id == 54 ||cursos[i].id == 59 || cursos[i].id == 61){
 					delete cursos[i];
-			}
+			}}
 			return cursos;
 		},
 		cidades_estado() {
