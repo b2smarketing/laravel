@@ -307,6 +307,7 @@ class Lead extends Model
             'curso_nome' => is_null($curso) ? null : $curso->nome,
             'tipo_cadastro' => $status_listizer,
             'ingresso' => $aluno->ingresso,
+            'distancia' => $aluno->distancia,
             'nomepai' => $aluno->dados_adicionais('nome_pai'),
             'nomemae' => $aluno->dados_adicionais('nome_mae'),
             'receberinfos' => $lead->dados_adicionais('newsletter'),

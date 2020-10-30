@@ -408,6 +408,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		unset($aluno->celular_numero);
 		unset($aluno->deficiencia);
 		unset($aluno->ingresso);
+		unset($aluno->distancia);
 		unset($aluno->data_provas);
 
 		// Atualizar dados

@@ -87,6 +87,7 @@ class Univestibular extends Migration
             $table->string('ingresso')->nullable(); 
             $table->string('arquivos')->nullable();            
             $table->string('aceite')->nullable();
+            $table->string('distancia')->nullable();
             $table->timestamps();
 
             $table->foreign('cidade_id')->references('id')->on('cidades');
