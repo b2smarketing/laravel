@@ -42,7 +42,7 @@ $(this).next().text(dflt);
 		<div class="alteracoes vmatricula">
 			<img class="imgadd" src="/assets/images/fam2020.png">
 			<h3>Cadastro de Matrícula</h3>
-			<form id="form1" action="/inscricao/finaliza" method="post" enctype="multipart/form-data">
+			<form id="form1" action="/inscricao/finalizada" method="post" enctype="multipart/form-data">
 				{{ csrf_field() }}
 				<input type="hidden" name="cpf" value="{{ aluno.cpf }}"/>
 				<input class="form-control" name="candidato[nome]" type="text" value="{{ aluno.nome }}" readonly required/><br>
