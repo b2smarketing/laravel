@@ -355,7 +355,7 @@
         height: 100%;
     }
 
-    #page-adicionais input[type="text"], #page-adicionais input[type="email"], #page-adicionais input[type="tel"], #page-adicionais input[type="file"] {
+    #page-adicionais input[type="text"], #page-adicionais input[type="password"], #page-adicionais input[type="email"], #page-adicionais input[type="tel"], #page-adicionais input[type="file"] {
         width: 400px;
     }
 

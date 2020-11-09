@@ -83,6 +83,7 @@ input[type="text"].form-control, input[type="email"].form-control, input[type="n
   #page-inscricao input[type="email"].form-control,
   #page-inscricao input[type="number"].form-control,
   #page-inscricao input[type="tel"].form-control,
+  #page-inscricao input[type="password"].form-control,
   #page-inscricao select.form-control {
     border-radius: 3px;
     background-color: #1eade9;

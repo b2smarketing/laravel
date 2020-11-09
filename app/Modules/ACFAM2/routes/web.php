@@ -148,7 +148,63 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		return view('AmbienteConversao::index', $dados);
 	});
 
+	// Apaga CPF (precisa de login) ***************************************
 
+	Route::get('/apagaCPF', function (Request $req) use ($module) {			
+	
+		return view('AmbienteConversao::apagaCPF');
+
+	});
+
+	Route::post('/apaga', function (Request $req) {
+
+		$cpf = $req->input('cpf');
+		$senha = $req->input('senha');
+
+	if ($senha == "admin@fam#"){
+
+		$host = getenv("DB_HOST");
+		$user = getenv("DB_USERNAME");
+		$pass = getenv("DB_PASSWORD");
+		$database = getenv("DB_DATABASE");
+
+		$conexao = new mysqli($host,$user,$pass,$database);
+
+		$sql = "select * from alunos where cpf = $cpf";
+		$consulta = $conexao->query($sql);		
+		
+		if($consulta){
+
+		$resultado = $consulta->fetch_assoc();
+		$id = $resultado['id'];			
+
+		$sql1 = "DELETE FROM alunos WHERE id = $id";
+		$sql2 = "DELETE FROM leads WHERE aluno_id = $id";
+		$conexao->query("SET foreign_key_checks = 0");
+		$apagado1 = $conexao->query($sql1);
+		$apagado2 = $conexao->query($sql2);
+
+		if(!$apagado1){
+			$frase = "ERRO ao apagar cpf";
+		}else if(!$apagado2){
+			$frase = "ERRO ao apagar lead";
+		}else{
+			$frase = "CPF ".$resultado['cpf']." apagado!";
+		}						
+
+		}else{
+			$frase = "CPF não encontrado !";
+		}
+	
+	}else{
+		$frase = "SENHA INCORRETA !!!";
+	}		
+		$dados = [
+			'frase' => $frase
+		];
+
+		return view('AmbienteConversao::apagado', $dados);
+	});	
 
 	// Inscrição Vestibular ***************************************
 
@@ -646,7 +702,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		return redirect('/inscricao/acompanhar');
 	});
 
-	Route::post('/inscricao/adicionais', function (Request $req) use ($module) {
+	Route::post('/inscricao/finaliza', function (Request $req) use ($module) {
 
 		$cpf = $req->input('cpf');
 		$aluno = Aluno::porCPF($cpf);
@@ -730,7 +786,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		return view('AmbienteConversao::finaliza-adicionais');
 	});
 
-	Route::get('/inscricao/adicionais', function (Request $req) use ($module) {
+	Route::post('/inscricao/adicionais', function (Request $req) use ($module) {
 		$cpf = $req->input('cpf');
 		$aluno = Aluno::porCPF($cpf);		
 
