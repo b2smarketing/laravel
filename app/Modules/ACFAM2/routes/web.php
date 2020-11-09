@@ -702,7 +702,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		return redirect('/inscricao/acompanhar');
 	});
 
-	Route::post('/inscricao/finaliza', function (Request $req) use ($module) {
+	Route::post('/inscricao/finalizada', function (Request $req) use ($module) {
 
 		$cpf = $req->input('cpf');
 		$aluno = Aluno::porCPF($cpf);
