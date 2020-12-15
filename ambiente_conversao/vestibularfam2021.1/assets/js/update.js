@@ -104,8 +104,12 @@ function verificar(ficheiro){
     var fnome = ficheiro.value;
     var extficheiro = fnome.substr(fnome.lastIndexOf('.'));
     if(extensoes.indexOf(extficheiro) >= 0){
-        if(ficheiro.files[0].size > 1000000){
-            alert('Erro: Arquivo muito grande ! Máx. permitido é 1000KB');            
+        if(ficheiro.files[0].size > 1048576){
+            alert('Erro: Arquivo muito grande ! Máx. permitido é 1M');            
+            ficheiro.value = "";
+        }
+        if(ficheiro.files[0].size < 153600){
+            alert('Erro: Arquivo muito pequeno ! Mín. permitido é 150K');            
             ficheiro.value = "";
         }
     } else {
