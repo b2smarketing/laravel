@@ -812,6 +812,26 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		return view('AmbienteConversao::matricula');
 	});
 
+	Route::get('/bem-vindo', function (Request $cpf) use ($module) {
+
+		$cpf = $_GET['cpf'];
+
+		$aluno = Aluno::porCPF($cpf);		
+
+		//print_r($aluno);
+
+		// Validar se CPF existe
+		if (is_null($aluno))
+			return redirect('/');
+			
+		$dados = [
+			'aluno' => $aluno			
+		];
+
+		return view('AmbienteConversao::bem-vindo', $dados);
+		
+	});
+
 	Route::post('/resultados', function (Request $req) use ($module) {
 		$cpf = $req->input('cpf');
 		$aluno = Aluno::porCPF($cpf);
