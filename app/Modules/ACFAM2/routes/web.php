@@ -812,6 +812,10 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		return view('AmbienteConversao::matricula');
 	});
 
+	Route::get('/teste', function (Request $req) use ($module) {
+		return view('AmbienteConversao::teste');
+	});
+
 	Route::get('/bem-vindo', function (Request $cpf) use ($module) {
 
 		$cpf = $_GET['cpf'];

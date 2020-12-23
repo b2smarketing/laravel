@@ -165,34 +165,37 @@ $(this).next().text(dflt);
 					<img class="imgarq9" src="" onclick="apagamanual(9)"><br><br>
 				{% endif %}
 
-				<!--<input id="militar" name="arquivos[militar]" type="file" style="display:none" placeholder="Certificado Militar (se houver)" onchange="verificar(this);"/>
-										<label class="arquivo" for="militar">Certificado Militar (se houver)</label>
-										&emsp;<span class="tutoarq" onclick="manual(10)">?</span>
-										<img class="imgarq10" src="" onclick="apagamanual(10)"><br><br>-->
+					<!--<input id="militar" name="arquivos[militar]" type="file" style="display:none" placeholder="Certificado Militar (se houver)" onchange="verificar(this);"/>
+											<label class="arquivo" for="militar">Certificado Militar (se houver)</label>
+											&emsp;<span class="tutoarq" onclick="manual(10)">?</span>
+											<img class="imgarq10" src="" onclick="apagamanual(10)"><br><br>-->
 
-				<!--<input id="cnh" name="arquivos[cnh]" type="file" style="display:none" placeholder="CNH (se houver)" onchange="verificar(this);"/>
-										<label class="arquivo" for="cnh">CNH (se houver)</label>
-										&emsp;<span class="tutoarq" onclick="manual(11)">?</span>
-										<img class="imgarq11" src="" onclick="apagamanual(11)"><br><br>-->
+					<!--<input id="cnh" name="arquivos[cnh]" type="file" style="display:none" placeholder="CNH (se houver)" onchange="verificar(this);"/>
+											<label class="arquivo" for="cnh">CNH (se houver)</label>
+											&emsp;<span class="tutoarq" onclick="manual(11)">?</span>
+											<img class="imgarq11" src="" onclick="apagamanual(11)"><br><br>-->
 
-				<!--<input id="programa" name="arquivos[programa]" type="file" style="display:none" placeholder="Conteúdo Programático (se houver)" onchange="verificar(this);"/>
-										<label class="arquivo" for="programa">Conteúdo Programático (se houver)</label>
-										&emsp;<span class="tutoarq" onclick="manual(12)">?</span>
-										<img class="imgarq12" src="" onclick="apagamanual(12)">--><br>
-				<br><br><hr><br>
-		</p>
-		</p>
-		<!--  -->
-			<p><a class="aceita" 			
-			{% if (lead.curso_id == 49) or (lead.curso_id == 63) or (lead.curso_id == 67) or (lead.curso_id == 56) or (lead.curso_id == 57) or (lead.curso_id == 52) or (lead.curso_id == 50) or (lead.curso_id == 65) or (lead.curso_id == 54) or (lead.curso_id == 59) or (lead.curso_id == 61) %} 
-			href="/assets/docs/Termo_de_Aceite_CT_061120.pdf" 
-			{% elseif (lead.curso_id == 69) or (lead.curso_id == 74) or (lead.curso_id == 75) or (lead.curso_id == 76) or (lead.curso_id == 77) %} 
-			href="/assets/docs/Termo_de_Aceite_EAD_061120.pdf" 
-			{% else %} 
-			href="/assets/docs/Termo_de_Aceite_Graduacao_061120.pdf" {% endif %} target="_blank"> Aceita o Contrato de Serviços Educacionais ?</a>&emsp;<input type="checkbox" id="aceito1"></p>
-		<br><p>
-			<a class="aceita" href="/assets/docs/Termo_LGPD.pdf" target="_blank">Aceita Termo para Tratamento de Dados Pessoais ?</a>&emsp;<input type="checkbox" id="aceito2"></p>
-		<br><hr><br>
-		<br><input type="button" onclick="aceitar()" class="add" value="Concluir Inscrição"/><br>
-		<br><br><br></body>
-</html></form></div></body></html>
+					<!--<input id="programa" name="arquivos[programa]" type="file" style="display:none" placeholder="Conteúdo Programático (se houver)" onchange="verificar(this);"/>
+											<label class="arquivo" for="programa">Conteúdo Programático (se houver)</label>
+											&emsp;<span class="tutoarq" onclick="manual(12)">?</span>
+											<img class="imgarq12" src="" onclick="apagamanual(12)">--><br>
+					<br><br><hr><br>
+					</p>
+					</p>
+					<!--  -->
+					<p><a class="aceita" 			
+					{% if (lead.curso_id == 49) or (lead.curso_id == 63) or (lead.curso_id == 67) or (lead.curso_id == 56) or (lead.curso_id == 57) or (lead.curso_id == 52) or (lead.curso_id == 50) or (lead.curso_id == 65) or (lead.curso_id == 54) or (lead.curso_id == 59) or (lead.curso_id == 61) %} 
+					href="/assets/docs/Termo_de_Aceite_CT_061120.pdf" 
+					{% elseif (lead.curso_id == 69) or (lead.curso_id == 74) or (lead.curso_id == 75) or (lead.curso_id == 76) or (lead.curso_id == 77) %} 
+					href="/assets/docs/Termo_de_Aceite_EAD_061120.pdf" 
+					{% else %} 
+					href="/assets/docs/Termo_de_Aceite_Graduacao_061120.pdf" {% endif %} target="_blank"> Aceita o Contrato de Serviços Educacionais ?</a>&emsp;<input type="checkbox" id="aceito1"></p>
+				<br><p>
+					<a class="aceita" href="/assets/docs/Termo_LGPD.pdf" target="_blank">Aceita Termo para Tratamento de Dados Pessoais ?</a>&emsp;<input type="checkbox" id="aceito2"></p>
+				<br><hr><br>
+				<br><input type="button" onclick="aceitar()" class="add" value="Concluir Inscrição"/><br>
+				<br><br><br>
+			</form>
+		</div>
+	</body>
+</html>
