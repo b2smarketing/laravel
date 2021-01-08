@@ -813,7 +813,37 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 	});
 
 	Route::get('/teste', function (Request $req) use ($module) {
-		return view('AmbienteConversao::teste');
+
+		// Preparar e-mail
+
+		// Identidade de Gênero
+		$assunto = 'Seja bem-vindo';
+
+		$email = "everton.messias@gmail.com";
+		$nome = "Everton Mendes Messias";
+
+		// Preparar dados
+		$dados_email = "Informatica";
+
+		// Criar e-mail
+		$email = Email::create($assunto)
+			->smtp_auth()
+			->from('no-reply@vestibularfam.com.br', 'Vestibular FAM')
+			->to($email, $nome)
+			->html($dados_email);
+
+		// Enviar
+		if($email->send()){
+			$frase = "Foi OK";
+		}else{
+			$frase = "ERRO";
+		}
+
+		$dados = [
+			'frase' => $frase			
+		];
+
+		return view('AmbienteConversao::teste', $dados);
 	});
 
 	Route::get('/bem-vindo', function (Request $cpf) use ($module) {
