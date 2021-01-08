@@ -833,17 +833,21 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			->html($dados_email);
 
 		// Enviar
-		if($email->send()){
+
+		$email->send();
+		
+		/*if($email->send()){
 			$frase = "Foi OK";
 		}else{
 			$frase = "ERRO";
-		}
+		}		
 
 		$dados = [
 			'frase' => $frase			
-		];
+		];*/
 
-		return view('AmbienteConversao::teste', $dados);
+		//return view('AmbienteConversao::teste', $dados);
+		return view('AmbienteConversao::teste');
 	});
 
 	Route::get('/bem-vindo', function (Request $cpf) use ($module) {
