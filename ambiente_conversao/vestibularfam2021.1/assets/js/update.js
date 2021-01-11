@@ -169,12 +169,49 @@ function manual(x){
         $('.poparq').css({'display':'block'});
         $('.imgarq12').attr('src','/assets/images/12.jpg').css({'display':'block'});
     }
+      
+}
+
+function abrepdf(x){
+    if (x == 1){
+        $('.poparq').css({'display':'block'});
+        $('.arqpdf'+x).css({'display':'block'});
+        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_de_Aceite_CT_061120.pdf');
+    } 
+    if (x == 2){
+        $('.poparq').css({'display':'block'});
+        $('.arqpdf'+x).css({'display':'block'});
+        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_de_Aceite_EAD_061120.pdf');
+    }
+    if (x == 3){
+        $('.poparq').css({'display':'block'});
+        $('.arqpdf'+x).css({'display':'block'});
+        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_de_Aceite_Graduacao_061120.pdf');
+    }  
+    if (x == 4){
+        $('.poparq').css({'display':'block'});
+        $('.arqpdf'+x).css({'display':'block'});
+        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_LGPD.pdf');
+    } 
 }
 
 //esconde manual
 function apagamanual(x){
     $('.poparq').css({'display':'none'});
     $('.imgarq'+x).css({'display':'none'});
+}
+
+//esconde pdf
+function apagapdf(x){
+    $('.poparq').css({'display':'none'});
+    $('.arqpdf'+x).css({'display':'none'});     
+    if(x == 4){
+        $('#aceito2').val("ok");
+        $('.aceitapdf2').html("&#10004");
+    }else{
+        $('#aceito1').val("ok");
+        $('.aceitapdf').html("&#10004");
+    }
 }
 
 
@@ -211,7 +248,7 @@ function aceitar() { // adicionais
 
     // verifica se aceita os termos    
     var aceita;
-    if (!($('#aceito1').prop("checked")) || !($('#aceito2').prop("checked"))) {
+    if ($('#aceito1').val() == "" || $('#aceito2').val() == "") {
         alert("Aceite os termos do Contrato antes de enviar !!!");
         aceita = false;
     } else {

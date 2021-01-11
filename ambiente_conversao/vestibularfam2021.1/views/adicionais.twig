@@ -182,17 +182,46 @@ $(this).next().text(dflt);
 					<br><br><hr><br>
 					</p>
 					</p>
-					<!--  -->
-					<p><a class="aceita" 			
+				
+							
 					{% if (lead.curso_id == 49) or (lead.curso_id == 63) or (lead.curso_id == 67) or (lead.curso_id == 56) or (lead.curso_id == 57) or (lead.curso_id == 52) or (lead.curso_id == 50) or (lead.curso_id == 65) or (lead.curso_id == 54) or (lead.curso_id == 59) or (lead.curso_id == 61) %} 
-					href="/assets/docs/Termo_de_Aceite_CT_061120.pdf" 
+					<span class="tutopdf" onclick="abrepdf(1)">Aceita o Contrato de Serviços Educacionais dos Cursos Técnicos?</span>
+					<span class="aceitapdf"></span>
+					<div class="arqpdf1">
+					<iframe class="pdfarqpdf1" src="" type="application/pdf" width="800" height="500"></iframe>
+					<button type="button" onclick="apagapdf(1)" class="fechapdf">Aceitar</button>
+					</div>
 					{% elseif (lead.curso_id == 69) or (lead.curso_id == 74) or (lead.curso_id == 75) or (lead.curso_id == 76) or (lead.curso_id == 77) %} 
-					href="/assets/docs/Termo_de_Aceite_EAD_061120.pdf" 
+					<span class="tutopdf" onclick="abrepdf(2)">Aceita o Contrato de Serviços Educacionais dos Cursos EAD ?</span>
+					<span class="aceitapdf"></span>
+					<div class="arqpdf2">
+					<iframe class="pdfarqpdf2" src="" type="application/pdf" width="800" height="500"></iframe>
+					<button type="button" onclick="apagapdf(2)" class="fechapdf">Aceitar</button>
+					</div>
 					{% else %} 
-					href="/assets/docs/Termo_de_Aceite_Graduacao_061120.pdf" {% endif %} target="_blank"> Aceita o Contrato de Serviços Educacionais ?</a>&emsp;<input type="checkbox" id="aceito1"></p>
-				<br><p>
-					<a class="aceita" href="/assets/docs/Termo_LGPD.pdf" target="_blank">Aceita Termo para Tratamento de Dados Pessoais ?</a>&emsp;<input type="checkbox" id="aceito2"></p>
-				<br><hr><br>
+					<span class="tutopdf" onclick="abrepdf(3)">Aceita o Contrato de Serviços Educacionais dos Cursos de Graduação ?</span>
+					<span class="aceitapdf"></span>
+					<div class="arqpdf3">
+					<iframe class="pdfarqpdf3" src="" type="application/pdf" width="800" height="500"></iframe>
+					<button type="button" onclick="apagapdf(3)" class="fechapdf">Aceitar</button>
+					</div>
+					{% endif %} 					
+					<input type="hidden" value="" id="aceito1">	
+
+				
+				<br><br><br><br>			
+				<hr>
+				<br>
+				<span class="tutopdf" onclick="abrepdf(4)">Aceita Termo para Tratamento de <br>Dados Pessoais ?</span>
+					<span class="aceitapdf2"></span>
+					<div class="arqpdf4">
+					<iframe class="pdfarqpdf4" src="" type="application/pdf" width="800" height="500"></iframe>
+					<button type="button" onclick="apagapdf(4)" class="fechapdf">Aceitar</button>
+				</div>				
+				<input type="hidden" value="" id="aceito2">
+				<br><br><br><br>			
+				<hr>
+				<br>
 				<br><input type="button" onclick="aceitar()" class="add" value="Concluir Inscrição"/><br>
 				<br><br><br>
 			</form>

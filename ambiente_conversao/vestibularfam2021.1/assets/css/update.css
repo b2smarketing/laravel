@@ -144,9 +144,36 @@
         background-color: #ec008c;
     }
 
-    .tutoarq:hover {
+    .tutopdf {
+        cursor: pointer;
+        display: block;
+        width: 390px;
+        float: left;
+        padding: 5px;
+        border-radius: 5px;
         background-color: #ffca30;
     }
+    .aceitapdf, .aceitapdf2{
+        display: block;
+        font-size: 16px;        
+        position: relative;
+        width: 17px;
+        height: 17px;
+        float: right;
+        top: 13px !important;
+        background-color: #ddd;
+        border: 1px solid #777;
+        color: #000;
+        font-weight: 900;
+        padding-bottom: 3px;
+        border-radius: 4px;
+    }
+  
+
+    .tutoarq:hover{
+        background-color: #ffca30;
+    }
+
 
     /*manuais*/
 
@@ -166,6 +193,20 @@
         display: none;
         position: absolute;
         margin-left: 2em;
+        z-index: 2500;
+    }
+
+    .fechapdf{
+        background-color: #ffca30;
+        border-radius: 2px;
+        width: 100px;
+        padding: 5px;        
+    }
+
+    .arqpdf1,.arqpdf2,.arqpdf23,.arqpdf4{
+        display: none;
+        position: absolute;
+        left: -10em;
         z-index: 2500;
     }
 
