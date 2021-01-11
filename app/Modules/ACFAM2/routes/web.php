@@ -821,7 +821,6 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
-
 		$resp = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 
 		if($resp){
@@ -1154,10 +1153,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$lead->converter('INSC', 'Inscrição via Ambiente de Conversão [Prova: ' . $prova->data->hora . ']');
 		$lead->save();
 
-		// Preparar e-mail
-
-		// Identidade de Gênero
-		$assunto = 'Seja bem-vind' . $aluno->genero_letra . ', ' . $aluno->primeiro_nome . '!';
+		//*******  Preparar e-mail *************
 
 		// Preparar dados
 		$dados_email = array_merge([
@@ -1168,24 +1164,33 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			'modulo' => $module
 		]);
 
-		// Criar e-mail
+		// Identidade de Gênero
+		$assunto = 'Seja bem-vind' . $aluno->genero_letra . ', ' . $aluno->primeiro_nome . '!';
+		$para = $aluno->email;		
+		$mensagem = view('AmbienteConversao::bem-vindo', $dados_email);
+		$headers[] = 'MIME-Version: 1.0';
+		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
+		mail($para, $assunto, $mensagem, implode("\r\n", $headers));
+
+		/* Criar e-mail LARAVEL
 		$email = Email::create($assunto)
 			->smtp_auth()
 			->from('no-reply@vestibularfam.com.br', 'Vestibular FAM')
 			->to($aluno->email, $aluno->nome)
 			->html(view('AmbienteConversao::bem-vindo', $dados_email)->render());
-
 		// Enviar
-		$email->send();
+		$email->send();*/
+
 
 		// Atualizar Sessão
 		$req->session()->put('opcoes_curso', $opcoes_curso);
 		$req->session()->put('prova', $prova);
 		$req->session()->put('local', $prova->local);
 		$req->session()->put('dados_adicionais', $dados_adicionais);
+
 		// Para não deixar atualizar
 		$req->session()->put('aluno_inscrito', "sim");
-
 		return redirect('/inscricao/bolsa');
 	});
 
