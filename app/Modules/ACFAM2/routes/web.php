@@ -814,29 +814,36 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 	Route::get('/teste', function (Request $req) use ($module) {
 
-		// Preparar e-mail
-
-		// Identidade de Gênero
+		$para = "everton.messias@gmail.com";
 		$assunto = 'Seja bem-vindo';
+		$mensagem = '
+		<html>
+		<head>
+		<title>Birthday Reminders for August</title>
+		</head>
+		<body>
+		<p>Here are the birthdays upcoming in August!</p>
+		<table>
+			<tr>
+			<th>Person</th><th>Day</th><th>Month</th><th>Year</th>
+			</tr>
+			<tr>
+			<td>Johny</td><td>10th</td><td>August</td><td>1970</td>
+			</tr>
+			<tr>
+			<td>Sally</td><td>17th</td><td>August</td><td>1973</td>
+			</tr>
+		</table>
+		</body>
+		</html>
+		';
+		$headers[] = 'MIME-Version: 1.0';
+		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
 
-		$email = "everton.messias@gmail.com";
-		$nome = "Everton Mendes Messias";
+		$resp = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 
-		// Preparar dados
-		$dados_email = "Informatica";
-
-		// Criar e-mail
-		$email = Email::create($assunto)
-			->smtp_auth()
-			->from('no-reply@vestibularfam.com.br', 'Vestibular FAM')
-			->to($email, $nome)
-			->html($dados_email);
-
-		// Enviar
-
-		$email->send();
-		
-		/*if($email->send()){
+		if($resp){
 			$frase = "Foi OK";
 		}else{
 			$frase = "ERRO";
@@ -844,10 +851,9 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 		$dados = [
 			'frase' => $frase			
-		];*/
+		];
 
-		//return view('AmbienteConversao::teste', $dados);
-		return view('AmbienteConversao::teste');
+		return view('AmbienteConversao::teste', $dados);		
 	});
 
 	Route::get('/bem-vindo', function (Request $cpf) use ($module) {
