@@ -611,9 +611,9 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$enviar = mail($famemail, $famassunto, $mensagem, $cabecalho);
 
 		if ($enviar) {
-			$msgemail = "Sucesso !! Enviamos um e-mail com mais detalhes sobre sua inscrição.";
+			$msgemail = "***SUCESSO*** ! Enviamos um e-mail com mais detalhes sobre sua inscrição.";
 		} else {
-			$msgemail = "Houve um ERRO no E-Mail, por favor entre em contato conosco !";
+			$msgemail = "ERRO no E-Mail, por favor entre em contato conosco !";
 		}
 
 		// fim bloco
