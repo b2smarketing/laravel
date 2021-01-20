@@ -841,10 +841,12 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			->to($para, $nome)
 			->html($mensagem);
 		// Enviar
-		$resp2 = $email->send();		
+		$resp2 = $email->send();	
+		
+		$hoje = date();
 		
 		if($resp1){
-			$frase1 = "Foi normal OK ==> para: $para";
+			$frase1 = "Foi normal OK ==> para: $para em $hoje";
 		}else{
 			$frase1 = "ERRO normal";
 		}
