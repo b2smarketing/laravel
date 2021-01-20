@@ -824,7 +824,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$nome = "Everton Messias";
 		$assunto = 'Seja bem-vindo';
 		//$mensagem = '<html><head><title>Teste</title></head><body><h1>Oii Amanda esse é um teste kkkkkkk!</h1></body></html>';
-		$mensagem = view('AmbienteConversao::bem-vindo');
+		$mensagem = "TESTANDOOOOOOOOOOOO";
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
