@@ -587,39 +587,42 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$dados_adicionais = $req->session()->get('dados_adicionais');
 
 
-		// inicio bloco Enviar e-mail
-
-		$inf_aluno = json_decode($aluno, TRUE);
-		//print_r($inf_aluno);
-
-		$nomealuno = $inf_aluno['nome'];
-		$cpfaluno = $inf_aluno['cpf'];
-		$emailaluno = $inf_aluno['email'];
-		$fammsg = "Sua inscrição foi realizada! Aguarde o contato dos organizadores do evento via email ou telefone para confirmar sua inscrição";
-		$famemail = 'informativo@fam.br';
-		$famassunto = 'Mensagem Vestibular FAM';
-
-		$cabecalho =
-			'MIME-Version: 1.0' . "\r\n" .
-			'Content-type: text/html; charset=UTF-8;' . "\r\n" .
-			'From: ' . $emailaluno . "\r\n" .
-			'Reply-To: ' . $famemail . "\r\n" .
-			'X-Mailer: PHP/' . phpversion();
-
-		$mensagem = "<h5>Nome: " . $nomealuno . "<br>CPF: " . $cpfaluno . "<br><br>FAM informa: </h5><p>" . $fammsg . "</p>";
-
-		$enviar = mail($famemail, $famassunto, $mensagem, $cabecalho);
+		//*******  Preparar e-mail *************
+		$dados_email = array_merge([
+			'aluno' => $aluno,
+			'opcoes_curso' => $opcoes_curso,
+			'prova' => $prova,
+			'local' => $prova->local,
+			'modulo' => $module
+		]);
+		
+		$assunto = 'Seja bem-vind' . $aluno->genero_letra . ', ' . $aluno->primeiro_nome . '!';
+		$para = $aluno->email;		
+		$mensagem = view('AmbienteConversao::bem-vindo', $dados_email)->render();
+		$headers[] = 'MIME-Version: 1.0';
+		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
+		
+		/* Criar e-mail LARAVEL
+		$email = Email::create($assunto)
+			->smtp_auth()
+			->from('no-reply@vestibularfam.com.br', 'Vestibular FAM')
+			->to($aluno->email, $aluno->nome)
+			->html(view('AmbienteConversao::bem-vindo', $dados_email)->render());
+		// Enviar
+		$email->send();*/
+		
+		$enviar = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 
 		if ($enviar) {
 			$msgemail = "***SUCESSO*** ! Enviamos um e-mail com mais detalhes sobre sua inscrição.";
 		} else {
 			$msgemail = "ERRO no E-Mail, por favor entre em contato conosco !";
 		}
+		// fim bloco email
 
-		// fim bloco
 
 		// WTF
-
 		if (is_null($prova)) return redirect('/inscricao');
 
 		$dados = [
@@ -1178,26 +1181,23 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$lead->save();
 
 		//*******  Preparar e-mail *************
-
-		// Preparar dados
+		
 		$dados_email = array_merge([
 			'aluno' => $aluno,
 			'opcoes_curso' => $opcoes_curso,
 			'prova' => $prova,
 			'local' => $prova->local,
 			'modulo' => $module
-		]);
-
-		// Identidade de Gênero
+		]);	
 		$assunto = 'Seja bem-vind' . $aluno->genero_letra . ', ' . $aluno->primeiro_nome . '!';
 		$para = $aluno->email;		
-		$mensagem = view('AmbienteConversao::bem-vindo', $dados_email);
+		$mensagem = view('AmbienteConversao::bem-vindo', $dados_email)->render();
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
 		mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 
-		/* Criar e-mail LARAVEL
+		/* e-mail LARAVEL
 		$email = Email::create($assunto)
 			->smtp_auth()
 			->from('no-reply@vestibularfam.com.br', 'Vestibular FAM')
@@ -1205,7 +1205,6 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			->html(view('AmbienteConversao::bem-vindo', $dados_email)->render());
 		// Enviar
 		$email->send();*/
-
 
 		// Atualizar Sessão
 		$req->session()->put('opcoes_curso', $opcoes_curso);
