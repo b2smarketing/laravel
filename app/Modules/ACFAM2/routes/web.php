@@ -819,7 +819,8 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 	Route::get('/teste', function (Request $req) use ($module) {
 
-		$para = "everton.messias@gmail.com";
+		//$para = "everton.messias@gmail.com";
+		$para = "everton@ic.unicamp.br";
 		$assunto = 'Seja bem-vindo';
 		//$mensagem = '<html><head><title>Teste</title></head><body><h1>Oii Amanda esse é um teste kkkkkkk!</h1></body></html>';
 		$mensagem = view('AmbienteConversao::bem-vindo');
