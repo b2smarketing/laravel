@@ -828,11 +828,9 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
+				
+		$resp1 = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 		
-		
-		//$resp = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
-
-			
 		//Criar e-mail LARAVEL
 		$email = Email::create($assunto)
 			->smtp_auth()
@@ -840,16 +838,23 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			->to($para, $nome)
 			->html($mensagem);
 		// Enviar
-		$frase = $email->send();		
+		$resp2 = $email->send();		
 		
-		/*if($resp){
-			$frase = "Foi OK ==> para: $para";
+		if($resp1){
+			$frase1 = "Foi normal OK ==> para: $para";
 		}else{
-			$frase = "ERRO";
-		}	*/	
+			$frase1 = "ERRO normal";
+		}
+		
+		if($resp2){
+			$frase2 = "Foi Laravel OK ==> para: $para";
+		}else{
+			$frase2 = "ERRO Laravel";
+		}		
 
 		$dados = [
-			'frase' => $frase			
+			'frase1' => $frase1,
+			'frase2' => $frase2			
 		];
 
 		return view('AmbienteConversao::teste', $dados);		
