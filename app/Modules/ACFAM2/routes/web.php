@@ -843,7 +843,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		// Enviar
 		$resp2 = $email->send();	
 		
-		$hoje = date();
+		$hoje = date("d-m-Y , H:i:s");
 		
 		if($resp1){
 			$frase1 = "Foi normal OK ==> para: $para em $hoje";
