@@ -846,7 +846,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$hoje = date("d-m-Y , H:i:s");
 		
 		if($resp1){
-			$frase1 = "Foi normal OK ==> para: $para<br>$hoje";
+			$frase1 = "Foi normal OK ==> para: $para em $hoje";
 		}else{
 			$frase1 = "ERRO normal";
 		}
