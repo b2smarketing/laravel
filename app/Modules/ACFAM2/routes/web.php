@@ -840,13 +840,13 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			->to($para, $nome)
 			->html($mensagem);
 		// Enviar
-		$resp = $email->send();		
+		$frase = $email->send();		
 		
-		if($resp){
+		/*if($resp){
 			$frase = "Foi OK ==> para: $para";
 		}else{
 			$frase = "ERRO";
-		}		
+		}	*/	
 
 		$dados = [
 			'frase' => $frase			
