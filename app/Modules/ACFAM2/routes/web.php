@@ -830,7 +830,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$resp = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 
 		if($resp){
-			$frase = "Foi OK";
+			$frase = "Foi OK ==> para: $para";
 		}else{
 			$frase = "ERRO";
 		}		
