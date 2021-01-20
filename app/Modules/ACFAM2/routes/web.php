@@ -819,16 +819,29 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 	Route::get('/teste', function (Request $req) use ($module) {
 
-		//$para = "everton.messias@gmail.com";
-		$para = "everton@ic.unicamp.br";
+		$para = "everton.messias@gmail.com";
+		//$para = "everton@ic.unicamp.br";
+		$nome = "Everton Messias";
 		$assunto = 'Seja bem-vindo';
 		//$mensagem = '<html><head><title>Teste</title></head><body><h1>Oii Amanda esse é um teste kkkkkkk!</h1></body></html>';
 		$mensagem = view('AmbienteConversao::bem-vindo');
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
-		$resp = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
+		
+		
+		//$resp = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 
+			
+		//Criar e-mail LARAVEL
+		$email = Email::create($assunto)
+			->smtp_auth()
+			->from('no-reply@vestibularfam.com.br', 'Vestibular FAM')
+			->to($para, $nome)
+			->html($mensagem);
+		// Enviar
+		$resp = $email->send();		
+		
 		if($resp){
 			$frase = "Foi OK ==> para: $para";
 		}else{
