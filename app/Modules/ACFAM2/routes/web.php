@@ -557,7 +557,15 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
-		mail($para, $assunto, $mensagem, implode("\r\n", $headers));
+		$foi = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
+		if($foi){
+			$msg_email = "Email Enviado";
+		}else{
+			$msg_email = "erro no email!";
+		}
+		$msg = array(
+			'msg_email' => $msg_email
+		);
 
 		/* Criar e-mail LARAVEL
 		$email = Email::create($assunto)
@@ -576,7 +584,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		// Para não deixar atualizar
 		$req->session()->put('aluno_inscrito', "sim");
 
-		return redirect('/inscricao/finaliza');
+		return redirect('/inscricao/finaliza',$msg);
 	});
 
 	Route::get('/inscricao/finaliza', function (Request $req) use ($module) {
