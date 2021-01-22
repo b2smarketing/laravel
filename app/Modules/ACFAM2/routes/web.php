@@ -160,7 +160,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 		$cpf = $req->input('cpf');
 		$senha = $req->input('senha');
-
+// senha gerada pelo gordinho //IeVeeGh4ae
 	if ($senha == "admin@fam#"){
 
 		$host = getenv("DB_HOST");
@@ -821,7 +821,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 	});
 
 	Route::get('/teste', function (Request $req) use ($module) {
-
+// senha gerada pelo gordinho //IeVeeGh4ae
 		$para = "everton.messias@gmail.com";
 		//$para = "everton@ic.unicamp.br";
 		$nome = "Everton Messias";
@@ -830,7 +830,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$mensagem = "TESTANDOOOOOOOOOOOO";
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
-		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
+		$headers[] = 'From: Vestibular FAM <noreply@vestibularfam.com.br>';
 				
 		$resp1 = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 		
