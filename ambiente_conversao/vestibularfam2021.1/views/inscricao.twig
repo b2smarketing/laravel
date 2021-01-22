@@ -63,6 +63,13 @@ var select = document.createElement("select");
 			option.innerHTML = 'Ingresso por curso Técnico';
 			select.appendChild(option);		  
 			$(".listaprova").append(select);
+		}else if (resp == "segunda_graduacao"){	
+			$(".formingresso").css({ "display": "none" })			
+			var option = document.createElement("option");
+			option.setAttribute("value",'2895');
+			option.innerHTML = 'Ingresso por Segunda Graduacao';
+			select.appendChild(option);		  
+			$(".listaprova").append(select);
 		}else{
 			$(".formingresso").css({ "display": "none" })
 			{% for prova in aluno.data_provas %}
