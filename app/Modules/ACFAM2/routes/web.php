@@ -601,7 +601,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$mensagem = view('AmbienteConversao::bem-vindo', $dados_email)->render();
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
-		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
+		$headers[] = 'From: Vestibular FAM <noreply@vestibularfam.com.br>';
 		
 		/* Criar e-mail LARAVEL
 		$email = Email::create($assunto)
@@ -1196,7 +1196,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$mensagem = view('AmbienteConversao::bem-vindo', $dados_email)->render();
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
-		$headers[] = 'From: Vestibular FAM <no-reply@vestibularfam.com.br>';
+		$headers[] = 'From: Vestibular FAM <noreply@vestibularfam.com.br>';
 		mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 
 		/* e-mail LARAVEL
