@@ -189,7 +189,7 @@
         z-index: 2000;
     }
 
-    .imgarq1, .imgarq2, .imgarq3, .imgarq4, .imgarq5, .imgarq6, .imgarq7, .imgarq8, .imgarq9, .imgarq10, .imgarq11, .imgarq12 {
+    .imgarq1, .imgarq2, .imgarq3, .imgarq4, .imgarq5, .imgarq6, .imgarq7, .imgarq8, .imgarq9, .imgarq10, .imgarq11, .imgarq12, .imgarq13, .imgarq14 {
         display: none;
         position: absolute;
         margin-left: 2em;
@@ -396,6 +396,15 @@
         border-radius: 4px;
         text-align: center;
         height: 100%;
+    }
+
+    .responsavel .arquivo{
+        left: 1px !important;
+    }
+    .responsavel .tutoarq{
+        position: relative;
+        left: 50px !important;
+        top: 1px;        
     }
 
     #page-adicionais input[type="text"], #page-adicionais input[type="password"], #page-adicionais input[type="email"], #page-adicionais input[type="tel"], #page-adicionais input[type="file"] {

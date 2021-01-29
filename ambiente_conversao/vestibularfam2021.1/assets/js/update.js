@@ -169,6 +169,15 @@ function manual(x){
         $('.poparq').css({'display':'block'});
         $('.imgarq12').attr('src','/assets/images/12.jpg').css({'display':'block'});
     }
+    // responsavel
+    if (x == 13){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq13').attr('src','/assets/images/1.jpg').css({'display':'block'});
+    }
+    if (x == 14){
+        $('.poparq').css({'display':'block'});
+        $('.imgarq14').attr('src','/assets/images/2.jpg').css({'display':'block'});
+    }
       
 }
 
