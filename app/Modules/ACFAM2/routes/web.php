@@ -92,26 +92,42 @@ $middle_dados = function ($req, Closure $next) use ($module) {
 	$cursograd = [];
 	$cursotec = [];
 	$cursodist = [];
+	$cursopres = [];
 	$cursototal = [];
 
-foreach($campanha->cursos as $curso){
-	if($curso->id != 79)$cursototal[] = $curso;
-}
-		
-foreach($campanha->cursos as $curso){
-	if($curso->id != 79){
-		if( $curso->id == 49 || $curso->id == 63 || $curso->id == 67 || $curso->id == 56 || $curso->id == 57 || $curso->id == 52 || $curso->id == 50 || $curso->id == 65 || $curso->id == 54 ||$curso->id == 59 || $curso->id == 61){
-					$cursotec[] = $curso;
-		}
-		else if ( $curso->id == 69 || $curso->id == 77 ||  $curso->id == 76 || $curso->id == 74 ||  $curso->id == 75){
-					$cursodist[] = $curso;
-		}
-		else{
-			$cursograd[] = $curso;
+	foreach ($campanha->cursos as $curso) {
+		if ($curso->id != 79) $cursototal[] = $curso;
+	}
+
+	foreach ($campanha->cursos as $curso) {
+		if ($curso->id != 79) {
+			if ($curso->id == 49 || $curso->id == 63 || $curso->id == 67 || $curso->id == 56 || $curso->id == 57 || $curso->id == 52 || $curso->id == 50 || $curso->id == 65 || $curso->id == 54 || $curso->id == 59 || $curso->id == 61) {
+				$cursotec[] = $curso;
+			}
 		}
 	}
-}		
-	
+	foreach ($campanha->cursos as $curso) {
+		if ($curso->id != 79) {
+			if ($curso->id == 69 || $curso->id == 77 ||  $curso->id == 76 || $curso->id == 74 ||  $curso->id == 75) {
+				$cursodist[] = $curso;
+			}
+		}
+	}
+	foreach ($campanha->cursos as $curso) {
+		if ($curso->id != 79) {
+			if ($curso->id != 49 && $curso->id != 63 && $curso->id != 67 && $curso->id != 56 && $curso->id != 57 && $curso->id != 52 && $curso->id != 50 && $curso->id != 65 && $curso->id != 54 && $curso->id != 59 && $curso->id != 61) {
+				$cursograd[] = $curso;
+			}
+		}
+	}
+	foreach ($campanha->cursos as $curso) {
+		if ($curso->id != 79) {
+			if ($curso->id != 49 && $curso->id != 63 && $curso->id != 67 && $curso->id != 56 && $curso->id != 57 && $curso->id != 52 && $curso->id != 50 && $curso->id != 65 && $curso->id != 54 && $curso->id != 59 && $curso->id != 61 && $curso->id != 69 && $curso->id != 77 &&  $curso->id != 76 && $curso->id != 74 &&  $curso->id != 75) {
+				$cursopres[] = $curso;
+			}
+		}
+	}
+
 
 	View::share('dados', $dados);
 	View::share('opcoes', $module->options);
@@ -119,6 +135,7 @@ foreach($campanha->cursos as $curso){
 	View::share('cursosgrad', $cursograd);
 	View::share('cursostec', $cursotec);
 	View::share('cursosdist', $cursodist);
+	View::share('cursospres', $cursopres);
 	View::share('settings', Settings::get_all());
 
 	$req->session()->put('obj', $dados);
@@ -150,61 +167,58 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 	// Apaga CPF (precisa de login) ***************************************
 
-	Route::get('/apagaCPF', function (Request $req) use ($module) {			
-	
-		return view('AmbienteConversao::apagaCPF');
+	Route::get('/apagaCPF', function (Request $req) use ($module) {
 
+		return view('AmbienteConversao::apagaCPF');
 	});
 
 	Route::post('/apaga', function (Request $req) {
 
 		$cpf = $req->input('cpf');
 		$senha = $req->input('senha');
-// senha gerada pelo gordinho //IeVeeGh4ae
-	if ($senha == "admin@fam#"){
+		// senha gerada pelo gordinho //IeVeeGh4ae
+		if ($senha == "admin@fam#") {
 
-		$host = getenv("DB_HOST");
-		$user = getenv("DB_USERNAME");
-		$pass = getenv("DB_PASSWORD");
-		$database = getenv("DB_DATABASE");
+			$host = getenv("DB_HOST");
+			$user = getenv("DB_USERNAME");
+			$pass = getenv("DB_PASSWORD");
+			$database = getenv("DB_DATABASE");
 
-		$conexao = new mysqli($host,$user,$pass,$database);
+			$conexao = new mysqli($host, $user, $pass, $database);
 
-		$sql = "select * from alunos where cpf = $cpf";
-		$consulta = $conexao->query($sql);		
-		
-		if($consulta){
+			$sql = "select * from alunos where cpf = $cpf";
+			$consulta = $conexao->query($sql);
 
-		$resultado = $consulta->fetch_assoc();
-		$id = $resultado['id'];			
+			if ($consulta) {
 
-		$sql1 = "DELETE FROM alunos WHERE id = $id";
-		$sql2 = "DELETE FROM leads WHERE aluno_id = $id";
-		$conexao->query("SET foreign_key_checks = 0");
-		$apagado1 = $conexao->query($sql1);
-		$apagado2 = $conexao->query($sql2);
+				$resultado = $consulta->fetch_assoc();
+				$id = $resultado['id'];
 
-		if(!$apagado1){
-			$frase = "ERRO ao apagar cpf";
-		}else if(!$apagado2){
-			$frase = "ERRO ao apagar lead";
-		}else{
-			$frase = "CPF ".$resultado['cpf']." apagado!";
-		}						
+				$sql1 = "DELETE FROM alunos WHERE id = $id";
+				$sql2 = "DELETE FROM leads WHERE aluno_id = $id";
+				$conexao->query("SET foreign_key_checks = 0");
+				$apagado1 = $conexao->query($sql1);
+				$apagado2 = $conexao->query($sql2);
 
-		}else{
-			$frase = "CPF não encontrado !";
+				if (!$apagado1) {
+					$frase = "ERRO ao apagar cpf";
+				} else if (!$apagado2) {
+					$frase = "ERRO ao apagar lead";
+				} else {
+					$frase = "CPF " . $resultado['cpf'] . " apagado!";
+				}
+			} else {
+				$frase = "CPF não encontrado !";
+			}
+		} else {
+			$frase = "SENHA INCORRETA !!!";
 		}
-	
-	}else{
-		$frase = "SENHA INCORRETA !!!";
-	}		
 		$dados = [
 			'frase' => $frase
 		];
 
 		return view('AmbienteConversao::apagado', $dados);
-	});	
+	});
 
 	// Inscrição Vestibular ***************************************
 
@@ -223,7 +237,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$cpf = $req->input('cpf');
 		$ingresso = $req->input('ingresso');
 		$distancia = $req->input('distancia');
-		
+
 		$infosCandidato = $req->input('candidato');
 		if (is_null($infosCandidato) || !is_array($infosCandidato)) $infosCandidato = [];
 
@@ -331,11 +345,11 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$data_provas = array();
 		$listaprovas = Prova_Data::all();
 		$hoje = date('Y/m/d 23:59:59');
-		foreach ($listaprovas as $prova){
-			if(strtotime($prova->hora) > strtotime($hoje) && $prova->id != 2895 && $prova->id != 2896){				
-			$data_provas[] = array($prova->id,date_format(date_create($prova->hora),"d/m/Y - H:i:s"));
+		foreach ($listaprovas as $prova) {
+			if (strtotime($prova->hora) > strtotime($hoje) && $prova->id != 2895 && $prova->id != 2896) {
+				$data_provas[] = array($prova->id, date_format(date_create($prova->hora), "d/m/Y - H:i:s"));
 			}
-		}//echo json_encode($data_provas);
+		} //echo json_encode($data_provas);
 
 		// Listar Locais de Prova
 		$locais_provas = $campanha->locais_provas;
@@ -365,7 +379,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			'ingresso' => $ingresso,
 			'distancia' => $distancia
 		];
-		
+
 		if ($req->query('e'))
 			$dados['error'] = $req->query('e');
 
@@ -567,7 +581,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			->html(view('AmbienteConversao::bem-vindo', $dados_email)->render());
 		// Enviar
 		$email->send();*/
-		
+
 		// Atualizar Sessão
 		$req->session()->put('opcoes_curso', $opcoes_curso);
 		$req->session()->put('prova', $prova);
@@ -595,14 +609,14 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			'local' => $prova->local,
 			'modulo' => $module
 		]);
-		
+
 		$assunto = 'Seja bem-vind' . $aluno->genero_letra . ', ' . $aluno->primeiro_nome . '!';
-		$para = $aluno->email;		
+		$para = $aluno->email;
 		$mensagem = view('AmbienteConversao::bem-vindo', $dados_email)->render();
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 		$headers[] = 'From: Vestibular FAM <noreply@vestibularfam.com.br>';
-		
+
 		/* Criar e-mail LARAVEL
 		$email = Email::create($assunto)
 			->smtp_auth()
@@ -611,7 +625,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			->html(view('AmbienteConversao::bem-vindo', $dados_email)->render());
 		// Enviar
 		$email->send();*/
-		
+
 		$enviar = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 
 		if ($enviar) {
@@ -796,7 +810,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 	Route::post('/inscricao/adicionais', function (Request $req) use ($module) {
 		$cpf = $req->input('cpf');
-		$aluno = Aluno::porCPF($cpf);		
+		$aluno = Aluno::porCPF($cpf);
 
 		if (is_null($aluno)) {
 			return view('AmbienteConversao::erro');
@@ -821,7 +835,7 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 	});
 
 	Route::get('/teste', function (Request $req) use ($module) {
-// senha gerada pelo gordinho //IeVeeGh4ae
+		// senha gerada pelo gordinho //IeVeeGh4ae
 		$para = "everton.messias@gmail.com";
 		//$para = "everton@ic.unicamp.br";
 		$nome = "Everton Messias";
@@ -831,9 +845,9 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 		$headers[] = 'From: Vestibular FAM <noreply@vestibularfam.com.br>';
-				
+
 		$resp1 = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
-		
+
 		//Criar e-mail LARAVEL
 		$email = Email::create($assunto)
 			->smtp_auth()
@@ -841,48 +855,47 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 			->to($para, $nome)
 			->html($mensagem);
 		// Enviar
-		$resp2 = $email->send();	
-		
+		$resp2 = $email->send();
+
 		$hoje = date("d-m-Y , H:i:s");
-		
-		if($resp1){
+
+		if ($resp1) {
 			$frase1 = "Foi normal OK ==> para: $para em $hoje";
-		}else{
+		} else {
 			$frase1 = "ERRO normal";
 		}
-		
-		if($resp2){
+
+		if ($resp2) {
 			$frase2 = "Foi Laravel OK ==> para: $para";
-		}else{
+		} else {
 			$frase2 = "ERRO Laravel";
-		}		
+		}
 
 		$dados = [
 			'frase1' => $frase1,
-			'frase2' => $frase2			
+			'frase2' => $frase2
 		];
 
-		return view('AmbienteConversao::teste', $dados);		
+		return view('AmbienteConversao::teste', $dados);
 	});
 
 	Route::get('/bem-vindo', function (Request $cpf) use ($module) {
 
 		$cpf = $_GET['cpf'];
 
-		$aluno = Aluno::porCPF($cpf);		
+		$aluno = Aluno::porCPF($cpf);
 
 		//print_r($aluno);
 
 		// Validar se CPF existe
 		if (is_null($aluno))
 			return redirect('/');
-			
+
 		$dados = [
-			'aluno' => $aluno			
+			'aluno' => $aluno
 		];
 
 		return view('AmbienteConversao::bem-vindo', $dados);
-		
 	});
 
 	Route::post('/resultados', function (Request $req) use ($module) {
@@ -1183,16 +1196,16 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 		$lead->save();
 
 		//*******  Preparar e-mail *************
-		
+
 		$dados_email = array_merge([
 			'aluno' => $aluno,
 			'opcoes_curso' => $opcoes_curso,
 			'prova' => $prova,
 			'local' => $prova->local,
 			'modulo' => $module
-		]);	
+		]);
 		$assunto = 'Seja bem-vind' . $aluno->genero_letra . ', ' . $aluno->primeiro_nome . '!';
-		$para = $aluno->email;		
+		$para = $aluno->email;
 		$mensagem = view('AmbienteConversao::bem-vindo', $dados_email)->render();
 		$headers[] = 'MIME-Version: 1.0';
 		$headers[] = 'Content-type: text/html; charset=iso-8859-1';
