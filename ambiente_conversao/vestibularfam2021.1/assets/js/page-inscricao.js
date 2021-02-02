@@ -41,6 +41,25 @@ $(document).ready(() => {
 			return cursos;
 		},
 
+		cursos2_tec() {
+			let cursos = Vue.util.extend({}, this.cursos_sort);
+			for (var i in cursos) {
+				if (cursos[i].id == this.opcao1 || (cursos[i].id != 49 && cursos[i].id != 63 && cursos[i].id != 67 && cursos[i].id != 56 && cursos[i].id != 57 && cursos[i].id != 52 && cursos[i].id != 50 && cursos[i].id != 65 && cursos[i].id != 54 && cursos[i].id != 59 && cursos[i].id != 61)) {
+					delete cursos[i];
+				}
+			}
+			return cursos;
+		},
+		cursos3_tec() {
+			let cursos = Vue.util.extend({}, this.cursos_sort);
+			for (var i in cursos) {
+				if (cursos[i].id == this.opcao1 || cursos[i].id == this.opcao2 || (cursos[i].id != 49 && cursos[i].id != 63 && cursos[i].id != 67 && cursos[i].id != 56 && cursos[i].id != 57 && cursos[i].id != 52 && cursos[i].id != 50 && cursos[i].id != 65 && cursos[i].id != 54 && cursos[i].id != 59 && cursos[i].id != 61)) {
+					delete cursos[i];
+				}
+			}
+			return cursos;
+		},
+
 		cursos2_so_presencial() {
 			let cursos = Vue.util.extend({}, this.cursos_sort);
 			for (var i in cursos) {

@@ -7,21 +7,7 @@
 <script type="text/javascript">
 $(function () {
 var ingresso = {{ curso|json_encode()|raw }}
-console.log("Curso: "+ingresso)
-if(ingresso == 49 || ingresso == 63 || ingresso == 67 || ingresso == 56 || ingresso == 57 || ingresso == 52 || ingresso == 50 || ingresso == 65 || ingresso == 54 || ingresso == 59 || ingresso == 61){
-	$(".ene").css({ "display": "none" })
-	$(".seg").css({ "display": "none" })
-	$(".ves").css({ "display": "none" })
-	$(".bol").css({ "display": "none" })
-	$(".tec").css({ "display": "block" })
-	$(".segundaeterceiraopcao").css({ "display": "none" })
-}else{
-	$(".ene").css({ "display": "block" })
-	$(".seg").css({ "display": "block" })
-	$(".ves").css({ "display": "block" })
-	$(".tec").css({ "display": "none" })
-	$(".segundaeterceiraopcao").css({ "display": "block" })
-}
+console.log("Curso: "+ingresso);
 })
 
 
@@ -158,6 +144,15 @@ var select = document.createElement("select");
 												</select>
 												</div>
 
+												<div v-if="aluno.ingresso === 'tecnico'">
+												<label for="acfam-inscricao-opcoes-curso-1">Segunda Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao2" v-on:change="opcao3 = null" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos2_tec" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+
 												<div v-if="aluno.ingresso === 'enem'">
 												<label for="acfam-inscricao-opcoes-curso-1">Segunda Opção:</label>
 												<!-- Listagem de Cursos -->												
@@ -229,6 +224,15 @@ var select = document.createElement("select");
 												<select name="opcoes_curso[]" v-model="opcao3" class="form-control" id="acfam-inscricao-opcoes-curso-2">
 													<option></option>
 													<option v-for="curso in cursos3_semTec" :value="curso.id">{{ curso.nome }}</option>
+												</select>
+												</div>
+
+												<div v-if="aluno.ingresso === 'tecnico'">
+												<label for="acfam-inscricao-opcoes-curso-1">Terceira Opção:</label>
+												<!-- Listagem de Cursos -->												
+												<select name="opcoes_curso[]" v-model="opcao3" class="form-control" id="acfam-inscricao-opcoes-curso-2">
+													<option></option>
+													<option v-for="curso in cursos3_tec" :value="curso.id">{{ curso.nome }}</option>
 												</select>
 												</div>
 
