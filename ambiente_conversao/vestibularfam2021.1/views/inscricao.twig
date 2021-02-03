@@ -7,7 +7,38 @@
 <script type="text/javascript">
 $(function () {
 var ingresso = {{ curso|json_encode()|raw }}
+console.log("Ingresso: "+aluno.ingresso);
 console.log("Curso: "+ingresso);
+
+var selectprova = $("select#prova");
+var option = document.createElement("option");
+
+if(aluno.ingresso == "tecnico"){
+option.setAttribute("class","tec");
+option.setAttribute("value", "tecnico");
+option.innerHTML = "Técnico";
+selectprova.append(option);		
+}else if(aluno.ingresso == "vestibular"){
+option.setAttribute("class","ves");
+option.setAttribute("value", "vestibular");
+option.innerHTML = "Vestibular";
+selectprova.append(option);		
+}else if(aluno.ingresso == "enem"){
+option.setAttribute("class","ene");
+option.setAttribute("value", "enem");
+option.innerHTML = "Enem";
+selectprova.append(option);		
+}else if(aluno.ingresso == "segunda_graduacao"){
+option.setAttribute("class","seg");
+option.setAttribute("value", "segunda_graduacao");
+option.innerHTML = "Segunda Graduação";
+selectprova.append(option);		
+}else{
+option.setAttribute("class","bol");
+option.setAttribute("value", "bolsa");
+option.innerHTML = "Prova de Bolsas";
+selectprova.append(option);		
+}
 })
 
 
@@ -444,12 +475,7 @@ var select = document.createElement("select");
 							<!-- Tipo de ingresso  -->
 							<div class="formingresso defic col-xs-12 col-md-6 v-spacing">							
 								<select oninput="FormaIngresso(value)" id="prova" size required class="form-control" name="candidato[ingresso]">
-									<option value="null" selected>Confirme a forma de ingresso:</option>									
-									<option class="tec" value="tecnico">Técnico</option>
-									<option class="ves" value="vestibular">Vestibular</option>
-									<option class="ene" value="enem">Nota do ENEM</option>
-									<option class="seg" value="segunda_graduacao">Segunda Graduação</option>
-									<option class="bol" value="bolsa">Prova de Bolsas</option>
+									<option value="null" selected>Confirme a forma de ingresso:</option>							
 								</select>
 							</div>
 
@@ -507,7 +533,7 @@ var select = document.createElement("select");
 							<div class="bolsa">
 								<p class="align center text-white">
 								Você optou por ingressar através da Prova de Bolsas. 
-								Confirme seu e-mail no campo abaixo e fique atento as informações que encaminharemos no por lá. Boa sorte!
+								Confirme seu e-mail no campo abaixo e fique atento as informações que encaminharemos por lá. Boa sorte!
 								</p>
 								
 							</div>

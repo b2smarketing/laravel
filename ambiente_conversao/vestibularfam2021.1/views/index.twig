@@ -93,7 +93,17 @@
 			select.append(optiont);
 			{% endfor %}   
 			$(".cursolista").append(select);
-		}else{
+		}else if (resp == "bolsa"){					
+			$(".cursoop").slideDown(500); 
+			{% for curso in cursospres %}
+			var optiont = document.createElement("option");
+			optiont.setAttribute("value",'{{ curso.id }}');
+			optiont.innerHTML = '{{ curso.nome }}';
+			select.append(optiont);
+			{% endfor %}   
+			$(".cursolista").append(select);
+		}
+		else{
 			//$(".cingresso").prop('disabled', 'disabled');
 			$(".curso-pergunta").slideDown(500); 		   
 		}
