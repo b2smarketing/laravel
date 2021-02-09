@@ -57,18 +57,23 @@
 								{{ prova.data.hora|date('w')|dia_semana }},
 								{{ prova.data.hora|date('d/m/Y') }}
 							</p>
-							<p>
+							<!--<p>
 								<strong>Hora da prova:</strong><br/>
 								{{ prova.data.hora|date('H:i') }}
 								{% if prova.data.hora_final %}
 									às
 									{{ prova.data.hora_final|date('H:i') }}
 								{% endif %}
-							</p>
+							</p>-->
 						{% endif %}
 						{% if aluno.ingresso == 'vestibular'%}
 							<p>
-								Você optou por <strong>{{aluno.ingresso}}</strong>, você receberá em seu e-mail a sua prova online com todas as orientações para realizá-la.
+								Você optou por <strong>Vestibular</strong>, você receberá em seu e-mail a sua prova online com todas as orientações para realizá-la.
+							</p>
+						{% elseif aluno.ingresso == 'bolsa'%}
+							<p>
+								Você optou por <strong>Prova de Bolsas</strong>. No dia e horário escolhido no cadastro, você receberá o tema da sua prova, com instruções de como realizá-la através do nosso canal no youtube. Fique atento, pois a prova é válida somente para a data escolhida.<br><br> 
+								Você também pode adiantar sua pré-matrícula abaixo: caso seja aprovado (a), o processo de matrícula já estará 98% completo para você iniciar sua vida universitária numa poderosa estrutura de ensino que é a FAM.
 							</p>
 						{% else %}
 							<p>
