@@ -101,7 +101,7 @@ $middle_dados = function ($req, Closure $next) use ($module) {
 
 	foreach ($campanha->cursos as $curso) {
 		if ($curso->id != 79) {
-			if ($curso->id == 49 || $curso->id == 63 || $curso->id == 67 || $curso->id == 56 || $curso->id == 57 || $curso->id == 52 || $curso->id == 50 || $curso->id == 65 || $curso->id == 54 || $curso->id == 59 || $curso->id == 61) {
+			if ($curso->id == 49 || $curso->id == 63 || $curso->id == 67 || $curso->id == 56 || $curso->id == 57 || $curso->id == 52 || $curso->id == 50 || $curso->id == 65 || $curso->id == 54 || $curso->id == 59 || $curso->id == 61 || $curso->id == 84 || $curso->id == 85 || $curso->id == 86 || $curso->id == 87 ) {
 				$cursotec[] = $curso;
 			}
 		}
@@ -115,7 +115,7 @@ $middle_dados = function ($req, Closure $next) use ($module) {
 	}
 	foreach ($campanha->cursos as $curso) {
 		if ($curso->id != 79) {
-			if ($curso->id != 49 && $curso->id != 63 && $curso->id != 67 && $curso->id != 56 && $curso->id != 57 && $curso->id != 52 && $curso->id != 50 && $curso->id != 65 && $curso->id != 54 && $curso->id != 59 && $curso->id != 61) {
+			if ($curso->id != 49 && $curso->id != 63 && $curso->id != 67 && $curso->id != 56 && $curso->id != 57 && $curso->id != 52 && $curso->id != 50 && $curso->id != 65 && $curso->id != 54 && $curso->id != 59 && $curso->id != 61  && $curso->id != 84 && $curso->id != 85 && $curso->id != 86 && $curso->id != 87 ) {
 				$cursograd[] = $curso;
 			}
 		}
