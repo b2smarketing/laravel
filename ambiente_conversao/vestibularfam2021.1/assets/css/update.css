@@ -466,7 +466,54 @@
         color: #0e2e7c !important;
     }
 
+    body.mmatricula{
+        background-image: url("../images/background.png");
+    }
+    .amatricula{
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        width: 700px !important;
+        text-align: center !important;
+    }
+    .amatricula #cpf{
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        text-align: center !important;
+    }
+    .amatricula h3{
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        width: 60%;
+        color: #fff;
+    }
+    .amatricula input, .amatricula select, .amatricula label{
+        background-color: #FFCA30 !important;
+        color: #0e2e7c !important;
+    }
+    .amatricula input[type="checkbox"]{
+        transform: scale(1.5);        
+    }
+    .amatricula input[type="button"]{
+        cursor: pointer;
+        background-color: #ec008c !important;
+        color: #fff !important;
+    }
+    .amatricula input[type="button"]:hover{
+        background-color: #FFCA30 !important;
+        color: #0e2e7c !important;
+    }
+    .amatricula input::placeholder{
+        color: #0e2e7c !important;
+    }
+    .amatricula .imgadd{
+        margin-top: -20px !important;
+        width: 700px !important;
+    }
 
+    
     
     .vmatricula h3{
         color: #fff;
@@ -491,5 +538,9 @@
 
     .vmatricula input::placeholder{
         color: #0e2e7c !important;
+    }
+    .vmatricula .imgadd{
+        margin-top: -20px !important;
+        width: 100% !important;
     }
 
