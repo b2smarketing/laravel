@@ -628,6 +628,10 @@ Route::group(['middleware' => [$middle_dados]], function () use ($module) {
 
 		$enviar = mail($para, $assunto, $mensagem, implode("\r\n", $headers));
 
+		//if (isset($_GET['socorro'])) {
+		//	dd($enviar, $para, $assunto, $mensagem, $headers);
+		//}
+
 		if ($enviar) {
 			$msgemail = "***SUCESSO*** ! Enviamos um e-mail com mais detalhes sobre sua inscrição.";
 		} else {

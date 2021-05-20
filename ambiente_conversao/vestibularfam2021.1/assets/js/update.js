@@ -185,17 +185,17 @@ function abrepdf(x){
     if (x == 1){
         $('.poparq').css({'display':'block'});
         $('.arqpdf'+x).css({'display':'block'});
-        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_de_Aceite_CT_061120.pdf');
+        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_de_Aceite_CT_130521.pdf');
     } 
     if (x == 2){
         $('.poparq').css({'display':'block'});
         $('.arqpdf'+x).css({'display':'block'});
-        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_de_Aceite_EAD_061120.pdf');
+        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_de_Aceite_EAD_130521.pdf');
     }
     if (x == 3){
         $('.poparq').css({'display':'block'});
         $('.arqpdf'+x).css({'display':'block'});
-        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_de_Aceite_Graduacao_061120.pdf');
+        $('.pdfarqpdf'+x).attr('src','/assets/docs/Termo_de_Aceite_Graduacao_130521.pdf');
     }  
     if (x == 4){
         $('.poparq').css({'display':'block'});

@@ -88,8 +88,8 @@ class Migracao_Base extends \App\SimpleModel {
 			// Data da alteração
 			$data_alterou = Carbon::createFromTimestamp(strtotime($base_lead->dataalteracao));
 
-			// Testa se a base de leads do CRM está desatualizada
-			$desatualizado = ($lead->historico->last()->at >= $data_alterou);
+			// Testa se a base de leads do CRM está desatualizada, em casos raros onde não há último update, considerar a base do CRM como mais atualizada
+			$desatualizado = is_null($lead->historico->last()) ? false : ($lead->historico->last()->at >= $data_alterou);
 
 			// Pular leads que já estão na base indicada ou que estão desatualizados
 			if ($desatualizado || $base->codigo == $lead->status->codigo) {
